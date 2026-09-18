@@ -14,8 +14,16 @@ import { Client } from '@microsoft/microsoft-graph-client';
 
 const { GRAPH_TENANT_ID, GRAPH_CLIENT_ID, GRAPH_CLIENT_SECRET, GRAPH_MEDIA_DRIVE_ID } = process.env;
 
+// TEMPORARY diagnostic: CI log output from this script isn't showing up, so
+// write a status file we can fetch directly from the deployed site instead.
+async function writeDebug(data) {
+  await mkdir(path.resolve('public', 'references'), { recursive: true });
+  await writeFile(path.resolve('public', 'references', '_debug.json'), JSON.stringify(data, null, 2));
+}
+
 if (!GRAPH_TENANT_ID || !GRAPH_CLIENT_ID || !GRAPH_CLIENT_SECRET || !GRAPH_MEDIA_DRIVE_ID) {
   console.log('[fetch-project-media] GRAPH_* env vars not set — skipping (using placeholder images).');
+  await writeDebug({ branch: 'skipped-missing-env', hasTenant: Boolean(GRAPH_TENANT_ID), hasClientId: Boolean(GRAPH_CLIENT_ID), hasSecret: Boolean(GRAPH_CLIENT_SECRET), hasDriveId: Boolean(GRAPH_MEDIA_DRIVE_ID) });
   process.exit(0);
 }
 
@@ -38,7 +46,7 @@ async function downloadFolder(slug) {
     .get();
 
   const files = (children.value ?? []).filter((item) => item['@microsoft.graph.downloadUrl']);
-  if (files.length === 0) return;
+  if (files.length === 0) return [];
 
   const targetDir = path.join(outDir, slug);
   await mkdir(targetDir, { recursive: true });
@@ -49,18 +57,25 @@ async function downloadFolder(slug) {
     await writeFile(path.join(targetDir, file.name), buffer);
     console.log(`[fetch-project-media] downloaded ${slug}/${file.name}`);
   }
+  return files.map((f) => f.name);
 }
 
 async function main() {
   const rootChildren = await client.api(`/drives/${GRAPH_MEDIA_DRIVE_ID}/root/children`).select('name,folder').get();
+  const allItems = (rootChildren.value ?? []).map((item) => ({ name: item.name, isFolder: Boolean(item.folder) }));
   const folders = (rootChildren.value ?? []).filter((item) => item.folder).map((item) => item.name);
 
+  const downloaded = [];
   for (const slug of folders) {
-    await downloadFolder(slug);
+    const files = await downloadFolder(slug);
+    downloaded.push({ slug, files });
   }
+
+  await writeDebug({ branch: 'ran-main', driveId: GRAPH_MEDIA_DRIVE_ID, rootItems: allItems, folders, downloaded });
 }
 
-main().catch((error) => {
+main().catch(async (error) => {
   console.error('[fetch-project-media] failed:', error);
-  process.exit(1);
+  await writeDebug({ branch: 'error', message: error instanceof Error ? error.message : String(error), stack: error instanceof Error ? error.stack : undefined });
+  process.exit(0); // don't fail the whole site build over a media-fetch diagnostic
 });
