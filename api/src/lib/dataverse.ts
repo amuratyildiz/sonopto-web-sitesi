@@ -1,6 +1,6 @@
 import { ClientSecretCredential } from '@azure/identity';
 
-export interface LeadInput {
+export interface ContactSubmissionInput {
   name: string;
   email: string;
   phone?: string;
@@ -10,23 +10,26 @@ export interface LeadInput {
 }
 
 /**
- * Creates a Dataverse Lead from a contact form submission.
+ * Creates a record in the "Web Sitesi Iletisim Formu" (cr0c0_iletisimformukaydi)
+ * Dataverse table — a dedicated table for website contact form submissions,
+ * separate from the standard Lead table and from the org's own "Fırsat"
+ * (cr0c0_firsat) pipeline table, which requires an existing linked Company
+ * record that an anonymous website visitor won't have.
  *
  * Uses a dedicated, least-privilege Entra app registration + Dataverse
- * Application User (Create-only on the Lead table) — intentionally
- * separate from the build-time Microsoft Graph/SharePoint credential in
- * the main site, per the integration plan (PLAN.md).
+ * Application User (Create-only on this table) — intentionally separate
+ * from the build-time Microsoft Graph/SharePoint credential in the main
+ * site, per the integration plan (PLAN.md).
  *
- * When DATAVERSE_* env vars are not configured, logs the lead instead of
- * throwing, so the contact form keeps working end-to-end before the
- * Power Platform side has been provisioned. Remove this fallback once
- * Dataverse is wired up — see README "Yayına alma kontrol listesi".
+ * When DATAVERSE_* env vars are not configured, logs the submission instead
+ * of throwing, so the contact form keeps working end-to-end before the
+ * Power Platform side has been provisioned.
  */
-export async function createDataverseLead(lead: LeadInput): Promise<void> {
+export async function createContactSubmission(input: ContactSubmissionInput): Promise<void> {
   const { DATAVERSE_URL, DATAVERSE_TENANT_ID, DATAVERSE_CLIENT_ID, DATAVERSE_CLIENT_SECRET } = process.env;
 
   if (!DATAVERSE_URL || !DATAVERSE_TENANT_ID || !DATAVERSE_CLIENT_ID || !DATAVERSE_CLIENT_SECRET) {
-    console.warn('[contact-submit] DATAVERSE_* env vars not set — lead was NOT persisted to Dataverse:', lead);
+    console.warn('[contact-submit] DATAVERSE_* env vars not set — submission was NOT persisted to Dataverse:', input);
     return;
   }
 
@@ -37,10 +40,7 @@ export async function createDataverseLead(lead: LeadInput): Promise<void> {
     throw new Error('Failed to acquire a Dataverse access token.');
   }
 
-  const [firstName, ...rest] = lead.name.trim().split(' ');
-  const lastName = rest.join(' ') || firstName;
-
-  const response = await fetch(`${DATAVERSE_URL}/api/data/v9.2/leads`, {
+  const response = await fetch(`${DATAVERSE_URL}/api/data/v9.2/cr0c0_iletisimformukaydis`, {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${token.token}`,
@@ -50,19 +50,17 @@ export async function createDataverseLead(lead: LeadInput): Promise<void> {
       'OData-Version': '4.0',
     },
     body: JSON.stringify({
-      firstname: firstName,
-      lastname: lastName,
-      emailaddress1: lead.email,
-      telephone1: lead.phone ?? undefined,
-      companyname: lead.company ?? undefined,
-      subject: lead.subject,
-      description: lead.message,
-      leadsourcecode: 8, // "Web" — confirmed against this org's leadsourcecode option set.
+      cr0c0_adsoyad: input.name,
+      cr0c0_eposta: input.email,
+      cr0c0_telefon: input.phone ?? undefined,
+      cr0c0_sirketadi: input.company ?? undefined,
+      cr0c0_konu: input.subject,
+      cr0c0_mesaj: input.message,
     }),
   });
 
   if (!response.ok) {
     const body = await response.text();
-    throw new Error(`Dataverse lead creation failed (${response.status}): ${body}`);
+    throw new Error(`Dataverse contact submission create failed (${response.status}): ${body}`);
   }
 }

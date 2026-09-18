@@ -1,6 +1,6 @@
 import { app, type HttpRequest, type HttpResponseInit, type InvocationContext } from '@azure/functions';
 import { z } from 'zod';
-import { createDataverseLead } from '../lib/dataverse.js';
+import { createContactSubmission } from '../lib/dataverse.js';
 import { verifyTurnstile } from '../lib/turnstile.js';
 import { isRateLimited } from '../lib/rateLimit.js';
 
@@ -49,9 +49,9 @@ async function contactSubmit(request: HttpRequest, context: InvocationContext): 
   }
 
   try {
-    await createDataverseLead({ name, email, phone: phone || undefined, company: company || undefined, subject, message });
+    await createContactSubmission({ name, email, phone: phone || undefined, company: company || undefined, subject, message });
   } catch (error) {
-    context.error('Failed to create Dataverse lead', error);
+    context.error('Failed to create Dataverse contact submission', error);
     return { status: 502, jsonBody: { error: 'Could not submit your message right now' } };
   }
 
