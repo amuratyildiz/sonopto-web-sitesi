@@ -1,0 +1,39 @@
+---
+import '../styles/global.css';
+import SeoHead from '../components/seo/SeoHead.astro';
+import JsonLd from '../components/seo/JsonLd.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import { organizationSchema, professionalServiceSchema } from '../lib/seo/schema';
+import type { Locale } from '../lib/i18n/routes';
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+  locale: Locale;
+  alternatePath?: string;
+  image?: string;
+  type?: 'website' | 'article';
+}
+
+const { title, description, path, locale, alternatePath, image, type } = Astro.props;
+---
+
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <SeoHead title={title} description={description} path={path} locale={locale} alternatePath={alternatePath} image={image} type={type} />
+    <JsonLd data={[organizationSchema(), professionalServiceSchema()]} />
+  </head>
+  <body class="flex min-h-screen flex-col">
+    <Header locale={locale} alternatePath={alternatePath} />
+    <main class="flex-1">
+      <slot />
+    </main>
+    <Footer locale={locale} />
+  </body>
+</html>

@@ -1,0 +1,34 @@
+---
+import JsonLd from './JsonLd.astro';
+import { breadcrumbSchema } from '../../lib/seo/schema';
+import { absoluteUrl } from '../../lib/seo/meta';
+
+interface Crumb {
+  name: string;
+  path: string;
+}
+
+interface Props {
+  items: Crumb[];
+}
+
+const { items } = Astro.props;
+const schemaItems = items.map((item) => ({ name: item.name, url: absoluteUrl(item.path) }));
+---
+
+<nav aria-label="Breadcrumb" class="text-sm text-neutral-600">
+  <ol class="flex flex-wrap items-center gap-1">
+    {items.map((item, index) => (
+      <li class="flex items-center gap-1">
+        {index > 0 && <span aria-hidden="true" class="text-neutral-300">/</span>}
+        {index === items.length - 1 ? (
+          <span aria-current="page" class="text-ink">{item.name}</span>
+        ) : (
+          <a href={item.path} class="hover:text-ink hover:underline">{item.name}</a>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>
+
+<JsonLd data={breadcrumbSchema(schemaItems)} />

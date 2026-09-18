@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import { getDictionary } from '../../content/i18n';
+import { pathFor } from '../../lib/i18n/routes';
+
+const locale = 'en' as const;
+const dict = getDictionary(locale);
+const path = pathFor('about', locale);
+---
+
+<BaseLayout title={dict.about.pageTitle} description={dict.about.intro} path={path} locale={locale} alternatePath={pathFor('about', 'tr')}>
+  <div class="mx-auto max-w-3xl px-4 py-10 sm:px-6">
+    <Breadcrumbs items={[{ name: dict.nav.home, path: pathFor('home', locale) }, { name: dict.nav.about, path }]} />
+    <h1 class="mt-4 text-3xl font-bold text-ink">{dict.about.pageTitle}</h1>
+    <p class="mt-4 text-lg text-neutral-700">{dict.about.intro}</p>
+    <div class="mt-6 space-y-4 text-neutral-600">
+      {dict.about.body.map((paragraph) => <p>{paragraph}</p>)}
+    </div>
+  </div>
+</BaseLayout>

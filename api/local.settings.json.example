@@ -1,0 +1,13 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+
+    "DATAVERSE_URL": "",
+    "DATAVERSE_TENANT_ID": "",
+    "DATAVERSE_CLIENT_ID": "",
+    "DATAVERSE_CLIENT_SECRET": "",
+
+    "TURNSTILE_SECRET_KEY": ""
+  }
+}

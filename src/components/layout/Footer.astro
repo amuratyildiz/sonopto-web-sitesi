@@ -1,0 +1,71 @@
+---
+import { pathFor, type Locale } from '../../lib/i18n/routes';
+import { getDictionary } from '../../content/i18n';
+import { company } from '../../data/company';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const dict = getDictionary(locale);
+const year = new Date().getFullYear();
+
+const serviceLinks = [
+  { label: dict.services.items.installation.title, path: pathFor('servicesInstallation', locale) },
+  { label: dict.services.items.maintenance.title, path: pathFor('servicesMaintenance', locale) },
+  { label: dict.services.items.consulting.title, path: pathFor('servicesConsulting', locale) },
+  { label: dict.services.items.supply.title, path: pathFor('servicesSupply', locale) },
+];
+
+const companyLinks = [
+  { label: dict.nav.about, path: pathFor('about', locale) },
+  { label: dict.nav.visionMission, path: pathFor('visionMission', locale) },
+  { label: dict.nav.references, path: pathFor('references', locale) },
+  { label: dict.nav.faq, path: pathFor('faq', locale) },
+];
+---
+
+<footer class="border-t border-neutral-100 bg-ink text-neutral-200">
+  <div class="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-4">
+    <div class="md:col-span-1">
+      <p class="font-heading text-lg text-white">
+        sonopto<span class="text-accent">.</span>
+      </p>
+      <p class="mt-3 text-sm text-neutral-300">{dict.footer.tagline}</p>
+    </div>
+
+    <div>
+      <h3 class="text-sm uppercase tracking-wide text-neutral-400">{dict.footer.servicesTitle}</h3>
+      <ul class="mt-3 space-y-2 text-sm">
+        {serviceLinks.map((item) => (
+          <li><a href={item.path} class="transition hover:text-white">{item.label}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-sm uppercase tracking-wide text-neutral-400">{dict.footer.companyTitle}</h3>
+      <ul class="mt-3 space-y-2 text-sm">
+        {companyLinks.map((item) => (
+          <li><a href={item.path} class="transition hover:text-white">{item.label}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-sm uppercase tracking-wide text-neutral-400">{dict.footer.contactTitle}</h3>
+      <ul class="mt-3 space-y-2 text-sm">
+        <li><a href={`tel:${company.phone.replace(/\s+/g, '')}`} class="transition hover:text-white">{company.phone}</a></li>
+        <li><a href={`mailto:${company.email}`} class="transition hover:text-white">{company.email}</a></li>
+        <li class="text-neutral-300">
+          {company.address.street}, {company.address.district}/{company.address.city}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-neutral-800 px-4 py-4 text-center font-mono text-xs text-neutral-400 sm:px-6">
+    &copy; {year} Sonopto. {dict.footer.rightsReserved}
+  </div>
+</footer>

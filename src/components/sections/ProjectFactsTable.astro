@@ -1,0 +1,20 @@
+---
+import type { ProjectFact } from '../../lib/graph/types';
+
+interface Props {
+  facts: ProjectFact[];
+}
+
+const { facts } = Astro.props;
+---
+
+{facts.length > 0 && (
+  <dl class="grid grid-cols-1 gap-x-6 gap-y-3 border border-neutral-100 bg-neutral-50 p-5 sm:grid-cols-2">
+    {facts.map((fact) => (
+      <div>
+        <dt class="text-xs font-semibold uppercase tracking-wide text-neutral-500">{fact.label}</dt>
+        <dd class="mt-0.5 text-sm text-ink">{fact.value}</dd>
+      </div>
+    ))}
+  </dl>
+)}

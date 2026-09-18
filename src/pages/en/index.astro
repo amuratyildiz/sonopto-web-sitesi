@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import ServiceCard from '../../components/sections/ServiceCard.astro';
+import PartnerLogos from '../../components/sections/PartnerLogos.astro';
+import CaseStudyCard from '../../components/sections/CaseStudyCard.astro';
+import { getDictionary } from '../../content/i18n';
+import { pathFor } from '../../lib/i18n/routes';
+import { getProjects } from '../../lib/graph/projects';
+
+const locale = 'en' as const;
+const dict = getDictionary(locale);
+const projects = (await getProjects()).filter((p) => p.bodyEn).slice(0, 3);
+
+const services = [
+  { ...dict.services.items.installation, path: pathFor('servicesInstallation', locale) },
+  { ...dict.services.items.maintenance, path: pathFor('servicesMaintenance', locale) },
+  { ...dict.services.items.consulting, path: pathFor('servicesConsulting', locale) },
+  { ...dict.services.items.supply, path: pathFor('servicesSupply', locale) },
+];
+---
+
+<BaseLayout
+  title="Sonopto"
+  description={dict.home.heroSubtitle}
+  path={pathFor('home', locale)}
+  locale={locale}
+  alternatePath={pathFor('home', 'tr')}
+>
+  <Hero
+    title={dict.home.heroTagline}
+    subtitle={dict.home.heroSubtitle}
+    ctaLabel={dict.home.heroCta}
+    ctaHref={pathFor('services', locale)}
+  />
+
+  <section class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+    <div class="text-center">
+      <h2 class="text-2xl font-bold text-ink sm:text-3xl">{dict.home.servicesTitle}</h2>
+      <p class="mx-auto mt-3 max-w-2xl text-neutral-600">{dict.home.servicesSubtitle}</p>
+    </div>
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {services.map((service) => (
+        <ServiceCard title={service.title} summary={service.summary} href={service.path} readMoreLabel={dict.common.readMore} />
+      ))}
+    </div>
+  </section>
+
+  <PartnerLogos title={dict.home.partnersTitle} />
+
+  {projects.length > 0 && (
+    <section class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+      <div class="flex items-end justify-between gap-4">
+        <h2 class="text-2xl font-bold text-ink sm:text-3xl">{dict.home.referencesTitle}</h2>
+        <a href={pathFor('references', locale)} class="text-sm font-medium text-neutral-600 hover:text-ink">
+          {dict.common.viewAllReferences} &rarr;
+        </a>
+      </div>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {projects.map((project) => (
+          <CaseStudyCard
+            project={project}
+            href={`${pathFor('references', locale)}${project.slugEn ?? project.slug}/`}
+            readMoreLabel={dict.common.readMore}
+          />
+        ))}
+      </div>
+    </section>
+  )}
+
+  <section class="bg-neutral-50">
+    <div class="mx-auto max-w-4xl px-4 py-16 text-center sm:px-6">
+      <h2 class="text-2xl font-bold text-ink sm:text-3xl">{dict.home.ctaTitle}</h2>
+      <p class="mx-auto mt-3 max-w-xl text-neutral-600">{dict.home.ctaSubtitle}</p>
+      <a
+        href={pathFor('contact', locale)}
+        class="mt-6 inline-block bg-ink px-6 py-3 text-sm font-semibold text-white transition hover:bg-neutral-800"
+      >
+        {dict.common.getQuote}
+      </a>
+    </div>
+  </section>
+</BaseLayout>

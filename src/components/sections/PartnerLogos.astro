@@ -1,0 +1,18 @@
+---
+import { partners } from '../../data/partners';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<section class="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+  <h2 class="text-center text-sm uppercase tracking-wide text-neutral-500">{title}</h2>
+  <div class="mt-6 flex flex-wrap items-center justify-center gap-8 opacity-80">
+    {partners.map((partner) => (
+      <img src={partner.logo} alt={partner.alt} width="160" height="48" loading="lazy" class="h-8 w-auto grayscale" />
+    ))}
+  </div>
+</section>

@@ -1,0 +1,24 @@
+---
+interface FaqEntry {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  items: FaqEntry[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="divide-y divide-neutral-100 border border-neutral-100 bg-white">
+  {items.map((item) => (
+    <details class="group p-5 open:pb-5">
+      <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-medium text-ink [&::-webkit-details-marker]:hidden">
+        {item.question}
+        <span class="shrink-0 text-neutral-400 transition group-open:rotate-45">+</span>
+      </summary>
+      <p class="mt-3 text-sm text-neutral-600">{item.answer}</p>
+    </details>
+  ))}
+</div>

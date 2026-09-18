@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/seo/Breadcrumbs.astro';
+import CaseStudyCard from '../../../components/sections/CaseStudyCard.astro';
+import { getDictionary } from '../../../content/i18n';
+import { pathFor } from '../../../lib/i18n/routes';
+import { getProjects } from '../../../lib/graph/projects';
+
+const locale = 'en' as const;
+const dict = getDictionary(locale);
+const path = pathFor('references', locale);
+// Only projects with an English translation are listed — see PLAN.md i18n fallback rules.
+const projects = (await getProjects()).filter((project) => project.bodyEn);
+---
+
+<BaseLayout title={dict.references.pageTitle} description={dict.references.pageIntro} path={path} locale={locale} alternatePath={pathFor('references', 'tr')}>
+  <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+    <Breadcrumbs items={[{ name: dict.nav.home, path: pathFor('home', locale) }, { name: dict.nav.references, path }]} />
+    <h1 class="mt-4 text-3xl font-bold text-ink">{dict.references.pageTitle}</h1>
+    <p class="mt-3 max-w-2xl text-neutral-600">{dict.references.pageIntro}</p>
+
+    {projects.length > 0 ? (
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {projects.map((project) => (
+          <CaseStudyCard project={project} href={`${path}${project.slugEn ?? project.slug}/`} readMoreLabel={dict.common.readMore} />
+        ))}
+      </div>
+    ) : (
+      <p class="mt-10 text-neutral-500">{dict.references.empty}</p>
+    )}
+  </div>
+</BaseLayout>

@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+/* Self-hosted brand fonts — see project design system (Sonopto Kurumsal Kimlik Kılavuzu v1.0). */
+@import "@fontsource/alata/400.css";
+@import "@fontsource/roboto-slab/400.css";
+@import "@fontsource/roboto-slab/500.css";
+@import "@fontsource/roboto-slab/700.css";
+@import "@fontsource/roboto-mono/400.css";
+@import "@fontsource/roboto-mono/500.css";
+
+/*
+ * Brand tokens sourced from the Sonopto Kurumsal Kimlik Kılavuzu (Corporate
+ * Identity Guide v1.0, Feb 2026) — see the "Sonopto" design system artifact.
+ * Palette formula: 70% Black/White + 20% neutral gray + 10% Neon Green.
+ *
+ * The five neutral steps below (100–500) are NOT yet confirmed against the
+ * guide's exact swatches (the design system's tokens.json only has
+ * Black/White/Green defined so far) — treat these as a reasonable
+ * placeholder ramp and replace with the guide's exact neutral hex values
+ * once available.
+ */
+@theme {
+  --color-ink: #000000;
+  --color-surface: #ffffff;
+
+  --color-neutral-50: #f7f7f7;
+  --color-neutral-100: #f2f2f2;
+  --color-neutral-200: #e0e0e0;
+  --color-neutral-300: #bdbdbd;
+  --color-neutral-400: #8a8a8a;
+  --color-neutral-500: #555555;
+  --color-neutral-600: #3a3a3a;
+  --color-neutral-700: #262626;
+  --color-neutral-800: #171717;
+  --color-neutral-900: #0a0a0a;
+
+  /* Neon Green accent — 10% of the palette, buttons/CTAs/the logo's dot only.
+     Never as body text or a large fill on white (fails contrast — see guide). */
+  --color-accent: #39ff14;
+  --color-accent-hover: #2fe010;
+  --color-accent-dim: #cffcb0;
+
+  /* on-accent: required text/icon color whenever it sits on --color-accent. */
+  --color-on-accent: #000000;
+
+  --font-heading: "Alata", "Alata Fallback", system-ui, sans-serif;
+  --font-sans: "Roboto Slab", "Roboto Slab Fallback", ui-serif, Georgia, serif;
+  --font-mono: "Roboto Mono", "Roboto Mono Fallback", SFMono-Regular, Menlo, monospace;
+
+  /* Brand guide: no rounded corners on UI blocks; only photo frames get a slight radius. */
+  --radius-photo: 0.25rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface text-ink antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+  }
+}

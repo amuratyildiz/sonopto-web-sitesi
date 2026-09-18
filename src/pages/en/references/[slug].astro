@@ -1,0 +1,23 @@
+---
+import CaseStudyLayout from '../../../layouts/CaseStudyLayout.astro';
+import { getProjects } from '../../../lib/graph/projects';
+import { pathFor } from '../../../lib/i18n/routes';
+
+export async function getStaticPaths() {
+  const projects = await getProjects();
+  // Only projects with an English translation get an EN page — see PLAN.md i18n fallback rules.
+  return projects
+    .filter((project) => project.bodyEn)
+    .map((project) => ({
+      params: { slug: project.slugEn ?? project.slug },
+      props: { project },
+    }));
+}
+
+const { project } = Astro.props;
+const locale = 'en' as const;
+const path = `${pathFor('references', locale)}${project.slugEn ?? project.slug}/`;
+const alternatePath = `${pathFor('references', 'tr')}${project.slug}/`;
+---
+
+<CaseStudyLayout project={project} path={path} locale={locale} alternatePath={alternatePath} />

@@ -1,0 +1,43 @@
+---
+import { absoluteUrl, buildTitle } from '../../lib/seo/meta';
+import { alternateLocale, defaultLocale, type Locale } from '../../lib/i18n/routes';
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+  locale: Locale;
+  /** Path (locale-prefixed, e.g. "/en/hizmetler/") of the translated equivalent page, if one exists. */
+  alternatePath?: string;
+  image?: string;
+  type?: 'website' | 'article';
+}
+
+const { title, description, path, locale, alternatePath, image, type = 'website' } = Astro.props;
+
+const canonical = absoluteUrl(path);
+const ogImage = absoluteUrl(image ?? '/og-default.png');
+const other = alternateLocale(locale);
+---
+
+<title>{buildTitle(title)}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+
+<link rel="alternate" hreflang={locale} href={canonical} />
+{alternatePath && <link rel="alternate" hreflang={other} href={absoluteUrl(alternatePath)} />}
+<link rel="alternate" hreflang="x-default" href={absoluteUrl(locale === defaultLocale ? path : (alternatePath ?? '/'))} />
+
+<meta property="og:type" content={type} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:locale" content={locale === 'tr' ? 'tr_TR' : 'en_US'} />
+{alternatePath && <meta property="og:locale:alternate" content={other === 'tr' ? 'tr_TR' : 'en_US'} />}
+<meta property="og:site_name" content="Sonopto" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />

@@ -1,0 +1,70 @@
+---
+import { pathFor, type Locale } from '../../lib/i18n/routes';
+import { getDictionary } from '../../content/i18n';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+
+interface Props {
+  locale: Locale;
+  alternatePath?: string;
+}
+
+const { locale, alternatePath } = Astro.props;
+const dict = getDictionary(locale);
+
+const navItems = [
+  { label: dict.nav.home, path: pathFor('home', locale) },
+  { label: dict.nav.services, path: pathFor('services', locale) },
+  { label: dict.nav.about, path: pathFor('about', locale) },
+  { label: dict.nav.references, path: pathFor('references', locale) },
+  { label: dict.nav.faq, path: pathFor('faq', locale) },
+  { label: dict.nav.contact, path: pathFor('contact', locale) },
+];
+---
+
+<header class="sticky top-0 z-40 border-b border-neutral-100 bg-ink text-white">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
+    <a href={pathFor('home', locale)} class="font-heading text-xl tracking-tight">
+      sonopto<span class="text-accent">.</span>
+    </a>
+
+    <nav aria-label="Main" class="hidden lg:block">
+      <ul class="flex items-center gap-6 text-sm font-medium">
+        {navItems.map((item) => (
+          <li>
+            <a href={item.path} class="text-neutral-100 transition hover:text-white">{item.label}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <div class="hidden sm:block">
+        <LanguageSwitcher locale={locale} alternatePath={alternatePath} variant="dark" />
+      </div>
+      <a
+        href={pathFor('contact', locale)}
+        class="hidden bg-accent px-4 py-2 text-sm font-semibold text-on-accent transition hover:bg-accent-hover md:inline-block"
+      >
+        {dict.common.getQuote}
+      </a>
+
+      <details class="relative lg:hidden">
+        <summary class="list-none border border-neutral-700 px-3 py-2 text-sm text-neutral-100 [&::-webkit-details-marker]:hidden">
+          ☰
+        </summary>
+        <nav aria-label="Main mobile" class="absolute right-0 mt-2 w-56 border border-neutral-100 bg-white p-2 text-ink shadow-lg">
+          <ul class="flex flex-col">
+            {navItems.map((item) => (
+              <li>
+                <a href={item.path} class="block px-3 py-2 text-sm hover:bg-neutral-50">{item.label}</a>
+              </li>
+            ))}
+            <li class="mt-1 border-t border-neutral-100 pt-2 sm:hidden">
+              <LanguageSwitcher locale={locale} alternatePath={alternatePath} />
+            </li>
+          </ul>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>

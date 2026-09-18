@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
+import ServiceCard from '../../components/sections/ServiceCard.astro';
+import { getDictionary } from '../../content/i18n';
+import { pathFor } from '../../lib/i18n/routes';
+
+const locale = 'tr' as const;
+const dict = getDictionary(locale);
+
+const services = [
+  { ...dict.services.items.installation, path: pathFor('servicesInstallation', locale) },
+  { ...dict.services.items.maintenance, path: pathFor('servicesMaintenance', locale) },
+  { ...dict.services.items.consulting, path: pathFor('servicesConsulting', locale) },
+  { ...dict.services.items.supply, path: pathFor('servicesSupply', locale) },
+];
+---
+
+<BaseLayout
+  title={dict.services.pageTitle}
+  description={dict.services.pageIntro}
+  path={pathFor('services', locale)}
+  locale={locale}
+  alternatePath={pathFor('services', 'en')}
+>
+  <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+    <Breadcrumbs items={[{ name: dict.nav.home, path: pathFor('home', locale) }, { name: dict.nav.services, path: pathFor('services', locale) }]} />
+    <h1 class="mt-4 text-3xl font-bold text-ink">{dict.services.pageTitle}</h1>
+    <p class="mt-3 max-w-2xl text-neutral-600">{dict.services.pageIntro}</p>
+
+    <div class="mt-10 grid gap-6 sm:grid-cols-2">
+      {services.map((service) => (
+        <ServiceCard title={service.title} summary={service.summary} href={service.path} readMoreLabel={dict.common.readMore} />
+      ))}
+    </div>
+  </div>
+</BaseLayout>

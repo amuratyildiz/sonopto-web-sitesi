@@ -1,0 +1,30 @@
+---
+import { alternateLocale, pathFor, type Locale } from '../../lib/i18n/routes';
+import { getDictionary } from '../../content/i18n';
+
+interface Props {
+  locale: Locale;
+  /** Path of the translated equivalent of the current page; falls back to that locale's home page. */
+  alternatePath?: string;
+  /** 'dark' when placed directly on the black header bar, 'light' on a white surface (e.g. the mobile dropdown). */
+  variant?: 'dark' | 'light';
+}
+
+const { locale, alternatePath, variant = 'light' } = Astro.props;
+const other = alternateLocale(locale);
+const dict = getDictionary(locale);
+const target = alternatePath ?? pathFor('home', other);
+
+const variantClass =
+  variant === 'dark'
+    ? 'border-neutral-700 text-neutral-100 hover:border-neutral-400 hover:bg-neutral-900'
+    : 'border-neutral-200 text-neutral-700 hover:border-neutral-400 hover:bg-neutral-50';
+---
+
+<a
+  href={target}
+  class={`border px-3 py-1.5 text-sm font-medium transition ${variantClass}`}
+  hreflang={other}
+>
+  {dict.common.switchLanguage}
+</a>

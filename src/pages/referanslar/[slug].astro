@@ -1,0 +1,20 @@
+---
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+import { getProjects } from '../../lib/graph/projects';
+import { pathFor } from '../../lib/i18n/routes';
+
+export async function getStaticPaths() {
+  const projects = await getProjects();
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const locale = 'tr' as const;
+const path = `${pathFor('references', locale)}${project.slug}/`;
+const alternatePath = project.slugEn && project.bodyEn ? `${pathFor('references', 'en')}${project.slugEn}/` : undefined;
+---
+
+<CaseStudyLayout project={project} path={path} locale={locale} alternatePath={alternatePath} />
