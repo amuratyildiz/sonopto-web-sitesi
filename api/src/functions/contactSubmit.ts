@@ -52,7 +52,8 @@ async function contactSubmit(request: HttpRequest, context: InvocationContext): 
     await createContactSubmission({ name, email, phone: phone || undefined, company: company || undefined, subject, message });
   } catch (error) {
     context.error('Failed to create Dataverse contact submission', error);
-    return { status: 502, jsonBody: { error: 'Could not submit your message right now' } };
+    // TEMPORARY diagnostic: exposing the real error to find the root cause. Revert before launch.
+    return { status: 502, jsonBody: { error: 'Could not submit your message right now', debug: error instanceof Error ? error.message : String(error) } };
   }
 
   return { status: 200, jsonBody: { ok: true } };
