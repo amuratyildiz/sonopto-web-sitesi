@@ -40,10 +40,9 @@ const client = Client.initWithMiddleware({
 const outDir = path.resolve('public', 'references');
 
 async function downloadFolder(slug) {
-  const children = await client
-    .api(`/drives/${GRAPH_MEDIA_DRIVE_ID}/root:/${slug}:/children`)
-    .select('name,@microsoft.graph.downloadUrl')
-    .get();
+  // No .select() here: @microsoft.graph.downloadUrl is an instance
+  // annotation that Graph only includes on the full (unselected) response.
+  const children = await client.api(`/drives/${GRAPH_MEDIA_DRIVE_ID}/root:/${slug}:/children`).get();
 
   const files = (children.value ?? []).filter((item) => item['@microsoft.graph.downloadUrl']);
   if (files.length === 0) return [];
