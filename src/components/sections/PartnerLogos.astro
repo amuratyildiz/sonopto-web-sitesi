@@ -1,18 +1,30 @@
 ---
-import { partners } from '../../data/partners';
+import { getPartners } from '../../lib/graph/partners';
 
 interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
+const partners = await getPartners();
 ---
 
-<section class="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-  <h2 class="text-center text-sm uppercase tracking-wide text-neutral-500">{title}</h2>
-  <div class="mt-6 flex flex-wrap items-center justify-center gap-8 opacity-80">
-    {partners.map((partner) => (
-      <img src={partner.logo} alt={partner.alt} width="160" height="48" loading="lazy" class="h-8 w-auto grayscale" />
-    ))}
-  </div>
-</section>
+{partners.length > 0 && (
+  <section class="bg-ink">
+    <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+      <h2 class="text-center font-mono text-xs uppercase tracking-widest text-neutral-400">{title}</h2>
+      <div data-reveal class="mt-8 flex flex-wrap items-center justify-center gap-x-10 gap-y-8">
+        {partners.map((partner) => (
+          <img
+            src={partner.logo}
+            alt={partner.alt}
+            width="112"
+            height="32"
+            loading="lazy"
+            class="h-8 w-28 object-contain opacity-60 transition hover:opacity-100"
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+)}

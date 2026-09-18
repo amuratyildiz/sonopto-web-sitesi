@@ -1,0 +1,119 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/seo/Breadcrumbs.astro';
+import JsonLd from '../components/seo/JsonLd.astro';
+import SolutionCard from '../components/sections/SolutionCard.astro';
+import { getDictionary } from '../content/i18n';
+import { alternateLocale, pathFor, type Locale } from '../lib/i18n/routes';
+import { faqSchema } from '../lib/seo/schema';
+import { solutionEntries, solutionKeys, type SolutionKey } from '../data/solutions';
+
+interface Props {
+  solutionKey: SolutionKey;
+  locale: Locale;
+}
+
+const { solutionKey, locale } = Astro.props;
+const dict = getDictionary(locale);
+
+const { routeId, image } = solutionEntries[solutionKey];
+const solution = dict.solutions.items[solutionKey];
+const path = pathFor(routeId, locale);
+
+// Sibling pages, linked at the foot of every solution page so the section is
+// crawlable from any entry point rather than only through the hub.
+const related = solutionKeys.filter((key) => key !== solutionKey);
+---
+
+<BaseLayout
+  title={solution.title}
+  description={solution.summary}
+  path={path}
+  locale={locale}
+  alternatePath={pathFor(routeId, alternateLocale(locale))}
+  image={image}
+>
+  <div class="mx-auto max-w-3xl px-4 py-10 sm:px-6">
+    <Breadcrumbs
+      items={[
+        { name: dict.nav.home, path: pathFor('home', locale) },
+        { name: dict.nav.solutions, path: pathFor('solutions', locale) },
+        { name: solution.title, path },
+      ]}
+    />
+
+    <h1 class="mt-4 text-3xl font-bold text-ink">{solution.headline}</h1>
+    <p class="mt-4 text-lg text-neutral-700">{solution.intro}</p>
+
+    <img
+      src={image}
+      alt={solution.imageAlt}
+      width="1600"
+      height="835"
+      class="mt-8 aspect-[16/9] w-full rounded-photo object-cover"
+    />
+
+    <section data-reveal class="mt-10">
+      <h2 class="text-xl text-ink">{solution.problemTitle}</h2>
+      <p class="mt-3 text-neutral-600">{solution.problemBody}</p>
+    </section>
+
+    <section data-reveal class="mt-10">
+      <h2 class="text-xl text-ink">{solution.servicesTitle}</h2>
+      <ul class="mt-4 space-y-3">
+        {solution.services.map((item) => (
+          <li class="flex gap-3 text-neutral-800">
+            <span class="mt-2 h-1.5 w-1.5 shrink-0 bg-accent"></span>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section data-reveal class="mt-10">
+      <h2 class="text-xl text-ink">{solution.approachTitle}</h2>
+      <p class="mt-3 text-neutral-600">{solution.approachBody}</p>
+    </section>
+
+    <a
+      href={pathFor('contact', locale)}
+      class="btn-sweep mt-10 inline-block bg-ink px-6 py-3 text-sm font-semibold text-white transition hover:bg-neutral-800"
+    >
+      {dict.common.requestSurvey}
+    </a>
+  </div>
+
+  <section class="border-t border-neutral-100 bg-neutral-50">
+    <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+      <div data-reveal class="flex items-end justify-between gap-4">
+        <h2 class="text-2xl font-bold text-ink">{dict.solutions.relatedTitle}</h2>
+        <a
+          href={pathFor('solutions', locale)}
+          class="shrink-0 text-sm font-medium text-neutral-600 transition hover:text-ink"
+        >
+          {dict.common.viewAllSolutions} &rarr;
+        </a>
+      </div>
+
+      <div data-reveal-group class="mt-8 grid gap-6 sm:grid-cols-3">
+        {related.map((key) => (
+          <SolutionCard
+            title={dict.solutions.items[key].title}
+            summary={dict.solutions.items[key].summary}
+            href={pathFor(solutionEntries[key].routeId, locale)}
+            image={solutionEntries[key].image}
+            imageAlt={dict.solutions.items[key].imageAlt}
+            readMoreLabel={dict.common.readMore}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <JsonLd
+    data={faqSchema([
+      { question: solution.problemTitle, answer: solution.problemBody },
+      { question: solution.approachTitle, answer: solution.approachBody },
+    ])}
+  />
+</BaseLayout>

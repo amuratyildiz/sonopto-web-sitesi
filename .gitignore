@@ -31,3 +31,8 @@ local.settings.json
 
 # local Claude Code session settings
 .claude/
+
+# reference material from the earlier Antigravity content pass — its own git
+# repo (nozomusama/web-i-erikleri), ~480MB. Assets are copied into public/
+# as they get used; the folder itself must never enter this repo.
+snpt/

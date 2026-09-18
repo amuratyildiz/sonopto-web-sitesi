@@ -28,12 +28,21 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
         </div>
         <div>
           <h2 class="text-sm uppercase tracking-wide text-neutral-500">{dict.contact.phoneTitle}</h2>
-          <a href={`tel:${company.phone.replace(/\s+/g, '')}`} class="mt-1 block text-neutral-800 hover:text-ink">{company.phone}</a>
+          <a href={`tel:${company.phone.replace(/\s+/g, '')}`} class="mt-1 block text-neutral-800 transition hover:text-ink">{company.phone}</a>
         </div>
         <div>
           <h2 class="text-sm uppercase tracking-wide text-neutral-500">{dict.contact.emailTitle}</h2>
-          <a href={`mailto:${company.email}`} class="mt-1 block text-neutral-800 hover:text-ink">{company.email}</a>
+          <a href={`mailto:${company.email}`} class="mt-1 block text-neutral-800 transition hover:text-ink">{company.email}</a>
         </div>
+
+        <img
+          src="/iletisim/teknik-destek-hatti-sonopto.webp"
+          alt={dict.contact.imageAlt}
+          width="1600"
+          height="835"
+          loading="lazy"
+          class="aspect-[16/9] w-full rounded-photo object-cover"
+        />
       </div>
 
       <form
@@ -83,7 +92,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 
         <button
           type="submit"
-          class="w-full bg-ink px-6 py-3 text-sm font-semibold text-white transition hover:bg-neutral-800 disabled:cursor-not-allowed disabled:opacity-60"
+          class="btn-sweep w-full bg-ink px-6 py-3 text-sm font-semibold text-white transition hover:bg-neutral-800 disabled:cursor-not-allowed disabled:opacity-60"
         >
           {dict.common.sendMessage}
         </button>

@@ -18,6 +18,13 @@ const serviceLinks = [
   { label: dict.services.items.supply.title, path: pathFor('servicesSupply', locale) },
 ];
 
+const solutionLinks = [
+  { label: dict.solutions.items.conference.title, path: pathFor('solutionsConference', locale) },
+  { label: dict.solutions.items.education.title, path: pathFor('solutionsEducation', locale) },
+  { label: dict.solutions.items.hotel.title, path: pathFor('solutionsHotel', locale) },
+  { label: dict.solutions.items.publicSector.title, path: pathFor('solutionsPublic', locale) },
+];
+
 const companyLinks = [
   { label: dict.nav.about, path: pathFor('about', locale) },
   { label: dict.nav.visionMission, path: pathFor('visionMission', locale) },
@@ -27,11 +34,12 @@ const companyLinks = [
 ---
 
 <footer class="border-t border-neutral-100 bg-ink text-neutral-200">
-  <div class="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-4">
+  <div class="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-5">
     <div class="md:col-span-1">
       <p class="font-heading text-lg text-white">
-        sonopto<span class="text-accent">.</span>
+        sonopto<span class="text-accent led-pulse">.</span>
       </p>
+      <p class="mt-1 font-mono text-[0.7rem] uppercase tracking-wide text-neutral-400">{dict.footer.subTagline}</p>
       <p class="mt-3 text-sm text-neutral-300">{dict.footer.tagline}</p>
     </div>
 
@@ -39,6 +47,15 @@ const companyLinks = [
       <h3 class="text-sm uppercase tracking-wide text-neutral-400">{dict.footer.servicesTitle}</h3>
       <ul class="mt-3 space-y-2 text-sm">
         {serviceLinks.map((item) => (
+          <li><a href={item.path} class="transition hover:text-white">{item.label}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-sm uppercase tracking-wide text-neutral-400">{dict.nav.solutions}</h3>
+      <ul class="mt-3 space-y-2 text-sm">
+        {solutionLinks.map((item) => (
           <li><a href={item.path} class="transition hover:text-white">{item.label}</a></li>
         ))}
       </ul>

@@ -24,7 +24,7 @@ const schemaItems = items.map((item) => ({ name: item.name, url: absoluteUrl(ite
         {index === items.length - 1 ? (
           <span aria-current="page" class="text-ink">{item.name}</span>
         ) : (
-          <a href={item.path} class="hover:text-ink hover:underline">{item.name}</a>
+          <a href={item.path} class="transition hover:text-ink hover:underline">{item.name}</a>
         )}
       </li>
     ))}

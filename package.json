@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "prebuild": "node scripts/fetch-project-media.mjs",
+    "prebuild": "node scripts/fetch-project-media.mjs && node scripts/fetch-partner-logos.mjs",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"

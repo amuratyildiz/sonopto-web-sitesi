@@ -56,6 +56,33 @@
     scroll-behavior: smooth;
   }
 
+  /*
+   * Motion timing scale. Every custom animation below reads its duration from
+   * one of these, so prefers-reduced-motion is handled in a single place
+   * instead of being repeated per rule. Tailwind's bare `transition` utility
+   * (used for the existing hover states) is deliberately left alone — short
+   * user-initiated hover feedback is not what reduced motion targets.
+   */
+  :root {
+    --motion-base: 300ms;
+    --motion-slow: 600ms;
+    --motion-pulse: 2400ms;
+    --motion-scan: 9000ms;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :root {
+      --motion-base: 0ms;
+      --motion-slow: 0ms;
+      --motion-pulse: 0ms;
+      --motion-scan: 0ms;
+    }
+
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
   body {
     @apply bg-surface text-ink antialiased;
     font-family: var(--font-sans);
@@ -64,5 +91,185 @@
   h1, h2, h3 {
     font-family: var(--font-heading);
     font-weight: 700;
+  }
+}
+
+/*
+ * Motion system — Pro AV flavoured, brand constrained: no bounce/overshoot
+ * easing (that would clash with the guide's hard, radius-none edges), accent
+ * green only ever as a 2px indicator or a barely-there glow, never a fill.
+ */
+
+@keyframes led-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(0.9); }
+}
+
+@keyframes fade-up-in {
+  from { opacity: 0; transform: translateY(0.75rem); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes hero-scan {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(100%); }
+}
+
+@layer components {
+  /* The logo's dot, breathing like an equipment standby LED. */
+  .led-pulse {
+    display: inline-block;
+    transform-origin: center;
+    animation: led-pulse var(--motion-pulse) ease-in-out infinite;
+  }
+
+  /* A stage-light pass across primary CTAs. The isolate/-1 pairing keeps the
+     band behind the label — without it the translucent sweep paints over the
+     button text, since positioned pseudo-elements outrank inline content. */
+  .btn-sweep {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .btn-sweep::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(115deg, transparent 40%, rgb(255 255 255 / 0.35) 50%, transparent 60%);
+    transform: translateX(-100%);
+    transition: transform var(--motion-slow) ease-out;
+  }
+
+  .btn-sweep:hover::after,
+  .btn-sweep:focus-visible::after {
+    transform: translateX(100%);
+  }
+
+  /* Nav links: a signal trace drawn left to right, not a fade. */
+  .nav-underline {
+    position: relative;
+  }
+
+  .nav-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 2px;
+    width: 100%;
+    background-color: var(--color-accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--motion-base) ease-out;
+  }
+
+  .nav-underline:hover::after,
+  .nav-underline:focus-visible::after {
+    transform: scaleX(1);
+  }
+
+  /* Cards: a status indicator igniting from the centre out. */
+  .card-status {
+    position: relative;
+  }
+
+  .card-status::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--color-accent);
+    transform: scaleX(0);
+    transition: transform var(--motion-base) ease-out;
+  }
+
+  .card-status:hover::before,
+  .card-status:focus-visible::before {
+    transform: scaleX(1);
+  }
+
+  /* Above-the-fold hero copy: staggered entrance, no JS involved. */
+  .hero-in {
+    animation: fade-up-in var(--motion-slow) ease-out both;
+  }
+
+  .hero-in-1 { animation-delay: 0ms; }
+  .hero-in-2 { animation-delay: 120ms; }
+  .hero-in-3 { animation-delay: 240ms; }
+
+  .hero-tech {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  /* LED panel grid — static texture, faded out towards the edges. */
+  .hero-tech::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background-image:
+      linear-gradient(to right, rgb(255 255 255 / 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(255 255 255 / 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 78%);
+    mask-image: radial-gradient(ellipse at center, black 40%, transparent 78%);
+  }
+
+  /* Signal scan sweeping down the panel. */
+  .hero-tech::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 35%;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(to bottom, transparent, rgb(57 255 20 / 0.06), transparent);
+    animation: hero-scan var(--motion-scan) linear infinite;
+  }
+
+  /*
+   * Scroll reveal. Polarity is deliberately inverted: the default state is
+   * visible and only motion.js ever adds the hiding class, so there is no
+   * code path that leaves content invisible when JS does not run.
+   */
+  [data-reveal] {
+    transition:
+      opacity var(--motion-slow) ease-out,
+      transform var(--motion-slow) ease-out;
+  }
+
+  [data-reveal].reveal-pending {
+    opacity: 0;
+    transform: translateY(0.9rem);
+  }
+
+  /* Stagger stops at six: the references grid length comes from SharePoint
+     and an ever-growing cascade would feel sluggish. */
+  [data-reveal-group] > [data-reveal]:nth-child(2) { transition-delay: 90ms; }
+  [data-reveal-group] > [data-reveal]:nth-child(3) { transition-delay: 180ms; }
+  [data-reveal-group] > [data-reveal]:nth-child(4) { transition-delay: 270ms; }
+  [data-reveal-group] > [data-reveal]:nth-child(5) { transition-delay: 360ms; }
+  [data-reveal-group] > [data-reveal]:nth-child(6) { transition-delay: 450ms; }
+
+  /* An infinite animation still counts as running at 0ms, so stop these two
+     outright rather than relying on the duration variables alone. */
+  @media (prefers-reduced-motion: reduce) {
+    .led-pulse {
+      animation: none;
+    }
+
+    .hero-tech::after {
+      animation: none;
+      opacity: 0;
+    }
   }
 }

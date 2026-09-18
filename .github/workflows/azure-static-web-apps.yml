@@ -40,6 +40,8 @@ jobs:
           GRAPH_SITE_ID: ${{ secrets.GRAPH_SITE_ID }}
           GRAPH_PROJECTS_LIST_ID: ${{ secrets.GRAPH_PROJECTS_LIST_ID }}
           GRAPH_MEDIA_DRIVE_ID: ${{ secrets.GRAPH_MEDIA_DRIVE_ID }}
+          GRAPH_PARTNERS_LIST_ID: ${{ secrets.GRAPH_PARTNERS_LIST_ID }}
+          GRAPH_PARTNER_LOGOS_DRIVE_ID: ${{ secrets.GRAPH_PARTNER_LOGOS_DRIVE_ID }}
           PUBLIC_TURNSTILE_SITE_KEY: ${{ secrets.PUBLIC_TURNSTILE_SITE_KEY }}
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}

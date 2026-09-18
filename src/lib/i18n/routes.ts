@@ -14,6 +14,23 @@ export const routes = {
   servicesMaintenance: { tr: 'hizmetler/bakim-ve-onarim', en: 'services/maintenance-and-repair' },
   servicesConsulting: { tr: 'hizmetler/danismanlik-hizmetleri', en: 'services/consulting' },
   servicesSupply: { tr: 'hizmetler/satis-ve-tedarik', en: 'services/sales-and-supply' },
+  solutions: { tr: 'cozumler', en: 'solutions' },
+  solutionsConference: {
+    tr: 'cozumler/konferans-ve-toplanti-salonu-sistemleri',
+    en: 'solutions/conference-and-meeting-room-systems',
+  },
+  solutionsEducation: {
+    tr: 'cozumler/okul-ve-egitim-kurumlari-ses-sistemleri',
+    en: 'solutions/school-and-education-audio-systems',
+  },
+  solutionsHotel: {
+    tr: 'cozumler/otel-ses-ve-goruntu-cozumleri',
+    en: 'solutions/hotel-audio-and-video-solutions',
+  },
+  solutionsPublic: {
+    tr: 'cozumler/kamu-kurumlari-av-sistemleri',
+    en: 'solutions/public-sector-av-systems',
+  },
   about: { tr: 'kurumsal/hakkimizda', en: 'about' },
   visionMission: { tr: 'vizyon-misyon', en: 'vision-and-mission' },
   references: { tr: 'referanslar', en: 'references' },

@@ -19,7 +19,7 @@ const projects = await getProjects();
     <p class="mt-3 max-w-2xl text-neutral-600">{dict.references.pageIntro}</p>
 
     {projects.length > 0 ? (
-      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div data-reveal-group class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
           <CaseStudyCard project={project} href={`${path}${project.slug}/`} readMoreLabel={dict.common.readMore} />
         ))}

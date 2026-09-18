@@ -14,6 +14,7 @@ const dict = getDictionary(locale);
 const navItems = [
   { label: dict.nav.home, path: pathFor('home', locale) },
   { label: dict.nav.services, path: pathFor('services', locale) },
+  { label: dict.nav.solutions, path: pathFor('solutions', locale) },
   { label: dict.nav.about, path: pathFor('about', locale) },
   { label: dict.nav.visionMission, path: pathFor('visionMission', locale) },
   { label: dict.nav.references, path: pathFor('references', locale) },
@@ -25,14 +26,14 @@ const navItems = [
 <header class="sticky top-0 z-40 border-b border-neutral-100 bg-ink text-white">
   <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
     <a href={pathFor('home', locale)} class="font-heading text-xl tracking-tight">
-      sonopto<span class="text-accent">.</span>
+      sonopto<span class="text-accent led-pulse">.</span>
     </a>
 
-    <nav aria-label="Main" class="hidden lg:block">
+    <nav aria-label="Main" class="hidden xl:block">
       <ul class="flex items-center gap-6 text-sm font-medium">
         {navItems.map((item) => (
           <li>
-            <a href={item.path} class="text-neutral-100 transition hover:text-white">{item.label}</a>
+            <a href={item.path} class="nav-underline text-neutral-100 transition hover:text-white">{item.label}</a>
           </li>
         ))}
       </ul>
@@ -44,12 +45,12 @@ const navItems = [
       </div>
       <a
         href={pathFor('contact', locale)}
-        class="hidden bg-accent px-4 py-2 text-sm font-semibold text-on-accent transition hover:bg-accent-hover md:inline-block"
+        class="btn-sweep hidden bg-accent px-4 py-2 text-sm font-semibold text-on-accent transition hover:bg-accent-hover md:inline-block"
       >
-        {dict.common.getQuote}
+        {dict.common.contactUs}
       </a>
 
-      <details class="relative lg:hidden">
+      <details class="relative xl:hidden">
         <summary class="list-none border border-neutral-700 px-3 py-2 text-sm text-neutral-100 [&::-webkit-details-marker]:hidden">
           ☰
         </summary>
@@ -57,7 +58,7 @@ const navItems = [
           <ul class="flex flex-col">
             {navItems.map((item) => (
               <li>
-                <a href={item.path} class="block px-3 py-2 text-sm hover:bg-neutral-50">{item.label}</a>
+                <a href={item.path} class="block px-3 py-2 text-sm transition hover:bg-neutral-50">{item.label}</a>
               </li>
             ))}
             <li class="mt-1 border-t border-neutral-100 pt-2 sm:hidden">
