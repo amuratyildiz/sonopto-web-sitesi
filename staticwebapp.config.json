@@ -1,7 +1,6 @@
 {
   "routes": [
     { "route": "/blog/referanslar-5", "redirect": "/referanslar/", "statusCode": 301 },
-    { "route": "/blog/referanslar-5/", "redirect": "/referanslar/", "statusCode": 301 },
     { "route": "/blog/referanslar-5/feed", "redirect": "/referanslar/", "statusCode": 301 },
     {
       "route": "/blog/referanslar-5/kosgeb-x-garaj-teknoloji-gelistirme-merkezi-led-video-wall-kurulumu-7",
