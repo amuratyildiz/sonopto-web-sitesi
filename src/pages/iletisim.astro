@@ -36,7 +36,13 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
         </div>
       </div>
 
-      <form id="contact-form" class="lg:col-span-3 space-y-4 border border-neutral-100 bg-white p-6">
+      <form
+        id="contact-form"
+        method="post"
+        class="lg:col-span-3 space-y-4 border border-neutral-100 bg-white p-6"
+        data-success-message={dict.contact.formSuccess}
+        data-error-message={dict.contact.formError}
+      >
         <div class="grid gap-4 sm:grid-cols-2">
           <label class="block text-sm font-medium text-neutral-800">
             {dict.contact.formName} <span class="text-neutral-400">({dict.contact.formRequired})</span>
@@ -91,38 +97,4 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 
 {turnstileSiteKey && <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
 
-<script define:vars={{ successMessage: dict.contact.formSuccess, errorMessage: dict.contact.formError }}>
-  const form = document.getElementById('contact-form');
-  const status = document.getElementById('contact-form-status');
-
-  form?.addEventListener('submit', async (event) => {
-    event.preventDefault();
-    const submitButton = form.querySelector('button[type="submit"]');
-    submitButton.disabled = true;
-    status.classList.add('hidden');
-
-    try {
-      const formData = new FormData(form);
-      const payload = Object.fromEntries(formData.entries());
-
-      const response = await fetch('/api/contact-submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
-
-      if (!response.ok) throw new Error('Request failed');
-
-      status.textContent = successMessage;
-      status.classList.remove('hidden', 'text-red-600');
-      status.classList.add('text-green-700');
-      form.reset();
-    } catch {
-      status.textContent = errorMessage;
-      status.classList.remove('hidden', 'text-green-700');
-      status.classList.add('text-red-600');
-    } finally {
-      submitButton.disabled = false;
-    }
-  });
-</script>
+<script is:inline src="/contact-form.js" defer></script>
