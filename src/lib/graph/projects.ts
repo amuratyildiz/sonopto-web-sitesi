@@ -1,3 +1,5 @@
+import { existsSync, readdirSync } from 'node:fs';
+import path from 'node:path';
 import { getGraphClient } from './graphClient';
 import { sampleProjects } from '../../data/projects.sample';
 import type { FaqItem, Project, ProjectFact } from './types';
@@ -10,7 +12,7 @@ interface SharePointListItemFields {
   ContentType?: 'Project' | 'News';
   Client?: string;
   Location?: string;
-  Category?: string[];
+  Category?: string; // single-choice SharePoint column — Graph returns one string, not an array
   PublishDate?: string;
   Published?: boolean;
   SortOrder?: number;
@@ -31,7 +33,24 @@ function safeParseJson<T>(raw: string | undefined, fallback: T): T {
   }
 }
 
+/**
+ * Lists media files already downloaded for a project by the `prebuild`
+ * script (scripts/fetch-project-media.mjs), which runs before `astro
+ * build` and populates public/references/<slug>/ from the "ProjectMedia"
+ * SharePoint document library. Falls back to the placeholder cover when
+ * no real photos have been downloaded yet (e.g. GRAPH_MEDIA_DRIVE_ID unset).
+ */
+function localMediaFiles(slug: string): string[] {
+  const dir = path.resolve('public', 'references', slug);
+  if (!existsSync(dir)) return [];
+  return readdirSync(dir).sort();
+}
+
 function mapListItem(fields: SharePointListItemFields, id: string, mediaBase: string): Project {
+  const mediaFiles = localMediaFiles(fields.Slug);
+  const hasCover = mediaFiles.includes('cover.jpg');
+  const gallery = mediaFiles.filter((file) => file !== 'cover.jpg').map((file) => `${mediaBase}/${fields.Slug}/${file}`);
+
   return {
     id,
     contentType: fields.ContentType ?? 'Project',
@@ -41,12 +60,12 @@ function mapListItem(fields: SharePointListItemFields, id: string, mediaBase: st
     slugEn: fields.SlugEN,
     client: fields.Client,
     location: fields.Location,
-    categories: fields.Category ?? [],
+    categories: fields.Category ? [fields.Category] : [],
     publishDate: fields.PublishDate ?? new Date().toISOString(),
     published: fields.Published ?? false,
     sortOrder: fields.SortOrder,
-    coverImage: `${mediaBase}/${fields.Slug}/cover.jpg`,
-    gallery: [],
+    coverImage: hasCover ? `${mediaBase}/${fields.Slug}/cover.jpg` : '/references/placeholder-cover.svg',
+    gallery,
     bodyTr: fields.BodyTR ?? '',
     bodyEn: fields.BodyEN,
     metaDescriptionTr: fields.MetaDescriptionTR,

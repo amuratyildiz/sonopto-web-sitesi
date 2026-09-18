@@ -62,8 +62,12 @@ export interface Dictionary {
     pageTitle: string;
     visionTitle: string;
     vision: string;
+    visionDetail: string;
     missionTitle: string;
     mission: string;
+    missionDetail: string;
+    valuesTitle: string;
+    values: { title: string; description: string }[];
   };
   references: {
     pageTitle: string;
@@ -141,42 +145,42 @@ export const tr: Dictionary = {
     items: {
       installation: {
         title: 'Kurulum ve Montaj',
-        summary: 'Ses, görüntü ve sahne ışık sistemlerinin profesyonel kurulumu ve devreye alınması.',
+        summary: 'Alan hesabından kablo yönetimine, estetik montajdan ince ayar kalibrasyonuna kadar profesyonel kurulum süreci. Hatalı kurulum, ekipman ömrünü yaklaşık %40 azaltır.',
         details: [
-          'Proje bazlı keşif ve uygulama planlaması',
-          'Ses, görüntü, LED ekran ve sahne ışık sistemlerinin montajı',
-          'Kontrol sistemleri entegrasyonu ve devreye alma',
-          'Kurulum sonrası test ve kullanıcı eğitimi',
+          'Alan/akustik hesabı, kablo yönetimi ve estetik montaj planlaması',
+          'Marka bağımsız montaj — Barco, Samsung, Bose gibi üreticilerle çalışma deneyimi',
+          'Bilişim ve mimarlık firmalarına saha kurulum/alt yüklenici ortaklığı',
+          'Sistemlerin tüm işlevleriyle çalışır halde devreye alınması (commissioning) ve ince ayar kalibrasyonu',
         ],
       },
       maintenance: {
         title: 'Bakım ve Onarım',
-        summary: 'Planlı bakım ve arıza müdahalesiyle sistemlerinizin kesintisiz çalışmasını garanti altına alıyoruz.',
+        summary: 'Sisteminiz arıza yaptığında "kimi arayacağım?" derdine son. Düzenli bakımı yapılan sistemlerde arıza oranı %75 azalır.',
         details: [
-          'Periyodik bakım planları ve saha ziyaretleri',
-          'Arıza tespiti ve hızlı müdahale',
-          'Yedek parça tedariki ve garanti kapsamı takibi',
-          'Uzaktan izleme ve önleyici bakım önerileri',
+          'Garanti süresi dolmuş veya başka firma tarafından kurulmuş sistemler dahil, tüm AV envanterinize bakım-onarım',
+          'Periyodik Bakım Anlaşmaları: 7/24 koruma sağlayan yıllık sözleşmeler',
+          'Acil Müdahale: kritik arızalarda hızlı yerinde servis',
+          'Yedek Parça ve Onarım: projektör lambası değişimi, amplifikatör tamiri, kablo yenileme',
         ],
       },
       consulting: {
         title: 'Danışmanlık Hizmetleri',
-        summary: 'Doğru teknolojiyi doğru bütçeyle seçmeniz için proje öncesi teknik danışmanlık sunuyoruz.',
+        summary: 'İşletmenizin ihtiyacına en uygun, sürdürülebilir ve verimli çözümü sunmak için mimari projelerden ihale süreçlerine kadar teknik destek sağlıyoruz.',
         details: [
-          'İhtiyaç analizi ve teknoloji seçimi',
-          'Bütçe ve zaman planlaması desteği',
-          'Teknik şartname hazırlığı',
+          'Mevcut sistem analizi ve raporlama',
+          'İhtiyaç belirleme ve marka bağımsız ürün reçetesi oluşturma',
+          'Teknik şartname ve ihale dosyası hazırlama',
           'Uygulayıcı firma seçiminde bağımsız danışmanlık',
         ],
       },
       supply: {
         title: 'Satış ve Tedarik',
-        summary: 'Global markaların ekipmanlarını ihtiyacınıza uygun şekilde tedarik ediyoruz.',
+        summary: 'Geniş distribütör ağımızla servis ve kurulum projeleriniz için gerekli cihaz ve yedek parçaları en uygun şartlarda temin ediyoruz.',
         details: [
-          'Uluslararası markalarla doğrudan iş ortaklığı',
-          'İhtiyaca özel ekipman seçimi ve teklif hazırlığı',
-          'Lojistik ve teslimat koordinasyonu',
-          'Satış sonrası destek ve garanti süreçleri',
+          'Distribütör ağı üzerinden cihaz ve yedek parça temini',
+          'Marka bağımsız montaj kapasitesi — Barco, Samsung, Bose gibi markalar',
+          'Bilişim ve mimarlık firmalarına alt yüklenici tedarik desteği',
+          'Devreye alma (commissioning) dahil eksiksiz teslimat',
         ],
       },
     },
@@ -186,15 +190,26 @@ export const tr: Dictionary = {
     intro: 'Sahadaki Çözüm Ortağınız.',
     body: [
       'Biz, işletmelerin ve teknoloji firmalarının sahada güvenle yanına aldığı teknik operasyon partneriyiz. Kurulum, entegrasyon ve bakım konularında ekibinizin doğal uzantısıyız.',
-      'Ürün satmaya değil, sistem kurmaya, yaşatmaya ve işletmeye odaklanıyoruz — kurulumdan satış sonrası desteğe kadar tek noktadan hizmet sunuyoruz.',
+      'Ürün satmaya değil, sistem kurmaya, yaşatmaya ve işletmeye odaklanıyoruz — kurulumdan satış sonrası desteğe kadar tek noktadan hizmet sunuyoruz. Servis odaklılığımızın önceliği sistemlerinizin kesintisiz çalışma (uptime) süresidir.',
+      'B2B iş ortaklıklarımızda müşteri konfidansiyalitesine değer veririz ve sahada partnerimizin kendi ekibinin doğal bir parçası gibi hareket ederiz.',
     ],
   },
   visionMission: {
     pageTitle: 'Vizyon & Misyon',
     visionTitle: 'Vizyonumuz',
     vision: 'Sonopto kurduysa sorun çıkmaz.',
+    visionDetail:
+      'Ürün bağımsız hizmet anlayışıyla, Türkiye\'nin en geniş ve yetkin profesyonel AV teknik servis ağını oluşturmak; "Sonopto kurduysa sorun çıkmaz" algısını endüstri standardı haline getirmek.',
     missionTitle: 'Misyonumuz',
     mission: 'Müşterinin krizi, bizim önceliğimizdir.',
+    missionDetail:
+      'İşletmelerin ve bireylerin teknolojik altyapılarını emanet edebilecekleri, sorun anında ulaşabilecekleri ve çözüm garantisi veren tek adres olmak.',
+    valuesTitle: 'Temel Değerlerimiz',
+    values: [
+      { title: 'Ulaşılabilirlik', description: 'Sorun anında müşteri desteği sağlama taahhüdü.' },
+      { title: 'Yetkinlik', description: 'Mühendislik yaklaşımıyla kurulan sağlam sistem anlayışı.' },
+      { title: 'Güven', description: 'Müşteri itibarını koruyarak sahada en iyi şekilde temsil etme.' },
+    ],
   },
   references: {
     pageTitle: 'Referanslarımız',
@@ -208,7 +223,7 @@ export const tr: Dictionary = {
       {
         question: 'LED ekranda piksel aralığı (pixel pitch) nedir?',
         answer:
-          'Piksel aralığı, bir LED ekrandaki iki piksel merkezi arasındaki mesafedir (mm cinsinden) ve ekranın çözünürlüğünü, izleme mesafesini ve maliyetini doğrudan etkiler. Doğru piksel aralığını, kullanım alanına ve izleyici mesafesine göre projeye özel olarak belirliyoruz.',
+          'Piksel aralığı, bir LED panelde komşu iki pikselin merkezi arasındaki mesafedir (mm cinsinden ölçülür — örneğin P2.5\'te bu mesafe 2,5 mm\'dir). Değer küçüldükçe görüntü daha keskin ve yüksek çözünürlüklü olur, ancak üretim maliyeti artar. Genel kural: minimum izleme mesafesi (metre) ≈ piksel aralığı (mm) × 1 — yani bir P4 ekran en az 4 metre uzaklıktan izlenmelidir. İç mekan ekranları yakından izlendiği için dar aralık (P1.2–P3), dış mekan ekranları ise güneş ışığına dayanıklı ve uzaktan görülen geniş aralık (P4–P10+) gerektirir. Doğru piksel aralığını kullanım alanınıza ve izleyici mesafenize göre projeye özel belirliyoruz.',
       },
       {
         question: 'Arıza durumunda ne kadar sürede müdahale ediyorsunuz?',

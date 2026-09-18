@@ -48,42 +48,42 @@ export const en: Dictionary = {
     items: {
       installation: {
         title: 'Installation & Assembly',
-        summary: 'Professional installation and commissioning of audio, video and stage lighting systems.',
+        summary: 'From site survey to cable management, from aesthetic mounting to fine-tuned calibration. Improper installation cuts equipment lifespan by roughly 40%.',
         details: [
-          'Project-based site survey and implementation planning',
-          'Installation of audio, video, LED display and stage lighting systems',
-          'Control system integration and commissioning',
-          'Post-installation testing and user training',
+          'Site/acoustic survey, cable management and aesthetic mounting planning',
+          'Brand-independent mounting — experience with manufacturers such as Barco, Samsung and Bose',
+          'Field installation / subcontractor partnership for IT and architecture firms',
+          'Full commissioning and fine-tuned calibration of every system function',
         ],
       },
       maintenance: {
         title: 'Maintenance & Repair',
-        summary: 'Scheduled maintenance and rapid fault response to keep your systems running without interruption.',
+        summary: 'No more "who do I call?" when your system fails. Systems under regular maintenance see a 75% lower fault rate.',
         details: [
-          'Scheduled maintenance plans and site visits',
-          'Fault diagnosis and rapid response',
-          'Spare parts sourcing and warranty tracking',
-          'Remote monitoring and preventive maintenance recommendations',
+          'Maintenance and repair for your entire AV inventory — including systems out of warranty or installed by another company',
+          'Scheduled Maintenance Agreements: annual contracts with 24/7 coverage',
+          'Emergency Response: fast on-site service for critical faults',
+          'Spare Parts & Repair: projector lamp replacement, amplifier repair, cable renewal',
         ],
       },
       consulting: {
         title: 'Consulting',
-        summary: 'Pre-project technical consulting so you choose the right technology at the right budget.',
+        summary: 'We provide technical support from architectural design through the tender process to deliver the most sustainable, efficient solution for your needs.',
         details: [
-          'Needs analysis and technology selection',
-          'Budget and timeline planning support',
-          'Technical specification preparation',
+          'Assessment and reporting of existing systems',
+          'Needs analysis and a brand-independent equipment recommendation',
+          'Technical specification and tender document preparation',
           'Independent guidance when selecting an implementation partner',
         ],
       },
       supply: {
         title: 'Sales & Supply',
-        summary: 'We source equipment from global brands tailored to your needs.',
+        summary: 'Through our extensive distributor network, we source the equipment and spare parts your service and installation projects need on the best terms.',
         details: [
-          'Direct partnerships with international brands',
-          'Equipment selection and proposals tailored to your needs',
-          'Logistics and delivery coordination',
-          'After-sales support and warranty processes',
+          'Equipment and spare parts sourcing through our distributor network',
+          'Brand-independent mounting capability — brands such as Barco, Samsung and Bose',
+          'Subcontractor supply support for IT and architecture firms',
+          'Complete delivery including full commissioning',
         ],
       },
     },
@@ -93,15 +93,26 @@ export const en: Dictionary = {
     intro: 'Your Solution Partner in the Field.',
     body: [
       'We are the technical operations partner that businesses and technology firms trust to have by their side in the field. In installation, integration and maintenance, we are the natural extension of your team.',
-      'We focus on installing, running and operating systems, not just selling products — offering end-to-end service from installation through after-sales support, all from a single point of contact.',
+      'We focus on installing, running and operating systems, not just selling products — offering end-to-end service from installation through after-sales support, all from a single point of contact. Our service focus is your systems\' uptime, first and foremost.',
+      'In our B2B partnerships we value client confidentiality and act as a natural extension of our partner\'s own team out in the field.',
     ],
   },
   visionMission: {
     pageTitle: 'Vision & Mission',
     visionTitle: 'Our Vision',
     vision: 'If Sonopto installed it, nothing goes wrong.',
+    visionDetail:
+      "To build Turkey's largest and most capable professional AV technical service network with a product-independent service philosophy, and to make \"if Sonopto installed it, nothing goes wrong\" the industry standard.",
     missionTitle: 'Our Mission',
     mission: "Our client's crisis is our priority.",
+    missionDetail:
+      'To be the single address businesses and individuals can entrust their technology infrastructure to — one they can reach the moment something goes wrong, and one that guarantees a solution.',
+    valuesTitle: 'Our Core Values',
+    values: [
+      { title: 'Accessibility', description: 'A commitment to being there for our clients the moment an issue arises.' },
+      { title: 'Competence', description: 'A solid, engineering-driven approach to building systems.' },
+      { title: 'Trust', description: 'Representing our clients in the field in the best possible way, protecting their reputation.' },
+    ],
   },
   references: {
     pageTitle: 'Our References',
@@ -115,7 +126,7 @@ export const en: Dictionary = {
       {
         question: 'What is pixel pitch on an LED display?',
         answer:
-          'Pixel pitch is the distance (in mm) between the centers of two pixels on an LED display, and it directly affects resolution, viewing distance and cost. We determine the right pixel pitch for each project based on the venue and typical viewing distance.',
+          "Pixel pitch is the distance between the centers of two adjacent pixels on an LED panel, measured in millimeters (for example, on a P2.5 panel that distance is 2.5 mm). The smaller the value, the sharper and higher-resolution the image — but production cost rises too. Rule of thumb: minimum viewing distance (meters) ≈ pixel pitch (mm) × 1, so a P4 display should be viewed from at least 4 meters away. Indoor displays are viewed up close and need a tighter pitch (P1.2–P3), while outdoor displays are viewed from farther away and need to handle direct sunlight, so a wider pitch (P4–P10+) is sufficient. We determine the right pixel pitch for each project based on the venue and typical viewing distance.",
       },
       {
         question: 'How quickly do you respond to a fault?',
