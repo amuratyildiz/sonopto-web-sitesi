@@ -57,7 +57,7 @@ export async function createDataverseLead(lead: LeadInput): Promise<void> {
       companyname: lead.company ?? undefined,
       subject: lead.subject,
       description: lead.message,
-      leadsourcecode: 100000000, // TODO: confirm/replace with the org's actual "Website" lead source option value.
+      leadsourcecode: 8, // "Web" — confirmed against this org's leadsourcecode option set.
     }),
   });
 
