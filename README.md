@@ -1,6 +1,6 @@
 # Sonopto Web Sitesi
 
-Sonopto'nun kurumsal web sitesi. Astro ile statik olarak üretilir, Azure Static Web Apps üzerinde barındırılır, referans/proje içeriği build zamanında bir SharePoint listesinden Microsoft Graph API ile çekilir, iletişim formu Dataverse'e CRM lead olarak düşer. Detaylı mimari kararlar ve gerekçeleri için bkz. `PLAN.md`.
+Sonopto'nun kurumsal web sitesi. Astro ile statik olarak üretilir, Azure Static Web Apps üzerinde barındırılır, referans/proje içeriği build zamanında bir SharePoint listesinden Microsoft Graph API ile çekilir, iletişim formu Dataverse'deki özel `cr0c0_iletisimformukaydi` ("Web Sitesi Iletisim Formu") tablosuna kaydedilir (standart Lead veya mevcut "Fırsat" tablosu değil — bkz. "Altyapı Durumu"). Detaylı mimari kararlar ve gerekçeleri için bkz. `PLAN.md`.
 
 ## Hızlı Başlangıç
 
@@ -40,7 +40,7 @@ M365/Azure tarafı kuruldu ve GitHub Actions secrets'ları bağlandı:
 
 1. ~~**SharePoint "Projects" listesi**~~ — Kuruldu: `https://sonopto.sharepoint.com/sites/sonopto-web-sitesi`, `Projects` listesi (tam kolon şemasıyla) + `ProjectMedia` doküman kütüphanesi. `scripts/provision-sharepoint-list.mjs` bu kurulumu tekrarlanabilir kılıyor (gerekirse başka bir ortamda yeniden çalıştırılabilir).
 2. ~~**Entra ID uygulama kaydı (Graph okuma)**~~ — `Sonopto Web Sitesi - Graph Icerik Okuma` uygulaması, `Sites.Selected` izniyle sadece bu siteye salt-okunur/yazma erişimine sahip (diğer SharePoint sitelerine erişemez).
-3. ~~**Entra ID uygulama kaydı + Dataverse Application User (form yazma)**~~ — `Sonopto Web Sitesi - Iletisim Formu Servis Hesabi` uygulaması, `sonoptocrm` ortamında özel bir güvenlik rolüyle (`Web Sitesi Iletisim Formu` — yalnızca Lead tablosunda Create yetkisi) kayıtlı. Graph okuma uygulamasından tamamen ayrı, en az yetkili bir kimlik.
+3. ~~**Entra ID uygulama kaydı + Dataverse Application User (form yazma)**~~ — `Sonopto Web Sitesi - Iletisim Formu Servis Hesabi` uygulaması, `sonoptocrm` ortamında özel bir güvenlik rolüyle (`Web Sitesi Iletisim Formu` — `cr0c0_iletisimformukaydi` tablosunda **Create + Read**, Global depth) kayıtlı. Graph okuma uygulamasından tamamen ayrı, en az yetkili bir kimlik. Standart Lead tablosu ve mevcut "Fırsat" (`cr0c0_firsat`) tablosu **kullanılmıyor** — Fırsat tablosu zorunlu bir Şirket bağlantısı gerektiriyor ve isim/e-posta/telefon/mesaj alanları yok, bu yüzden web sitesi gönderileri için özel olarak `cr0c0_iletisimformukaydi` ("Web Sitesi Iletisim Formu") tablosu oluşturuldu (Ad Soyad, E-posta, Telefon, Şirket Adı, Konu, Mesaj alanlarıyla). Not: Dataverse'in Web API'si bir kayıt oluştururken dahili bir "sahiplik kontrolü" için **Read** yetkisini de istiyor — yalnızca Create yetmiyor; bu proje sırasında canlıda 502 hatasına yol açan asıl neden buydu.
 4. **Power Automate akışı** — henüz kurulmadı (opsiyonel — günlük zamanlanmış build zaten bir güvenlik ağı; içerik güncellemesinden sonra anlık yayın için ileride eklenebilir).
 5. **Cloudflare Turnstile** — henüz kurulmadı; `PUBLIC_TURNSTILE_SITE_KEY`/`TURNSTILE_SECRET_KEY` ayarlanana kadar form widget'sız ama çalışır durumda.
 6. ~~**Azure Static Web Apps kaynağı**~~ — `sonopto-web-sitesi` (Free tier, `mcpp-purchase` kaynak grubu, `victorious-desert-00b3ca10f.1.azurestaticapps.net`) oluşturuldu, deploy token GitHub secret'ı olarak eklendi.
