@@ -205,7 +205,7 @@ export const en: Dictionary = {
     intro: 'Your Solution Partner in the Field.',
     body: [
       'We are the technical operations partner that businesses and technology firms trust to have by their side in the field. In installation, integration and maintenance, we are the natural extension of your team.',
-      'We focus on installing, running and operating systems, not just selling products — offering end-to-end service from installation through after-sales support, all from a single point of contact. Our service focus is your systems\' uptime, first and foremost.',
+      'We focus on building, sustaining and operating systems, covering the whole path from installation to equipment supply, from commissioning to after-sales support, all from a single point of contact. Our service focus is your systems\' uptime, first and foremost.',
       'In our B2B partnerships we value client confidentiality and act as a natural extension of our partner\'s own team out in the field.',
     ],
     imageAlt: 'A Sonopto field technician organising cabling inside a rack cabinet',

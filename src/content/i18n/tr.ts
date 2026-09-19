@@ -349,7 +349,7 @@ export const tr: Dictionary = {
     intro: 'Sahadaki Çözüm Ortağınız.',
     body: [
       'Biz, işletmelerin ve teknoloji firmalarının sahada güvenle yanına aldığı teknik operasyon partneriyiz. Kurulum, entegrasyon ve bakım konularında ekibinizin doğal uzantısıyız.',
-      'Ürün satmaya değil, sistem kurmaya, yaşatmaya ve işletmeye odaklanıyoruz — kurulumdan satış sonrası desteğe kadar tek noktadan hizmet sunuyoruz. Servis odaklılığımızın önceliği sistemlerinizin kesintisiz çalışma (uptime) süresidir.',
+      'Sistem kurmaya, yaşatmaya ve işletmeye odaklanıyoruz; kurulumdan ürün tedarikine, devreye almadan satış sonrası desteğe kadar tek noktadan hizmet sunuyoruz. Servis odaklılığımızın önceliği sistemlerinizin kesintisiz çalışma (uptime) süresidir.',
       'B2B iş ortaklıklarımızda müşteri konfidansiyalitesine değer veririz ve sahada partnerimizin kendi ekibinin doğal bir parçası gibi hareket ederiz.',
     ],
     imageAlt: 'Rack kabin içinde kablo düzenlemesi yapan Sonopto saha teknisyeni',
