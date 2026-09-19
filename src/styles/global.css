@@ -26,17 +26,27 @@
  * Identity Guide v1.0, Feb 2026) — see the "Sonopto" design system artifact.
  * Palette formula: 70% Black/White + 20% neutral gray + 10% Neon Green.
  *
- * The five neutral steps below (100–500) are NOT yet confirmed against the
- * guide's exact swatches (the design system's tokens.json only has
- * Black/White/Green defined so far) — treat these as a reasonable
- * placeholder ramp and replace with the guide's exact neutral hex values
- * once available.
+ * On the neutral ramp: the guide names only three greys, as roles rather than
+ * scale steps — Açık Gri #F5F5F5 (backgrounds), Orta Gri #6B6B6B (dividers,
+ * passive content) and Koyu Gri #2A2A2A (subheads, secondary text). Only the
+ * first maps cleanly onto a step here, and it is applied below as neutral-50.
+ *
+ * The other two are deliberately NOT adopted:
+ *   - #6B6B6B at neutral-500 would lighten ~23 text usages from 7.5:1 to
+ *     5.3:1 on white. Still AA, but a legibility downgrade for a nominal win.
+ *   - #2A2A2A at neutral-600 (14.4:1, vs 11.4:1 today) collapses the gap to
+ *     neutral-700 #262626 to almost nothing, and neutral-700 is what draws the
+ *     mobile menu button's border on the ink header — darkening 700 to restore
+ *     the step would make that affordance nearly invisible.
+ * The guide's figures were written for the brand at large, not for a ten-step
+ * UI scale spanning both white and ink surfaces. Revisit only if the brand
+ * team supplies a full ramp.
  */
 @theme {
   --color-ink: #000000;
   --color-surface: #ffffff;
 
-  --color-neutral-50: #f7f7f7;
+  --color-neutral-50: #f5f5f5;
   --color-neutral-100: #f2f2f2;
   --color-neutral-200: #e0e0e0;
   --color-neutral-300: #bdbdbd;
@@ -366,6 +376,49 @@
   .service-card:focus-visible {
     outline: 2px solid var(--color-ink);
     outline-offset: 2px;
+  }
+
+  /*
+   * Photo cards (references, solutions) — the white counterpart to
+   * .service-card. Same reason for being hand-authored: the `transition`
+   * utility these used to carry sat in the utilities layer and overrode
+   * [data-reveal]'s `transition` shorthand, so their scroll reveal was
+   * silently running at the utility's 150ms instead of --motion-slow.
+   *
+   * Like .service-card, this must stay AFTER the [data-reveal] rules.
+   */
+  .media-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-neutral-100);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.06);
+    transition:
+      translate var(--motion-base) ease-out,
+      border-color var(--motion-base) ease-out,
+      box-shadow var(--motion-base) ease-out,
+      opacity var(--motion-slow) ease-out,
+      transform var(--motion-slow) ease-out;
+  }
+
+  .media-card:hover,
+  .media-card:focus-visible {
+    translate: 0 -2px;
+    border-color: var(--color-neutral-300);
+    box-shadow: 0 10px 24px -14px rgb(0 0 0 / 0.25);
+  }
+
+  .media-card:focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+  }
+
+  .media-card-more {
+    color: var(--color-neutral-500);
+    transition: color var(--motion-base) ease-out;
+  }
+
+  .media-card:hover .media-card-more,
+  .media-card:focus-visible .media-card-more {
+    color: var(--color-ink);
   }
 
   /* Roboto Mono is the guide's face for technical labels. A label, not a state

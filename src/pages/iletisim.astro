@@ -54,7 +54,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
       >
         <div class="grid gap-4 sm:grid-cols-2">
           <label class="block text-sm font-medium text-neutral-800">
-            {dict.contact.formName} <span class="text-neutral-400">({dict.contact.formRequired})</span>
+            {dict.contact.formName} <span class="text-neutral-500">({dict.contact.formRequired})</span>
             <input type="text" name="name" required class="mt-1 w-full border border-neutral-200 px-3 py-2 text-sm focus:border-neutral-500 focus:outline-none" />
           </label>
           <label class="block text-sm font-medium text-neutral-800">
@@ -62,7 +62,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
             <input type="tel" name="phone" class="mt-1 w-full border border-neutral-200 px-3 py-2 text-sm focus:border-neutral-500 focus:outline-none" />
           </label>
           <label class="block text-sm font-medium text-neutral-800">
-            {dict.contact.formEmail} <span class="text-neutral-400">({dict.contact.formRequired})</span>
+            {dict.contact.formEmail} <span class="text-neutral-500">({dict.contact.formRequired})</span>
             <input type="email" name="email" required class="mt-1 w-full border border-neutral-200 px-3 py-2 text-sm focus:border-neutral-500 focus:outline-none" />
           </label>
           <label class="block text-sm font-medium text-neutral-800">
@@ -72,12 +72,12 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
         </div>
 
         <label class="block text-sm font-medium text-neutral-800">
-          {dict.contact.formSubject} <span class="text-neutral-400">({dict.contact.formRequired})</span>
+          {dict.contact.formSubject} <span class="text-neutral-500">({dict.contact.formRequired})</span>
           <input type="text" name="subject" required class="mt-1 w-full border border-neutral-200 px-3 py-2 text-sm focus:border-neutral-500 focus:outline-none" />
         </label>
 
         <label class="block text-sm font-medium text-neutral-800">
-          {dict.contact.formMessage} <span class="text-neutral-400">({dict.contact.formRequired})</span>
+          {dict.contact.formMessage} <span class="text-neutral-500">({dict.contact.formRequired})</span>
           <textarea name="message" required rows="5" class="mt-1 w-full border border-neutral-200 px-3 py-2 text-sm focus:border-neutral-500 focus:outline-none"></textarea>
         </label>
 
