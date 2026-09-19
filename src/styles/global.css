@@ -302,12 +302,212 @@
   [data-reveal-group] > [data-reveal]:nth-child(5) { transition-delay: 360ms; }
   [data-reveal-group] > [data-reveal]:nth-child(6) { transition-delay: 450ms; }
 
-  /* An infinite animation still counts as running at 0ms, so stop these two
-     outright rather than relying on the duration variables alone. */
+  /*
+   * Service cards — ink blocks inside the white section. Going dark is what
+   * makes the accent usable on them: #39ff14 is 15.5:1 on black, but only
+   * 1.4:1 on white, which the identity guide rules out.
+   *
+   * The shell is hand-authored rather than composed from utilities because
+   * every property below is stateful. Utilities sit in a later cascade layer
+   * than `components`, so a `text-neutral-400` utility on the read-more label
+   * would beat `.service-card:hover .svc-more` in every state.
+   *
+   * This block must stay AFTER the [data-reveal] rules above: both set the
+   * `transition` shorthand on the same element at the same specificity, the
+   * shorthand resets the whole list, so the reveal's opacity/transform pair is
+   * repeated here and source order decides it.
+   */
+  .service-card {
+    --svc-pad: 1.5rem;
+
+    padding: var(--svc-pad);
+    background-color: var(--color-ink);
+    border: 1px solid var(--color-neutral-800);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.08);
+    transition:
+      translate var(--motion-base) ease-out,
+      border-color var(--motion-base) ease-out,
+      box-shadow var(--motion-base) ease-out,
+      opacity var(--motion-slow) ease-out,
+      transform var(--motion-slow) ease-out;
+  }
+
+  /* The lift rides on `translate`, not `transform`: [data-reveal].reveal-pending
+     owns `transform` on this same element, and the two individual properties
+     compose instead of clobbering each other. */
+  .service-card:hover,
+  .service-card:focus-visible {
+    translate: 0 -2px;
+    border-color: var(--color-neutral-500);
+    box-shadow: 0 10px 24px -14px rgb(0 0 0 / 0.45);
+  }
+
+  /* Ink, not accent: this ring is drawn on the white section, where green
+     fails contrast. The green cues stay inside the card. */
+  .service-card:focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+  }
+
+  /* Roboto Mono is the guide's face for technical labels. A label, not a state
+     indicator, so it does not react to hover. */
+  .svc-index {
+    position: absolute; /* .card-status supplies position: relative */
+    top: var(--svc-pad);
+    right: var(--svc-pad);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    color: var(--color-neutral-400);
+  }
+
+  .svc-icon {
+    display: block;
+    overflow: hidden; /* the supply crate flies in from outside the viewBox */
+    color: var(--color-neutral-300);
+    transition: color var(--motion-base) ease-out;
+  }
+
+  .svc-more {
+    color: var(--color-neutral-400);
+    transition: color var(--motion-base) ease-out;
+  }
+
+  .svc-arrow {
+    display: inline-block;
+    translate: 0 0;
+    transition: translate var(--motion-base) ease-out;
+  }
+
+  .service-card:hover .svc-icon,
+  .service-card:focus-visible .svc-icon,
+  .service-card:hover .svc-more,
+  .service-card:focus-visible .svc-more {
+    color: var(--color-accent);
+  }
+
+  .service-card:hover .svc-arrow,
+  .service-card:focus-visible .svc-arrow {
+    translate: 2px 0;
+  }
+
+  /*
+   * Per-service icon motion. Three of the four move on `translate`/`opacity`
+   * only, which are transform-origin independent and so need no transform-box
+   * setup at all — only the rotating screw does.
+   *
+   * Stagger delays live exclusively in the hover rules, so the return is
+   * immediate and unstaggered. Every delay derives from --motion-base via
+   * calc(), so the single prefers-reduced-motion block zeroes them too.
+   */
+
+  /* 01 Kurulum — four panels exploded at rest, snapping flush in raster order. */
+  .svc-panel {
+    transition: translate var(--motion-base) ease-out;
+  }
+
+  .svc-panel-tl { translate: -3px -3px; }
+  .svc-panel-tr { translate: 3px -3px; }
+  .svc-panel-bl { translate: -3px 3px; }
+  .svc-panel-br { translate: 3px 3px; }
+
+  .service-card:hover .svc-panel,
+  .service-card:focus-visible .svc-panel {
+    translate: 0 0;
+  }
+
+  .service-card:hover .svc-panel-tr,
+  .service-card:focus-visible .svc-panel-tr {
+    transition-delay: calc(var(--motion-base) * 0.08);
+  }
+
+  .service-card:hover .svc-panel-bl,
+  .service-card:focus-visible .svc-panel-bl {
+    transition-delay: calc(var(--motion-base) * 0.16);
+  }
+
+  .service-card:hover .svc-panel-br,
+  .service-card:focus-visible .svc-panel-br {
+    transition-delay: calc(var(--motion-base) * 0.24);
+  }
+
+  /*
+   * 02 Bakım — the driver seats into the slot, then the screw takes a quarter
+   * turn. The only explicit transform origin in the stylesheet: an SVG
+   * element's initial transform-box is `view-box` and its transform-origin is
+   * 50% 50% OF THAT BOX — (24,24) here — so an un-anchored rotate would swing
+   * the head around the centre of the canvas instead of spinning it in place.
+   * The values below are the screw's own centre, in user units.
+   */
+  .svc-screw {
+    transform-box: view-box;
+    transform-origin: 18px 30px;
+    rotate: 0deg;
+    transition: rotate var(--motion-base) ease-in-out;
+  }
+
+  .svc-driver {
+    translate: 2.5px -2.5px; /* pulled back along the 45° shaft axis */
+    transition: translate var(--motion-base) ease-out;
+  }
+
+  .service-card:hover .svc-driver,
+  .service-card:focus-visible .svc-driver {
+    translate: 0 0;
+  }
+
+  .service-card:hover .svc-screw,
+  .service-card:focus-visible .svc-screw {
+    rotate: 90deg;
+    transition-delay: calc(var(--motion-base) * 0.35);
+  }
+
+  /* 03 Danışmanlık — four seats at rest; the fifth takes the head of the table. */
+  .svc-seat-join {
+    translate: 6px 0;
+    opacity: 0;
+    transition:
+      translate var(--motion-base) ease-out,
+      opacity calc(var(--motion-base) * 0.6) ease-out;
+  }
+
+  .service-card:hover .svc-seat-join,
+  .service-card:focus-visible .svc-seat-join {
+    translate: 0 0;
+    opacity: 1;
+  }
+
+  /* 04 Tedarik — a second case drops in from outside the frame, then the cart
+     rolls on. ease-in on the drop because a falling object accelerates; still
+     monotonic, no overshoot. */
+  .svc-item-drop {
+    translate: 0 -30px;
+    transition: translate var(--motion-base) ease-in;
+  }
+
+  .svc-cart {
+    translate: 0 0;
+    transition: translate var(--motion-base) ease-out;
+  }
+
+  .service-card:hover .svc-item-drop,
+  .service-card:focus-visible .svc-item-drop {
+    translate: 0 0;
+  }
+
+  .service-card:hover .svc-cart,
+  .service-card:focus-visible .svc-cart {
+    translate: 2px 0;
+    transition-delay: calc(var(--motion-base) * 0.45);
+  }
+
+  /* An infinite animation still counts as running at 0ms, so stop it outright
+     rather than relying on the duration variable alone. Everything else on the
+     site is a transition, which genuinely does nothing at 0ms. */
   @media (prefers-reduced-motion: reduce) {
     .led-flicker {
       animation: none;
     }
-
   }
 }

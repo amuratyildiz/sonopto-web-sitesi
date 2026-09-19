@@ -7,17 +7,17 @@ import CaseStudyCard from '../components/sections/CaseStudyCard.astro';
 import { getDictionary } from '../content/i18n';
 import { pathFor } from '../lib/i18n/routes';
 import { getProjects } from '../lib/graph/projects';
+import { serviceEntries, serviceKeys } from '../data/services';
 
 const locale = 'tr' as const;
 const dict = getDictionary(locale);
 const projects = (await getProjects()).slice(0, 3);
 
-const services = [
-  { ...dict.services.items.installation, path: pathFor('servicesInstallation', locale) },
-  { ...dict.services.items.maintenance, path: pathFor('servicesMaintenance', locale) },
-  { ...dict.services.items.consulting, path: pathFor('servicesConsulting', locale) },
-  { ...dict.services.items.supply, path: pathFor('servicesSupply', locale) },
-];
+const services = serviceKeys.map((key) => ({
+  ...dict.services.items[key],
+  path: pathFor(serviceEntries[key].routeId, locale),
+  icon: serviceEntries[key].icon,
+}));
 ---
 
 <BaseLayout
@@ -42,8 +42,15 @@ const services = [
       <p class="mx-auto mt-3 max-w-2xl text-neutral-600">{dict.home.servicesSubtitle}</p>
     </div>
     <div data-reveal-group class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      {services.map((service) => (
-        <ServiceCard title={service.title} summary={service.summary} href={service.path} readMoreLabel={dict.common.readMore} />
+      {services.map((service, i) => (
+        <ServiceCard
+          title={service.title}
+          summary={service.summary}
+          href={service.path}
+          readMoreLabel={dict.common.readMore}
+          icon={service.icon}
+          index={i + 1}
+        />
       ))}
     </div>
   </section>

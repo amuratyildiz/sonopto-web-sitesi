@@ -1,0 +1,89 @@
+---
+import type { ServiceIconName } from '../../data/services';
+
+interface Props {
+  name: ServiceIconName;
+}
+
+const { name } = Astro.props;
+---
+
+{/*
+  Line icons in the brand's technical register: square caps, miter joins,
+  currentColor so the card owns the tone. Rendered 1:1 with the viewBox — 48
+  user units at 48 CSS px — so integer coordinates and the even stroke land on
+  whole device pixels. The hero chevron's 2.5 weight is deliberately not reused
+  here: that is a single heavy mark, and the same ratio would close the gaps in
+  a four-part icon.
+
+  Every rest state is a complete picture on its own, because touch devices
+  never reach the hover state. Moving parts are driven from .svc-* in
+  global.css.
+
+  No `transform` presentation attribute anywhere — a non-zero transform-origin
+  would silently relocate an attribute rotation's pivot.
+*/}
+<svg
+  class="svc-icon"
+  width="48"
+  height="48"
+  viewBox="0 0 48 48"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="square"
+  aria-hidden="true"
+>
+  {name === 'installation' && (
+    <>
+      {/* A 2x2 video wall, exploded at rest, seating flush in raster order. */}
+      <rect class="svc-panel svc-panel-tl" x="7" y="7" width="16" height="16" />
+      <rect class="svc-panel svc-panel-tr" x="25" y="7" width="16" height="16" />
+      <rect class="svc-panel svc-panel-bl" x="7" y="25" width="16" height="16" />
+      <rect class="svc-panel svc-panel-br" x="25" y="25" width="16" height="16" />
+    </>
+  )}
+
+  {name === 'maintenance' && (
+    <>
+      {/* Flat head, slot horizontal at rest, quarter turn on hover. A 180° turn
+          or a cross head would land on a shape identical to the start, so the
+          motion would be invisible. */}
+      <g class="svc-screw">
+        <circle cx="18" cy="30" r="10" />
+        <line x1="11" y1="30" x2="25" y2="30" />
+      </g>
+      {/* Driver pulled back off the slot at rest; grip is a literal polygon. */}
+      <g class="svc-driver">
+        <line x1="25" y1="23" x2="31" y2="17" />
+        <polygon points="33.5,19.5 41.5,11.5 36.5,6.5 28.5,14.5" />
+      </g>
+    </>
+  )}
+
+  {name === 'consulting' && (
+    <>
+      {/* The table from above; the fifth seat takes the head on hover. */}
+      <rect x="12" y="16" width="24" height="16" />
+      <circle cx="17" cy="10" r="4" />
+      <circle cx="31" cy="10" r="4" />
+      <circle cx="17" cy="38" r="4" />
+      <circle cx="31" cy="38" r="4" />
+      <circle class="svc-seat-join" cx="42" cy="24" r="4" />
+    </>
+  )}
+
+  {name === 'supply' && (
+    <g class="svc-cart">
+      {/* The basket's left wall sits exactly on the handle strut at (12,14) —
+          that overlap is what makes a minimal cart read at this size. */}
+      <polyline points="5,8 10,8 16,28 40,28" />
+      <polyline points="12,14 44,14 40,28" />
+      <circle cx="21" cy="34" r="3.5" />
+      <circle cx="36" cy="34" r="3.5" />
+      <rect x="17" y="17" width="9" height="9" />
+      {/* Starts above the viewBox; the icon clips it into frame. */}
+      <rect class="svc-item-drop" x="28" y="17" width="9" height="9" />
+    </g>
+  )}
+</svg>
