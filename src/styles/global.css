@@ -9,6 +9,19 @@
 @import "@fontsource/roboto-mono/500.css";
 
 /*
+ * The logo wordmark is set in Visby Heavy (licensed, not on Google Fonts).
+ * The served file is subset to just the glyphs "sonopto." needs — 1KB instead
+ * of the 44KB full face — so it only ever renders the logo, never body copy.
+ */
+@font-face {
+  font-family: "Visby";
+  src: url("/fonts/visby-heavy-logo.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*
  * Brand tokens sourced from the Sonopto Kurumsal Kimlik Kılavuzu (Corporate
  * Identity Guide v1.0, Feb 2026) — see the "Sonopto" design system artifact.
  * Palette formula: 70% Black/White + 20% neutral gray + 10% Neon Green.
@@ -43,6 +56,8 @@
   /* on-accent: required text/icon color whenever it sits on --color-accent. */
   --color-on-accent: #000000;
 
+  /* Logo only — the subset has no glyphs beyond the wordmark. */
+  --font-wordmark: "Visby", "Alata", "Alata Fallback", system-ui, sans-serif;
   --font-heading: "Alata", "Alata Fallback", system-ui, sans-serif;
   --font-sans: "Roboto Slab", "Roboto Slab Fallback", ui-serif, Georgia, serif;
   --font-mono: "Roboto Mono", "Roboto Mono Fallback", SFMono-Regular, Menlo, monospace;
@@ -66,16 +81,14 @@
   :root {
     --motion-base: 300ms;
     --motion-slow: 600ms;
-    --motion-pulse: 2400ms;
-    --motion-scan: 9000ms;
+    --motion-flicker: 1600ms;
   }
 
   @media (prefers-reduced-motion: reduce) {
     :root {
       --motion-base: 0ms;
       --motion-slow: 0ms;
-      --motion-pulse: 0ms;
-      --motion-scan: 0ms;
+      --motion-flicker: 0ms;
     }
 
     html {
@@ -100,9 +113,15 @@
  * green only ever as a 2px indicator or a barely-there glow, never a fill.
  */
 
-@keyframes led-pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.55; transform: scale(0.9); }
+/*
+ * Status-lamp blink: steady interval, snappy edges. The 2%-wide ramps (~30ms
+ * here) switch rather than fade, which is what makes it read as a lamp instead
+ * of a pulsing dot.
+ */
+@keyframes led-flicker {
+  0%, 58% { opacity: 1; }
+  60%, 98% { opacity: 0.16; }
+  100% { opacity: 1; }
 }
 
 @keyframes fade-up-in {
@@ -110,17 +129,16 @@
   to { opacity: 1; transform: none; }
 }
 
-@keyframes hero-scan {
-  from { transform: translateY(-100%); }
-  to { transform: translateY(100%); }
-}
-
 @layer components {
-  /* The logo's dot, breathing like an equipment standby LED. */
-  .led-pulse {
+  /* The logo's dot, flickering like an equipment indicator lamp. */
+  .led-flicker {
     display: inline-block;
-    transform-origin: center;
-    animation: led-pulse var(--motion-pulse) ease-in-out infinite;
+    animation: led-flicker var(--motion-flicker) linear infinite;
+  }
+
+  .wordmark {
+    font-family: var(--font-wordmark);
+    font-weight: 800;
   }
 
   /* A stage-light pass across primary CTAs. The isolate/-1 pairing keeps the
@@ -202,38 +220,62 @@
   .hero-in-2 { animation-delay: 120ms; }
   .hero-in-3 { animation-delay: 240ms; }
 
-  .hero-tech {
+  /*
+   * Homepage header: rides over the hero photo unstyled, then hardens into the
+   * ink bar once the page scrolls. Both states are declared here rather than as
+   * Tailwind utilities — utilities sit in a later cascade layer and would
+   * otherwise beat the scrolled state.
+   */
+  .header-transparent {
+    background-color: transparent;
+    border-color: transparent;
+    transition:
+      background-color var(--motion-base) ease-out,
+      border-color var(--motion-base) ease-out;
+  }
+
+  .header-transparent.is-solid {
+    background-color: var(--color-ink);
+    border-color: var(--color-neutral-100);
+  }
+
+  /* Clips the full-bleed photo and gives it a stacking context to sit behind
+     the headline in. */
+  .hero-frame {
     position: relative;
     overflow: hidden;
     isolation: isolate;
   }
 
-  /* LED panel grid — static texture, faded out towards the edges. */
-  .hero-tech::before {
-    content: '';
+  /* Full-bleed hero photograph, monochrome until the visitor engages with it. */
+  .hero-photo {
     position: absolute;
     inset: 0;
-    z-index: -2;
-    background-image:
-      linear-gradient(to right, rgb(255 255 255 / 0.04) 1px, transparent 1px),
-      linear-gradient(to bottom, rgb(255 255 255 / 0.04) 1px, transparent 1px);
-    background-size: 48px 48px;
-    -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 78%);
-    mask-image: radial-gradient(ellipse at center, black 40%, transparent 78%);
+    z-index: -4;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(1);
+    transition: filter var(--motion-slow) ease-out;
   }
 
-  /* Signal scan sweeping down the panel. */
-  .hero-tech::after {
-    content: '';
+  .hero-frame:hover .hero-photo {
+    filter: grayscale(0);
+  }
+
+  /* Touch devices have no hover state, so they get the colour version outright
+     rather than a photo that never resolves. */
+  @media (hover: none) {
+    .hero-photo {
+      filter: grayscale(0);
+    }
+  }
+
+  .hero-photo-scrim {
     position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    height: 35%;
-    z-index: -1;
-    pointer-events: none;
-    background: linear-gradient(to bottom, transparent, rgb(57 255 20 / 0.06), transparent);
-    animation: hero-scan var(--motion-scan) linear infinite;
+    inset: 0;
+    z-index: -3;
+    background: linear-gradient(to bottom, rgb(0 0 0 / 0.72), rgb(0 0 0 / 0.55) 45%, rgb(0 0 0 / 0.78));
   }
 
   /*
@@ -263,13 +305,9 @@
   /* An infinite animation still counts as running at 0ms, so stop these two
      outright rather than relying on the duration variables alone. */
   @media (prefers-reduced-motion: reduce) {
-    .led-pulse {
+    .led-flicker {
       animation: none;
     }
 
-    .hero-tech::after {
-      animation: none;
-      opacity: 0;
-    }
   }
 }

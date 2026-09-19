@@ -2,15 +2,28 @@
 interface Props {
   title: string;
   subtitle: string;
+  backgroundImage: string;
+  backgroundImageAlt: string;
   ctaLabel?: string;
   ctaHref?: string;
 }
 
-const { title, subtitle, ctaLabel, ctaHref } = Astro.props;
+const { title, subtitle, backgroundImage, backgroundImageAlt, ctaLabel, ctaHref } = Astro.props;
 ---
 
-<section class="hero-tech bg-ink text-white">
-  <div class="mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 sm:py-28">
+<section class="hero-frame flex min-h-svh items-center bg-ink text-white">
+  <img
+    src={backgroundImage}
+    alt={backgroundImageAlt}
+    width="2400"
+    height="1253"
+    loading="eager"
+    fetchpriority="high"
+    class="hero-photo"
+  />
+  <div class="hero-photo-scrim"></div>
+
+  <div class="mx-auto w-full max-w-4xl px-4 py-20 text-center sm:px-6 sm:py-28">
     <h1 class="hero-in hero-in-1 text-3xl tracking-tight text-balance sm:text-5xl">{title}</h1>
     <p class="hero-in hero-in-2 mx-auto mt-6 max-w-2xl text-lg text-neutral-200 text-balance">{subtitle}</p>
     {ctaLabel && ctaHref && (

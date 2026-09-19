@@ -1,3 +1,17 @@
+// Homepage header: transparent over the hero, solid once scrolled. This is a
+// legibility state, not decoration, so it runs regardless of reduced motion.
+(function () {
+  var header = document.querySelector('[data-transparent-header]');
+  if (!header) return;
+
+  var sync = function () {
+    header.classList.toggle('is-solid', window.scrollY > 24);
+  };
+
+  sync();
+  window.addEventListener('scroll', sync, { passive: true });
+})();
+
 (function () {
   if (!('IntersectionObserver' in window)) return;
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;

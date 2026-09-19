@@ -36,3 +36,7 @@ local.settings.json
 # repo (nozomusama/web-i-erikleri), ~480MB. Assets are copied into public/
 # as they get used; the folder itself must never enter this repo.
 snpt/
+
+# Licensed source font. Only the 1KB logo-glyph subset under public/fonts/
+# is committed and served; the full face stays local.
+/Visby Heavy.ttf

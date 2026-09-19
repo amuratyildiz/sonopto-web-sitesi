@@ -69,6 +69,7 @@ export interface Dictionary {
     heroTagline: string;
     heroSubtitle: string;
     heroCta: string;
+    heroImageAlt: string;
     servicesTitle: string;
     servicesSubtitle: string;
     partnersTitle: string;
@@ -183,6 +184,8 @@ export const tr: Dictionary = {
     heroSubtitle:
       'Ses, görüntü ve sahne ışık sistemlerinin kurulumu, bakımı ve danışmanlığında uçtan uca çözüm ortağınız.',
     heroCta: 'Hizmetlerimizi İnceleyin',
+    heroImageAlt:
+      'Konferans salonunda video konferans ekranı ve masa mikrofonlarıyla kurulmuş profesyonel toplantı sistemi',
     servicesTitle: 'Neler Yapıyoruz',
     servicesSubtitle: 'Kurulumdan satış sonrası desteğe, AV sistemlerinizin tüm yaşam döngüsünü yönetiyoruz.',
     partnersTitle: 'Birlikte Çalıştığımız Markalar',

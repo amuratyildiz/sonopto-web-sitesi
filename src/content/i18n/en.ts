@@ -39,6 +39,8 @@ export const en: Dictionary = {
     heroSubtitle:
       'Your end-to-end solution partner for the installation, maintenance and consulting of audio, video and stage lighting systems.',
     heroCta: 'Explore Our Services',
+    heroImageAlt:
+      'A professional meeting room system with a video conferencing display and table microphones',
     servicesTitle: 'What We Do',
     servicesSubtitle: 'From installation to after-sales support, we manage the full lifecycle of your AV systems.',
     partnersTitle: 'Brands We Work With',
