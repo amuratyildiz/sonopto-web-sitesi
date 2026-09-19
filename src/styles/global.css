@@ -69,6 +69,25 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+
+    /*
+     * Viewport-scaled root size. Tailwind's whole scale is rem-based — type,
+     * spacing and `max-w-6xl` (72rem) alike — so moving this one value scales
+     * the page exactly the way browser zoom does, but only past the width
+     * where the fixed layout starts to look stranded.
+     *
+     * Calibrated against two setups that read correctly at 16px: an FHD screen
+     * at 150% browser zoom (1280px effective viewport) and a 32" 4K at 150% OS
+     * scale plus 150% zoom (1706px). Both sit under the 1700px floor, so they
+     * are untouched. The same 4K at 100% zoom gives a 2560px viewport, where
+     * this reaches 24px and the content column lands at 1728px — the same
+     * content-to-viewport ratio the 150% zoom was producing by hand.
+     *
+     * Bounds are percentages, not px, so a visitor who has raised their
+     * browser's default font size keeps that as the floor instead of having it
+     * overridden.
+     */
+    font-size: clamp(100%, 0.93vw, 150%);
   }
 
   /*
@@ -364,6 +383,10 @@
 
   .svc-icon {
     display: block;
+    /* rem rather than the px width/height attributes, so the icon scales with
+       the viewport-linked root size instead of staying 48px on a 4K screen. */
+    width: 3rem;
+    height: 3rem;
     overflow: hidden; /* the supply crate flies in from outside the viewBox */
     color: var(--color-neutral-300);
     transition: color var(--motion-base) ease-out;
