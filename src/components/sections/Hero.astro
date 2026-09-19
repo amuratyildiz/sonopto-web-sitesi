@@ -35,4 +35,21 @@ const { title, subtitle, backgroundImage, backgroundImageAlt, ctaLabel, ctaHref 
       </a>
     )}
   </div>
+
+  {/* Shares the .led-flicker animation with the logo dot; both start on first
+      paint with no delay, so they blink in step. */}
+  <div class="pointer-events-none absolute inset-x-0 bottom-8 flex justify-center sm:bottom-10" aria-hidden="true">
+    <svg
+      class="led-flicker text-accent"
+      width="30"
+      height="30"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2.5"
+      stroke-linecap="square"
+    >
+      <path d="M6 9l6 6 6-6" />
+    </svg>
+  </div>
 </section>
