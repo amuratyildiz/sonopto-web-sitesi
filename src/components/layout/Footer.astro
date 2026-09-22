@@ -3,6 +3,7 @@ import { pathFor, type Locale } from '../../lib/i18n/routes';
 import { getDictionary } from '../../content/i18n';
 import { company } from '../../data/company';
 import SocialLinks from './SocialLinks.astro';
+import ProductName from './ProductName.astro';
 
 interface Props {
   locale: Locale;
@@ -60,6 +61,11 @@ const companyLinks = [
         {solutionLinks.map((item) => (
           <li><a href={item.path} class="transition hover:text-white">{item.label}</a></li>
         ))}
+        <li class="mt-3 border-t border-neutral-800 pt-3">
+          <a href={pathFor('signage', locale)} class="transition hover:text-white">
+            <ProductName accent />
+          </a>
+        </li>
       </ul>
     </div>
 

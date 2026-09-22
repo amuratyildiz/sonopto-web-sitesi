@@ -1,0 +1,113 @@
+---
+import { getDictionary } from '../../content/i18n';
+import { signageDevices } from '../../data/signage';
+import type { Locale } from '../../lib/i18n/routes';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const dict = getDictionary(locale);
+const signage = dict.signage;
+
+const capabilityLabels = [
+  signage.deviceAutoUpdateLabel,
+  signage.deviceRemoteRebootLabel,
+  signage.devicePowerLabel,
+] as const;
+---
+
+{/*
+  Logo picker on the left, one detail panel on the right.
+
+  Built on a radio group rather than script: nothing here can be blocked by the
+  CSP, the arrow-key behaviour and the "one of many" announcement come from the
+  browser, and there is no flash of every panel before JS arrives.
+
+  The radios sit immediately before their own panels, so the switch itself is a
+  single `:checked + .device-panel` rule that works in any browser. Only the
+  highlight on the chosen logo needs :has(), and that is wrapped in @supports —
+  without it the panels still switch correctly, you just lose the chip outline.
+
+  Every panel ships in the HTML, so all seventeen descriptions stay crawlable.
+*/}
+<div class="device-tabs mt-10 grid gap-6 lg:grid-cols-[20rem_1fr] lg:gap-10">
+  <div role="group" aria-label={signage.devicesTitle} class="grid grid-cols-3 gap-2 self-start sm:grid-cols-4 lg:grid-cols-3">
+    {signageDevices.map((device) => (
+      <label class="device-chip" for={`device-${device.key}`}>
+        <img
+          src={`/signage/cihazlar/${device.file}`}
+          alt={device.label}
+          width="112"
+          height="32"
+          loading="lazy"
+          class="h-8 w-full object-contain"
+        />
+      </label>
+    ))}
+  </div>
+
+  <div>
+    {signageDevices.map((device, index) => {
+      const capabilities = [device.autoUpdate, device.remoteReboot, device.powerManagement];
+      return (
+        <>
+          <input
+            class="device-radio"
+            type="radio"
+            name="signage-device"
+            id={`device-${device.key}`}
+            checked={index === 0}
+          />
+          <article class="device-panel border border-neutral-100 bg-white p-6">
+            <h3 class="text-lg text-ink">{device.label}</h3>
+
+            {device.overall === null || device.performance === null ? (
+              <p class="mt-4 font-mono text-xs uppercase tracking-wide text-neutral-500">{signage.deviceUnrated}</p>
+            ) : (
+              <div class="mt-5 grid gap-4 sm:grid-cols-2">
+                {[
+                  { label: signage.deviceScoreLabel, value: device.overall },
+                  { label: signage.devicePerformanceLabel, value: device.performance },
+                ].map((meter) => (
+                  <div>
+                    <div class="flex items-baseline justify-between gap-3">
+                      <span class="text-xs uppercase tracking-wide text-neutral-500">{meter.label}</span>
+                      <span class="font-mono text-xs text-ink">
+                        {meter.value.toFixed(1)}<span class="text-neutral-500">/5</span>
+                      </span>
+                    </div>
+                    {/* Ink on a neutral track, never accent: #39ff14 is 1.4:1 on
+                        white and fails 1.4.11 for a graphic that carries meaning.
+                        The number is printed too, so the bar is never the only
+                        way to read the rating. */}
+                    <div class="mt-1.5 h-1.5 w-full bg-neutral-200">
+                      <div class="h-full bg-ink" style={`width:${(meter.value / 5) * 100}%`}></div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            <ul class="mt-5 flex flex-wrap gap-x-6 gap-y-2">
+              {capabilityLabels.map((label, i) => (
+                <li class="flex items-center gap-2 text-xs">
+                  {/* Glyph, not colour alone — survives greyscale and colour
+                      blindness. neutral-500 (7.0:1), never neutral-400, which is
+                      3.45:1 on white and fails AA at this size. */}
+                  <span aria-hidden="true" class={capabilities[i] ? 'text-ink' : 'text-neutral-500'}>
+                    {capabilities[i] === null ? '?' : capabilities[i] ? '✓' : '—'}
+                  </span>
+                  <span class={capabilities[i] ? 'text-neutral-700' : 'text-neutral-500'}>{label}</span>
+                </li>
+              ))}
+            </ul>
+
+            <p class="mt-4 text-sm text-neutral-600">{signage.devices[device.key]}</p>
+          </article>
+        </>
+      );
+    })}
+  </div>
+</div>

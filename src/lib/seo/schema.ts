@@ -70,6 +70,57 @@ export function faqSchema(items: Array<{ question: string; answer: string }>) {
   };
 }
 
+/**
+ * The signage product page.
+ *
+ * Deliberately `Service` rather than `Product` or `SoftwareApplication`: both of
+ * those are rich-result types that Google requires `offers` or `aggregateRating`
+ * on, and we publish neither. Licence pricing exists but is integrator pricing —
+ * our own cost base — so it cannot go on the site, and inventing a rating is out
+ * of the question. A recognised-but-incomplete entity would just accrue Search
+ * Console warnings in exchange for a rich result that could never render.
+ *
+ * `provider` is also the structured-data half of the white label: the platform
+ * is presented as ours, so the vendor appears nowhere in the graph.
+ */
+export function signageServiceSchema(input: {
+  name: string;
+  description: string;
+  url: string;
+  platformUrl: string;
+  offerings: string[];
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: input.name,
+    description: input.description,
+    url: input.url,
+    serviceType: 'Digital signage',
+    provider: {
+      '@type': 'Organization',
+      name: company.name,
+      url: SITE_URL,
+    },
+    areaServed: {
+      '@type': 'Country',
+      name: 'Türkiye',
+    },
+    availableChannel: {
+      '@type': 'ServiceChannel',
+      serviceUrl: input.platformUrl,
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: input.name,
+      itemListElement: input.offerings.map((offering) => ({
+        '@type': 'Offer',
+        itemOffered: { '@type': 'Service', name: offering },
+      })),
+    },
+  };
+}
+
 export function articleSchema(project: Project, url: string) {
   return {
     '@context': 'https://schema.org',

@@ -10,21 +10,28 @@ interface Crumb {
 
 interface Props {
   items: Crumb[];
+  /** 'dark' when the trail sits on an ink band instead of the usual white page. */
+  variant?: 'light' | 'dark';
 }
 
-const { items } = Astro.props;
+const { items, variant = 'light' } = Astro.props;
 const schemaItems = items.map((item) => ({ name: item.name, url: absoluteUrl(item.path) }));
+
+const styles =
+  variant === 'dark'
+    ? { trail: 'text-neutral-300', separator: 'text-neutral-600', current: 'text-white', link: 'hover:text-white' }
+    : { trail: 'text-neutral-600', separator: 'text-neutral-300', current: 'text-ink', link: 'hover:text-ink' };
 ---
 
-<nav aria-label="Breadcrumb" class="text-sm text-neutral-600">
+<nav aria-label="Breadcrumb" class:list={['text-sm', styles.trail]}>
   <ol class="flex flex-wrap items-center gap-1">
     {items.map((item, index) => (
       <li class="flex items-center gap-1">
-        {index > 0 && <span aria-hidden="true" class="text-neutral-300">/</span>}
+        {index > 0 && <span aria-hidden="true" class={styles.separator}>/</span>}
         {index === items.length - 1 ? (
-          <span aria-current="page" class="text-ink">{item.name}</span>
+          <span aria-current="page" class={styles.current}>{item.name}</span>
         ) : (
-          <a href={item.path} class="transition hover:text-ink hover:underline">{item.name}</a>
+          <a href={item.path} class:list={['transition hover:underline', styles.link]}>{item.name}</a>
         )}
       </li>
     ))}

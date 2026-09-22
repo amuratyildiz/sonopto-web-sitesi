@@ -7,6 +7,7 @@ import { getDictionary } from '../content/i18n';
 import { alternateLocale, pathFor, type Locale } from '../lib/i18n/routes';
 import { faqSchema } from '../lib/seo/schema';
 import { solutionEntries, solutionKeys, type SolutionKey } from '../data/solutions';
+import { signageUseCaseKeys } from '../data/signage';
 
 interface Props {
   solutionKey: SolutionKey;
@@ -23,6 +24,10 @@ const path = pathFor(routeId, locale);
 // Sibling pages, linked at the foot of every solution page so the section is
 // crawlable from any entry point rather than only through the hub.
 const related = solutionKeys.filter((key) => key !== solutionKey);
+
+// Opt-in per sector rather than blanket: a sector added later should not
+// inherit a signage cross-link that may not apply to it.
+const showSignageLink = (signageUseCaseKeys as readonly SolutionKey[]).includes(solutionKey);
 ---
 
 <BaseLayout
@@ -74,6 +79,18 @@ const related = solutionKeys.filter((key) => key !== solutionKey);
       <h2 class="text-xl text-ink">{solution.approachTitle}</h2>
       <p class="mt-3 text-neutral-600">{solution.approachBody}</p>
     </section>
+
+    {showSignageLink && (
+      <aside data-reveal class="mt-10 border-l-2 border-accent bg-neutral-50 p-5">
+        <p class="text-neutral-700">{dict.signage.crossLinkBody}</p>
+        <a
+          href={pathFor('signage', locale)}
+          class="media-card-more mt-3 inline-block text-sm font-medium"
+        >
+          {dict.signage.crossLinkCta} &rarr;
+        </a>
+      </aside>
+    )}
 
     <a
       href={pathFor('contact', locale)}

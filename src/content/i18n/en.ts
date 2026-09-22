@@ -202,6 +202,189 @@ export const en: Dictionary = {
       },
     },
   },
+  signage: {
+    navTag: 'sonopto.signage',
+    navNote: 'Our digital signage platform',
+    pageTitle: 'sonopto.signage — Digital Signage Software',
+    metaDescription:
+      'sonopto.signage: cloud-based digital signage content and device management. Design content, schedule it and push it to every screen — from the team that installs the screen.',
+    heroKicker: 'PRODUCT',
+    heroHeadline: 'Run Every Screen From One Panel',
+    heroIntro:
+      'sonopto.signage is cloud-based digital signage software that lets you design content, schedule it and send it to any screen. From the same team that mounts the panel, runs the cable and turns up when something fails.',
+    platformCta: 'Sign In to the Platform',
+    platformCtaNote: 'Already using sonopto.signage?',
+    whatTitle: 'What is sonopto.signage?',
+    whatBody:
+      'It is the management layer that decides what appears on a screen and when. From a panel you open in your browser, you upload content, build playlists and plan which screen shows what at which hour. The same panel serves a single screen and hundreds of screens spread across cities. The infrastructure runs on Google Cloud; support comes directly from us.',
+    featuresTitle: 'Key Features',
+    features: {
+      offline: {
+        title: 'Offline Operation',
+        body: 'Media files download to the screen’s local storage. When the connection drops the screen does not go dark — playback carries on.',
+      },
+      grouping: {
+        title: 'Screen Grouping',
+        body: 'Screens that need to share the same content and settings are grouped. One change reaches hundreds of screens in a single action.',
+      },
+      power: {
+        title: 'Power Management',
+        body: 'Screens switch on and off automatically at set times. A screen running outside business hours costs both electricity and panel life.',
+      },
+      geo: {
+        title: 'Geolocation',
+        body: 'Content changes automatically based on where the device is. One playlist shows each branch its own content.',
+      },
+      monitoring: {
+        title: 'Remote Monitoring and Control',
+        body: 'See which screens are online, what they are playing and when they last updated. You notice the fault before your customer does.',
+      },
+      scheduling: {
+        title: 'Scheduling and Layers',
+        body: 'Build different content streams for different parts of the day, and manage several zones on one screen through layout layers.',
+      },
+    },
+    featuresFootnote: 'Features may vary by player type; we confirm the details with you before installation.',
+    integrationsTitle: 'Integrations',
+    integrationsIntro:
+      'Feed your screens from the tools your team already uses, instead of building a separate workflow just to update a display.',
+    integrations: {
+      design: {
+        title: 'Canva',
+        body: 'Designs you build in Canva flow straight to your screens. With hundreds of thousands of ready-made templates and drag-and-drop layout, you do not need a separate design team.',
+      },
+      drive: {
+        title: 'Google Drive',
+        body: 'Connect a Drive folder and whatever lands in it appears on screen. Your team can update content without ever opening the panel.',
+      },
+      sheets: {
+        title: 'Google Sheets',
+        body: 'Frequently changing data — price lists, schedules, announcements — is driven from a spreadsheet. Update the sheet and the screen follows.',
+      },
+      doorSign: {
+        title: 'Door Sign',
+        body: 'Room displays connected to Microsoft and Google Calendar show current occupancy and the next meeting, ending the scheduling argument at the door.',
+      },
+    },
+    devicesTitle: 'Supported Devices',
+    devicesIntro:
+      'sonopto.signage runs on a commercial display’s own operating system or through an external player. Which route suits the screens you have is something we establish on site during the survey.',
+    devicesNote:
+      'The scores describe how mature each platform’s integration with sonopto.signage is; they are not a hardware benchmark. If you do not see your device here, ask us — we test compatibility before installation.',
+    deviceScoreLabel: 'Platform Integration',
+    devicePerformanceLabel: 'Playback Performance',
+    deviceAutoUpdateLabel: 'Automatic updates',
+    deviceRemoteRebootLabel: 'Remote reboot',
+    devicePowerLabel: 'Power management',
+    deviceUnrated: 'Depends on the hardware you choose',
+    devices: {
+      android:
+        'The software runs as a native Android app. Android 5 and above is supported, 7 and later recommended. Performance and remote-control capability depend on the box you choose.',
+      philips:
+        'Commercial displays with Android built in. Anti-glare panels, built for continuous operation, and the hardware is fully manageable remotely.',
+      bravia:
+        'Sony BRAVIA professional series (BZ, BU, EZ, BA). The software runs on the display itself with no external player — suited to shop windows and lobbies that need high brightness.',
+      fireTv:
+        'The budget entry point. Fine for short-term, non-critical installations; because OS updates can interrupt playback and there is no power management, choose the Signage Stick for 24/7 duty.',
+      signageStick:
+        'A plug-and-play player purpose-built for digital signage. Scales from a single screen to multi-site estates and is designed for continuous operation.',
+      tcl: 'Commercial 4K Android displays from 43" to 98", up to 400 nits. Rated for 24/7 operation across retail, hospitality and transport.',
+      viewsonic:
+        'Commercial 4K Android displays built for continuous operation, with WPA3 network security and flexible connectivity.',
+      raspberryPi:
+        'A low-cost, dependable player based on the Raspberry Pi 5 — the most economical way to turn screens you already own into signage displays.',
+      brightsign:
+        'A dedicated player with its own operating system and very high reliability. Every BrightSign model is supported; the choice where downtime is unacceptable.',
+      samsung:
+        'Tizen-based commercial displays; every model on SSSP 6.0 / Tizen 4.0 or later is supported. Anti-glare panels and 24-hour operation.',
+      vestel:
+        'A commercial display range for retail, restaurants, control rooms and transport hubs, with local supply and service in Türkiye.',
+      novastar:
+        'For LED walls and large-format displays. Taurus and TU series players connect through a web-page widget in ViPlex Express, which is why power management and remote reboot are not available by this route.',
+      amino:
+        'An enterprise-grade set-top box (H200 / H200W, Android 10). Ships with the software preloaded, and its tamper-resistant hardware suits distributed estates.',
+      lg: 'webOS-based commercial displays. The software runs as a native webOS app, so no external hardware is needed.',
+      chromeos:
+        'A secure, centrally managed platform for kiosks and signage, with a wide device range and a strong update policy.',
+      googleTv:
+        'Built into televisions from Sony, TCL, Hisense and Philips. The app installs from the Play Store with no extra hardware; power management is not available on this platform.',
+      chromecast:
+        'An inexpensive plug-in player that turns any television into a signage screen, in 4K and HD. Hides behind the display; suited to non-critical installations.',
+    },
+    differenceTitle: 'What Sets Us Apart: We Install the Screen Too',
+    differenceBody:
+      'Plenty of companies sell digital signage software. Here is where we differ: the team that sells the software is the team that mounts the screen. Software alone is not a solution — getting the panel on the right wall, with the right bracket and the right data and power infrastructure, is half the job.',
+    differencePoints: [
+      {
+        title: 'One contact, one contract',
+        body: 'Panel, mounting system, player, data and power infrastructure, installation and platform licence in a single scope. When something goes wrong, nobody argues about whether it is hardware or software.',
+      },
+      {
+        title: 'The team that installs it maintains it',
+        body: 'When a screen goes dark, the people who answer the phone are the people who put it up. Sending someone who already knows the system is the single biggest factor in shortening downtime.',
+      },
+      {
+        title: 'Survey before purchase',
+        body: 'We will not tell you how many screens, what size, what brightness or which player you need without seeing the site. Not recommending hardware you do not need is part of how we work.',
+      },
+    ],
+    useCasesTitle: 'Where It Is Used',
+    useCasesIntro:
+      'Signage needs differ by sector: welcome and wayfinding in a hotel, announcements and ceremony information in a school, queue and information displays in a public building. Each sector page sets out the specifics.',
+    processTitle: 'How We Start',
+    processSteps: [
+      {
+        title: '1. Survey',
+        body: 'We visit the site and establish screen count, sizes and mounting points. If you already have screens, this is where we confirm whether they can be connected to the platform.',
+      },
+      {
+        title: '2. Screens and Installation',
+        body: 'Panel supply, bracket and steelwork fabrication, data and power infrastructure and the installation itself are completed at this stage — the scope of our installation and assembly service.',
+      },
+      {
+        title: '3. Account Setup and Training',
+        body: 'Your platform account is opened, screens are registered and the first playlists are built together. We train your team so they can run the content themselves.',
+      },
+      {
+        title: '4. Maintenance and Support',
+        body: 'Once commissioned, the system comes under scheduled maintenance. Platform support is provided by email and phone during business hours.',
+      },
+    ],
+    faqTitle: 'Frequently Asked Questions',
+    faq: [
+      {
+        question: 'Can we use our existing screens?',
+        answer:
+          'In most cases yes. Depending on the screen, we either connect a compatible player or use the display’s own operating system. We determine which route fits by looking at your screens during the survey; we will not ask you to replace a screen that still works.',
+      },
+      {
+        question: 'Do the screens go dark if the internet drops?',
+        answer:
+          'No. Media files are downloaded to the screen’s local storage, so playback continues offline. When the connection returns the device re-syncs with the panel and picks up any pending updates.',
+      },
+      {
+        question: 'Can we manage the content ourselves?',
+        answer:
+          'Yes — that is the point. The panel runs in a browser and day-to-day updates need no technical background. We train your team after installation, and if you prefer to work through Canva, Google Drive or Google Sheets you can update content without opening the panel at all.',
+      },
+      {
+        question: 'How does pricing work?',
+        answer:
+          'Licensing is calculated per screen, per year, and the unit price falls as the screen count rises. Because the total depends on screen count, hardware needs and installation scope, we do not publish a single list price. Tell us how many screens and where, and we will scope it and prepare a quote.',
+      },
+      {
+        question: 'How many screens does it take to be worthwhile?',
+        answer:
+          'It works for a single screen, but the platform earns its keep when you are running several from one place. The more screens you have and the further apart they are, the clearer the gain from managing them remotely.',
+      },
+    ],
+    ctaTitle: 'Let’s Talk About Your Screens',
+    ctaBody:
+      'Tell us how many screens you have and where you want to use them. We will scope it with you and prepare the right setup and quote.',
+    crossLinkBody:
+      'The information and wayfinding screens in this environment can be run from a single panel with sonopto.signage, our own digital signage platform.',
+    crossLinkCta: 'Explore sonopto.signage',
+  },
   about: {
     pageTitle: 'About Us',
     intro: 'Your Solution Partner in the Field.',

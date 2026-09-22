@@ -40,3 +40,8 @@ snpt/
 # Licensed source font. Only the 1KB logo-glyph subset under public/fonts/
 # is committed and served; the full face stays local.
 /Visby Heavy.ttf
+
+# Supplied marketing material for sonopto.signage (raw vendor logos, JPG/PNG
+# duplicates of files already processed). Everything the site actually serves
+# is committed under public/signage/; the source folder stays local.
+sonopto_signage_medyalar/

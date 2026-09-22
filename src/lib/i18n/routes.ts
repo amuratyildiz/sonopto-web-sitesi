@@ -31,6 +31,9 @@ export const routes = {
     tr: 'cozumler/kamu-kurumlari-av-sistemleri',
     en: 'solutions/public-sector-av-systems',
   },
+  /* The segment is the product name, so it is identical in both languages;
+     only the /en/ prefix differs. */
+  signage: { tr: 'signage', en: 'signage' },
   about: { tr: 'kurumsal/hakkimizda', en: 'about' },
   visionMission: { tr: 'vizyon-misyon', en: 'vision-and-mission' },
   references: { tr: 'referanslar', en: 'references' },

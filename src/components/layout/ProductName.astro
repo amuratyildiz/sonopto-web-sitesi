@@ -1,0 +1,21 @@
+---
+import { SIGNAGE_NAME } from '../../data/signage';
+
+interface Props {
+  /**
+   * Light the period as an indicator lamp — accent green, flickering like the
+   * logo's dot. Opt-in per surface, not a default: #39ff14 is 15.5:1 on ink but
+   * 1.4:1 on white, where the dot would vanish and the name would read
+   * "sonoptosignage". The flicker rides along with it, since an unlit dot
+   * blinking in body-text grey reads as a rendering fault rather than a lamp.
+   */
+  accent?: boolean;
+  class?: string;
+}
+
+const { accent = false, class: className } = Astro.props;
+---
+
+<span class:list={['product-lockup', className]}
+  >{SIGNAGE_NAME.stem}<span class:list={[accent && 'text-accent led-flicker']}>{SIGNAGE_NAME.dot}</span>{SIGNAGE_NAME.suffix}</span
+>

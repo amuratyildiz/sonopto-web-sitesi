@@ -1,7 +1,9 @@
 ---
 import { pathFor, type Locale } from '../../lib/i18n/routes';
 import { getDictionary } from '../../content/i18n';
+import { solutionEntries, solutionKeys } from '../../data/solutions';
 import LanguageSwitcher from './LanguageSwitcher.astro';
+import ProductName from './ProductName.astro';
 
 interface Props {
   locale: Locale;
@@ -13,16 +15,27 @@ interface Props {
 const { locale, alternatePath, transparent = false } = Astro.props;
 const dict = getDictionary(locale);
 
+const solutionsPath = pathFor('solutions', locale);
+const signagePath = pathFor('signage', locale);
+
+// The top-level bar was already at its width limit with eight items, which is
+// why Solutions collapses into a disclosure rather than the product taking a
+// ninth slot.
 const navItems = [
   { label: dict.nav.home, path: pathFor('home', locale) },
   { label: dict.nav.services, path: pathFor('services', locale) },
-  { label: dict.nav.solutions, path: pathFor('solutions', locale) },
+  { label: dict.nav.solutions, path: solutionsPath, dropdown: true },
   { label: dict.nav.about, path: pathFor('about', locale) },
   { label: dict.nav.visionMission, path: pathFor('visionMission', locale) },
   { label: dict.nav.references, path: pathFor('references', locale) },
   { label: dict.nav.faq, path: pathFor('faq', locale) },
   { label: dict.nav.contact, path: pathFor('contact', locale) },
 ];
+
+const solutionLinks = solutionKeys.map((key) => ({
+  label: dict.solutions.items[key].title,
+  path: pathFor(solutionEntries[key].routeId, locale),
+}));
 ---
 
 <header
@@ -41,7 +54,39 @@ const navItems = [
       <ul class="flex items-center gap-6 text-sm font-medium">
         {navItems.map((item) => (
           <li>
-            <a href={item.path} class="nav-underline text-neutral-100 transition hover:text-white">{item.label}</a>
+            {item.dropdown ? (
+              <details class="nav-disclosure">
+                {/* The colour utilities are copied verbatim from the sibling
+                    links so the summary cannot drift from them. */}
+                <summary class="nav-underline text-neutral-100 transition hover:text-white">
+                  {item.label}
+                  <span class="nav-caret" aria-hidden="true"></span>
+                </summary>
+                <nav aria-label={item.label} class="nav-panel">
+                  <ul class="flex flex-col">
+                    {/* The trigger is no longer a link, so the hub needs its own
+                        row or it drops out of the top nav entirely. */}
+                    <li>
+                      <a href={solutionsPath} class="nav-panel-link">{dict.solutions.pageTitle}</a>
+                    </li>
+                    {solutionLinks.map((solution) => (
+                      <li>
+                        <a href={solution.path} class="nav-panel-link">{solution.label}</a>
+                      </li>
+                    ))}
+                    <li aria-hidden="true" class="my-1 border-t border-neutral-700"></li>
+                    <li>
+                      <a href={signagePath} class="nav-panel-link">
+                        <ProductName accent />
+                        <span class="mt-0.5 block text-xs text-neutral-400">{dict.signage.navNote}</span>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </details>
+            ) : (
+              <a href={item.path} class="nav-underline text-neutral-100 transition hover:text-white">{item.label}</a>
+            )}
           </li>
         ))}
       </ul>
@@ -65,9 +110,20 @@ const navItems = [
         <nav aria-label="Main mobile" class="absolute right-0 mt-2 w-56 border border-neutral-100 bg-white p-2 text-ink shadow-lg">
           <ul class="flex flex-col">
             {navItems.map((item) => (
-              <li>
-                <a href={item.path} class="block px-3 py-2 text-sm transition hover:bg-neutral-50">{item.label}</a>
-              </li>
+              <>
+                <li>
+                  <a href={item.path} class="block px-3 py-2 text-sm transition hover:bg-neutral-50">{item.label}</a>
+                </li>
+                {/* The product sits under Solutions as an indented row. No accent
+                    on the dot here — this panel is white. */}
+                {item.dropdown && (
+                  <li>
+                    <a href={signagePath} class="block py-2 pl-7 pr-3 text-sm transition hover:bg-neutral-50">
+                      <ProductName />
+                    </a>
+                  </li>
+                )}
+              </>
             ))}
             <li class="mt-1 border-t border-neutral-100 pt-2 sm:hidden">
               <LanguageSwitcher locale={locale} alternatePath={alternatePath} />

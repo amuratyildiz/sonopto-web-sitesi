@@ -1,0 +1,238 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/seo/Breadcrumbs.astro';
+import JsonLd from '../components/seo/JsonLd.astro';
+import FaqAccordion from '../components/sections/FaqAccordion.astro';
+import SolutionCard from '../components/sections/SolutionCard.astro';
+import SignageIcon from '../components/sections/SignageIcon.astro';
+import SignageDeviceList from '../components/sections/SignageDeviceList.astro';
+import ProductName from '../components/layout/ProductName.astro';
+import { getDictionary } from '../content/i18n';
+import { alternateLocale, pathFor, type Locale, type RouteId } from '../lib/i18n/routes';
+import { faqSchema, signageServiceSchema } from '../lib/seo/schema';
+import { solutionEntries } from '../data/solutions';
+import { serviceKeys } from '../data/services';
+import {
+  signageUseCaseKeys,
+  signageFeatureKeys,
+  signageIntegrationKeys,
+  SIGNAGE_PLATFORM_URL,
+} from '../data/signage';
+import { absoluteUrl } from '../lib/seo/meta';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const dict = getDictionary(locale);
+const signage = dict.signage;
+
+const path = pathFor('signage', locale);
+
+// Each step of the engagement maps onto the service that actually delivers it,
+// so the page feeds the service pages rather than dead-ending.
+const processRoutes: RouteId[] = [
+  'servicesConsulting',
+  'servicesInstallation',
+  'servicesSupply',
+  'servicesMaintenance',
+];
+---
+
+<BaseLayout
+  title={signage.pageTitle}
+  description={signage.metaDescription}
+  path={path}
+  locale={locale}
+  alternatePath={pathFor('signage', alternateLocale(locale))}
+>
+  <section class="bg-ink text-white">
+    <div class="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
+      <Breadcrumbs
+        variant="dark"
+        items={[
+          { name: dict.nav.home, path: pathFor('home', locale) },
+          { name: dict.nav.solutions, path: pathFor('solutions', locale) },
+          { name: signage.navTag, path },
+        ]}
+      />
+
+      <p class="mt-6 font-mono text-xs uppercase tracking-[0.2em] text-accent">{signage.heroKicker}</p>
+      <p class="mt-3 text-2xl sm:text-3xl">
+        <ProductName accent />
+      </p>
+      <h1 class="mt-4 text-3xl font-bold sm:text-4xl">{signage.heroHeadline}</h1>
+      <p class="mt-5 max-w-2xl text-lg text-neutral-300">{signage.heroIntro}</p>
+
+      {/* One call to action, and it is the enquiry. Signing in belongs to people
+          who are already customers, so it moved to the foot of the page. */}
+      <div class="mt-8">
+        <a
+          href={pathFor('contact', locale)}
+          class="btn-sweep inline-block bg-accent px-6 py-3 text-sm font-semibold text-on-accent transition hover:bg-accent-hover"
+        >
+          {dict.common.requestSurvey}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {/* Every section box is max-w-6xl so the page keeps one gutter; prose is
+      narrowed inside it instead, which keeps the left edge aligned rather than
+      centring a series of boxes at different widths. */}
+  <section class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+    <div data-reveal class="max-w-3xl">
+      <h2 class="text-2xl font-bold text-ink">{signage.whatTitle}</h2>
+      <p class="mt-4 text-lg text-neutral-700">{signage.whatBody}</p>
+    </div>
+  </section>
+
+  <section class="border-y border-neutral-100 bg-neutral-50">
+    <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+      <h2 data-reveal class="text-2xl font-bold text-ink sm:text-3xl">{signage.featuresTitle}</h2>
+      <div data-reveal-group class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {signageFeatureKeys.map((key) => (
+          <div data-reveal class="sig-card p-6">
+            <SignageIcon name={key} />
+            <h3 class="mt-4 text-base text-ink">{signage.features[key].title}</h3>
+            <p class="mt-2 text-sm text-neutral-600">{signage.features[key].body}</p>
+          </div>
+        ))}
+      </div>
+      <p data-reveal class="mt-6 text-sm text-neutral-500">{signage.featuresFootnote}</p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+    <div data-reveal>
+      <h2 class="text-2xl font-bold text-ink sm:text-3xl">{signage.integrationsTitle}</h2>
+      <p class="mt-3 max-w-2xl text-neutral-600">{signage.integrationsIntro}</p>
+    </div>
+    <div data-reveal-group class="mt-10 grid gap-6 sm:grid-cols-2">
+      {signageIntegrationKeys.map((key) => (
+        <div data-reveal class="flex gap-5 border border-neutral-100 p-6">
+          <SignageIcon name={key} />
+          <div>
+            <h3 class="text-base text-ink">{signage.integrations[key].title}</h3>
+            <p class="mt-2 text-sm text-neutral-600">{signage.integrations[key].body}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="border-y border-neutral-100 bg-neutral-50">
+    <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+      <div data-reveal>
+        <h2 class="text-2xl font-bold text-ink sm:text-3xl">{signage.devicesTitle}</h2>
+        <p class="mt-3 max-w-2xl text-neutral-600">{signage.devicesIntro}</p>
+      </div>
+      <SignageDeviceList locale={locale} />
+      <p data-reveal class="mt-8 max-w-3xl text-sm text-neutral-500">{signage.devicesNote}</p>
+    </div>
+  </section>
+
+  <section class="bg-ink text-white">
+    <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+      <div data-reveal class="max-w-2xl">
+        <h2 class="text-2xl font-bold sm:text-3xl">{signage.differenceTitle}</h2>
+        <p class="mt-4 text-neutral-300">{signage.differenceBody}</p>
+      </div>
+      <div data-reveal-group class="mt-10 grid gap-6 sm:grid-cols-3">
+        {signage.differencePoints.map((point) => (
+          <div data-reveal class="border border-neutral-800 p-6">
+            <h3 class="text-base text-white">{point.title}</h3>
+            <p class="mt-2 text-sm text-neutral-300">{point.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+    <div data-reveal>
+      <h2 class="text-2xl font-bold text-ink sm:text-3xl">{signage.useCasesTitle}</h2>
+      <p class="mt-3 max-w-2xl text-neutral-600">{signage.useCasesIntro}</p>
+    </div>
+    <div data-reveal-group class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {signageUseCaseKeys.map((key) => (
+        <SolutionCard
+          title={dict.solutions.items[key].title}
+          summary={dict.solutions.items[key].summary}
+          href={pathFor(solutionEntries[key].routeId, locale)}
+          image={solutionEntries[key].image}
+          imageAlt={dict.solutions.items[key].imageAlt}
+          readMoreLabel={dict.common.readMore}
+        />
+      ))}
+    </div>
+  </section>
+
+  <section class="border-y border-neutral-100 bg-neutral-50">
+    <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+      <h2 data-reveal class="text-2xl font-bold text-ink sm:text-3xl">{signage.processTitle}</h2>
+      <ol data-reveal-group class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {signage.processSteps.map((step, index) => (
+          <li data-reveal class="border-t-2 border-ink bg-white p-6">
+            <h3 class="text-base text-ink">{step.title}</h3>
+            <p class="mt-2 text-sm text-neutral-600">{step.body}</p>
+            <a
+              href={pathFor(processRoutes[index], locale)}
+              class="media-card-more mt-4 inline-block text-sm font-medium"
+            >
+              {dict.common.readMore} &rarr;
+            </a>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+    <h2 data-reveal class="text-2xl font-bold text-ink sm:text-3xl">{signage.faqTitle}</h2>
+    <div data-reveal class="mt-8 max-w-3xl">
+      <FaqAccordion items={signage.faq} />
+    </div>
+  </section>
+
+  <section class="border-t border-neutral-100 bg-neutral-50">
+    <div data-reveal class="mx-auto max-w-6xl px-4 py-16 text-center sm:px-6">
+      <h2 class="text-2xl font-bold text-ink sm:text-3xl">{signage.ctaTitle}</h2>
+      <p class="mx-auto mt-3 max-w-xl text-neutral-600">{signage.ctaBody}</p>
+      <a
+        href={pathFor('contact', locale)}
+        class="btn-sweep mt-6 inline-block bg-ink px-6 py-3 text-sm font-semibold text-white transition hover:bg-neutral-800"
+      >
+        {dict.common.requestSurvey}
+      </a>
+
+      {/* The only route to the platform on this page: small, muted, last. It is
+          signposting for existing customers, not a conversion path. */}
+      <p class="mt-10 border-t border-neutral-200 pt-6 text-sm text-neutral-500">
+        {signage.platformCtaNote}{' '}
+        <a
+          href={SIGNAGE_PLATFORM_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="underline underline-offset-2 transition hover:text-ink"
+        >
+          {signage.platformCta}
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <JsonLd
+    data={[
+      signageServiceSchema({
+        name: signage.navTag,
+        description: signage.metaDescription,
+        url: absoluteUrl(path),
+        platformUrl: SIGNAGE_PLATFORM_URL,
+        offerings: serviceKeys.map((key) => dict.services.items[key].title),
+      }),
+      faqSchema(signage.faq),
+    ]}
+  />
+</BaseLayout>

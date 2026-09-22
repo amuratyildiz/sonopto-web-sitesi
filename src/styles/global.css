@@ -268,6 +268,259 @@
     border-color: var(--color-neutral-100);
   }
 
+  /*
+   * Nav dropdown. <details> is this site's disclosure idiom (mobile menu,
+   * WhatsApp widget): nothing for the CSP to block, and the browser supplies
+   * the keyboard and screen-reader behaviour — including the open/closed state,
+   * which is why no aria-expanded is hand-written on the summary.
+   *
+   * The summary carries the same colour utilities as its sibling <a> links, so
+   * nothing here declares `color` on it: utilities sit in a later cascade layer
+   * and would win anyway.
+   */
+  .nav-disclosure {
+    position: relative;
+  }
+
+  .nav-disclosure > summary {
+    /* flex, not inline-flex: an inline summary picks up baseline leading and
+       would drop .nav-underline::after out of line with its seven siblings. */
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .nav-disclosure > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  /* Deliberately not Tailwind's `transition` utility, which would pin this at a
+     fixed 150ms and escape the reduced-motion block below. */
+  .nav-caret {
+    width: 0.45rem;
+    height: 0.45rem;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    rotate: 45deg;
+    translate: 0 -0.15rem;
+    transition: rotate var(--motion-base) ease-out;
+  }
+
+  .nav-disclosure[open] .nav-caret {
+    rotate: 225deg;
+    translate: 0 0.05rem;
+  }
+
+  /*
+   * Absolute, so opening the panel cannot grow the <li> and shunt the wordmark
+   * and CTA down. No z-index: the header is already a stacking context, and
+   * nothing in the chain clips overflow.
+   *
+   * The panel declares its own surface. On the homepage the header is
+   * transparent over a photograph, so an inherited background, a translucent
+   * tint or backdrop-filter would all be unreadable.
+   */
+  .nav-panel {
+    position: absolute;
+    /* Hangs off the header's bottom edge: the nav row is centred against the
+       36px wordmark, leaving 0.5rem below the summary, plus the header's 1rem
+       padding. Otherwise the panel would start mid-band and, on the homepage's
+       transparent header, show a strip of hero photo above itself. */
+    top: calc(100% + 1.5rem);
+    left: 0;
+    width: 19rem;
+    padding: 0.5rem;
+    background-color: var(--color-ink);
+    border: 1px solid var(--color-neutral-700);
+    box-shadow: 0 16px 40px rgb(0 0 0 / 0.45);
+  }
+
+  .nav-panel-link {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    color: var(--color-neutral-200);
+    transition:
+      background-color var(--motion-base) ease-out,
+      color var(--motion-base) ease-out;
+  }
+
+  .nav-panel-link:hover,
+  .nav-panel-link:focus-visible {
+    background-color: var(--color-neutral-800);
+    color: var(--color-surface);
+  }
+
+  /*
+   * Signage feature and integration icons. Same register as .svc-icon, but ink
+   * on white cards rather than neutral on ink, and with no hover state: those
+   * cards are not links. Sized in rem, not by the SVG width/height attributes,
+   * so the icon tracks the viewport-linked root size instead of pinning itself
+   * to 48px on a 4K display.
+   */
+  .sig-icon {
+    display: block;
+    width: 2.5rem;
+    height: 2.5rem;
+    /* The integration cards lay the icon beside the text, where a flex item
+       would otherwise be allowed to squash it. */
+    flex-shrink: 0;
+    color: var(--color-ink);
+  }
+
+  /*
+   * The sonopto.signage lockup — the wordmark face, same as the logo.
+   * This is why the committed subset carries "sonoptaigeSONOPTAIGE." rather
+   * than just the logo's own glyphs: "signage" needs i, g, a and e, and a
+   * missing glyph would fall back to Alata silently, splitting the product
+   * name across two typefaces. Regenerating the subset without those letters
+   * will break this class, not just the logo.
+   */
+  .product-lockup {
+    font-family: var(--font-wordmark);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+
+  /*
+   * Device picker. A radio group styled as a logo grid: the browser supplies
+   * arrow-key navigation and the "one of many" announcement, and nothing here
+   * depends on script.
+   */
+  .device-radio {
+    /* Hidden but still focusable — display:none would drop it out of the tab
+       order and take the keyboard behaviour with it. */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .device-chip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.625rem 0.5rem;
+    cursor: pointer;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-neutral-100);
+    transition: border-color var(--motion-base) ease-out;
+  }
+
+  .device-chip:hover {
+    border-color: var(--color-neutral-300);
+  }
+
+  /*
+   * Monochrome at rest, colour on hover — the same move as .hero-photo. Greying
+   * the marks also stops seventeen competing brand palettes from shouting over
+   * the page's own 70/20/10 split.
+   *
+   * No @media (hover: none) escape hatch here, unlike .hero-photo. There the
+   * photo could never resolve on a touch device; here tapping selects the chip
+   * and the rule below brings it to colour, so the interaction is reachable.
+   */
+  .device-chip img {
+    filter: grayscale(1);
+    transition: filter var(--motion-base) ease-out;
+  }
+
+  .device-chip:hover img {
+    filter: grayscale(0);
+  }
+
+  /* The panel switch itself — one rule, no :has() needed, because each radio
+     sits immediately before the panel it controls. */
+  .device-panel {
+    display: none;
+  }
+
+  .device-radio:checked + .device-panel {
+    display: block;
+  }
+
+  /*
+   * Highlighting the chosen logo is the one thing that has to reach back across
+   * the grid, so it needs :has(). Guarded: where :has() is missing the panels
+   * still switch, only the outline is lost.
+   *
+   * NOTE: one selector per device. Adding a device to signageDevices means
+   * adding a line here — the compiler cannot catch this one.
+   */
+  @supports selector(:has(*)) {
+    .device-tabs:has(#device-android:checked) [for='device-android'],
+    .device-tabs:has(#device-philips:checked) [for='device-philips'],
+    .device-tabs:has(#device-bravia:checked) [for='device-bravia'],
+    .device-tabs:has(#device-fireTv:checked) [for='device-fireTv'],
+    .device-tabs:has(#device-signageStick:checked) [for='device-signageStick'],
+    .device-tabs:has(#device-tcl:checked) [for='device-tcl'],
+    .device-tabs:has(#device-viewsonic:checked) [for='device-viewsonic'],
+    .device-tabs:has(#device-raspberryPi:checked) [for='device-raspberryPi'],
+    .device-tabs:has(#device-brightsign:checked) [for='device-brightsign'],
+    .device-tabs:has(#device-samsung:checked) [for='device-samsung'],
+    .device-tabs:has(#device-vestel:checked) [for='device-vestel'],
+    .device-tabs:has(#device-novastar:checked) [for='device-novastar'],
+    .device-tabs:has(#device-amino:checked) [for='device-amino'],
+    .device-tabs:has(#device-lg:checked) [for='device-lg'],
+    .device-tabs:has(#device-chromeos:checked) [for='device-chromeos'],
+    .device-tabs:has(#device-googleTv:checked) [for='device-googleTv'],
+    .device-tabs:has(#device-chromecast:checked) [for='device-chromecast'] {
+      border-color: var(--color-ink);
+    }
+
+    /* The selected mark stays in colour, so the active platform reads at a
+       glance without relying on the border alone. */
+    .device-tabs:has(#device-android:checked) [for='device-android'] img,
+    .device-tabs:has(#device-philips:checked) [for='device-philips'] img,
+    .device-tabs:has(#device-bravia:checked) [for='device-bravia'] img,
+    .device-tabs:has(#device-fireTv:checked) [for='device-fireTv'] img,
+    .device-tabs:has(#device-signageStick:checked) [for='device-signageStick'] img,
+    .device-tabs:has(#device-tcl:checked) [for='device-tcl'] img,
+    .device-tabs:has(#device-viewsonic:checked) [for='device-viewsonic'] img,
+    .device-tabs:has(#device-raspberryPi:checked) [for='device-raspberryPi'] img,
+    .device-tabs:has(#device-brightsign:checked) [for='device-brightsign'] img,
+    .device-tabs:has(#device-samsung:checked) [for='device-samsung'] img,
+    .device-tabs:has(#device-vestel:checked) [for='device-vestel'] img,
+    .device-tabs:has(#device-novastar:checked) [for='device-novastar'] img,
+    .device-tabs:has(#device-amino:checked) [for='device-amino'] img,
+    .device-tabs:has(#device-lg:checked) [for='device-lg'] img,
+    .device-tabs:has(#device-chromeos:checked) [for='device-chromeos'] img,
+    .device-tabs:has(#device-googleTv:checked) [for='device-googleTv'] img,
+    .device-tabs:has(#device-chromecast:checked) [for='device-chromecast'] img {
+      filter: grayscale(0);
+    }
+
+    /* The radio is visually hidden, so its focus ring has to be drawn on the
+       chip instead or keyboard users get no indication at all. */
+    .device-tabs:has(#device-android:focus-visible) [for='device-android'],
+    .device-tabs:has(#device-philips:focus-visible) [for='device-philips'],
+    .device-tabs:has(#device-bravia:focus-visible) [for='device-bravia'],
+    .device-tabs:has(#device-fireTv:focus-visible) [for='device-fireTv'],
+    .device-tabs:has(#device-signageStick:focus-visible) [for='device-signageStick'],
+    .device-tabs:has(#device-tcl:focus-visible) [for='device-tcl'],
+    .device-tabs:has(#device-viewsonic:focus-visible) [for='device-viewsonic'],
+    .device-tabs:has(#device-raspberryPi:focus-visible) [for='device-raspberryPi'],
+    .device-tabs:has(#device-brightsign:focus-visible) [for='device-brightsign'],
+    .device-tabs:has(#device-samsung:focus-visible) [for='device-samsung'],
+    .device-tabs:has(#device-vestel:focus-visible) [for='device-vestel'],
+    .device-tabs:has(#device-novastar:focus-visible) [for='device-novastar'],
+    .device-tabs:has(#device-amino:focus-visible) [for='device-amino'],
+    .device-tabs:has(#device-lg:focus-visible) [for='device-lg'],
+    .device-tabs:has(#device-chromeos:focus-visible) [for='device-chromeos'],
+    .device-tabs:has(#device-googleTv:focus-visible) [for='device-googleTv'],
+    .device-tabs:has(#device-chromecast:focus-visible) [for='device-chromecast'] {
+      outline: 2px solid var(--color-ink);
+      outline-offset: 2px;
+    }
+  }
+
   /* Clips the full-bleed photo and gives it a stacking context to sit behind
      the headline in. */
   .hero-frame {
@@ -683,6 +936,139 @@
   .service-card:focus-visible .svc-cart {
     translate: 2px 0;
     transition-delay: calc(var(--motion-base) * 0.45);
+  }
+
+  /*
+   * Signage feature cards. Hand-authored for the same reason as .service-card:
+   * every property below is stateful, and utilities sit in a later cascade
+   * layer than `components`.
+   *
+   * Like .service-card, this must stay AFTER the [data-reveal] rules: both set
+   * the `transition` shorthand on the same element, the shorthand resets the
+   * whole list, so the reveal's opacity/transform pair is repeated here and
+   * source order decides it.
+   *
+   * White cards, so the icon stays ink on hover rather than turning accent the
+   * way the service icons do — #39ff14 is 1.4:1 on white. The motion carries
+   * the hover feedback on its own here.
+   */
+  .sig-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-neutral-100);
+    transition:
+      translate var(--motion-base) ease-out,
+      border-color var(--motion-base) ease-out,
+      box-shadow var(--motion-base) ease-out,
+      opacity var(--motion-slow) ease-out,
+      transform var(--motion-slow) ease-out;
+  }
+
+  /* On `translate`, not `transform`: [data-reveal].reveal-pending owns
+     `transform` on this same element and the two compose. */
+  .sig-card:hover {
+    translate: 0 -2px;
+    border-color: var(--color-neutral-300);
+    box-shadow: 0 10px 24px -14px rgb(0 0 0 / 0.45);
+  }
+
+  /*
+   * Per-feature icon motion. Stagger delays live exclusively in the hover
+   * rules, so the return is immediate and unstaggered, and every delay derives
+   * from --motion-base via calc() so the one prefers-reduced-motion block
+   * zeroes them too. All of it rides on translate/opacity/rotate — individual
+   * properties, never the `transform` shorthand.
+   */
+
+  /* Çevrimdışı — the media descends into local storage. ease-in because a
+     falling object accelerates. */
+  .sig-drop {
+    translate: 0 -3px;
+    transition: translate var(--motion-base) ease-in;
+  }
+
+  .sig-card:hover .sig-drop {
+    translate: 0 0;
+  }
+
+  /* Gruplama — three screens settle onto the shared bus, left to right. */
+  .sig-screen {
+    translate: 0 -3px;
+    transition: translate var(--motion-base) ease-out;
+  }
+
+  .sig-card:hover .sig-screen {
+    translate: 0 0;
+  }
+
+  .sig-card:hover .sig-screen-2 {
+    transition-delay: calc(var(--motion-base) * 0.12);
+  }
+
+  .sig-card:hover .sig-screen-3 {
+    transition-delay: calc(var(--motion-base) * 0.24);
+  }
+
+  /* Güç — the bar rises into the gap like a switch being thrown. */
+  .sig-power-bar {
+    translate: 0 3px;
+    transition: translate var(--motion-base) ease-out;
+  }
+
+  .sig-card:hover .sig-power-bar {
+    translate: 0 0;
+  }
+
+  /* Konum — the pin drops onto the map. */
+  .sig-pin {
+    translate: 0 -4px;
+    transition: translate var(--motion-base) ease-in;
+  }
+
+  .sig-card:hover .sig-pin {
+    translate: 0 0;
+  }
+
+  /* İzleme — the trace goes from flat to reporting. */
+  .sig-flat,
+  .sig-pulse {
+    transition: opacity var(--motion-base) ease-out;
+  }
+
+  .sig-pulse {
+    opacity: 0;
+  }
+
+  .sig-card:hover .sig-flat {
+    opacity: 0;
+  }
+
+  .sig-card:hover .sig-pulse {
+    opacity: 1;
+  }
+
+  /*
+   * Zamanlama — the minute hand sweeps a half turn. Same transform-origin
+   * caveat as .svc-screw: an SVG element's initial transform-box is `view-box`
+   * and its transform-origin is 50% 50% of that box, so an un-anchored rotate
+   * swings the hand around the canvas centre. Here the clock centre and the
+   * canvas centre both happen to be (24,24), but it is pinned explicitly so a
+   * later change to the viewBox or the dial cannot break it silently.
+   */
+  .sig-hand-hour,
+  .sig-hand-min {
+    transform-box: view-box;
+    transform-origin: 24px 24px;
+    rotate: 0deg;
+    transition: rotate var(--motion-base) ease-in-out;
+  }
+
+  .sig-card:hover .sig-hand-min {
+    rotate: 180deg;
+  }
+
+  .sig-card:hover .sig-hand-hour {
+    rotate: 30deg;
+    transition-delay: calc(var(--motion-base) * 0.1);
   }
 
   /* An infinite animation still counts as running at 0ms, so stop it outright

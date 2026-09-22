@@ -27,6 +27,103 @@ export interface ServiceItem {
   imageAlt: string;
 }
 
+/** A titled paragraph — used for both the feature and the integration grids. */
+export interface SignageBlock {
+  title: string;
+  body: string;
+}
+
+/**
+ * The product page. Deliberately not modelled on SolutionItem: that shape opens
+ * from a sector's technical risk and closes on a survey call, which would force
+ * us to invent a "problem" the product does not have.
+ *
+ * No field here is optional. Anything we cannot yet source honestly — the
+ * supported-device list, screenshots, public pricing — is absent from the
+ * interface entirely, so the day the material arrives both dictionaries fail to
+ * compile until they are filled. An optional field would instead invite
+ * placeholder copy and ship it.
+ */
+export interface SignageContent {
+  navTag: string;
+  navNote: string;
+  pageTitle: string;
+  metaDescription: string;
+  heroKicker: string;
+  heroHeadline: string;
+  heroIntro: string;
+  platformCta: string;
+  platformCtaNote: string;
+  whatTitle: string;
+  whatBody: string;
+  featuresTitle: string;
+  /* Keyed rather than a list: the key also selects the icon, so a block and its
+     icon cannot drift apart the way parallel arrays would. */
+  features: {
+    offline: SignageBlock;
+    grouping: SignageBlock;
+    power: SignageBlock;
+    geo: SignageBlock;
+    monitoring: SignageBlock;
+    scheduling: SignageBlock;
+  };
+  /** Carried over from the product sheet: capabilities vary by player type. */
+  featuresFootnote: string;
+  integrationsTitle: string;
+  integrationsIntro: string;
+  integrations: {
+    design: SignageBlock;
+    drive: SignageBlock;
+    sheets: SignageBlock;
+    doorSign: SignageBlock;
+  };
+  devicesTitle: string;
+  devicesIntro: string;
+  devicesNote: string;
+  /* Labelled as platform integration, not as our own hardware bench test —
+     the page must not imply we rated Samsung against LG ourselves. */
+  deviceScoreLabel: string;
+  devicePerformanceLabel: string;
+  deviceAutoUpdateLabel: string;
+  deviceRemoteRebootLabel: string;
+  devicePowerLabel: string;
+  /** Shown instead of the meters for a generic platform with no fixed hardware. */
+  deviceUnrated: string;
+  devices: {
+    android: string;
+    philips: string;
+    bravia: string;
+    fireTv: string;
+    signageStick: string;
+    tcl: string;
+    viewsonic: string;
+    raspberryPi: string;
+    brightsign: string;
+    samsung: string;
+    vestel: string;
+    novastar: string;
+    amino: string;
+    lg: string;
+    chromeos: string;
+    googleTv: string;
+    chromecast: string;
+  };
+  differenceTitle: string;
+  differenceBody: string;
+  differencePoints: SignageBlock[];
+  useCasesTitle: string;
+  useCasesIntro: string;
+  processTitle: string;
+  processSteps: SignageBlock[];
+  faqTitle: string;
+  faq: FaqEntry[];
+  ctaTitle: string;
+  ctaBody: string;
+  /** Sits at the foot of every sector solution page. */
+  crossLinkBody: string;
+  crossLinkCta: string;
+}
+
 export interface Dictionary {
   nav: {
     home: string;
@@ -101,6 +198,7 @@ export interface Dictionary {
       publicSector: SolutionItem;
     };
   };
+  signage: SignageContent;
   about: {
     pageTitle: string;
     intro: string;
@@ -356,6 +454,191 @@ export const tr: Dictionary = {
         imageAlt: 'Meclis salonunda delege üniteleri ve oylama ekranlarıyla donatılmış oturum salonu',
       },
     },
+  },
+  signage: {
+    navTag: 'sonopto.signage',
+    navNote: 'Dijital tabela platformumuz',
+    pageTitle: 'sonopto.signage — Dijital Tabela Yazılımı',
+    metaDescription:
+      'sonopto.signage: bulut tabanlı dijital tabela içerik ve cihaz yönetim platformu. İçeriği tasarlayın, zamanlayın, tüm ekranlarınıza gönderin — ekranı kuran ekipten.',
+    heroKicker: 'ÜRÜN',
+    heroHeadline: 'Ekranlarınızı Tek Panelden Yönetin',
+    heroIntro:
+      'sonopto.signage, içerik tasarlamanıza, zamanlamanıza ve herhangi bir ekrana göndermenize olanak tanıyan bulut tabanlı bir dijital tabela yazılımıdır. Ekranı asan, kabloyu çeken ve arızada gelen ekiple aynı çatı altında.',
+    platformCta: 'Platforma Giriş Yapın',
+    /* Sits at the foot of the page, not in the hero: signing in is for people
+       who are already customers, and it should not compete with the enquiry. */
+    platformCtaNote: 'Zaten sonopto.signage kullanıyor musunuz?',
+    whatTitle: 'sonopto.signage nedir?',
+    whatBody:
+      'Bir ekrana ne zaman ne görüneceğini belirleyen yönetim katmanıdır. Tarayıcıdan açtığınız panelden içeriğinizi yükler, çalma listelerini kurar, hangi ekranın hangi saatte ne göstereceğini planlarsınız. Tek bir ekran için de, farklı şehirlere dağılmış yüzlerce ekran için de aynı panel kullanılır. Altyapı Google Cloud üzerinde çalışır; destek Türkçe ve doğrudan bizden.',
+    featuresTitle: 'Öne Çıkan Özellikler',
+    features: {
+      offline: {
+        title: 'Çevrimdışı Çalışma',
+        body: 'Medya dosyaları ekranın yerel depolamasına iner. İnternet kesildiğinde ekran kararmaz, yayın kaldığı yerden devam eder.',
+      },
+      grouping: {
+        title: 'Ekran Gruplama',
+        body: 'Aynı içeriği ve ayarları paylaşması gereken ekranlar gruplanır. Bir değişikliği yüzlerce ekrana tek işlemle uygularsınız.',
+      },
+      power: {
+        title: 'Güç Yönetimi',
+        body: 'Ekranlar belirlenen tarih ve saatte otomatik açılıp kapanır. Mesai dışında boşuna çalışan ekran, hem elektrik hem panel ömrü demektir.',
+      },
+      geo: {
+        title: 'Coğrafi Konum',
+        body: 'İçerik, cihazın bulunduğu konuma göre otomatik değişir. Aynı çalma listesi her şubede o şubeye ait içeriği gösterir.',
+      },
+      monitoring: {
+        title: 'Uzaktan İzleme ve Kontrol',
+        body: 'Hangi ekranın çevrimiçi olduğunu, ne oynattığını ve en son ne zaman güncellendiğini panelden görürsünüz. Arızayı müşteri değil siz fark edersiniz.',
+      },
+      scheduling: {
+        title: 'Zamanlama ve Katmanlar',
+        body: 'Gün içindeki saat dilimlerine göre farklı içerik akışları kurulur; yerleşim katmanlarıyla aynı ekranda birden fazla bölge yönetilir.',
+      },
+    },
+    featuresFootnote: 'Özellikler oynatıcı tipine göre değişiklik gösterebilir; kurulum öncesi birlikte netleştiriyoruz.',
+    integrationsTitle: 'Entegrasyonlar',
+    integrationsIntro:
+      'İçeriğinizi zaten kullandığınız araçlardan besleyin; ekranı güncellemek için ayrı bir iş akışı kurmanıza gerek kalmasın.',
+    integrations: {
+      design: {
+        title: 'Canva',
+        body: 'Canva üzerinde hazırladığınız tasarımlar doğrudan ekranlarınıza akar. Yüz binlerce hazır şablon ve sürükle-bırak düzeniyle, tasarım için ayrı bir ekibe ihtiyaç duymazsınız.',
+      },
+      drive: {
+        title: 'Google Drive',
+        body: 'Medya dosyalarınızı Drive klasöründen bağlarsınız; klasöre eklenen dosya ekranda belirir. Ekibiniz panele hiç girmeden içerik güncelleyebilir.',
+      },
+      sheets: {
+        title: 'Google Sheets',
+        body: 'Fiyat listesi, program veya duyuru gibi sık değişen veriler bir tablodan beslenir. Tabloyu güncellediğinizde ekran kendiliğinden güncellenir.',
+      },
+      doorSign: {
+        title: 'Kapı Etiketi',
+        body: 'Microsoft ve Google Takvim ile bağlanan kapı ekranları, odanın o anki doluluğunu ve sıradaki toplantıyı gösterir. Salon kapısındaki çakışma tartışmasını bitirir.',
+      },
+    },
+    devicesTitle: 'Desteklenen Cihazlar',
+    devicesIntro:
+      'sonopto.signage, kurumsal ekranların kendi işletim sistemi üzerinde ya da harici bir oynatıcıyla çalışır. Elinizdeki ekranın hangi yola uygun olduğunu keşif sırasında yerinde belirliyoruz.',
+    devicesNote:
+      'Puanlar, platformun sonopto.signage ile entegrasyon olgunluğunu gösterir; donanım kıyaslaması değildir. Listede göremediğiniz bir cihaz için bize danışın, uyumluluğu kurulum öncesinde test ediyoruz.',
+    deviceScoreLabel: 'Platform Uyumu',
+    devicePerformanceLabel: 'Oynatma Performansı',
+    deviceAutoUpdateLabel: 'Otomatik güncelleme',
+    deviceRemoteRebootLabel: 'Uzaktan yeniden başlatma',
+    devicePowerLabel: 'Güç yönetimi',
+    deviceUnrated: 'Kullanılan donanıma göre değişir',
+    devices: {
+      android:
+        'Yazılım yerel bir Android uygulaması olarak çalışır. Android 5 ve üzeri desteklenir, 7 ve sonrası önerilir. Performans ve uzaktan kontrol yetenekleri seçtiğiniz kutunun donanımına bağlıdır.',
+      philips:
+        'Android’i dahili kurumsal ekranlar. Yansıma önleyici panel ve kesintisiz çalışmaya uygun yapı; donanımın tamamı uzaktan yönetilebilir.',
+      bravia:
+        'Sony BRAVIA profesyonel serisi (BZ, BU, EZ, BA). Yazılım doğrudan ekran üzerinde çalışır, harici oynatıcı gerekmez. Yüksek parlaklık isteyen vitrin ve lobi uygulamaları için.',
+      fireTv:
+        'Bütçe dostu giriş seviyesi. Kısa süreli ve kritik olmayan kurulumlarda iş görür; işletim sistemi güncellemeleri yayını kesebildiği ve güç yönetimi bulunmadığı için 7/24 senaryolarda Signage Stick tercih edilmeli.',
+      signageStick:
+        'Doğrudan dijital tabela için üretilmiş tak-çalıştır oynatıcı. Tek ekrandan çok şubeli kurulumlara kadar ölçeklenir ve kesintisiz çalışmaya uygundur.',
+      tcl: '43"–98" arası 4K kurumsal Android ekranlar, 400 nit’e kadar parlaklık. 7/24 çalışmaya uygun; perakende, ağırlama ve ulaşım noktaları için.',
+      viewsonic:
+        'Kesintisiz çalışma için tasarlanmış 4K Android kurumsal ekranlar. WPA3 ağ güvenliği ve esnek bağlantı seçenekleri sunar.',
+      raspberryPi:
+        'Raspberry Pi 5 ile düşük maliyetli ve güvenilir oynatıcı. Elinizdeki ekranları tabela ekranına çevirmenin en ekonomik yolu.',
+      brightsign:
+        'Kendi işletim sistemine sahip, adanmış ve yüksek güvenilirlikli oynatıcı. Tüm BrightSign modelleri desteklenir; arıza toleransının kritik olduğu kurulumlar için.',
+      samsung:
+        'Tizen tabanlı kurumsal ekranlar; SSSP 6.0 / Tizen 4.0 ve üzeri tüm modeller desteklenir. Yansıma önleyici panel ve 24 saat çalışma.',
+      vestel:
+        'Kurumsal ekran ailesi. Perakende, restoran, kontrol odası ve ulaşım noktaları için; yerli servis ve tedarik avantajıyla.',
+      novastar:
+        'LED duvarlar ve büyük ölçekli ekranlar için. Taurus ve TU serisi oynatıcılar ViPlex Express üzerinden web sayfası bileşeniyle bağlanır; bu nedenle güç yönetimi ve uzaktan yeniden başlatma bu yolla kullanılamaz.',
+      amino:
+        'Kurumsal sınıf set üstü kutu (H200 / H200W, Android 10). Yazılım önyüklü gelir, kurcalamaya dayanıklı donanımı dağıtık ağlar için uygundur.',
+      lg: 'webOS tabanlı kurumsal ekranlar. Yazılım yerel bir webOS uygulaması olarak çalışır, harici donanım gerekmez.',
+      chromeos:
+        'Kiosk ve tabela için güvenli, merkezi yönetilebilir platform. Geniş cihaz yelpazesi ve güçlü güncelleme politikası.',
+      googleTv:
+        'Sony, TCL, Hisense ve Philips televizyonlarında dahili gelir. Uygulama Play Store’dan kurulur, ek donanım gerekmez; güç yönetimi bu platformda bulunmaz.',
+      chromecast:
+        'Herhangi bir televizyonu tabela ekranına çeviren ekonomik takılabilir oynatıcı, 4K ve HD seçenekleriyle. Ekran arkasına gizlenir; kritik olmayan kurulumlar için uygundur.',
+    },
+    differenceTitle: 'Farkımız: Ekranı da Biz Kuruyoruz',
+    differenceBody:
+      'Dijital tabela yazılımı satan çok sayıda firma var. Ayrıldığımız nokta şu: yazılımı satan ekiple ekranı duvara asan ekip aynı. Yazılım tek başına bir çözüm değildir; panelin doğru yere, doğru askıyla, doğru veri ve enerji altyapısıyla monte edilmesi işin yarısıdır.',
+    differencePoints: [
+      {
+        title: 'Tek muhatap, tek sözleşme',
+        body: 'Panel, askı sistemi, oynatıcı, veri ve enerji altyapısı, montaj ve platform lisansı tek kalemde. Sorun çıktığında "yazılım mı donanım mı" tartışması yaşanmaz.',
+      },
+      {
+        title: 'Kuran ekip, bakan ekip',
+        body: 'Ekran karardığında telefonu açan ekip, o ekranı asan ekiptir. Sistemi tanıyan birinin gelmesi, arıza süresini kısaltan en somut etkendir.',
+      },
+      {
+        title: 'Satın almadan önce keşif',
+        body: 'Kaç ekran, hangi boyut, hangi parlaklık ve hangi oynatıcı gerektiğini yerinde görmeden söylemeyiz. Gereksiz donanım önermemek, uzun vadeli çalışma biçimimizin parçası.',
+      },
+    ],
+    useCasesTitle: 'Hangi Sektörlerde Kullanılıyor?',
+    useCasesIntro:
+      'Dijital tabela ihtiyacı sektöre göre değişir: bir otelde karşılama ve yönlendirme, bir okulda duyuru ve tören bilgilendirmesi, bir kamu binasında sıra ve bilgilendirme ekranıdır. Sektörünüze özel kurguyu aşağıdaki sayfalarda anlattık.',
+    processTitle: 'Nasıl Başlıyoruz?',
+    processSteps: [
+      {
+        title: '1. Keşif',
+        body: 'Mekânı yerinde görür, ekran sayısını, boyutlarını ve montaj noktalarını belirleriz. Mevcut ekranlarınız varsa bunların platforma bağlanıp bağlanamayacağını burada netleştiririz.',
+      },
+      {
+        title: '2. Ekran ve Montaj',
+        body: 'Panel tedariki, askı ve konstrüksiyon imalatı, veri ve enerji altyapısı ile montaj bu aşamada tamamlanır. Kurulum ve montaj hizmetimizin kapsamı bu aşamadadır.',
+      },
+      {
+        title: '3. Hesap Kurulumu ve Eğitim',
+        body: 'Platform hesabınız açılır, ekranlar tanımlanır, ilk çalma listeleri birlikte kurulur. İçeriği kendi ekibinizin yönetebilmesi için kullanım eğitimi veririz.',
+      },
+      {
+        title: '4. Bakım ve Destek',
+        body: 'Sistem devreye alındıktan sonra periyodik bakım kapsamına alınır. Platform tarafındaki destek e-posta ve telefonla mesai saatleri içinde sağlanır.',
+      },
+    ],
+    faqTitle: 'Sık Sorulan Sorular',
+    faq: [
+      {
+        question: 'Mevcut ekranlarımızı kullanabilir miyiz?',
+        answer:
+          'Çoğu durumda evet. Ekranın tipine göre ya doğrudan uyumlu bir oynatıcı bağlanır ya da ekranın kendi işletim sistemi kullanılır. Hangi yolun uygun olduğunu keşif sırasında ekranlarınızı görerek belirliyoruz; kullanılabilecek bir ekranı değiştirmenizi önermiyoruz.',
+      },
+      {
+        question: 'İnternet kesilirse ekranlar kararır mı?',
+        answer:
+          'Hayır. Medya dosyaları ekranın yerel depolamasına indirildiği için yayın çevrimdışı da sürer. İnternet geri geldiğinde cihaz panelle yeniden eşleşir ve bekleyen güncellemeleri alır.',
+      },
+      {
+        question: 'İçeriği kendimiz yönetebilir miyiz?',
+        answer:
+          'Evet, amaç bu. Panel tarayıcıdan çalışır ve gündelik içerik güncellemesi için teknik bilgi gerektirmez. Kurulum sonrası ekibinize eğitim veriyoruz; ayrıca Canva, Google Drive veya Google Sheets üzerinden çalışmayı tercih ederseniz panele hiç girmeden de içerik güncelleyebilirsiniz.',
+      },
+      {
+        question: 'Fiyatlandırma nasıl işliyor?',
+        answer:
+          'Lisans, ekran başına ve yıllık olarak hesaplanır; ekran sayısı arttıkça birim fiyat düşer. Toplam maliyet ekran sayısına, donanım ihtiyacına ve montaj kapsamına göre değiştiği için tek bir liste fiyatı vermiyoruz. Ekran sayınızı ve mekânı paylaşın, kapsamı netleştirip teklif hazırlayalım.',
+      },
+      {
+        question: 'Kaç ekrandan itibaren mantıklı oluyor?',
+        answer:
+          'Tek ekranda da kullanılabilir, ancak platformun asıl değeri birden fazla ekranı tek yerden yönetmekte ortaya çıkar. Ekran sayısı arttıkça ve ekranlar farklı noktalara dağıldıkça uzaktan yönetimin kazancı belirginleşir.',
+      },
+    ],
+    ctaTitle: 'Ekranlarınızı Konuşalım',
+    ctaBody:
+      'Kaç ekranınız olduğunu ve nerede kullanmak istediğinizi paylaşın; kapsamı birlikte netleştirip size uygun kurgu ve teklifi hazırlayalım.',
+    crossLinkBody:
+      'Bu alandaki bilgilendirme ve yönlendirme ekranlarını, kendi dijital tabela platformumuz sonopto.signage ile tek panelden yönetebilirsiniz.',
+    crossLinkCta: 'sonopto.signage\'ı inceleyin',
   },
   about: {
     pageTitle: 'Hakkımızda',
