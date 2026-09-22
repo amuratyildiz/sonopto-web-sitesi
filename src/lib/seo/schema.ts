@@ -3,12 +3,17 @@ import { SITE_URL } from './meta';
 import type { Project } from '../graph/types';
 
 export function organizationSchema() {
+  // sameAs is how search engines tie the social profiles to this organisation
+  // entity; empty slots are dropped so an unfilled profile never ships.
+  const sameAs = Object.values(company.social).filter(Boolean);
+
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: company.name,
     url: SITE_URL,
     logo: `${SITE_URL}/logo.png`,
+    ...(sameAs.length > 0 && { sameAs }),
     contactPoint: [
       {
         '@type': 'ContactPoint',

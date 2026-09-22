@@ -307,6 +307,18 @@
     background: linear-gradient(to bottom, rgb(0 0 0 / 0.72), rgb(0 0 0 / 0.55) 45%, rgb(0 0 0 / 0.78));
   }
 
+  /* Footer social icons — same neutral-400 → white move as the footer links. */
+  .social-link {
+    display: inline-flex;
+    color: var(--color-neutral-400);
+    transition: color var(--motion-base) ease-out;
+  }
+
+  .social-link:hover,
+  .social-link:focus-visible {
+    color: var(--color-surface);
+  }
+
   /*
    * WhatsApp widget. Square rather than the usual circle, because the guide's
    * radius-none rule covers UI blocks. The button stays ink and only turns

@@ -20,9 +20,13 @@ export const company = {
     { key: 'support', wa: '905303055162', display: '+90 530 305 51 62' },
     { key: 'installation', wa: '905469631601', display: '+90 546 963 16 01' },
   ],
+  /** Empty entries are skipped everywhere, so a profile can be added later
+      without touching the footer or the schema. */
   social: {
-    // TODO: confirm current social profile URLs with the client before launch.
-    linkedin: '',
-    instagram: '',
+    linkedin: 'https://www.linkedin.com/company/sonopto',
+    instagram: 'https://www.instagram.com/sonopto_svg/',
+    // The /people/ form 404s without the numeric profile id appended
+    // (…/people/Sonopto/<id>/). Waiting on the full URL.
+    facebook: '',
   },
 } as const;
