@@ -277,4 +277,11 @@ export const en: Dictionary = {
     emailTitle: 'Email',
     imageAlt: 'A Sonopto support agent taking a call on the technical support line',
   },
+  whatsapp: {
+    label: 'Message us on WhatsApp',
+    sales: 'Sales',
+    support: 'Support',
+    installation: 'Installation',
+    prefill: 'Hello, I am writing from your website.',
+  },
 };

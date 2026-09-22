@@ -143,6 +143,14 @@ export interface Dictionary {
     emailTitle: string;
     imageAlt: string;
   };
+  whatsapp: {
+    label: string;
+    sales: string;
+    support: string;
+    installation: string;
+    /** Prefilled into the chat so the visitor does not start from a blank box. */
+    prefill: string;
+  };
 }
 
 export const tr: Dictionary = {
@@ -421,5 +429,12 @@ export const tr: Dictionary = {
     phoneTitle: 'Telefon',
     emailTitle: 'E-posta',
     imageAlt: 'Sonopto teknik destek hattında çağrı karşılayan müşteri temsilcisi',
+  },
+  whatsapp: {
+    label: 'WhatsApp ile yazın',
+    sales: 'Satış',
+    support: 'Destek',
+    installation: 'Montaj',
+    prefill: 'Merhaba, web sitenizden yazıyorum.',
   },
 };

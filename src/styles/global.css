@@ -308,6 +308,101 @@
   }
 
   /*
+   * WhatsApp widget. Square rather than the usual circle, because the guide's
+   * radius-none rule covers UI blocks. The button stays ink and only turns
+   * accent once open — the glyph carries the service recognition, so the
+   * palette does not have to.
+   */
+  .wa-widget {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 50;
+  }
+
+  .wa-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    list-style: none;
+    cursor: pointer;
+    background-color: var(--color-ink);
+    color: var(--color-surface);
+    box-shadow: 0 8px 24px -10px rgb(0 0 0 / 0.5);
+    transition:
+      background-color var(--motion-base) ease-out,
+      color var(--motion-base) ease-out;
+  }
+
+  .wa-toggle::-webkit-details-marker {
+    display: none;
+  }
+
+  .wa-toggle:hover {
+    background-color: var(--color-neutral-800);
+  }
+
+  .wa-toggle:focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+  }
+
+  .wa-widget[open] .wa-toggle {
+    background-color: var(--color-accent);
+    color: var(--color-on-accent);
+  }
+
+  .wa-menu {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 0.75rem);
+    width: 15rem;
+    background-color: var(--color-ink);
+    border: 1px solid var(--color-neutral-800);
+    box-shadow: 0 12px 32px -12px rgb(0 0 0 / 0.6);
+  }
+
+  .wa-line {
+    display: block;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--color-neutral-800);
+    transition: background-color var(--motion-base) ease-out;
+  }
+
+  .wa-line:last-child {
+    border-bottom: 0;
+  }
+
+  .wa-line:hover,
+  .wa-line:focus-visible {
+    background-color: var(--color-neutral-900);
+  }
+
+  .wa-line-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-surface);
+  }
+
+  /* neutral-400 on ink is 6.08:1 — the same pairing used in the footer. */
+  .wa-line-number {
+    display: block;
+    margin-top: 0.125rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-neutral-400);
+    transition: color var(--motion-base) ease-out;
+  }
+
+  .wa-line:hover .wa-line-number,
+  .wa-line:focus-visible .wa-line-number {
+    color: var(--color-accent);
+  }
+
+  /*
    * Scroll reveal. Polarity is deliberately inverted: the default state is
    * visible and only motion.js ever adds the hiding class, so there is no
    * code path that leaves content invisible when JS does not run.
