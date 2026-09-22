@@ -6,6 +6,7 @@ import PartnerLogos from '../components/sections/PartnerLogos.astro';
 import CaseStudyCard from '../components/sections/CaseStudyCard.astro';
 import { getDictionary } from '../content/i18n';
 import { pathFor } from '../lib/i18n/routes';
+import { BRAND } from '../lib/seo/meta';
 import { getProjects } from '../lib/graph/projects';
 import { serviceEntries, serviceKeys } from '../data/services';
 
@@ -21,7 +22,7 @@ const services = serviceKeys.map((key) => ({
 ---
 
 <BaseLayout
-  title="Sonopto"
+  title={BRAND}
   description={dict.home.heroSubtitle}
   path={pathFor('home', locale)}
   locale={locale}

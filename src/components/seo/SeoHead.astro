@@ -1,5 +1,5 @@
 ---
-import { absoluteUrl, buildTitle } from '../../lib/seo/meta';
+import { absoluteUrl, buildTitle, BRAND } from '../../lib/seo/meta';
 import { alternateLocale, defaultLocale, type Locale } from '../../lib/i18n/routes';
 
 interface Props {
@@ -35,7 +35,7 @@ const other = alternateLocale(locale);
 <meta property="og:image" content={ogImage} />
 <meta property="og:locale" content={locale === 'tr' ? 'tr_TR' : 'en_US'} />
 {alternatePath && <meta property="og:locale:alternate" content={other === 'tr' ? 'tr_TR' : 'en_US'} />}
-<meta property="og:site_name" content="Sonopto" />
+<meta property="og:site_name" content={BRAND} />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />
