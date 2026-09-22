@@ -25,8 +25,7 @@ export const company = {
   social: {
     linkedin: 'https://www.linkedin.com/company/sonopto',
     instagram: 'https://www.instagram.com/sonopto_svg/',
-    // The /people/ form 404s without the numeric profile id appended
-    // (…/people/Sonopto/<id>/). Waiting on the full URL.
-    facebook: '',
+    // The /people/ form needs the numeric profile id — without it the URL 404s.
+    facebook: 'https://www.facebook.com/people/Sonopto/61584077511431/',
   },
 } as const;
