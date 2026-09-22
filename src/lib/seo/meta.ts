@@ -23,8 +23,10 @@ export function absoluteUrl(path: string): string {
  */
 export const BRAND = 'sonopto.';
 
+/** A title that already leads with the wordmark (the homepage) is left alone;
+    everything else gets the brand appended. */
 export function buildTitle(pageTitle: string): string {
-  return pageTitle === BRAND ? pageTitle : `${pageTitle} | ${BRAND}`;
+  return pageTitle.startsWith(BRAND) ? pageTitle : `${pageTitle} | ${BRAND}`;
 }
 
 export { SITE_URL };

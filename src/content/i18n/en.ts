@@ -11,9 +11,9 @@ export const en: Dictionary = {
     faq: 'FAQ',
     contact: 'Contact',
   },
+  brandTagline: 'Video | Audio | Stage Systems',
   footer: {
     tagline: 'You focus on your business, we will manage your technology.',
-    subTagline: 'Audio | Stage Lighting | Video Systems',
     servicesTitle: 'Services',
     companyTitle: 'Company',
     contactTitle: 'Contact',

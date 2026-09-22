@@ -38,11 +38,13 @@ export interface Dictionary {
     faq: string;
     contact: string;
   };
+  /**
+   * The line that sits under the wordmark (identity guide §5.4). Shared by the
+   * footer and the homepage title so the two cannot drift apart.
+   */
+  brandTagline: string;
   footer: {
     tagline: string;
-    /* Identity guide §5.4: this sub-tagline sits under the wordmark in the
-       footer, e-mail signatures and print material. */
-    subTagline: string;
     servicesTitle: string;
     companyTitle: string;
     contactTitle: string;
@@ -164,9 +166,9 @@ export const tr: Dictionary = {
     faq: 'SSS',
     contact: 'İletişim',
   },
+  brandTagline: 'Görüntü | Ses | Sahne Sistemleri',
   footer: {
     tagline: 'Siz işinize odaklanın, teknolojinizi biz yönetelim.',
-    subTagline: 'Ses | Sahne Aydınlatma | Görüntü Sistemleri',
     servicesTitle: 'Hizmetler',
     companyTitle: 'Kurumsal',
     contactTitle: 'İletişim',
