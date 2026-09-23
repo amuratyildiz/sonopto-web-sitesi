@@ -34,6 +34,32 @@ export interface SignageBlock {
 }
 
 /**
+ * A signage sector page. Unlike SolutionItem this carries no imageAlt: the
+ * signage section is drawn with line icons and ink bands rather than
+ * photography, so there is no photo to describe.
+ */
+export interface SignageSector {
+  /** Short label for cards and breadcrumbs. */
+  title: string;
+  /** The page's H1 — a hook, not a category name. */
+  headline: string;
+  /** Card text on the product page. */
+  summary: string;
+  metaDescription: string;
+  intro: string;
+  problemTitle: string;
+  problemBody: string;
+  screensTitle: string;
+  /** What actually goes on the screens in this sector. */
+  screens: string[];
+  integrationTitle: string;
+  integrationBody: string;
+  resultTitle: string;
+  resultBody: string;
+  faq: FaqEntry[];
+}
+
+/**
  * The product page. Deliberately not modelled on SolutionItem: that shape opens
  * from a sector's technical risk and closes on a survey call, which would force
  * us to invent a "problem" the product does not have.
@@ -113,6 +139,15 @@ export interface SignageContent {
   differencePoints: SignageBlock[];
   useCasesTitle: string;
   useCasesIntro: string;
+  sectors: {
+    retail: SignageSector;
+    food: SignageSector;
+    office: SignageSector;
+    health: SignageSector;
+  };
+  /** Strip at the foot of every sector page. */
+  otherSectorsTitle: string;
+  backToProduct: string;
   processTitle: string;
   processSteps: SignageBlock[];
   faqTitle: string;
@@ -585,7 +620,187 @@ export const tr: Dictionary = {
     ],
     useCasesTitle: 'Hangi Sektörlerde Kullanılıyor?',
     useCasesIntro:
-      'Dijital tabela ihtiyacı sektöre göre değişir: bir otelde karşılama ve yönlendirme, bir okulda duyuru ve tören bilgilendirmesi, bir kamu binasında sıra ve bilgilendirme ekranıdır. Sektörünüze özel kurguyu aşağıdaki sayfalarda anlattık.',
+      'Dijital tabela ihtiyacı sektöre göre değişir: bir mağazada kampanya döngüsü, bir restoranda gün içinde değişen menü, bir ofiste oda doluluğu, bir klinikte sıra yönetimidir. Sektörünüze özel kurguyu aşağıdaki sayfalarda anlattık.',
+    otherSectorsTitle: 'Diğer Sektörler',
+    backToProduct: 'sonopto.signage hakkında her şey',
+    sectors: {
+      retail: {
+        title: 'Perakende ve Mağazalar',
+        headline: 'Kampanya Başladığında Vitrin de Değişsin',
+        summary:
+          'Vitrin ve reyon ekranları, şube ağında tek panelden yönetim, kampanya takvimine bağlı otomatik içerik değişimi.',
+        metaDescription:
+          'Mağaza ve vitrin ekranları için dijital tabela: kampanyaları tüm şubelere tek panelden gönderin, saatine göre otomatik değiştirin. Ekran tedariki ve montaj dahil.',
+        intro:
+          'Perakendede ekranın işi dekorasyon değil, doğru anda doğru mesajı göstermek. Kampanya pazartesi başlıyorsa vitrin pazartesi sabahı değişmiş olmalı — hem merkezdeki mağazada hem de üç şehir ötedeki şubede.',
+        problemTitle: 'Kampanya başladı, ekranlar hâlâ geçen ayın afişini gösteriyor',
+        problemBody:
+          'Çünkü içerik güncellemesi çoğu zaman şube personeline bırakılmış durumda: USB bellekle dolaşmak, her ekrana tek tek girmek, kim yaptı kim yapmadı takip edememek. Şube sayısı arttıkça bu yöntem kendi ağırlığı altında çöker ve en pahalı reklam alanınız — vitrin — güncelliğini yitirir. Merkezden yönetilen bir sistemde bu iş tek bir yüklemeye iner.',
+        screensTitle: 'Ekranlarda neler gösteriliyor?',
+        screens: [
+          'Vitrin ekranları: sezon kampanyaları, indirim duyuruları, marka filmleri',
+          'Reyon ve raf ekranları: ürün tanıtımı, fiyat ve kampanya bilgisi',
+          'Kasa önü ekranları: sırada beklerken son dakika teklifleri ve sadakat programı',
+          'Karşılama ve yönlendirme: kat planı, reyon yönlendirmesi, yürüyen duyurular',
+          'Personel alanı: vardiya, hedef ve iç duyuru ekranları',
+        ],
+        integrationTitle: 'Bu sektörde asıl fark: coğrafi konum ve gruplama',
+        integrationBody:
+          'Şubeleri gruplayarak aynı içeriği tek işlemle yüzlerce ekrana gönderirsiniz. Coğrafi konum özelliğiyle de aynı çalma listesi her şubede o şubeye ait içeriği gösterir — İstanbul mağazasında İstanbul stoğu, Ankara mağazasında Ankara kampanyası. Fiyat ve stok gibi sık değişen veriler Google Sheets üzerinden beslendiğinde, tabloyu güncellemeniz ekranların da güncellenmesi için yeterli olur.',
+        resultTitle: 'Ekranı biz kurduğumuz için fark ne?',
+        resultBody:
+          'Vitrin ekranı, ofis ekranından farklı bir iştir: gün ışığı altında okunabilmesi için yüksek parlaklık, cam yüzeyde yansımayı kesen konumlandırma ve vitrin içinde gizlenmiş bir kablolama gerekir. Keşif sırasında bunları yerinde ölçüyor, panel ve askı seçimini buna göre yapıyoruz. Yazılımı satıp montajı başkasına bırakmadığımız için, ekran karardığında aranacak tek numara bizde.',
+        faq: [
+          {
+            question: 'Şubelerimizde farklı marka ve boyutta ekranlar var, hepsi bağlanır mı?',
+            answer:
+              'Büyük ihtimalle evet. Kurumsal ekranlarda yazılım doğrudan ekranın işletim sistemi üzerinde çalışır; normal televizyonlarda ise küçük bir harici oynatıcı eklenir. Hangi ekranın hangi yolla bağlanacağını keşifte belirliyoruz, kullanılabilecek bir ekranı değiştirmenizi önermiyoruz.',
+          },
+          {
+            question: 'Kampanyayı belirli bir saatte otomatik başlatabilir miyiz?',
+            answer:
+              'Evet. İçeriği tarih ve saate bağlayabilirsiniz; kampanya pazartesi 09:00’da kendiliğinden devreye girer, bitiş tarihinde de kendiliğinden kalkar. Mağaza kapanışında ekranların otomatik kapanması da aynı şekilde programlanır.',
+          },
+          {
+            question: 'İnternet kesilirse vitrin kararır mı?',
+            answer:
+              'Hayır. Medya dosyaları ekranın yerel depolamasına indiği için yayın çevrimdışı da sürer. Bağlantı geri geldiğinde cihaz panelle eşleşip bekleyen güncellemeleri alır.',
+          },
+        ],
+      },
+      food: {
+        title: 'Restoran ve Kafeler',
+        headline: 'Menü Kahvaltıdan Akşama Kendi Kendine Değişsin',
+        summary:
+          'Dijital menü panoları, gün içinde otomatik değişen menüler, fiyatların tablodan beslenmesi ve baskı maliyetinin sıfırlanması.',
+        metaDescription:
+          'Restoran ve kafeler için dijital menü ekranı: kahvaltı, öğle ve akşam menüleri saatine göre otomatik değişir, fiyatlar tablodan güncellenir. Ekran ve montaj dahil.',
+        intro:
+          'Menü panosu bir restoranın en çok okunan yüzeyidir. Basılı menüde bir fiyat değişikliği yeniden baskı demektir; ekranda ise bir tablo hücresini güncellemek yeterlidir.',
+        problemTitle: 'Fiyat değişti, menüyü yeniden bastırmak gerekiyor',
+        problemBody:
+          'Basılı menünün gerçek maliyeti kâğıt değil, değişime direnç göstermesidir. Bir ürünün fiyatı arttığında ya da tedarik sorunu çıktığında menü haftalarca yanlış kalır; kampanya denemek, günün yemeğini öne çıkarmak veya saatlik teklif vermek pratikte imkânsızlaşır. Ekrana geçince bu kararlar dakikalar içinde uygulanabilir hale gelir.',
+        screensTitle: 'Ekranlarda neler gösteriliyor?',
+        screens: [
+          'Menü panoları: kategori bazlı fiyat listeleri, görselli ürün tanıtımları',
+          'Gün bölümüne göre menü: kahvaltı, öğle, akşam ve gece menüsünün otomatik geçişi',
+          'Kampanya ve upsell: sırada beklerken tatlı, içecek ve menü tamamlayıcı teklifler',
+          'Günün yemeği ve tükenen ürün bildirimi',
+          'Wi-Fi şifresi ve sosyal medya hesapları için QR kodlu ekranlar',
+        ],
+        integrationTitle: 'Bu sektörde asıl fark: Google Sheets ve zamanlama',
+        integrationBody:
+          'Menü fiyatlarını bir Google Sheets tablosundan besleyebilirsiniz: tabloyu güncellediğinizde ekranlar kendiliğinden güncellenir, panele girmenize bile gerek kalmaz. Zamanlama özelliğiyle kahvaltı menüsü 11:00’de yerini öğle menüsüne bırakır. Tasarım tarafında Canva entegrasyonu, hazır şablonlarla menü düzenlemeyi mutfak ekibinin bile yapabileceği bir işe indirger.',
+        resultTitle: 'Ekranı biz kurduğumuz için fark ne?',
+        resultBody:
+          'Menü panosu genelde tezgâhın üstünde, mutfak ısısına ve buharına yakın bir noktada durur; kablolama gıda alanı kurallarına uygun geçirilmek zorundadır. Askı yüksekliğini ayakta duran müşterinin göz hizasına göre belirlemek de okunabilirliği doğrudan etkiler. Bunları keşifte yerinde ölçüyoruz. Birden fazla ekranı yan yana tek bir menü olarak kullanacaksanız, senkron oynatma ile hepsi tek parça gibi çalışır.',
+        faq: [
+          {
+            question: 'Menüyü kendimiz güncelleyebilir miyiz?',
+            answer:
+              'Evet, amaç bu. Fiyatları Google Sheets üzerinden yönetiyorsanız tabloyu güncellemeniz yeterli. Tasarımı değiştirmek isterseniz Canva üzerinden hazırlayıp doğrudan ekrana gönderebilirsiniz; kurulum sonrası ekibinize eğitim veriyoruz.',
+          },
+          {
+            question: 'Birden fazla ekranı tek menü gibi kullanabilir miyiz?',
+            answer:
+              'Evet. Yan yana duran ekranlar senkron oynatma grubuna alındığında içerik hepsinde aynı anda akar, böylece üç ekran tek bir geniş menü panosu gibi görünür. Ekranların aynı model ve aynı boyutta olması görsel bütünlük açısından önemlidir; keşifte buna göre öneriyoruz.',
+          },
+          {
+            question: 'Ekranlar kapanış saatinde kapanır mı?',
+            answer:
+              'Evet. Güç yönetimi ile ekranlar belirlediğiniz saatte otomatik kapanır ve açılır. Bu hem elektrik faturasına hem de panel ömrüne yansır; gece boyunca boşuna çalışan bir ekran yılda binlerce saat yıpranma demektir.',
+          },
+        ],
+      },
+      office: {
+        title: 'Kurumsal Ofisler',
+        headline: 'Toplantı Odası Kapısındaki Tartışma Bitsin',
+        summary:
+          'Karşılama ekranları, kapı önü oda rezervasyon ekranları, iç iletişim panoları ve kurum içi duyuru ağı.',
+        metaDescription:
+          'Kurumsal ofisler için dijital tabela: karşılama ekranları, Microsoft ve Google Takvim ile çalışan kapı etiketi ekranları, iç iletişim panoları. Kurulum ve montaj dahil.',
+        intro:
+          'Ofiste ekranın iki işi var: gelen ziyaretçiye kurumu doğru anlatmak ve çalışana gün içinde ihtiyaç duyduğu bilgiyi aramadan vermek. İkisi de basit görünür, ikisi de doğru kurgulanmadığında işe yaramaz.',
+        problemTitle: 'Oda doluydu, kimse haberdar değildi',
+        problemBody:
+          'Toplantı odası çakışmaları takvim yüzünden değil, takvimin kapının önünde görünmemesi yüzünden çıkar. Odayı rezerve eden kişi gelmediğinde oda boş durur; rezerve etmeyen biri girdiğinde ise toplantı bölünür. Kapıya konan küçük bir ekran, takvimle canlı bağlandığında bu iki durumu da ortadan kaldırır: odanın o anki durumu ve sıradaki toplantı kapının önünde yazar.',
+        screensTitle: 'Ekranlarda neler gösteriliyor?',
+        screens: [
+          'Kapı önü oda ekranları: anlık doluluk, sıradaki toplantı ve yerinde rezervasyon',
+          'Karşılama ekranı: ziyaretçi karşılama mesajı, kurum tanıtımı, günün programı',
+          'İç iletişim panoları: duyurular, İK bilgilendirmeleri, yeni katılan ekip arkadaşları',
+          'Performans ve operasyon ekranları: hedefler, canlı gösterge panoları',
+          'Ortak alan ekranları: yemekhane menüsü, servis saatleri, etkinlik takvimi',
+        ],
+        integrationTitle: 'Bu sektörde asıl fark: Kapı Etiketi ve takvim entegrasyonu',
+        integrationBody:
+          'Kapı etiketi uygulaması Microsoft ve Google Takvim ile bağlanır; odanın doluluğu takvimden canlı okunur, ayrı bir sistem beslemeniz gerekmez. Duyuru panolarında ise Google Drive entegrasyonu işi kolaylaştırır: İK ekibi bir klasöre dosya attığında ekranda belirir, panele hiç girmeden. Kurumsal kimliğinizi taşıyan şablonlar Canva üzerinden hazırlanıp tüm ofislere tek seferde dağıtılabilir.',
+        resultTitle: 'Ekranı biz kurduğumuz için fark ne?',
+        resultBody:
+          'Kapı önü ekranları küçük ama zahmetli işlerdir: alçıpan duvara gömme montaj, kablo kanalı görünmeyecek şekilde veri ve enerji çekilmesi, kapı kasasına hizalı bir yerleşim gerekir. Toplantı odalarında zaten ses ve görüntü sistemi kuruyoruz; signage ekranlarını aynı keşifte ve aynı ekiple çözmek, iki ayrı firmayla uğraşmaktan hem hızlı hem tutarlı olur.',
+        faq: [
+          {
+            question: 'Kapı ekranları Microsoft 365 takvimimizle çalışır mı?',
+            answer:
+              'Evet. Kapı etiketi uygulaması Microsoft ve Google Takvim ile bağlanır; odanın o anki doluluğu ve sıradaki toplantı doğrudan takviminizden okunur. Rezervasyon süreciniz nasıl işliyorsa öyle kalır, ekran yalnızca onu görünür kılar.',
+          },
+          {
+            question: 'Mevcut toplantı odası sistemimizle birlikte çalışır mı?',
+            answer:
+              'Evet. Signage ekranları Zoom Rooms veya Microsoft Teams Rooms kurulumunuzdan bağımsız çalışır; ikisi birbirine karışmaz. Toplantı odası sistemlerini de kuruyoruz, ikisini tek keşifte planlamak en verimlisi olur.',
+          },
+          {
+            question: 'Birden fazla ofisimiz var, hepsini tek yerden yönetebilir miyiz?',
+            answer:
+              'Evet. Ofisleri gruplayarak kurumsal duyuruyu tek işlemle hepsine gönderir, yerel duyuruları ise yalnızca ilgili ofisin grubuna bırakırsınız. Hangi ekranın çevrimiçi olduğunu ve en son ne zaman güncellendiğini de panelden görürsünüz.',
+          },
+        ],
+      },
+      health: {
+        title: 'Sağlık Kuruluşları',
+        headline: 'Bekleyen Hasta Ne Kadar Bekleyeceğini Bilsin',
+        summary:
+          'Sıra ve yönlendirme ekranları, poliklinik bilgilendirmesi, bekleme alanı içeriği ve hekim programı ekranları.',
+        metaDescription:
+          'Hastane, klinik ve poliklinikler için dijital tabela: sıra ve yönlendirme ekranları, hekim programı, bekleme alanı bilgilendirmesi. Ekran tedariki ve montaj dahil.',
+        intro:
+          'Sağlık kuruluşlarında bekleme süresinin kendisi kadar, ne kadar bekleneceğinin bilinmemesi rahatsız eder. Doğru kurgulanmış bir ekran ağı, personelin gün boyu cevapladığı soruların büyük bölümünü ortadan kaldırır.',
+        problemTitle: 'Danışmaya sorulan soruların çoğu ekranda yazabilir',
+        problemBody:
+          'Hangi hekim hangi odada, sıra kaçta, hangi kat, ödeme nereden yapılır — bunların hepsi tekrar eden ve her seferinde bir personelin zamanını alan sorulardır. Bekleme alanına ve koridorlara konumlandırılmış ekranlar bu yükü üstlendiğinde, danışma personeli gerçekten insan teması gerektiren işlere vakit ayırabilir. Bekleme algısı da ölçülebilir biçimde kısalır.',
+        screensTitle: 'Ekranlarda neler gösteriliyor?',
+        screens: [
+          'Sıra ve çağrı ekranları: sıra numarası, oda yönlendirmesi, tahmini bekleme',
+          'Hekim programı: poliklinik saatleri, oda değişiklikleri, izin duyuruları',
+          'Yönlendirme: kat planı, birim yönlendirmesi, acil çıkış bilgilendirmesi',
+          'Bekleme alanı içeriği: sağlık bilgilendirmeleri, kurum tanıtımı, sessiz video akışı',
+          'Personel alanları: vardiya, nöbet listesi ve iç duyurular',
+        ],
+        integrationTitle: 'Bu sektörde asıl fark: çevrimdışı çalışma ve uzaktan izleme',
+        integrationBody:
+          'Sağlık kuruluşunda kararan bir ekran yalnızca estetik sorun değildir; yönlendirme ekranıysa doğrudan hasta akışını bozar. Medya dosyaları ekranın yerel depolamasına indiği için ağ kesintisinde yayın sürer. Uzaktan izleme ile hangi ekranın çevrimiçi olduğunu ve ne oynattığını panelden görürsünüz — arızayı hasta değil siz fark edersiniz. Bekleme alanı ekranları genelde sessiz çalıştığı için içerik altyazılı ve görsel ağırlıklı kurgulanır.',
+        resultTitle: 'Ekranı biz kurduğumuz için fark ne?',
+        resultBody:
+          'Hastane koridorları 7/24 çalışan, temizliğe ve dezenfektana dayanıklı, güvenli monte edilmiş ekranlar ister; hasta trafiğinin olduğu bir alanda askı seçimi bir güvenlik konusudur. Kurulumu çalışan bir kurumda, hasta akışını kesmeden ve çoğu zaman mesai dışında yapmak gerekir. Bunlar montaj planlamasının parçası — keşifte konuşup takvime bağlıyoruz.',
+        faq: [
+          {
+            question: 'Sıra sistemimizle entegre olur mu?',
+            answer:
+              'Sıra verisi çoğu kurumda mevcut bir yazılımdan gelir. Bu veri bir tablo, CSV ya da web sayfası olarak dışarı verilebiliyorsa ekrana bağlanabilir. Mevcut sisteminizin ne sunduğunu keşif sırasında birlikte inceleyip, entegrasyonun mümkün olup olmadığını taahhüt vermeden önce netleştiriyoruz.',
+          },
+          {
+            question: 'Ekranlar 7/24 çalışabilir mi?',
+            answer:
+              'Kurumsal ekranlar bunun için üretilir; normal televizyonlar üretilmez. Sürekli çalışacak noktalarda kurumsal panel öneriyoruz, gün içinde belirli saatlerde çalışacak noktalarda ise güç yönetimiyle otomatik kapatarak panel ömrünü uzatıyoruz.',
+          },
+          {
+            question: 'Hasta verisi ekranda gösterilir mi?',
+            answer:
+              'Bu tamamen sizin kararınız ve kurumunuzun kişisel veri politikasına tabidir. Sıra ekranlarında genellikle yalnızca sıra numarası ve oda bilgisi gösterilir, isim gösterilmez. Sistem hangi veriyi beslerseniz onu gösterir; bu kapsamı kurulum öncesinde birlikte belirliyoruz.',
+          },
+        ],
+      },
+    },
     processTitle: 'Nasıl Başlıyoruz?',
     processSteps: [
       {

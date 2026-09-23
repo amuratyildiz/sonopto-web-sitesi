@@ -34,6 +34,14 @@ export const routes = {
   /* The segment is the product name, so it is identical in both languages;
      only the /en/ prefix differs. */
   signage: { tr: 'signage', en: 'signage' },
+  /* Signage sector pages sit under the product rather than under /cozumler/:
+     they target signage buying intent ("dijital menü ekranı"), which is a
+     different search than the AV solution pages, and nesting them here keeps
+     the two sets from competing for the same terms. */
+  signageRetail: { tr: 'signage/perakende', en: 'signage/retail' },
+  signageFood: { tr: 'signage/restoran-ve-kafe', en: 'signage/restaurants-and-cafes' },
+  signageOffice: { tr: 'signage/kurumsal-ofis', en: 'signage/corporate-office' },
+  signageHealth: { tr: 'signage/saglik', en: 'signage/healthcare' },
   about: { tr: 'kurumsal/hakkimizda', en: 'about' },
   visionMission: { tr: 'vizyon-misyon', en: 'vision-and-mission' },
   references: { tr: 'referanslar', en: 'references' },

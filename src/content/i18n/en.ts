@@ -330,7 +330,187 @@ export const en: Dictionary = {
     ],
     useCasesTitle: 'Where It Is Used',
     useCasesIntro:
-      'Signage needs differ by sector: welcome and wayfinding in a hotel, announcements and ceremony information in a school, queue and information displays in a public building. Each sector page sets out the specifics.',
+      'Signage needs differ by sector: a campaign cycle in a shop, a menu that changes through the day in a restaurant, room availability in an office, queue management in a clinic. Each sector page sets out the specifics.',
+    otherSectorsTitle: 'Other Sectors',
+    backToProduct: 'Everything about sonopto.signage',
+    sectors: {
+      retail: {
+        title: 'Retail and Shops',
+        headline: 'When the Campaign Starts, So Should the Window',
+        summary:
+          'Window and aisle displays, one panel for the whole branch network, content that changes automatically on the campaign calendar.',
+        metaDescription:
+          'Digital signage for shops and shop windows: push campaigns to every branch from one panel and switch them automatically by time of day. Screen supply and installation included.',
+        intro:
+          'In retail a screen is not decoration; its job is to show the right message at the right moment. If the campaign starts on Monday the window should have changed by Monday morning — in the flagship and in the branch three cities away.',
+        problemTitle: 'The campaign has started and the screens still show last month’s poster',
+        problemBody:
+          'Because updating content is usually left to branch staff: walking around with a USB stick, logging into each screen, with no way to tell who did it and who did not. As the branch count rises that method collapses under its own weight, and your most expensive advertising surface — the window — goes stale. Managed centrally, the same job becomes a single upload.',
+        screensTitle: 'What goes on the screens?',
+        screens: [
+          'Window displays: seasonal campaigns, sale announcements, brand films',
+          'Aisle and shelf displays: product introductions, price and promotion information',
+          'Checkout displays: last-minute offers and loyalty programmes while customers queue',
+          'Welcome and wayfinding: floor plans, department directions, rolling announcements',
+          'Staff areas: shift, target and internal announcement screens',
+        ],
+        integrationTitle: 'What really matters here: geolocation and grouping',
+        integrationBody:
+          'Group your branches and one action reaches hundreds of screens. With geolocation the same playlist shows each branch its own content — Istanbul stock in the Istanbul store, the Ankara promotion in Ankara. Feed fast-moving data such as prices and stock from Google Sheets and updating the spreadsheet is all it takes to update the screens.',
+        resultTitle: 'What difference does it make that we install the screen?',
+        resultBody:
+          'A window display is a different job from an office screen: it needs high brightness to stay readable in daylight, positioning that kills reflections on the glass, and cabling hidden inside the window. We measure all of that on site during the survey and choose the panel and mount accordingly. Because we do not sell the software and hand the installation to someone else, there is one number to call when a screen goes dark.',
+        faq: [
+          {
+            question: 'Our branches have screens of different brands and sizes — will they all connect?',
+            answer:
+              'Almost certainly. On commercial displays the software runs on the display’s own operating system; on ordinary televisions a small external player is added. We establish which screen takes which route during the survey, and we will not ask you to replace a screen that still works.',
+          },
+          {
+            question: 'Can a campaign start automatically at a set time?',
+            answer:
+              'Yes. Content can be tied to a date and time, so the campaign goes live by itself at 09:00 on Monday and comes down by itself on the end date. Switching the screens off at closing time is scheduled the same way.',
+          },
+          {
+            question: 'Does the window go dark if the internet drops?',
+            answer:
+              'No. Media files download to the screen’s local storage, so playback continues offline. When the connection returns the device re-syncs with the panel and picks up any pending updates.',
+          },
+        ],
+      },
+      food: {
+        title: 'Restaurants and Cafés',
+        headline: 'Let the Menu Change Itself From Breakfast to Dinner',
+        summary:
+          'Digital menu boards, menus that switch automatically through the day, prices driven from a spreadsheet and no reprinting.',
+        metaDescription:
+          'Digital menu boards for restaurants and cafés: breakfast, lunch and dinner menus switch automatically and prices update from a spreadsheet. Screens and installation included.',
+        intro:
+          'The menu board is the most-read surface in a restaurant. On a printed menu a price change means a reprint; on a screen it means editing one cell in a spreadsheet.',
+        problemTitle: 'The price changed, so the menu has to be reprinted',
+        problemBody:
+          'The real cost of a printed menu is not paper — it is how strongly it resists change. When a price rises or a supply problem hits, the menu stays wrong for weeks, and trying a promotion, pushing the dish of the day or running an hourly offer becomes impractical. On screen those decisions take minutes.',
+        screensTitle: 'What goes on the screens?',
+        screens: [
+          'Menu boards: price lists by category, dishes presented with photography',
+          'Dayparting: automatic switching between breakfast, lunch, dinner and late menus',
+          'Promotions and upsell: desserts, drinks and add-ons shown while customers wait',
+          'Dish of the day and sold-out notices',
+          'QR code screens for the Wi-Fi password and social media accounts',
+        ],
+        integrationTitle: 'What really matters here: Google Sheets and scheduling',
+        integrationBody:
+          'Menu prices can be driven from a Google Sheet: update the sheet and the screens follow, without anyone opening the panel. Scheduling hands the breakfast menu over to lunch at 11:00 on its own. On the design side, the Canva integration and its ready-made templates bring menu layout within reach of the kitchen team.',
+        resultTitle: 'What difference does it make that we install the screen?',
+        resultBody:
+          'Menu boards usually sit above the counter, close to kitchen heat and steam, and the cabling has to be routed to food-area rules. Mount height matters too — it is set to the eye line of a standing customer, which directly affects legibility. We measure this on site. If you are running several screens as one continuous menu, synchronised playback keeps them acting as a single board.',
+        faq: [
+          {
+            question: 'Can we update the menu ourselves?',
+            answer:
+              'Yes — that is the point. If prices are managed in Google Sheets, updating the sheet is enough. To change the design you can build it in Canva and send it straight to the screen. We train your team after installation.',
+          },
+          {
+            question: 'Can several screens work as one menu?',
+            answer:
+              'Yes. Screens placed side by side can be put in a synchronised playback group so content runs across all of them at once and three displays read as one wide menu board. Matching model and size matters for visual continuity; we advise on that during the survey.',
+          },
+          {
+            question: 'Do the screens switch off at closing time?',
+            answer:
+              'Yes. Power management switches screens off and on at times you set. That shows up in both the electricity bill and the life of the panel — a screen running needlessly overnight accumulates thousands of hours of wear a year.',
+          },
+        ],
+      },
+      office: {
+        title: 'Corporate Offices',
+        headline: 'End the Argument Outside the Meeting Room',
+        summary:
+          'Welcome displays, room booking screens at the door, internal communication boards and a company-wide announcement network.',
+        metaDescription:
+          'Digital signage for corporate offices: welcome displays, door signs driven by Microsoft and Google Calendar, internal communication boards. Installation included.',
+        intro:
+          'A screen in an office has two jobs: to present the company properly to a visitor, and to give staff the information they need without having to go looking for it. Both look simple, and both fail when they are not set up properly.',
+        problemTitle: 'The room was booked and nobody knew',
+        problemBody:
+          'Meeting room clashes are not caused by the calendar — they are caused by the calendar being invisible at the door. When whoever booked the room does not turn up, the room sits empty; when someone who did not book it walks in, a meeting gets interrupted. A small screen at the door, wired live to the calendar, removes both: current status and the next meeting are written outside the room.',
+        screensTitle: 'What goes on the screens?',
+        screens: [
+          'Door displays: live occupancy, the next meeting and booking on the spot',
+          'Welcome screen: visitor greeting, company introduction, the day’s schedule',
+          'Internal communication boards: announcements, HR notices, new joiners',
+          'Performance and operations screens: targets and live dashboards',
+          'Shared areas: canteen menu, shuttle times, event calendar',
+        ],
+        integrationTitle: 'What really matters here: the door sign and calendar integration',
+        integrationBody:
+          'The door sign app connects to Microsoft and Google Calendar, so occupancy is read live from the calendar and there is no second system to maintain. For announcement boards the Google Drive integration does the work: HR drops a file in a folder and it appears on screen, with nobody opening the panel. Templates carrying your brand can be built in Canva and pushed to every office at once.',
+        resultTitle: 'What difference does it make that we install the screen?',
+        resultBody:
+          'Door displays are small but fiddly: recessed mounting into plasterboard, data and power run without visible trunking, and alignment to the door frame. We are already installing audio and video systems in your meeting rooms, so handling the signage screens in the same survey with the same team is both quicker and more consistent than coordinating two firms.',
+        faq: [
+          {
+            question: 'Do the door screens work with our Microsoft 365 calendar?',
+            answer:
+              'Yes. The door sign app connects to Microsoft and Google Calendar, and current occupancy and the next meeting are read straight from your calendar. Your booking process stays exactly as it is; the screen only makes it visible.',
+          },
+          {
+            question: 'Will it work alongside our existing meeting room system?',
+            answer:
+              'Yes. Signage screens run independently of your Zoom Rooms or Microsoft Teams Rooms setup; the two do not interfere. We install meeting room systems as well, so planning both in one survey is the most efficient route.',
+          },
+          {
+            question: 'We have several offices — can we manage them from one place?',
+            answer:
+              'Yes. Group the offices and a company-wide announcement reaches all of them in one action, while local notices go only to the relevant group. You can also see from the panel which screens are online and when each last updated.',
+          },
+        ],
+      },
+      health: {
+        title: 'Healthcare',
+        headline: 'Let Waiting Patients Know How Long They Are Waiting',
+        summary:
+          'Queue and wayfinding displays, clinic information, waiting area content and consultant schedule screens.',
+        metaDescription:
+          'Digital signage for hospitals, clinics and practices: queue and wayfinding displays, consultant schedules, waiting area information. Screen supply and installation included.',
+        intro:
+          'In healthcare it is not the wait itself that frustrates people so much as not knowing how long it will be. A well-planned screen network removes most of the questions staff answer all day.',
+        problemTitle: 'Most of the questions at reception could be written on a screen',
+        problemBody:
+          'Which consultant is in which room, what number the queue is on, which floor, where to pay — these repeat endlessly and each one costs a member of staff their time. When screens in the waiting area and corridors carry that load, reception can spend its time on the things that genuinely need a person. Perceived waiting time falls measurably too.',
+        screensTitle: 'What goes on the screens?',
+        screens: [
+          'Queue and call displays: ticket number, room direction, estimated wait',
+          'Consultant schedules: clinic hours, room changes, absence notices',
+          'Wayfinding: floor plans, department directions, emergency exit information',
+          'Waiting area content: health information, hospital introduction, silent video',
+          'Staff areas: shift and on-call rotas and internal notices',
+        ],
+        integrationTitle: 'What really matters here: offline operation and remote monitoring',
+        integrationBody:
+          'In a healthcare setting a dark screen is not only an aesthetic problem; if it is a wayfinding display it disrupts patient flow directly. Media files download to the screen’s local storage, so playback survives a network outage. Remote monitoring shows you which screens are online and what they are playing — you notice the fault before a patient does. Waiting area screens usually run silent, so content is planned to be visual and subtitled.',
+        resultTitle: 'What difference does it make that we install the screen?',
+        resultBody:
+          'Hospital corridors need screens that run 24/7, tolerate cleaning and disinfectant, and are mounted securely — in an area with patient traffic the choice of mount is a safety matter. Installation in a working facility has to happen without interrupting patient flow, and usually outside normal hours. That is all part of planning the installation, which we agree and schedule during the survey.',
+        faq: [
+          {
+            question: 'Will it integrate with our queue system?',
+            answer:
+              'Queue data usually comes from software you already run. If that data can be exported as a spreadsheet, a CSV or a web page, it can be connected to the screens. We look at what your current system exposes during the survey and confirm whether integration is possible before committing to it.',
+          },
+          {
+            question: 'Can the screens run 24/7?',
+            answer:
+              'Commercial displays are built for it; ordinary televisions are not. Where a screen has to run continuously we specify a commercial panel, and where it only runs during set hours we use power management to switch it off and extend the panel’s life.',
+          },
+          {
+            question: 'Is patient data shown on screen?',
+            answer:
+              'That is entirely your decision and governed by your own data protection policy. Queue displays normally show only a ticket number and a room, not a name. The system displays whatever data you feed it; we agree that scope with you before installation.',
+          },
+        ],
+      },
+    },
     processTitle: 'How We Start',
     processSteps: [
       {

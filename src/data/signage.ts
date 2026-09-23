@@ -1,4 +1,5 @@
 import type { Dictionary } from '../content/i18n/tr';
+import type { RouteId } from '../lib/i18n/routes';
 import type { SolutionKey } from './solutions';
 
 /**
@@ -48,7 +49,26 @@ export const signageIntegrationKeys = [
   'doorSign',
 ] as const satisfies readonly SignageIntegrationKey[];
 
-export type SignageIconName = SignageFeatureKey | SignageIntegrationKey;
+export type SignageSectorKey = keyof Dictionary['signage']['sectors'];
+
+/**
+ * Sectors that buy signage on its own terms, rather than as part of an AV
+ * installation. Deliberately not the four keys in solutions.ts: those pages
+ * already rank for their own sectors, and duplicating them here would put two
+ * of our own pages against each other for the same query.
+ *
+ * The key doubles as the icon name.
+ */
+export const signageSectorKeys = ['retail', 'food', 'office', 'health'] as const satisfies readonly SignageSectorKey[];
+
+export const signageSectorEntries: Record<SignageSectorKey, { routeId: RouteId }> = {
+  retail: { routeId: 'signageRetail' },
+  food: { routeId: 'signageFood' },
+  office: { routeId: 'signageOffice' },
+  health: { routeId: 'signageHealth' },
+};
+
+export type SignageIconName = SignageFeatureKey | SignageIntegrationKey | SignageSectorKey;
 
 /**
  * A supported player platform. Brand names, so they live here rather than in

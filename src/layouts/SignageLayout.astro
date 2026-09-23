@@ -3,19 +3,18 @@ import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '../components/seo/Breadcrumbs.astro';
 import JsonLd from '../components/seo/JsonLd.astro';
 import FaqAccordion from '../components/sections/FaqAccordion.astro';
-import SolutionCard from '../components/sections/SolutionCard.astro';
 import SignageIcon from '../components/sections/SignageIcon.astro';
 import SignageDeviceList from '../components/sections/SignageDeviceList.astro';
 import ProductName from '../components/layout/ProductName.astro';
 import { getDictionary } from '../content/i18n';
 import { alternateLocale, pathFor, type Locale, type RouteId } from '../lib/i18n/routes';
 import { faqSchema, signageServiceSchema } from '../lib/seo/schema';
-import { solutionEntries } from '../data/solutions';
 import { serviceKeys } from '../data/services';
 import {
-  signageUseCaseKeys,
   signageFeatureKeys,
   signageIntegrationKeys,
+  signageSectorKeys,
+  signageSectorEntries,
   SIGNAGE_PLATFORM_URL,
 } from '../data/signage';
 import { absoluteUrl } from '../lib/seo/meta';
@@ -155,16 +154,22 @@ const processRoutes: RouteId[] = [
       <h2 class="text-2xl font-bold text-ink sm:text-3xl">{signage.useCasesTitle}</h2>
       <p class="mt-3 max-w-2xl text-neutral-600">{signage.useCasesIntro}</p>
     </div>
+    {/* These point at the signage sector pages, not the AV solution pages: the
+        buying intent is different ("dijital menü ekranı" is not "otel ses ve
+        görüntü sistemi"), and pointing both sets at the same queries would put
+        two of our own pages in competition. The AV pages link here instead. */}
     <div data-reveal-group class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      {signageUseCaseKeys.map((key) => (
-        <SolutionCard
-          title={dict.solutions.items[key].title}
-          summary={dict.solutions.items[key].summary}
-          href={pathFor(solutionEntries[key].routeId, locale)}
-          image={solutionEntries[key].image}
-          imageAlt={dict.solutions.items[key].imageAlt}
-          readMoreLabel={dict.common.readMore}
-        />
+      {signageSectorKeys.map((key) => (
+        <a
+          data-reveal
+          href={pathFor(signageSectorEntries[key].routeId, locale)}
+          class="sig-card card-status flex flex-col p-6"
+        >
+          <SignageIcon name={key} />
+          <h3 class="mt-4 text-base text-ink">{dict.signage.sectors[key].title}</h3>
+          <p class="mt-2 flex-1 text-sm text-neutral-600">{dict.signage.sectors[key].summary}</p>
+          <span class="media-card-more mt-4 text-sm font-medium">{dict.common.readMore} &rarr;</span>
+        </a>
       ))}
     </div>
   </section>
