@@ -1,6 +1,6 @@
 ---
 title: 'Install Player on Samsung Digital Signage'
-slug: 'samsung-digital-signage'
+urlSlug: 'samsung-digital-signage'
 summary: 'How to install digital signage app on Samsung SSSP Commercial Display'
 category: 'installation'
 order: 17
@@ -48,12 +48,12 @@ _Check the [supported features](#Supported-Features)._
 -   Make sure that the time is set up correctly. **Press Menu** > **System** > **Time**.
 -   Make sure that **Secured Protocol** is on. **Press Menu** > **System** > **Security**.
 
-<img src="/destek/installation/secure_protocol.webp" alt="URL Launcher Settings" loading="lazy" decoding="async">
+<img src="/kb/installation/secure_protocol.webp" alt="URL Launcher Settings" loading="lazy" decoding="async">
 
 -   Press **HOME** on the remote control
 -   Go to **URL Launcher Settings**
 
-<img src="/destek/installation/sssp-url-launcher-icon.webp" alt="URL Launcher Settings" loading="lazy" decoding="async">
+<img src="/kb/installation/sssp-url-launcher-icon.webp" alt="URL Launcher Settings" loading="lazy" decoding="async">
 
 -   Uninstall any previously installed apps
     
@@ -66,16 +66,16 @@ _Check the [supported features](#Supported-Features)._
 -   Click on **Done**
     
 
-<img src="/destek/installation/sssp-url-no-brand-launcher-settings.webp" alt="URL Launcher Settings Type" loading="lazy" decoding="async">
+<img src="/kb/installation/sssp-url-no-brand-launcher-settings.webp" alt="URL Launcher Settings Type" loading="lazy" decoding="async">
 
 -   the sonopto.signage app is now installed, it will start automatically.
 
-<img src="/destek/installation/sssp-nobrand-urllauncher.webp" alt=" URL Launcher" loading="lazy" decoding="async">
+<img src="/kb/installation/sssp-nobrand-urllauncher.webp" alt=" URL Launcher" loading="lazy" decoding="async">
 
 -   When the app starts, the hash code will show on the screen
 -   Go to the management console and add your screen
 
-<img src="/destek/installation/sssp-hash-code.webp" alt="Hash Code" loading="lazy" decoding="async">
+<img src="/kb/installation/sssp-hash-code.webp" alt="Hash Code" loading="lazy" decoding="async">
 
 #### Tizen 4.0 Option 2: Follow this if Samsung SSSP is brand new or after a factory reset
 
@@ -83,25 +83,25 @@ The brand new device will start with an initial setup, Follow the below instruct
 
 -   Choose **Basic Setup** in the installation type page.
 
-<img src="/destek/installation/sssp-basic-setup.webp" alt="Basic Setup" loading="lazy" decoding="async">
+<img src="/kb/installation/sssp-basic-setup.webp" alt="Basic Setup" loading="lazy" decoding="async">
 
 -   Select a language.
 
-<img src="/destek/installation/sssp-language.webp" alt="Language" loading="lazy" decoding="async">
+<img src="/kb/installation/sssp-language.webp" alt="Language" loading="lazy" decoding="async">
 
 -   Choose the orientation (Landscape or Portrait).
 
 _You can change the orientation remotely from the management console later on - after adding the screen_
 
-<img src="/destek/installation/sssp-orientation.webp" alt="Orientation" loading="lazy" decoding="async">
+<img src="/kb/installation/sssp-orientation.webp" alt="Orientation" loading="lazy" decoding="async">
 
 -   Set Auto Power off to OFF
 
-<img src="/destek/installation/sssp-autopoweroff.webp" alt="Auto Power Off" loading="lazy" decoding="async">
+<img src="/kb/installation/sssp-autopoweroff.webp" alt="Auto Power Off" loading="lazy" decoding="async">
 
 -   Set your network connection (Wireless or wired)
 
-<img src="/destek/installation/sssp-network.webp" alt="Network" loading="lazy" decoding="async">
+<img src="/kb/installation/sssp-network.webp" alt="Network" loading="lazy" decoding="async">
 
 -   In **Play Via** page, Choose play via **URL Launcher**
     
@@ -112,34 +112,34 @@ _You can change the orientation remotely from the management console later on - 
     ```
     
 
-<img src="/destek/installation/sssp-play-via-url-launcher.webp" alt="Play Via" loading="lazy" decoding="async">
+<img src="/kb/installation/sssp-play-via-url-launcher.webp" alt="Play Via" loading="lazy" decoding="async">
 
 -   Click on Done
 
-<img src="/destek/installation/sssp-url-no-brand-launcher-settings.webp" alt="URL Launcher" loading="lazy" decoding="async">
+<img src="/kb/installation/sssp-url-no-brand-launcher-settings.webp" alt="URL Launcher" loading="lazy" decoding="async">
 
 -   Choose **Skip** in the step of **Connect to RM Server**
 
-<img src="/destek/installation/sssp-rm-server.webp" alt="Skip RM Server" loading="lazy" decoding="async">
+<img src="/kb/installation/sssp-rm-server.webp" alt="Skip RM Server" loading="lazy" decoding="async">
 
 -   Set the correct date and time.
 
-<img src="/destek/installation/sssp-clock.webp" alt="Date and time" loading="lazy" decoding="async">
+<img src="/kb/installation/sssp-clock.webp" alt="Date and time" loading="lazy" decoding="async">
 
 -   Setup is complete. Digital Signage Player is ready to use.
 
-<img src="/destek/installation/sssp-setup-done.webp" alt="Setup Done" loading="lazy" decoding="async">
+<img src="/kb/installation/sssp-setup-done.webp" alt="Setup Done" loading="lazy" decoding="async">
 
 -   the sonopto.signage app is now installed, it will start automatically
 
-<img src="/destek/installation/sssp-nobrand-urllauncher.webp" alt="URL Launcher" loading="lazy" decoding="async">
+<img src="/kb/installation/sssp-nobrand-urllauncher.webp" alt="URL Launcher" loading="lazy" decoding="async">
 
 -   When the app starts, the hash code will show on the screen
     
 -   Go to the management console and add your screen
     
 
-<img src="/destek/installation/sssp-hash-code.webp" alt="Hash Code" loading="lazy" decoding="async">
+<img src="/kb/installation/sssp-hash-code.webp" alt="Hash Code" loading="lazy" decoding="async">
 
 * * *
 
@@ -154,11 +154,11 @@ _You can change the orientation remotely from the management console later on - 
 -   In case there was a previous application installed, it will show near App Management
     
 
-<img src="/destek/installation/sssp-65-14-no-brand.webp" alt="previous app" loading="lazy" decoding="async">
+<img src="/kb/installation/sssp-65-14-no-brand.webp" alt="previous app" loading="lazy" decoding="async">
 
 -   Choose it and click Uninstall
     
-    <img src="/destek/installation/sssp-65-15-no-brand.webp" alt="Uninstall" loading="lazy" decoding="async">
+    <img src="/kb/installation/sssp-65-15-no-brand.webp" alt="Uninstall" loading="lazy" decoding="async">
     
 -   Choose **Install Custom App**
     
@@ -169,44 +169,44 @@ _You can change the orientation remotely from the management console later on - 
     ```
     
 
-<img src="/destek/installation/sssp-65-16-no-brand.webp" alt="Custom App" loading="lazy" decoding="async">
+<img src="/kb/installation/sssp-65-16-no-brand.webp" alt="Custom App" loading="lazy" decoding="async">
 
 -   The App will download and start automatically
     
-    <img src="/destek/installation/sssp-65-13.webp" alt="Installing" loading="lazy" decoding="async">
+    <img src="/kb/installation/sssp-65-13.webp" alt="Installing" loading="lazy" decoding="async">
     
 -   When the app starts, the hash code will show on the screen
     
 -   Go to the management console and add your screen
     
 
-<img src="/destek/installation/sssp-hash-code.webp" alt="Hash Code" loading="lazy" decoding="async">
+<img src="/kb/installation/sssp-hash-code.webp" alt="Hash Code" loading="lazy" decoding="async">
 
 #### Tizen 6.5 Option 2: Follow this if Samsung SSSP is brand new or after a factory reset
 
 -   Select your Language on the welcome screen
     
-    <img src="/destek/installation/sssp-65-1.webp" alt="Welcome" loading="lazy" decoding="async">
+    <img src="/kb/installation/sssp-65-1.webp" alt="Welcome" loading="lazy" decoding="async">
     
 -   Set your network connection (Wireless or wired)
     
-    <img src="/destek/installation/sssp-65-2.webp" alt="Network" loading="lazy" decoding="async">
+    <img src="/kb/installation/sssp-65-2.webp" alt="Network" loading="lazy" decoding="async">
     
 -   Review and Accept the Privacy Notice
     
-    <img src="/destek/installation/sssp-65-3.webp" alt="Privacy Notice" loading="lazy" decoding="async">
+    <img src="/kb/installation/sssp-65-3.webp" alt="Privacy Notice" loading="lazy" decoding="async">
     
 -   In Installation Type, Choose Basic Setup
     
-    <img src="/destek/installation/sssp-65-4.webp" alt="Basic Setup" loading="lazy" decoding="async">
+    <img src="/kb/installation/sssp-65-4.webp" alt="Basic Setup" loading="lazy" decoding="async">
     
 -   Choose the orientation (Landscape or Portrait). _You can change the orientation remotely from the management console later on - after adding the screen_
     
-    <img src="/destek/installation/sssp-65-5.webp" alt="Orientation" loading="lazy" decoding="async">
+    <img src="/kb/installation/sssp-65-5.webp" alt="Orientation" loading="lazy" decoding="async">
     
 -   Under Player Selection, Choose **Custom App**
     
-    <img src="/destek/installation/sssp-65-6.webp" alt="Custom App" loading="lazy" decoding="async">
+    <img src="/kb/installation/sssp-65-6.webp" alt="Custom App" loading="lazy" decoding="async">
     
 -   Type in the URL of the digital Signage Player Application:
     
@@ -215,38 +215,38 @@ _You can change the orientation remotely from the management console later on - 
     ```
     
 
-<img src="/destek/installation/sssp-65-7-nobrand.webp" alt="URL" loading="lazy" decoding="async">
+<img src="/kb/installation/sssp-65-7-nobrand.webp" alt="URL" loading="lazy" decoding="async">
 
 -   Set **Skip** for RM Server setup
     
-    <img src="/destek/installation/sssp-65-8.webp" alt="Skip RM Server" loading="lazy" decoding="async">
+    <img src="/kb/installation/sssp-65-8.webp" alt="Skip RM Server" loading="lazy" decoding="async">
     
 -   Disable Auto Power Off mode
     
-    <img src="/destek/installation/sssp-65-9.webp" alt="Auto Power off" loading="lazy" decoding="async">
+    <img src="/kb/installation/sssp-65-9.webp" alt="Auto Power off" loading="lazy" decoding="async">
     
 -   Set the correct date and time
     
-    <img src="/destek/installation/sssp-65-10.webp" alt="Date time" loading="lazy" decoding="async">
+    <img src="/kb/installation/sssp-65-10.webp" alt="Date time" loading="lazy" decoding="async">
     
 -   Choose a PIN
     
-    <img src="/destek/installation/sssp-65-11.webp" alt="Pin" loading="lazy" decoding="async">
+    <img src="/kb/installation/sssp-65-11.webp" alt="Pin" loading="lazy" decoding="async">
     
 -   On the Remote Control, Press on **MENU**
     
 -   Choose **Custom App**
     
-    <img src="/destek/installation/sssp-65-12.webp" alt="Custom App" loading="lazy" decoding="async">
+    <img src="/kb/installation/sssp-65-12.webp" alt="Custom App" loading="lazy" decoding="async">
     
 -   The App will download and start automatically
     
-    <img src="/destek/installation/sssp-65-13.webp" alt="Installing" loading="lazy" decoding="async">
+    <img src="/kb/installation/sssp-65-13.webp" alt="Installing" loading="lazy" decoding="async">
     
 -   Go to the management console and add your screen
     
 
-<img src="/destek/installation/sssp-hash-code.webp" alt="Hash Code" loading="lazy" decoding="async">
+<img src="/kb/installation/sssp-hash-code.webp" alt="Hash Code" loading="lazy" decoding="async">
 
 * * *
 
@@ -262,7 +262,7 @@ _You can change the orientation remotely from the management console later on - 
     
 -   It will create a folder named _SSSP_ . Under this folder there are 2 files (DigitalSignage.wgt and sssp\_config.xml), as following:
     
-    <img src="/destek/installation/sssp-usb-files-nobrand.webp" alt="files" loading="lazy" decoding="async">
+    <img src="/kb/installation/sssp-usb-files-nobrand.webp" alt="files" loading="lazy" decoding="async">
     
 
 ### USB Setup on SSSP6 - Tizen 4.0 Display
@@ -275,24 +275,24 @@ _You can change the orientation remotely from the management console later on - 
     
 -   Select **Install From USB Device**.
     
-    <img src="/destek/installation/sssp-usb-install-from-4.0.webp" alt="Install from USB" loading="lazy" decoding="async">
+    <img src="/kb/installation/sssp-usb-install-from-4.0.webp" alt="Install from USB" loading="lazy" decoding="async">
     
 -   Enter the PIN
     
-    <img src="/destek/installation/sssp-usb-pin-4.0.webp" alt="PIN" loading="lazy" decoding="async">
+    <img src="/kb/installation/sssp-usb-pin-4.0.webp" alt="PIN" loading="lazy" decoding="async">
     
 -   The Digital Signage Player will start to download and install automatically
     
 -   The app will launch once the download is complete
     
-    <img src="/destek/installation/sssp-url-launcher4.0.webp" alt="DONE" loading="lazy" decoding="async">
+    <img src="/kb/installation/sssp-url-launcher4.0.webp" alt="DONE" loading="lazy" decoding="async">
     
 -   When the app starts, the hash code will show on the screen
     
 -   Go to the management console and add your screen
     
 
-<img src="/destek/installation/sssp-hash-code.webp" alt="Hash Code" loading="lazy" decoding="async">
+<img src="/kb/installation/sssp-hash-code.webp" alt="Hash Code" loading="lazy" decoding="async">
 
 ### USB Setup on SSSP10 - Tizen 6.5 Display
 
@@ -302,11 +302,11 @@ _You can change the orientation remotely from the management console later on - 
     
 -   Select **App Management**
     
-    <img src="/destek/installation/sssp-usb-app-management6.5.webp" alt="App Management" loading="lazy" decoding="async">
+    <img src="/kb/installation/sssp-usb-app-management6.5.webp" alt="App Management" loading="lazy" decoding="async">
     
 -   Select **Install from USB Device**
     
-    <img src="/destek/installation/sssp-usb-install-from-6.5.webp" alt="App Management" loading="lazy" decoding="async">
+    <img src="/kb/installation/sssp-usb-install-from-6.5.webp" alt="App Management" loading="lazy" decoding="async">
     
 -   Enter PIN if required
     
@@ -319,7 +319,7 @@ _You can change the orientation remotely from the management console later on - 
 -   Go to the management console and add your screen
     
 
-<img src="/destek/installation/sssp-hash-code.webp" alt="Hash Code" loading="lazy" decoding="async">
+<img src="/kb/installation/sssp-hash-code.webp" alt="Hash Code" loading="lazy" decoding="async">
 
 * * *
 
@@ -327,15 +327,15 @@ _You can change the orientation remotely from the management console later on - 
 
 1.  Make sure your screen is setup to play via Custom App. Press Menu > System > Play Via > Custom App
 
-<img src="/destek/installation/custom-app.webp" alt="SSSP Play Via Menu" loading="lazy" decoding="async">
+<img src="/kb/installation/custom-app.webp" alt="SSSP Play Via Menu" loading="lazy" decoding="async">
 
 2.  Install the DS application by going to Features > AppManagement. If you see this feature is not available, switch your screen to HDMI and then try again.
 
-<img src="/destek/installation/app-managment.webp" alt="SSSP App Management" loading="lazy" decoding="async">
+<img src="/kb/installation/app-managment.webp" alt="SSSP App Management" loading="lazy" decoding="async">
 
 3.  Click on “Install Custom App” and enter this url `https://app-ds.net/ts7` then click Go.
 
-<img src="/destek/installation/ts7.webp" alt="SSSP Install App" loading="lazy" decoding="async">
+<img src="/kb/installation/ts7.webp" alt="SSSP Install App" loading="lazy" decoding="async">
 
 The application should get downloaded, installed and start automatically.
 
@@ -349,12 +349,12 @@ To switch the screen to URL Launcher, follow these steps:
 1.  Press the ‘**Menu**’ button on the remote control to open the device menu.
 2.  Select ‘**System**’.
 
-<img src="/destek/installation/url-laucher-system.webp" alt="SSSP System Menu" loading="lazy" decoding="async">
+<img src="/kb/installation/url-laucher-system.webp" alt="SSSP System Menu" loading="lazy" decoding="async">
 
 3.  Scroll to the bottom of the menu and select the ‘**Play Via**’ option.
 4.  Select the ‘**URL Launcher**’ option. If any app is installed on your device, the option available may be a ‘**Custom App**’ instead of ‘URL Launcher’.
 
-<img src="/destek/installation/url-launcher-playvia.webp" alt="SSSP Play Via Menu" loading="lazy" decoding="async">
+<img src="/kb/installation/url-launcher-playvia.webp" alt="SSSP Play Via Menu" loading="lazy" decoding="async">
 
 5.  Press the ‘Home’ button and select ‘URL Launcher’ from the home menu.
 

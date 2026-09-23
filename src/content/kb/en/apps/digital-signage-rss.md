@@ -1,6 +1,6 @@
 ---
 title: 'RSS News App'
-slug: 'digital-signage-rss'
+urlSlug: 'digital-signage-rss'
 summary: 'Learn how to integrate RSS feeds with sonopto.signage to display real-time updates on your digital signage. A step-by-step guide to keep your audience informed!'
 category: 'apps'
 order: 69
@@ -8,7 +8,7 @@ source: 'apps/digital-signage-rss'
 sourceHash: 'f86dd3eb54eea7e4'
 importedAt: '2026-09-23'
 ---
-<video width="90%" src="/destek/apps/digital-signage-rss-feed.mp4" controls="" preload="metadata" playsinline=""></video>
+<video width="90%" src="/kb/apps/digital-signage-rss-feed.mp4" controls="" preload="metadata" playsinline=""></video>
 
 -   Go to the RSS web page and copy the RSS feed URL (_e.g. [](https://www.jpl.nasa.gov/feeds/news)https://www.jpl.nasa.gov/feeds/news/_).
 -   Go to the Management Console.

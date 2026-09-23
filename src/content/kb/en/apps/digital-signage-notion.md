@@ -1,6 +1,6 @@
 ---
 title: 'Notion App'
-slug: 'digital-signage-notion'
+urlSlug: 'digital-signage-notion'
 summary: 'Integrate Notion with your digital signage to display live Notion pages on your screens. Any changes made in Notion update automatically in real-time.'
 category: 'apps'
 order: 60
@@ -10,7 +10,7 @@ importedAt: '2026-09-23'
 ---
 Notion is an all-in-one productivity and collaboration app that combines note-taking, project management, databases, task tracking, and documentation in a single workspace. It’s used by individuals and teams to organize their work, manage projects, write content, and centralize knowledge.
 
-<video muted="" width="90%" src="/destek/apps/notion-app.mp4" controls="" preload="metadata" playsinline=""></video>
+<video muted="" width="90%" src="/kb/apps/notion-app.mp4" controls="" preload="metadata" playsinline=""></video>
 
 -   Go to your Notion Page.
 -   Click the “Share” button on the top right corner.

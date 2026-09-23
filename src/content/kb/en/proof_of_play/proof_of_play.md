@@ -1,6 +1,6 @@
 ---
 title: 'Proof Of Play'
-slug: 'proof_of_play'
+urlSlug: 'proof_of_play'
 summary: 'Learn how to enable Proof of Play in your digital signage account to track media performance and ensure accurate reporting with ease.'
 category: 'proof_of_play'
 order: 999
@@ -14,14 +14,14 @@ Proof of play provides statistics about media playback.
 
 This feature can be enabled at the Management Console from the Settings Page.
 
-<img src="/destek/proof_of_play/proof-of-play-settings.webp" alt="Proof of play Settings" loading="lazy" decoding="async">
+<img src="/kb/proof_of_play/proof-of-play-settings.webp" alt="Proof of play Settings" loading="lazy" decoding="async">
 
 -   Click on the account profile on the top right corner.
     
 -   Select Settings.
     
 
-<img src="/destek/proof_of_play/enable-proof-of-play.webp" alt="Enable proof of play" loading="lazy" decoding="async">
+<img src="/kb/proof_of_play/enable-proof-of-play.webp" alt="Enable proof of play" loading="lazy" decoding="async">
 
 -   Go to Statistics.
     
@@ -30,7 +30,7 @@ This feature can be enabled at the Management Console from the Settings Page.
 
 ### Step 2: Enable Proof of play on the media
 
-<img src="/destek/proof_of_play/proof_of_play.webp" alt="Proof of Play" loading="lazy" decoding="async">
+<img src="/kb/proof_of_play/proof_of_play.webp" alt="Proof of Play" loading="lazy" decoding="async">
 
 -   Go to playlists page and click on your playlist
 -   Click on a layer
@@ -49,7 +49,7 @@ This feature can be enabled at the Management Console from the Settings Page.
 -   Click on Preview
 -   Click on Export to export the results to a CSV file.
 
-<img src="/destek/proof_of_play/proof-of-play-preview.webp" alt="Proof of Play Filter" loading="lazy" decoding="async">
+<img src="/kb/proof_of_play/proof-of-play-preview.webp" alt="Proof of Play Filter" loading="lazy" decoding="async">
 
 ### Step 4: Proof of Play Dashboard
 
@@ -57,7 +57,7 @@ The Proof of Play dashboard provides easy-to-read data reports on media playback
 
 -   Click the “Open Dashboard” button next to “Preview”.
 
-<img src="/destek/proof_of_play/proof-of-play-dashboard.webp" alt="Proof of Play Dashbaord" loading="lazy" decoding="async">
+<img src="/kb/proof_of_play/proof-of-play-dashboard.webp" alt="Proof of Play Dashbaord" loading="lazy" decoding="async">
 
 -   The Proof of Play Analytics dashboard will open in a new tab.
 -   In the Filters section, select a date to view the report.
@@ -71,7 +71,7 @@ Filters (optional):
 
 _Note: if there’s no data available in the report, the Players, Playlist, Media Files, and Tags fields will not show._
 
-<img src="/destek/proof_of_play/proof-of-play-dashbaord-filter.webp" alt="Proof of Play Dashbaord Report" loading="lazy" decoding="async">
+<img src="/kb/proof_of_play/proof-of-play-dashbaord-filter.webp" alt="Proof of Play Dashbaord Report" loading="lazy" decoding="async">
 
 -   You can click the Toggle in the bottom right corner for a fullscreen view.
 
@@ -85,12 +85,12 @@ In this section, you can manage your dashboard by adding accounts, creating team
 -   Enter the Team name and relevant media tags for this team to access.
 -   If no tags are assigned, the accounts in this team can have full media access.
 
-<img src="/destek/proof_of_play/create-teams.webp" alt="Proof of Play Dashbaord Teams" loading="lazy" decoding="async">
+<img src="/kb/proof_of_play/create-teams.webp" alt="Proof of Play Dashbaord Teams" loading="lazy" decoding="async">
 
 -   Now, navigate to the ACCOUNTS tab and click “Add Account”.
 -   Enter the account you want to grant dashboard access (e.g. [example@domain.com](mailto:example@domain.com)).
 -   Select a team from the dropdown menu.
 
-<img src="/destek/proof_of_play/add-account.webp" alt="Proof of Play Dashbaord Accounts" loading="lazy" decoding="async">
+<img src="/kb/proof_of_play/add-account.webp" alt="Proof of Play Dashbaord Accounts" loading="lazy" decoding="async">
 
 -   Now, the added accounts will have access to your proof of play dashboard based on their associated team and assigned media tag.

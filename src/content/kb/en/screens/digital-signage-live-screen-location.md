@@ -1,6 +1,6 @@
 ---
 title: 'Live Screen Location'
-slug: 'digital-signage-live-screen-location'
+urlSlug: 'digital-signage-live-screen-location'
 summary: 'Learn how to use the sonopto.signage Live Screen Location feature, which provides a map view of all your active digital signage screens.'
 category: 'screens'
 order: 6
@@ -30,7 +30,7 @@ To enable location services, grant the app permission for precise location on An
 3.  Turn on Location Services. If Location is off, tap the switch to turn it on.
     
 
-<img src="/destek/screens/location-services.webp" alt="Location Services" loading="lazy" decoding="async">
+<img src="/kb/screens/location-services.webp" alt="Location Services" loading="lazy" decoding="async">
 
 ### Step 2: Enable Precise Location for an App
 
@@ -48,7 +48,7 @@ To enable location services, grant the app permission for precise location on An
     
     -   Ensure that Use precise location is enabled (it allows the app to access GPS data). You will see a toggle next to “Use precise location”; ensure it’s turned on.
 
-<img src="/destek/screens/location-permission.webp" alt="Location Permission" loading="lazy" decoding="async">
+<img src="/kb/screens/location-permission.webp" alt="Location Permission" loading="lazy" decoding="async">
 
 ### Step 3: Check GPS Settings
 
@@ -57,7 +57,7 @@ High Accuracy Mode:
 -   Go back to Settings > Location.
 -   Tap on Location Mode or Advanced (depending on your Android version), and select High accuracy. This will use GPS, Wi-Fi, and mobile networks for location detection.
 
-<img src="/destek/screens/location-gps-setting.webp" alt="Location GPS Settings" loading="lazy" decoding="async">
+<img src="/kb/screens/location-gps-setting.webp" alt="Location GPS Settings" loading="lazy" decoding="async">
 
 After following these steps, your app should be able to access GPS data from a precise location.
 
@@ -72,11 +72,11 @@ After configuring the location services and permissions on your digital signage 
 2.  Under the Screen Location column next to the screen name, click on SET LOCATION.
     
 
-<img src="/destek/screens/screen-location.webp" alt="Screen Location" loading="lazy" decoding="async">
+<img src="/kb/screens/screen-location.webp" alt="Screen Location" loading="lazy" decoding="async">
 
 3.  Check " Enable auto-update location using the device’s GPS".
 
-<img src="/destek/screens/enable-auto-update.webp" alt="Enable Auto-update Location" loading="lazy" decoding="async">
+<img src="/kb/screens/enable-auto-update.webp" alt="Enable Auto-update Location" loading="lazy" decoding="async">
 
 4.  Click on UPDATE LOCATION.
     
@@ -89,12 +89,12 @@ After configuring the location services and permissions on your digital signage 
     Online screens are marked with green pins, while offline screens with red pins.
     
 
-<img src="/destek/screens/screen-location-on-map.webp" alt="Scree Location on Map" loading="lazy" decoding="async">
+<img src="/kb/screens/screen-location-on-map.webp" alt="Scree Location on Map" loading="lazy" decoding="async">
 
 8.  Click the Toggle in the top right corner for a fullscreen view.
 
-<img src="/destek/screens/fullscreen-view.webp" alt="Fullscreen View" loading="lazy" decoding="async">
+<img src="/kb/screens/fullscreen-view.webp" alt="Fullscreen View" loading="lazy" decoding="async">
 
 9.  You can also switch to Satellite view.
 
-<img src="/destek/screens/satellite-view.webp" alt="Satellite View" loading="lazy" decoding="async">
+<img src="/kb/screens/satellite-view.webp" alt="Satellite View" loading="lazy" decoding="async">

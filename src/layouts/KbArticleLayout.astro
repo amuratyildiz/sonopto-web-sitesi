@@ -1,0 +1,91 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/seo/Breadcrumbs.astro';
+import JsonLd from '../components/seo/JsonLd.astro';
+import KbSidebar from '../components/kb/KbSidebar.astro';
+import KbToc from '../components/kb/KbToc.astro';
+import KbPrevNext from '../components/kb/KbPrevNext.astro';
+import { render } from 'astro:content';
+import { getDictionary } from '../content/i18n';
+import { pathFor, type Locale } from '../lib/i18n/routes';
+import { kbArticlePath, kbCategoryPath } from '../lib/kb/paths';
+import { getKbEntries, siblings, type KbEntry } from '../lib/kb/nav';
+import { techArticleSchema } from '../lib/seo/schema';
+import { absoluteUrl } from '../lib/seo/meta';
+
+interface Props { entry: KbEntry; locale: Locale; alternatePath?: string }
+
+const { entry, locale, alternatePath } = Astro.props;
+const dict = getDictionary(locale);
+const { Content, headings } = await render(entry);
+
+const entries = await getKbEntries(locale);
+const { prev, next } = siblings(entries, entry);
+const path = kbArticlePath(entry, locale);
+const category = dict.kb.categories[entry.data.category];
+---
+
+<BaseLayout
+  title={entry.data.title}
+  description={entry.data.summary}
+  path={path}
+  locale={locale}
+  alternatePath={alternatePath}
+  type="article"
+>
+  <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+    <Breadcrumbs
+      items={[
+        { name: dict.nav.home, path: pathFor('home', locale) },
+        { name: dict.kb.pageTitle, path: pathFor('support', locale) },
+        { name: category.name, path: kbCategoryPath(entry.data.category, locale) },
+        { name: entry.data.title, path },
+      ]}
+    />
+
+    <div class="mt-8 flex flex-col gap-10 lg:grid lg:grid-cols-[15rem_minmax(0,1fr)]">
+      {/* Rendered once. On a phone it reflows below the article via grid order
+          rather than being duplicated into a collapsible copy — two copies
+          would double every internal link on all 119 pages. */}
+      <div class="order-2 mt-12 border-t border-neutral-100 pt-8 lg:order-none lg:mt-0 lg:border-0 lg:pt-0">
+        <KbSidebar locale={locale} entries={entries} current={entry.data.category} currentId={entry.id} />
+      </div>
+
+      <article class="order-1 min-w-0 lg:order-none">
+        <p class="font-mono text-xs uppercase tracking-wide text-neutral-500">{category.name}</p>
+        <h1 class="mt-2 text-3xl font-bold text-ink">{entry.data.title}</h1>
+        {entry.data.summary && <p class="mt-3 text-lg text-neutral-600">{entry.data.summary}</p>}
+
+        <KbToc locale={locale} headings={headings} />
+
+        <div class="prose mt-8 max-w-none">
+          <Content />
+        </div>
+
+        <KbPrevNext locale={locale} prev={prev} next={next} />
+
+        <aside class="mt-10 border border-neutral-100 bg-neutral-50 p-6">
+          <h2 class="text-base text-ink">{dict.kb.stuckTitle}</h2>
+          <p class="mt-2 text-sm text-neutral-600">{dict.kb.stuckBody}</p>
+          <a
+            href={pathFor('contact', locale)}
+            class="btn-sweep mt-4 inline-block bg-ink px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-neutral-800"
+          >
+            {dict.common.contactUs}
+          </a>
+        </aside>
+      </article>
+    </div>
+  </div>
+
+  <JsonLd
+    data={techArticleSchema({
+      headline: entry.data.title,
+      description: entry.data.summary,
+      url: absoluteUrl(path),
+      section: category.name,
+      inLanguage: locale,
+      dateModified: entry.data.reviewedAt ?? entry.data.importedAt,
+    })}
+  />
+</BaseLayout>

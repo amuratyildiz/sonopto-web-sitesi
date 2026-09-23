@@ -1,6 +1,6 @@
 ---
 title: 'Google Slides App'
-slug: 'digital-signage-google-slides'
+urlSlug: 'digital-signage-google-slides'
 summary: 'Learn how to use Google Slides with sonopto.signage for dynamic digital signage. Follow our step-by-step guide to display stunning presentations seamlessly!'
 category: 'apps'
 order: 50
@@ -8,7 +8,7 @@ source: 'apps/digital-signage-google-slides'
 sourceHash: '13d311ff3bbc878f'
 importedAt: '2026-09-23'
 ---
-<video width="90%" src="/destek/apps/google-slides.mp4" controls="" preload="metadata" playsinline=""></video>
+<video width="90%" src="/kb/apps/google-slides.mp4" controls="" preload="metadata" playsinline=""></video>
 
 -   Go to Google Slides and open the slideshow you want to show.
     
@@ -45,4 +45,4 @@ importedAt: '2026-09-23'
 
 Published Google Slides do not receive automatic updates. If you want your changes to be refrect on screens, you need to enable the auto-refresh function for your Google Slide. This will reload your slide every 30 minutes and ensure that your slide is up to date.
 
-<img src="/destek/apps/google-slides-auto-update.webp" alt="Digital Signage Google Slide Auto Update" loading="lazy" decoding="async">
+<img src="/kb/apps/google-slides-auto-update.webp" alt="Digital Signage Google Slide Auto Update" loading="lazy" decoding="async">

@@ -1,6 +1,6 @@
 ---
 title: 'Dynamic Canva App'
-slug: 'digital-signage-dynamic-canva'
+urlSlug: 'digital-signage-dynamic-canva'
 summary: 'Integrate Canva with your digital signage to embed your designs easily. Any changes in Canva update automatically on your digital signage screens.'
 category: 'apps'
 order: 39
@@ -8,7 +8,7 @@ source: 'apps/digital-signage-dynamic-canva'
 sourceHash: '465c1161831d0497'
 importedAt: '2026-09-23'
 ---
-<video muted="" width="90%" src="/destek/apps/dynamic-canva-app.mp4" controls="" preload="metadata" playsinline=""></video>
+<video muted="" width="90%" src="/kb/apps/dynamic-canva-app.mp4" controls="" preload="metadata" playsinline=""></video>
 
 -   Go to your [](https://www.canva.com)Canva design.
 -   Click on the “Share” button in the top right corner.

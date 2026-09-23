@@ -1,6 +1,6 @@
 ---
 title: 'Canva Settings'
-slug: 'digital-signage-canva-settings'
+urlSlug: 'digital-signage-canva-settings'
 summary: 'Learn how to disconnect and remove your Canva account through Canva Settings by signing out of the connected account.'
 category: 'account_settings'
 order: 8
@@ -19,4 +19,4 @@ To remove access and delete your Canva account, follow these steps:
 3.  Choose **Canva Settings**.
 4.  You will see the Canva account that is currently logged in. Click on **Sign out** to remove access.
 
-<img src="/destek/account_settings/remove-canva-access.webp" alt="Remove Canva Access" loading="lazy" decoding="async">
+<img src="/kb/account_settings/remove-canva-access.webp" alt="Remove Canva Access" loading="lazy" decoding="async">

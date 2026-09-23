@@ -1,6 +1,6 @@
 ---
 title: 'Profile Settings'
-slug: 'digital-signage-profile-settings'
+urlSlug: 'digital-signage-profile-settings'
 summary: 'Learn how to update your preferences like account name and password.'
 category: 'account_settings'
 order: 1
@@ -12,7 +12,7 @@ Learn how to manage your profile settings, including updating your profile and c
 
 To access the Profile Settings, click on the profile icon in the top right corner. From the drop-down menu list, select Settings.
 
-<img src="/destek/account_settings/profile-settings.webp" alt="Profile Settings" loading="lazy" decoding="async">
+<img src="/kb/account_settings/profile-settings.webp" alt="Profile Settings" loading="lazy" decoding="async">
 
 -   Click on **Profile Settings**
 -   **Name** is the current user name

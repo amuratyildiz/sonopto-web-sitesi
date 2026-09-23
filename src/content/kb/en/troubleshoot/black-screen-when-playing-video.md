@@ -1,6 +1,6 @@
 ---
 title: 'Black Screen When Playing a Video'
-slug: 'black-screen-when-playing-video'
+urlSlug: 'black-screen-when-playing-video'
 summary: 'Troubleshoot black screen issues when playing videos on your digital signage devices.'
 category: 'troubleshoot'
 order: 119

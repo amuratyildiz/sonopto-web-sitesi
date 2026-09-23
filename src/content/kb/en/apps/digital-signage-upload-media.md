@@ -1,6 +1,6 @@
 ---
 title: 'Upload Media'
-slug: 'digital-signage-upload-media'
+urlSlug: 'digital-signage-upload-media'
 summary: 'Learn how to upload media to your digital signage with sonopto.signage. Follow our step-by-step guide to quickly and easily add videos, images, and more!'
 category: 'apps'
 order: 76
@@ -13,7 +13,7 @@ importedAt: '2026-09-23'
 -   If the layer has no media, the apps dialog will open. Otherwise, click on **Add New**
 -   Click on **Upload Media**
 
-<img src="/destek/apps/upload_media_app.webp" alt="Apps" loading="lazy" decoding="async">
+<img src="/kb/apps/upload_media_app.webp" alt="Apps" loading="lazy" decoding="async">
 
 Files Formats that are supported and can be uploaded are:
 
@@ -23,7 +23,7 @@ Files Formats that are supported and can be uploaded are:
 
 ### 1- Upload from Device
 
-<img src="/destek/apps/upload_from_device.webp" alt="Upload from Device" loading="lazy" decoding="async">
+<img src="/kb/apps/upload_from_device.webp" alt="Upload from Device" loading="lazy" decoding="async">
 
 -   To upload files from your local storage, drag and drop files from your PC to this dialog, or click on **Browse Files**, or click on **My Device**
 -   Select your files
@@ -31,7 +31,7 @@ Files Formats that are supported and can be uploaded are:
 
 ### 2- Upload from Dropbox
 
-<img src="/destek/apps/connect_to_dropbox.webp" alt="Dropbox" loading="lazy" decoding="async">
+<img src="/kb/apps/connect_to_dropbox.webp" alt="Dropbox" loading="lazy" decoding="async">
 
 -   Click on **Dropbox** from the upload media dialog
 -   Click on **Connect to Dropbox**
@@ -41,7 +41,7 @@ Files Formats that are supported and can be uploaded are:
 
 ### 3- Upload from OneDrive
 
-<img src="/destek/apps/connect_to_onedrive.webp" alt="OneDrive" loading="lazy" decoding="async">
+<img src="/kb/apps/connect_to_onedrive.webp" alt="OneDrive" loading="lazy" decoding="async">
 
 -   Click on **OneDrive** from the upload media dialog
 -   Click on **Connect to OneDrive**
@@ -61,7 +61,7 @@ Files Formats that are supported and can be uploaded are:
 
 All the uploaded files will show in the layer’s playlist
 
-<img src="/destek/apps/uploaded_media.webp" alt="Uploaded Media" loading="lazy" decoding="async">
+<img src="/kb/apps/uploaded_media.webp" alt="Uploaded Media" loading="lazy" decoding="async">
 
 **Media Settings**
 

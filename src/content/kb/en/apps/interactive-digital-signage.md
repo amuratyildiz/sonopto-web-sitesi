@@ -1,6 +1,6 @@
 ---
 title: 'Interactive Kiosk App'
-slug: 'interactive-digital-signage'
+urlSlug: 'interactive-digital-signage'
 summary: 'Learn how to create and manage an interactive kiosk in digital signage. Build multi-page interactive sites for product catalogs, directories, and self-service touchscreen kiosks.'
 category: 'apps'
 order: 53
@@ -30,11 +30,11 @@ Common use cases include:
 -   If the layer has no media, the apps dialog will open. Otherwise, click on **Add New**.
 -   Find **General Apps** and click on it.
 
-<img src="/destek/apps/apps-grid.webp" alt="Apps Grid" loading="lazy" decoding="async">
+<img src="/kb/apps/apps-grid.webp" alt="Apps Grid" loading="lazy" decoding="async">
 
 -   Select **Interactive Kiosk** from the General Apps list.
 
-<img src="/destek/apps/search-interactive-kiosk.webp" alt="Select Interactive Kiosk" loading="lazy" decoding="async">
+<img src="/kb/apps/search-interactive-kiosk.webp" alt="Select Interactive Kiosk" loading="lazy" decoding="async">
 
 -   The **Interactive Sites** dialog will open. If you have no sites yet, click **\+ Add New Site** to create one.
 
@@ -44,11 +44,11 @@ Common use cases include:
 -   Enter a name for your site (e.g., “Product Catalog” or “Visitor Guide”).
 -   Click **Save**.
 
-<img src="/destek/apps/add-new-site.webp" alt="Add New Site" loading="lazy" decoding="async">
+<img src="/kb/apps/add-new-site.webp" alt="Add New Site" loading="lazy" decoding="async">
 
 -   The site editor will open, allowing you to build your interactive pages.
 
-<img src="/destek/apps/interactive-sites-empty.webp" alt="Interactive Sites Dialog" loading="lazy" decoding="async">
+<img src="/kb/apps/interactive-sites-empty.webp" alt="Interactive Sites Dialog" loading="lazy" decoding="async">
 
 * * *
 
@@ -62,7 +62,7 @@ The site editor is where you design your interactive pages. It includes:
 -   **Layers panel** (bottom-left): View and manage the layer hierarchy of your page elements.
 -   **Toolbar** (top): Access blocks, save, templates, preview, code editor, and more.
 
-<img src="/destek/apps/site-editor.webp" alt="Site Editor" loading="lazy" decoding="async">
+<img src="/kb/apps/site-editor.webp" alt="Site Editor" loading="lazy" decoding="async">
 
 * * *
 
@@ -70,7 +70,7 @@ The site editor is where you design your interactive pages. It includes:
 
 Click **Templates** in the toolbar to choose from pre-built kiosk templates. Templates give you a ready-made starting point with multiple pages already designed.
 
-<img src="/destek/apps/templates-dialog.webp" alt="Templates Dialog" loading="lazy" decoding="async">
+<img src="/kb/apps/templates-dialog.webp" alt="Templates Dialog" loading="lazy" decoding="async">
 
 Available templates include:
 
@@ -83,7 +83,7 @@ Available templates include:
 
 Once you select a template, the editor loads it with all pages and elements ready to customize.
 
-<img src="/destek/apps/site-editor-template.webp" alt="Site Editor with Template" loading="lazy" decoding="async">
+<img src="/kb/apps/site-editor-template.webp" alt="Site Editor with Template" loading="lazy" decoding="async">
 
 > **Important:** Click the purple **Save** button in the toolbar before navigating away or closing the editor to save your changes.
 
@@ -105,11 +105,11 @@ Use the **Pages** panel on the left to manage your site’s pages:
 
 Once you have created a site, it will appear in the Interactive Sites list. Click **Use This Site** to assign it to your kiosk, then click **Save**.
 
-<img src="/destek/apps/use-site-save.webp" alt="Use Site and Save" loading="lazy" decoding="async">
+<img src="/kb/apps/use-site-save.webp" alt="Use Site and Save" loading="lazy" decoding="async">
 
 The kiosk preview will update to show the site content in your playlist layer.
 
-<img src="/destek/apps/preview.webp" alt="Kiosk Preview" loading="lazy" decoding="async">
+<img src="/kb/apps/preview.webp" alt="Kiosk Preview" loading="lazy" decoding="async">
 
 * * *
 

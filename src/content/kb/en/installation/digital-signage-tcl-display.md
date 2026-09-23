@@ -1,6 +1,6 @@
 ---
 title: 'Install Digital Signage on TCL Displays'
-slug: 'digital-signage-tcl-display'
+urlSlug: 'digital-signage-tcl-display'
 summary: 'Step-by-step guide to install Digital Signage on TCL digital signage displays (Android 9 & 13). Get your screens up and running in minutes.'
 category: 'installation'
 order: 7
@@ -33,11 +33,11 @@ This guide offers clear instructions for installing Digital Signage on TCL comme
 
 -   On your remote control, press the **Apps** button
 
-<img src="/destek/installation/tcl-remotecontrol.webp" alt="TCL Remote Control" loading="lazy" decoding="async">
+<img src="/kb/installation/tcl-remotecontrol.webp" alt="TCL Remote Control" loading="lazy" decoding="async">
 
 -   Go to **File Browser**
 
-<img src="/destek/installation/tcl-install-apk.webp" alt="TCL Apps" loading="lazy" decoding="async">
+<img src="/kb/installation/tcl-install-apk.webp" alt="TCL Apps" loading="lazy" decoding="async">
 
 -   Click on the **APK** file
     

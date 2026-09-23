@@ -1,6 +1,6 @@
 ---
 title: 'Player Showing Offline on Dashboard'
-slug: 'player-offline-on-dashboard'
+urlSlug: 'player-offline-on-dashboard'
 summary: 'Troubleshoot your digital signage when a player appears offline on the dashboard even though internet is available.'
 category: 'troubleshoot'
 order: 118

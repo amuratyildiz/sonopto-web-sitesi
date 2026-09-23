@@ -1,0 +1,63 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/seo/Breadcrumbs.astro';
+import { getDictionary } from '../content/i18n';
+import { alternateLocale, pathFor, type Locale } from '../lib/i18n/routes';
+import { kbCategoryPath } from '../lib/kb/paths';
+import { getKbEntries, groupByCategory } from '../lib/kb/nav';
+import { kbCategoryKeys } from '../data/kb';
+
+interface Props { locale: Locale }
+
+const { locale } = Astro.props;
+const dict = getDictionary(locale);
+const path = pathFor('support', locale);
+
+const entries = await getKbEntries(locale);
+const mine = groupByCategory(entries);
+// Counts are of what exists in THIS language, so the numbers are not a promise
+// the section cannot keep.
+const source = groupByCategory(await getKbEntries('en'));
+
+const categories = kbCategoryKeys
+  .map((key) => ({
+    key,
+    count: (mine.get(key) ?? []).length,
+    total: (source.get(key) ?? []).length,
+  }))
+  .filter((c) => c.total > 0);
+---
+
+<BaseLayout
+  title={dict.kb.pageTitle}
+  description={dict.kb.pageIntro}
+  path={path}
+  locale={locale}
+  alternatePath={pathFor('support', alternateLocale(locale))}
+>
+  <section class="bg-ink text-white">
+    <div class="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
+      <Breadcrumbs
+        variant="dark"
+        items={[{ name: dict.nav.home, path: pathFor('home', locale) }, { name: dict.kb.pageTitle, path }]}
+      />
+      <h1 class="mt-6 text-3xl font-bold sm:text-4xl">{dict.kb.pageTitle}</h1>
+      <p class="mt-5 max-w-2xl text-lg text-neutral-300">{dict.kb.pageIntro}</p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+    <h2 class="text-sm uppercase tracking-wide text-neutral-500">{dict.kb.categoriesTitle}</h2>
+    <div data-reveal-group class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {categories.map((c) => (
+        <a data-reveal href={kbCategoryPath(c.key, locale)} class="sig-card card-status flex flex-col p-6">
+          <h3 class="text-base text-ink">{dict.kb.categories[c.key].name}</h3>
+          <p class="mt-2 flex-1 text-sm text-neutral-600">{dict.kb.categories[c.key].intro}</p>
+          <span class="mt-4 font-mono text-xs text-neutral-500">
+            {c.count > 0 ? c.count : c.total} {dict.kb.articles}
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

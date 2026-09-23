@@ -1,6 +1,6 @@
 ---
 title: 'sonopto.signage configuration file'
-slug: 'digital-signage-configuration'
+urlSlug: 'digital-signage-configuration'
 summary: 'sonopto.signage configuration file'
 category: 'installation'
 order: 19
@@ -18,7 +18,7 @@ importedAt: '2026-09-23'
 
 The configuration file is a text file that should be placed in the same directory as the software application file and should be named **“conf.txt”**.
 
-<img src="/destek/installation/conf_file.webp" alt="Digital Signage Config file" loading="lazy" decoding="async">
+<img src="/kb/installation/conf_file.webp" alt="Digital Signage Config file" loading="lazy" decoding="async">
 
 Configuration file contains the below
 
@@ -72,7 +72,7 @@ fullscreen: no
 
 #### 4\. Play sonopto.signage on Two Extended Screens
 
-<img src="/destek/installation/2-screens-extended.webp" alt="2-screens-extended" loading="lazy" decoding="async">
+<img src="/kb/installation/2-screens-extended.webp" alt="2-screens-extended" loading="lazy" decoding="async">
 
 To set up the application on two extended screens, disable fullscreen mode and use width, height, x, and y configuration to position the application across the two screens. Here’s an example assuming each screen is 1920x1080px.
 
@@ -98,7 +98,7 @@ fullscreen: no
 
 #### 5\. Play sonopto.signage on One of the two connected screens
 
-<img src="/destek/installation/2-screens-1080.webp" alt="2-screens-1080" loading="lazy" decoding="async">
+<img src="/kb/installation/2-screens-1080.webp" alt="2-screens-1080" loading="lazy" decoding="async">
 
   Assuming you have two screens connected to the same player, each 1920x1080px, in the configuration below, and you want the digital signage application to play on screen 2, the configuration should be as follows:
 
@@ -126,7 +126,7 @@ To run different content on two or more different screens using the same player,
 
 -   1 - Make another copy of the application by coping the folder containing the application files as the below example:
 
-<img src="/destek/installation/two-applications.webp" alt="2-screens-1080" loading="lazy" decoding="async">
+<img src="/kb/installation/two-applications.webp" alt="2-screens-1080" loading="lazy" decoding="async">
 
 -   2 - For screen 1, update screen\_id to 1 and keep x at 0 pixels.
 

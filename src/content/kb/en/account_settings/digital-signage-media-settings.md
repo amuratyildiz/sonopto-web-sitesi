@@ -1,6 +1,6 @@
 ---
 title: 'Media Settings'
-slug: 'digital-signage-media-settings'
+urlSlug: 'digital-signage-media-settings'
 summary: 'Configure default media behavior, including media duration, screen stretching, and video mute settings for images and videos added to playlists.'
 category: 'account_settings'
 order: 5
@@ -10,7 +10,7 @@ importedAt: '2026-09-23'
 ---
 The Media Settings section allows you to configure the default behavior of media files when they are added to playlists. These settings help streamline content management by automatically applying predefined options to images and videos, saving time when building playlists.
 
-<img src="/destek/account_settings/media_settings.webp" alt="Media Settings" loading="lazy" decoding="async">
+<img src="/kb/account_settings/media_settings.webp" alt="Media Settings" loading="lazy" decoding="async">
 
 1.  **Default Media Duration**:  
     This is the default media duration that will be used when you add media to a playlist.  

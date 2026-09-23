@@ -1,6 +1,6 @@
 ---
 title: 'Google Docs App'
-slug: 'digital-signage-google-docs'
+urlSlug: 'digital-signage-google-docs'
 summary: 'Digital Signage Support Guide'
 category: 'apps'
 order: 46
@@ -8,7 +8,7 @@ source: 'apps/digital-signage-google-docs'
 sourceHash: '227ffd5389d858fe'
 importedAt: '2026-09-23'
 ---
-<video width="90%" src="/destek/apps/google-docs.mp4" controls="" preload="metadata" playsinline=""></video>
+<video width="90%" src="/kb/apps/google-docs.mp4" controls="" preload="metadata" playsinline=""></video>
 
 -   Go to Google Docs and open the document you want to show.
 -   Click on **File**.

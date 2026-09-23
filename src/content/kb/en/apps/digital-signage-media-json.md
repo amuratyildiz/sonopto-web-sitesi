@@ -1,6 +1,6 @@
 ---
 title: 'Media JSON Integration'
-slug: 'digital-signage-media-json'
+urlSlug: 'digital-signage-media-json'
 summary: 'Automate your screen content using Media JSON feeds. Learn how to connect external image and video feeds with your digital signage for seamless, scheduled updates.'
 category: 'apps'
 order: 66
@@ -41,7 +41,7 @@ Perfect for:
 -   Select the media type: images, videos, or both.
 -   Click **Save** to apply your changes.
 
-<video width="90%" src="/destek/apps/media-json-video.mp4" controls="" preload="metadata" playsinline=""></video>
+<video width="90%" src="/kb/apps/media-json-video.mp4" controls="" preload="metadata" playsinline=""></video>
 
 * * *
 

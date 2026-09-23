@@ -1,6 +1,6 @@
 ---
 title: 'sonopto.signage'
-slug: 'digital-signage-dashboard'
+urlSlug: 'digital-signage-dashboard'
 summary: 'Get a complete overview of your digital signage account with our intuitive dashboard. Manage content, track performance, and stay in control effortlessly!'
 category: 'dashboard'
 order: 999
@@ -16,7 +16,7 @@ On the first row, we have the system statistics.
 
 -   The statistics include online screens, offline screens, the storage usage for this account, and the licences available for this account.
 
-<img src="/destek/dashboard/dashboard-1.webp" alt="Dashboard Statistics" loading="lazy" decoding="async">
+<img src="/kb/dashboard/dashboard-1.webp" alt="Dashboard Statistics" loading="lazy" decoding="async">
 
 **Add licences from the dashboard**
 
@@ -26,7 +26,7 @@ On the first row, we have the system statistics.
 
 On the second row we have 3 sections: The first is for screens, the second and the third section is for horizontal and vertical playlists.
 
-<img src="/destek/dashboard/dashboard-2.webp" alt="Dashboard Screens Playlists" loading="lazy" decoding="async">
+<img src="/kb/dashboard/dashboard-2.webp" alt="Dashboard Screens Playlists" loading="lazy" decoding="async">
 
 **Screens**
 
@@ -36,17 +36,17 @@ On the second row we have 3 sections: The first is for screens, the second and t
 -   Get the code from the screen and enter it.
 -   Enter the screen name and location then click on **Add screen**.
 
-<img src="/destek/dashboard/add-screen.webp" alt="Add Screen" loading="lazy" decoding="async">
+<img src="/kb/dashboard/add-screen.webp" alt="Add Screen" loading="lazy" decoding="async">
 
 -   Now go back to the dashboard.
 -   You can see the screen we just added.
 
-<img src="/destek/dashboard/add-screen-2.webp" alt="Add Screen 2" loading="lazy" decoding="async">
+<img src="/kb/dashboard/add-screen-2.webp" alt="Add Screen 2" loading="lazy" decoding="async">
 
 -   Click on screen’s location to check its location on the map.
 -   Below the screens section, you can check Screens’ Status History on this bar chart.
 
-<img src="/destek/dashboard/screen-status.webp" alt="Screen Status" loading="lazy" decoding="async">
+<img src="/kb/dashboard/screen-status.webp" alt="Screen Status" loading="lazy" decoding="async">
 
 -   To do more actions, you can also click on screen from this list. It will open the screens page.
 
@@ -57,7 +57,7 @@ On the second row we have 3 sections: The first is for screens, the second and t
 -   Default playlists and playlists you create will be listed here.
 -   To open a playlist click on it. It will open the playlist where you can start adding content.
 
-<img src="/destek/dashboard/dashboard-playlist.webp" alt="Dashboard Playlist" loading="lazy" decoding="async">
+<img src="/kb/dashboard/dashboard-playlist.webp" alt="Dashboard Playlist" loading="lazy" decoding="async">
 
 ### 3- Support Guide
 

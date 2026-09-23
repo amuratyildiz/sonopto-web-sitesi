@@ -1,6 +1,6 @@
 ---
 title: 'Install Digital Signage on BrightSign'
-slug: 'digital-signage-install-brightsign'
+urlSlug: 'digital-signage-install-brightsign'
 summary: 'How to install digital signage app on BrightSign players'
 category: 'installation'
 order: 6
@@ -20,7 +20,7 @@ The latest autorun.zip file can be downloaded from [https://appds.io/bs/autorun.
 
 Copy the autorun.zip file to the the root of your SD card. DO NOT extract the zip file.
 
-<img src="/destek/installation/brightsign-standalone-sdcard.webp" alt="brightsign-standalone-sdcard" loading="lazy" decoding="async">
+<img src="/kb/installation/brightsign-standalone-sdcard.webp" alt="brightsign-standalone-sdcard" loading="lazy" decoding="async">
 
 #### 3\. Insert the SD card into the player and let it finish the setup
 

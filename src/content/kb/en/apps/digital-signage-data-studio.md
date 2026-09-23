@@ -1,6 +1,6 @@
 ---
 title: 'Google Looker Studio App'
-slug: 'digital-signage-data-studio'
+urlSlug: 'digital-signage-data-studio'
 summary: 'Learn how to use the Google Looker Studio App with digital signage to display dynamic, data-driven dashboards on your digital signage screens effortlessly.'
 category: 'apps'
 order: 48
@@ -8,7 +8,7 @@ source: 'apps/digital-signage-data-studio'
 sourceHash: '83edacb6acb6445d'
 importedAt: '2026-09-23'
 ---
-<video width="90%" src="/destek/apps/looker-studio.mp4" controls="" preload="metadata" playsinline=""></video>
+<video width="90%" src="/kb/apps/looker-studio.mp4" controls="" preload="metadata" playsinline=""></video>
 
 ### Step 1: Make Report Visible and Share it
 

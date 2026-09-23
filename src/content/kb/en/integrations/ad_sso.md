@@ -1,6 +1,6 @@
 ---
 title: 'Setup SAML 2.0 SSO for Hexa and Azure Active Directory'
-slug: 'ad_sso'
+urlSlug: 'ad_sso'
 summary: 'Learn how to set up SAML 2.0 SSO for seamless single sign-on, enhancing security and streamlining access to your applications effortlessly.'
 category: 'integrations'
 order: 112
@@ -28,18 +28,18 @@ _Important: Login to Azure AD as **admin**_
 -   Go to **Enterprise applications**.
 -   Click on **New Application**.
 
-<img src="/destek/integrations/1-ad-enterprise-application.webp" alt="Enterprise Application" loading="lazy" decoding="async">
+<img src="/kb/integrations/1-ad-enterprise-application.webp" alt="Enterprise Application" loading="lazy" decoding="async">
 
 -   Click on **Create your own application**.
 -   Enter _CloudHexa_ as the name of the app.
 -   Choose **Integrate any other application you don’t find in the gallery (Non-gallery)**.
 -   Click **Create**.
 
-<img src="/destek/integrations/2-ad-create-app.webp" alt="Create Application" loading="lazy" decoding="async">
+<img src="/kb/integrations/2-ad-create-app.webp" alt="Create Application" loading="lazy" decoding="async">
 
 -   Click on Setup Single Sign on
 
-<img src="/destek/integrations/3-ad-setup-sso.webp" alt="Setup SSO" loading="lazy" decoding="async">
+<img src="/kb/integrations/3-ad-setup-sso.webp" alt="Setup SSO" loading="lazy" decoding="async">
 
 -   Click on SAML in the Select a single sign-on method step
 
@@ -54,37 +54,37 @@ _Important: Login to Azure AD as **admin**_
 -   Your settings will look like the following:
     
 
-<img src="/destek/integrations/4-ad-edit-basic-saml.webp" alt="Edit Basic SAML" loading="lazy" decoding="async">
+<img src="/kb/integrations/4-ad-edit-basic-saml.webp" alt="Edit Basic SAML" loading="lazy" decoding="async">
 
 #### Step 2
 
 -   Under Attributes & Claims, click on Edit
 
-<img src="/destek/integrations/8-attributes-claims.webp" alt="Attributes and Claims" loading="lazy" decoding="async">
+<img src="/kb/integrations/8-attributes-claims.webp" alt="Attributes and Claims" loading="lazy" decoding="async">
 
 -   Click on **Add a group claim**
 
-<img src="/destek/integrations/9-group-claim.webp" alt="Group Claim Settings" loading="lazy" decoding="async">
+<img src="/kb/integrations/9-group-claim.webp" alt="Group Claim Settings" loading="lazy" decoding="async">
 
 -   Choose Security Groups
 -   Check **Customize the name of the group claim**
 -   Type in _groups_
 -   Click Save
 
-<img src="/destek/integrations/10-group-claim-settings.webp" alt="Group Claim Settings" loading="lazy" decoding="async">
+<img src="/kb/integrations/10-group-claim-settings.webp" alt="Group Claim Settings" loading="lazy" decoding="async">
 
 #### Step 3
 
 -   In **SAML Certificates**,
 -   From Certificate (Base64), Click on Download. This file should be sent to Hexa Support Team.
 
-<img src="/destek/integrations/5-ad-download-certificate.webp" alt="Certificate" loading="lazy" decoding="async">
+<img src="/kb/integrations/5-ad-download-certificate.webp" alt="Certificate" loading="lazy" decoding="async">
 
 #### Step 4
 
 -   In Setup \[CloudHexa\], copy the 2 below URLs, and send to Hexa support team.
 
-<img src="/destek/integrations/6-ad-setup-urls.webp" alt="Setup URLs" loading="lazy" decoding="async">
+<img src="/kb/integrations/6-ad-setup-urls.webp" alt="Setup URLs" loading="lazy" decoding="async">
 
 ## Map AD groups to CloudHexa Accounts
 
@@ -92,6 +92,6 @@ _Important: Login to Azure AD as **admin**_
 -   Get the Group ID from Azure AD and provide it to Hexa support Team and specify to which CloudHexa user it should be mapped.
 -   In Azure AD, go to Groups, locate your group and copy its **Object ID**
 
-<img src="/destek/integrations/7-group-id.webp" alt="Group ID" loading="lazy" decoding="async">
+<img src="/kb/integrations/7-group-id.webp" alt="Group ID" loading="lazy" decoding="async">
 
 _To manage user roles in CloudHexa, refer to [Teams](/en/support/user-management/teams/)._

@@ -1,6 +1,6 @@
 ---
 title: 'Troubleshoot'
-slug: 'troubleshoot'
+urlSlug: 'troubleshoot'
 summary: 'Having issues with your digital signage? Visit our troubleshooting guide for step-by-step solutions to common setup, display, and connectivity problems.'
 category: 'troubleshoot'
 order: 116

@@ -1,0 +1,27 @@
+---
+import { getDictionary } from '../../content/i18n';
+import type { Locale } from '../../lib/i18n/routes';
+
+interface Heading { depth: number; slug: string; text: string }
+interface Props { locale: Locale; headings: Heading[] }
+
+const { locale, headings } = Astro.props;
+const dict = getDictionary(locale);
+
+// h2 and h3 only. Imported articles go down to h4 and a four-level contents
+// list is harder to scan than the article itself.
+const items = headings.filter((h) => h.depth === 2 || h.depth === 3);
+---
+
+{items.length > 1 && (
+  <nav aria-label={dict.kb.onThisPage} class="kb-toc">
+    <p class="kb-toc-title">{dict.kb.onThisPage}</p>
+    <ul class="mt-3 space-y-1.5">
+      {items.map((h) => (
+        <li class:list={[h.depth === 3 && 'pl-3']}>
+          <a href={`#${h.slug}`} class="kb-toc-link">{h.text}</a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+)}

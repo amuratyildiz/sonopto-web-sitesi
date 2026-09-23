@@ -1,6 +1,6 @@
 ---
 title: 'Install digital signage on Raspberry Pi'
-slug: 'install-digital-signage-raspberry-pi'
+urlSlug: 'install-digital-signage-raspberry-pi'
 summary: 'Learn how to install digital signage on your Raspberry Pi with our step-by-step guide. Simplify digital signage setup and get started in minutes!'
 category: 'installation'
 order: 11
@@ -59,42 +59,42 @@ Using the **digital signage Custom Android Image** is highly recommended for the
     
     1.  Click **Choose Device**
     
-    <img src="/destek/installation/imager.webp" alt="choose raspberry pi device" loading="lazy" decoding="async">
+    <img src="/kb/installation/imager.webp" alt="choose raspberry pi device" loading="lazy" decoding="async">
     
     2.  Select your Raspberry Pi model from the list.
     
-    <img src="/destek/installation/choose-device.webp" alt="choose raspberry pi model" loading="lazy" decoding="async">
+    <img src="/kb/installation/choose-device.webp" alt="choose raspberry pi model" loading="lazy" decoding="async">
     
     3.  Click **Choose OS → Use Custom**
     
-    <img src="/destek/installation/use-custom.webp" alt="choose custom OS" loading="lazy" decoding="async">
+    <img src="/kb/installation/use-custom.webp" alt="choose custom OS" loading="lazy" decoding="async">
     
     4.  select **rpi5-aosp15-ez-v1.img.zip** (for Raspberry Pi 5).
         
     5.  Click **Choose Storage → select your SD card**.
         
     
-    <img src="/destek/installation/choose-storage-device.webp" alt="choose storage device" loading="lazy" decoding="async">
+    <img src="/kb/installation/choose-storage-device.webp" alt="choose storage device" loading="lazy" decoding="async">
     
     6.  Click **Next** → In a popup, Imager will ask you to apply OS customisation. Click **NO** button to skip.
     
-    <img src="/destek/installation/no-customization.webp" alt="OS customization settings" loading="lazy" decoding="async">
+    <img src="/kb/installation/no-customization.webp" alt="OS customization settings" loading="lazy" decoding="async">
     
     7.  Respond **YES** to the popup “Are you sure you want to continue?”.
     
-    <img src="/destek/installation/continue-yes.webp" alt="Continue" loading="lazy" decoding="async">
+    <img src="/kb/installation/continue-yes.webp" alt="Continue" loading="lazy" decoding="async">
     
     8.  Click **Write** when an admin prompt ask for permission to allow the Imager to read and write to your SD card. Wait until the flashing is complete, this could take a few minutes.
     
-    <img src="/destek/installation/write-on-storage.webp" alt="Write on storage device" loading="lazy" decoding="async">
+    <img src="/kb/installation/write-on-storage.webp" alt="Write on storage device" loading="lazy" decoding="async">
     
     9.  Click **Cancel Verify** to skip the verification process.
     
-    <img src="/destek/installation/cancel-verify.webp" alt="Cancel Verify" loading="lazy" decoding="async">
+    <img src="/kb/installation/cancel-verify.webp" alt="Cancel Verify" loading="lazy" decoding="async">
     
     10.  When you see the “Write Successful” popup, your image has been completely written. You’re now ready to boot a Raspberry Pi from the SD card!
     
-    <img src="/destek/installation/write-successful.webp" alt="Write Successful" loading="lazy" decoding="async">
+    <img src="/kb/installation/write-successful.webp" alt="Write Successful" loading="lazy" decoding="async">
     
 
 #### 3\. Boot the Raspberry Pi
@@ -147,24 +147,24 @@ Check the below link for more information on how to install Raspberry Pi OS on y
     
     -   **Step 1:** On the main Raspberry Pi menu, click on Raspberry Pi Configuration under Preferences
         
-        <img src="/destek/installation/raspberry-pi-configuration.webp" alt="Raspberry-Pi-Configuration" loading="lazy" decoding="async">
+        <img src="/kb/installation/raspberry-pi-configuration.webp" alt="Raspberry-Pi-Configuration" loading="lazy" decoding="async">
         
     
     -   **Step 2:** Click to the “Display”.
         
-        <img src="/destek/installation/raspberry-pi-display.webp" alt="Raspberry-Pi-Display" loading="lazy" decoding="async">
+        <img src="/kb/installation/raspberry-pi-display.webp" alt="Raspberry-Pi-Display" loading="lazy" decoding="async">
         
     
     -   **Step 3:** Disable the “Screen Blanking”
         
-        <img src="/destek/installation/raspberry-pi-screen-blanking.webp" alt="Raspberry-Pi-Screen-Blanking" loading="lazy" decoding="async">
+        <img src="/kb/installation/raspberry-pi-screen-blanking.webp" alt="Raspberry-Pi-Screen-Blanking" loading="lazy" decoding="async">
         
 
 #### Installation steps
 
 -   **Step 1:** Open Terminal as the below:
     
-    <img src="/destek/installation/open-terminal-on-raspbian.webp" alt="Raspberry-Pi-Screen-Blanking" loading="lazy" decoding="async">
+    <img src="/kb/installation/open-terminal-on-raspbian.webp" alt="Raspberry-Pi-Screen-Blanking" loading="lazy" decoding="async">
     
 -   **Step 2:** Copy paste the below script into the terminal:
     
@@ -205,15 +205,15 @@ Open terminal and run the below command
 
 -   Navigate to: 6 Advanced Options
 
-<img src="/destek/installation/raspberry-pi-4-software-configuration-1.webp" alt="Raspberry-Pi-Software-configuration" loading="lazy" decoding="async">
+<img src="/kb/installation/raspberry-pi-4-software-configuration-1.webp" alt="Raspberry-Pi-Software-configuration" loading="lazy" decoding="async">
 
 -   Choose : A6 Wayland
 
-<img src="/destek/installation/raspberry-pi-4-software-configuration-2.webp" alt="Raspberry-Pi-Software-configuration" loading="lazy" decoding="async">
+<img src="/kb/installation/raspberry-pi-4-software-configuration-2.webp" alt="Raspberry-Pi-Software-configuration" loading="lazy" decoding="async">
 
 -   Choose : W1 X11
 
-<img src="/destek/installation/raspberry-pi-4-software-configuration-3.webp" alt="Raspberry-Pi-Software-configuration" loading="lazy" decoding="async">
+<img src="/kb/installation/raspberry-pi-4-software-configuration-3.webp" alt="Raspberry-Pi-Software-configuration" loading="lazy" decoding="async">
 
 -   Press Ok. You should see the message “Openbox on X11 is active” press Ok.
     

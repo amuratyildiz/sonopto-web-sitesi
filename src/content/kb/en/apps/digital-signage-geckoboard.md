@@ -1,6 +1,6 @@
 ---
 title: 'Geckoboard App'
-slug: 'digital-signage-geckoboard'
+urlSlug: 'digital-signage-geckoboard'
 summary: 'Integrate Geckoboard with your digital signage to seamlessly display real-time business dashboards, KPIs, and analytics directly on your digital signage screens.'
 category: 'apps'
 order: 44
@@ -10,7 +10,7 @@ importedAt: '2026-09-23'
 ---
 Geckoboard is a cloud-based dashboard platform that enables teams to visualize and monitor key performance indicators (KPIs) in real time. By connecting to over 90 data sources—including tools like Google Analytics, Salesforce, Zendesk, and spreadsheets—Geckoboard allows users to create live dashboards that surface important metrics, making data accessible and actionable across organizations.
 
-<video width="90%" src="/destek/apps/geckodashboard-app.mp4" controls="" preload="metadata" playsinline=""></video>
+<video width="90%" src="/kb/apps/geckodashboard-app.mp4" controls="" preload="metadata" playsinline=""></video>
 
 -   Go to your [](https://www.geckoboard.com)Geckoboard dashboard.
 -   Click on “Share”.

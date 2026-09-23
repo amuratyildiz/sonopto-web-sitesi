@@ -1,6 +1,6 @@
 ---
 title: 'World Clock'
-slug: 'digital-signage-clock'
+urlSlug: 'digital-signage-clock'
 summary: 'Display analog or digital clocks on your screens with full theme, timezone, and colour controls. Perfect for offices, hotels, airports, and more.'
 category: 'apps'
 order: 82
@@ -16,11 +16,11 @@ Choose from two theme families to match the visual style of your display:
 
 **Digital themes** offer a technology-forward aesthetic, with styles including Minimal, Neon, Flip, Rounded, Condensed, Dot Matrix, Glass, Outline, Block, Split Modern, and LED Bar.
 
-<img src="/destek/apps/digital-clock.webp" alt="Digital Clock" loading="lazy" decoding="async">
+<img src="/kb/apps/digital-clock.webp" alt="Digital Clock" loading="lazy" decoding="async">
 
 **Analog themes** provide a classic or contemporary dial look, with styles including Swiss, Chronograph, Gradient Dial, Ultra Minimal, Thin Line, Shadow Dial, Open Face, Bold Index, Sweep Modern, Classic Numbers, Roman Numerals, Art Deco, Modern Numbers, Sweep Numbers, Bold Numbers, Shadow Numbers, Minimal Numbers, and Chrono Numbers.
 
-<img src="/destek/apps/analog-clock.webp" alt="Analog Clock" loading="lazy" decoding="async">
+<img src="/kb/apps/analog-clock.webp" alt="Analog Clock" loading="lazy" decoding="async">
 
 ## How to add World Clock to your digital signage
 
@@ -29,7 +29,7 @@ Choose from two theme families to match the visual style of your display:
 -   If the layer has no media, the apps dialogue will open. Otherwise, click on **Add New**
 -   Go to **General Apps** then choose **World-Clock**
 
-<img src="/destek/apps/add-clock.webp" alt="Add digital clock" loading="lazy" decoding="async">
+<img src="/kb/apps/add-clock.webp" alt="Add digital clock" loading="lazy" decoding="async">
 
 ### Options
 

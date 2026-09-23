@@ -1,6 +1,6 @@
 ---
 title: 'Screens'
-slug: 'digital-signage-screens'
+urlSlug: 'digital-signage-screens'
 summary: 'Effortlessly manage your digital signage screens with advanced tools for seamless content updates and real-time displays.'
 category: 'screens'
 order: 1
@@ -10,7 +10,7 @@ importedAt: '2026-09-23'
 ---
 ## How to add a screen
 
-<img src="/destek/screens/screens.webp" alt="Screens" loading="lazy" decoding="async">
+<img src="/kb/screens/screens.webp" alt="Screens" loading="lazy" decoding="async">
 
 -   Open the management console, and navigate to screens page
 -   Install the player app on your device
@@ -18,7 +18,7 @@ importedAt: '2026-09-23'
 -   Otherwise, download and install the player app manually. For more information about installing the player app on your device, check [Installation](/en/support/installation/)
 -   After installation, a Hash ID should be shown on your display, this ID will be used to add your screen to your management console
 
-<img src="/destek/screens/add-screen.webp" alt="Add Screen" loading="lazy" decoding="async">
+<img src="/kb/screens/add-screen.webp" alt="Add Screen" loading="lazy" decoding="async">
 
 -   Click on **Add Screen**
 -   Enter the ID from your display. This Hash ID is case sensitive
@@ -27,7 +27,7 @@ importedAt: '2026-09-23'
 -   Click on **Add Screen**
 -   Your screen will be added in the list
 
-<img src="/destek/screens/screens-list.webp" alt="Screens List" loading="lazy" decoding="async">
+<img src="/kb/screens/screens-list.webp" alt="Screens List" loading="lazy" decoding="async">
 
 -   To change a screen’s name, click on the name, then click on the edit icon next to the name, type the new name and click Save.
 -   To change the screen’s location, click on the location and change it.
@@ -41,11 +41,11 @@ importedAt: '2026-09-23'
 -   Choose the source type: Playlists, Channels, Groups, or Schedules
 -   To assign to a playlist, click on **Playlists**
 
-<img src="/destek/screens/source-type.webp" alt="Choose Source Type" loading="lazy" decoding="async">
+<img src="/kb/screens/source-type.webp" alt="Choose Source Type" loading="lazy" decoding="async">
 
 -   If you already created playlists, click on the playlist your want to assign to your screen
 
-<img src="/destek/screens/media-source.webp" alt="Set Media Source" loading="lazy" decoding="async">
+<img src="/kb/screens/media-source.webp" alt="Set Media Source" loading="lazy" decoding="async">
 
 -   or click on **Set to new Playlist** to create a new playlist and assign it to your screen
 -   Type in a playlist name to filter the playlists
@@ -62,9 +62,9 @@ _Note: If the screen is horizontal, only horizontal playlists will show, and if 
 
 -   Click on the Settings button of your screen
 
-<img src="/destek/screens/settings-button.webp" alt="Settings Button" loading="lazy" decoding="async">
+<img src="/kb/screens/settings-button.webp" alt="Settings Button" loading="lazy" decoding="async">
 
-<img src="/destek/screens/screen-details.webp" alt="Screen Settings" loading="lazy" decoding="async">
+<img src="/kb/screens/screen-details.webp" alt="Screen Settings" loading="lazy" decoding="async">
 
 ### Power Management
 
@@ -76,7 +76,7 @@ Check [Brightness Management](/en/support/screens/digital-signage-brightness-man
 
 ### Screenshot
 
-<img src="/destek/screens/screenshot.webp" alt="Screenshot" loading="lazy" decoding="async">
+<img src="/kb/screens/screenshot.webp" alt="Screenshot" loading="lazy" decoding="async">
 
 -   Click on **Screenshot** from the screen details
 -   Click on **Take a new screenshot**
@@ -85,7 +85,7 @@ Check [Brightness Management](/en/support/screens/digital-signage-brightness-man
 
 ### Rotate Screen
 
-<img src="/destek/screens/rotation.webp" alt="Rotate" loading="lazy" decoding="async">
+<img src="/kb/screens/rotation.webp" alt="Rotate" loading="lazy" decoding="async">
 
 -   Click on **Rotate Screen** from the screen details
     
@@ -106,14 +106,14 @@ Check [Brightness Management](/en/support/screens/digital-signage-brightness-man
 -   You can also enable fake rotation which will cause the screen to report in the opposite orientation, but it will not change the actual orientation of the screen.
     
 
-<img src="/destek/screens/rotate-vetrical.webp" alt="Rotate Vertical" loading="lazy" decoding="async">
+<img src="/kb/screens/rotate-vetrical.webp" alt="Rotate Vertical" loading="lazy" decoding="async">
 
 -   If you choose vertical, you can see that the Type has changed to vertical
 -   The media source is cleared, since the vertical playlists are different from the horizontal ones, choose a new one by clicking on **Set Screen Content**
 
 ### Tags
 
-<img src="/destek/screens/screen-tags.webp" alt="Tags" loading="lazy" decoding="async">
+<img src="/kb/screens/screen-tags.webp" alt="Tags" loading="lazy" decoding="async">
 
 -   Click on Tags
 -   Choose Tags for the screen
@@ -121,7 +121,7 @@ Check [Brightness Management](/en/support/screens/digital-signage-brightness-man
 
 ### Screen Details
 
-<img src="/destek/screens/screen-details-2.webp" alt="Screen Details" loading="lazy" decoding="async">
+<img src="/kb/screens/screen-details-2.webp" alt="Screen Details" loading="lazy" decoding="async">
 
 -   Click on **Details**
 -   View the hardware and software screen details
@@ -134,7 +134,7 @@ Check [Brightness Management](/en/support/screens/digital-signage-brightness-man
 
 ### Status history
 
-<img src="/destek/screens/status-history.webp" alt="Status History" loading="lazy" decoding="async">
+<img src="/kb/screens/status-history.webp" alt="Status History" loading="lazy" decoding="async">
 
 The status history displays when your screen goes online and offline.
 
@@ -146,7 +146,7 @@ The status history displays when your screen goes online and offline.
 
 ### Filter and Search Screens
 
-<img src="/destek/screens/filter-search-screen.webp" alt="Filter and Search" loading="lazy" decoding="async">
+<img src="/kb/screens/filter-search-screen.webp" alt="Filter and Search" loading="lazy" decoding="async">
 
 -   Type in a screen name to search for it in the list
 -   Click on **Filter Screens** to filter by:

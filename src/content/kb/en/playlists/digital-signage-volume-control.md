@@ -1,6 +1,6 @@
 ---
 title: 'Volume Control'
-slug: 'digital-signage-volume-control'
+urlSlug: 'digital-signage-volume-control'
 summary: 'Learn how to easily control the volume of videos in your digital signage playlist with our step-by-step guide for seamless audio management.'
 category: 'playlists'
 order: 9
@@ -12,7 +12,7 @@ The volume of a video or an IPTV channel can be controlled and muted in a playli
 
 #### Mute a video in a playlist
 
-<img src="/destek/playlists/video_mute.webp" alt="Proof of Play" loading="lazy" decoding="async">
+<img src="/kb/playlists/video_mute.webp" alt="Proof of Play" loading="lazy" decoding="async">
 
 -   Go to playlists page and click on your playlist
 -   Click on a layer

@@ -1,6 +1,6 @@
 ---
 title: 'Date and Time Apps'
-slug: 'digital-signage-datetimeapps'
+urlSlug: 'digital-signage-datetimeapps'
 summary: 'Learn how to set up and customize the Date and Time App on your digital signage. Display real-time date and time effortlessly on your digital signage screens.'
 category: 'apps'
 order: 36
@@ -8,7 +8,7 @@ source: 'apps/digital-signage-datetimeapps'
 sourceHash: '5405d083eae8db55'
 importedAt: '2026-09-23'
 ---
-<video width="90%" src="/destek/apps/digital-signage-datetime.mp4" controls="" preload="metadata" playsinline=""></video>
+<video width="90%" src="/kb/apps/digital-signage-datetime.mp4" controls="" preload="metadata" playsinline=""></video>
 
 -   Go to the Management Console.
 -   Click on the playlist then the layer where you will add Date and Time App.
@@ -26,7 +26,7 @@ importedAt: '2026-09-23'
 
 #### CountDown App
 
-<video width="90%" src="/destek/apps/digital-signage-countdown.mp4" controls="" preload="metadata" playsinline=""></video>
+<video width="90%" src="/kb/apps/digital-signage-countdown.mp4" controls="" preload="metadata" playsinline=""></video>
 
 -   Type in the countdown text
 -   Type in the countdown message at the end of the countdown

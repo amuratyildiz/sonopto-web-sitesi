@@ -1,6 +1,6 @@
 ---
 title: 'Power BI App'
-slug: 'digital-signage-powerbi'
+urlSlug: 'digital-signage-powerbi'
 summary: 'Learn how to integrate Microsoft Power BI with sonopto.signage for seamless digital signage. Display real-time data insights on your screens effortlessly!'
 category: 'apps'
 order: 64
@@ -27,11 +27,11 @@ Public reports are accessible via a public link without the need to signin with 
     -   Open your Power BI report.
     -   Go to **File** > **Embed Report** > **Publish to Web**.
 
-<img src="/destek/apps/digital-signage-powerbi-1.webp" alt="Digital Signage - Power BI - Share to web" loading="lazy" decoding="async">
+<img src="/kb/apps/digital-signage-powerbi-1.webp" alt="Digital Signage - Power BI - Share to web" loading="lazy" decoding="async">
 
 -   Copy the provided public URL.
 
-<img src="/destek/apps/digital-signage-powerbi-2.2.webp" alt="Digital Signage - Power BI - copy URL" loading="lazy" decoding="async">
+<img src="/kb/apps/digital-signage-powerbi-2.2.webp" alt="Digital Signage - Power BI - copy URL" loading="lazy" decoding="async">
 
 -   The URL should look simiar to the below
     
@@ -46,7 +46,7 @@ Public reports are accessible via a public link without the need to signin with 
         -   If it already has media, click **Add New**.
     -   Select **Business Intelligence** > **Power BI**.
 
-<img src="/destek/apps/digital-signage-powerbi-3.webp" alt="Digital Signage - Power BI - select business IntelligenceL" loading="lazy" decoding="async"> <img src="/destek/apps/digital-signage-powerbi-4.webp" alt="Digital Signage - Power BI - select powerbi" loading="lazy" decoding="async">
+<img src="/kb/apps/digital-signage-powerbi-3.webp" alt="Digital Signage - Power BI - select business IntelligenceL" loading="lazy" decoding="async"> <img src="/kb/apps/digital-signage-powerbi-4.webp" alt="Digital Signage - Power BI - select powerbi" loading="lazy" decoding="async">
 
 -   Paste the copied URL into the box.
 -   Check the **Public** checkbox.
@@ -58,7 +58,7 @@ Public reports are accessible via a public link without the need to signin with 
     
     -   Click **Save** to display the report on your screen.
 
-<img src="/destek/apps/digital-signage-powerbi-5.webp" alt="Digital Signage - Power BI - paste url" loading="lazy" decoding="async">
+<img src="/kb/apps/digital-signage-powerbi-5.webp" alt="Digital Signage - Power BI - paste url" loading="lazy" decoding="async">
 
 * * *
 
@@ -75,7 +75,7 @@ Protected reports require user authentication and are more secure than public re
         `https://app.powerbi.com/groups/XXXX/reports/XXX/ReportSection2?experience=power-bi`
         
 
-<img src="/destek/apps/digital-signage-powerbi-2.webp" alt="Digital Signage - Power BI - copy url" loading="lazy" decoding="async">
+<img src="/kb/apps/digital-signage-powerbi-2.webp" alt="Digital Signage - Power BI - copy url" loading="lazy" decoding="async">
 
 2.  **Add the Report to your sonopto.signage**
     
@@ -91,7 +91,7 @@ Protected reports require user authentication and are more secure than public re
     
     -   Click **Save** to display the protected report.
 
-<img src="/destek/apps/digital-signage-powerbi-6.webp" alt="Digital Signage - Power BI - copy url" loading="lazy" decoding="async">
+<img src="/kb/apps/digital-signage-powerbi-6.webp" alt="Digital Signage - Power BI - copy url" loading="lazy" decoding="async">
 
 ##### Note:
 

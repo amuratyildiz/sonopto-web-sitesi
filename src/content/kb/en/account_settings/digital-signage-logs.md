@@ -1,6 +1,6 @@
 ---
 title: 'Account Logs'
-slug: 'digital-signage-logs'
+urlSlug: 'digital-signage-logs'
 summary: 'Learn how to access and manage digital signage logs. Get detailed insights and troubleshoot issues with our step-by-step guide.'
 category: 'account_settings'
 order: 108
@@ -12,7 +12,7 @@ This page shows how to access and review system logs, including playback events,
 
 Logs provide a detailed record of user activity, helping you track actions, monitor changes, and troubleshoot issues across your digital signage account.
 
-<img src="/destek/account_settings/logs.webp" alt="Logs" loading="lazy" decoding="async">
+<img src="/kb/account_settings/logs.webp" alt="Logs" loading="lazy" decoding="async">
 
 -   Click on the profile icon on the top right corner
 -   Click on **Logs**

@@ -1,6 +1,6 @@
 ---
 title: 'Twitter Ticker App'
-slug: 'digital-signage-twitter-ticker'
+urlSlug: 'digital-signage-twitter-ticker'
 summary: 'Learn how to use the Twitter Ticker app in your digital signage playlist to display real-time tweets and keep your audience engaged!'
 category: 'apps'
 order: 73
@@ -12,7 +12,7 @@ Use the twitter ticker app to create a twitter news feed from a twitter account.
 
 This App can be used in 1920x120 layer only.
 
-<video width="90%" src="/destek/apps/digital-signage-twitter-ticker.mp4" controls="" preload="metadata" playsinline=""></video>
+<video width="90%" src="/kb/apps/digital-signage-twitter-ticker.mp4" controls="" preload="metadata" playsinline=""></video>
 
 -   Go to the Management Console.
 -   Click on the playlist then the 1920x120 layer where you want to add a twitter ticker

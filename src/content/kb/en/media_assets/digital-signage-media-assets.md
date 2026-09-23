@@ -1,6 +1,6 @@
 ---
 title: 'Media Assets'
-slug: 'digital-signage-media-assets'
+urlSlug: 'digital-signage-media-assets'
 summary: 'Discover how to manage digital signage media assets with ease. Learn to upload, organize, and optimize content for smooth and effective displays.'
 category: 'media_assets'
 order: 999
@@ -19,7 +19,7 @@ Media Assets is a media library of videos, images and PDFs.
 
 **Files deleted from the media assets will be deleted from all the playlists they are used in.**
 
-<video width="90%" src="/destek/media_assets/digital-signage-media-assets.mp4" controls="" preload="metadata" playsinline=""></video>
+<video width="90%" src="/kb/media_assets/digital-signage-media-assets.mp4" controls="" preload="metadata" playsinline=""></video>
 
 #### Upload Media
 
@@ -57,7 +57,7 @@ Media Assets is a media library of videos, images and PDFs.
 
 #### Filter
 
-<img src="/destek/media_assets/media_assets_filter.webp" alt="Media Assets Filter" loading="lazy" decoding="async">
+<img src="/kb/media_assets/media_assets_filter.webp" alt="Media Assets Filter" loading="lazy" decoding="async">
 
 -   Use the buttons marked in red to respectively Show All, Show Images Only, Show Videos Only
 

@@ -1,6 +1,6 @@
 ---
 title: 'the sonopto.signage web player'
-slug: 'digital-signage-web-player'
+urlSlug: 'digital-signage-web-player'
 summary: 'How to run digital signage player from a browser'
 category: 'installation'
 order: 9
@@ -27,7 +27,7 @@ Persisting the Player ID ensures the device always reconnects using the same scr
 
 Under Details, you will find the Device ID.
 
-<img src="/destek/installation/device-id.webp" alt="Device ID" loading="lazy" decoding="async">
+<img src="/kb/installation/device-id.webp" alt="Device ID" loading="lazy" decoding="async">
 
 Copy the Device ID, then update and re-publish the Web Page URL using the following format:
 

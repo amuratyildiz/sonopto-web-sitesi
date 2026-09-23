@@ -1,6 +1,6 @@
 ---
 title: 'Weather and Forecast Apps'
-slug: 'digital-signage-weather-apps'
+urlSlug: 'digital-signage-weather-apps'
 summary: 'Discover how to use digital signage weather and forecast app. Learn to display real-time weather updates on your digital signage effortlessly with our detailed guide!'
 category: 'apps'
 order: 77
@@ -10,7 +10,7 @@ importedAt: '2026-09-23'
 ---
 ## 1\. Weather
 
-<video width="90%" src="/destek/apps/digital-signage-weather.mp4" controls="" preload="metadata" playsinline=""></video>
+<video width="90%" src="/kb/apps/digital-signage-weather.mp4" controls="" preload="metadata" playsinline=""></video>
 
 -   Go to the Management Console.
 -   Click on the playlist then the layer where you want to add a Weather
@@ -23,7 +23,7 @@ importedAt: '2026-09-23'
 
 ## 2\. Weather Forecast
 
-<video width="90%" src="/destek/apps/digital-signage-weather-forecast.mp4" controls="" preload="metadata" playsinline=""></video>
+<video width="90%" src="/kb/apps/digital-signage-weather-forecast.mp4" controls="" preload="metadata" playsinline=""></video>
 
 -   Go to the Management Console.
 -   Click on the playlist then the layer where you want to add a Weather

@@ -1,0 +1,15 @@
+---
+import KbCategoryLayout from '../../../../layouts/KbCategoryLayout.astro';
+import { kbCategoryKeys, kbCategoryEntries } from '../../../../data/kb';
+
+export function getStaticPaths() {
+  return kbCategoryKeys.map((key) => ({
+    params: { category: kbCategoryEntries[key].slug.en },
+    props: { category: key },
+  }));
+}
+
+const { category } = Astro.props;
+---
+
+<KbCategoryLayout category={category} locale="en" />

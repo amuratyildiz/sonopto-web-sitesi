@@ -1,6 +1,6 @@
 ---
 title: 'Pexels stock photos'
-slug: 'digital-signage-pexels'
+urlSlug: 'digital-signage-pexels'
 summary: 'Learn how to use the Pexels app with sonopto.signage to access free, high-quality stock photos and videos, perfect for enhancing your digital signage content.'
 category: 'apps'
 order: 61
@@ -8,7 +8,7 @@ source: 'apps/digital-signage-pexels'
 sourceHash: 'a410d18d19929d54'
 importedAt: '2026-09-23'
 ---
-<video width="90%" src="/destek/apps/digital-signage-pexels.mp4" controls="" preload="metadata" playsinline=""></video>
+<video width="90%" src="/kb/apps/digital-signage-pexels.mp4" controls="" preload="metadata" playsinline=""></video>
 
 -   Go to the Management Console.
 -   Click on the playlist then the layer where you will add Pexels.

@@ -1,6 +1,6 @@
 ---
 title: 'Groups'
-slug: 'digital-signage-groups'
+urlSlug: 'digital-signage-groups'
 summary: 'Learn how to organize and manage digital signage screens effortlessly with sonopto.signage groups. Simplify screen management and enhance your display strategy!'
 category: 'screens'
 order: 2
@@ -10,7 +10,7 @@ importedAt: '2026-09-23'
 ---
 A group allows you to schedule playlists for multiple screens at the same time.
 
-<video width="90%" src="/destek/screens/digital-signage-group.mp4" controls="" preload="metadata" playsinline=""></video>
+<video width="90%" src="/kb/screens/digital-signage-group.mp4" controls="" preload="metadata" playsinline=""></video>
 
 -   Open the management console, and navigate to screens page
 -   Click on groups tab

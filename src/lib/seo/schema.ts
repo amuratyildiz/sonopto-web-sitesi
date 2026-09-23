@@ -121,6 +121,40 @@ export function signageServiceSchema(input: {
   };
 }
 
+/**
+ * Knowledge base articles.
+ *
+ * TechArticle rather than Article: this is product documentation, and the type
+ * says so. Deliberately not HowTo — Google retired HowTo rich results in 2023,
+ * so hand-curating step markup across 119 pages would buy nothing.
+ *
+ * A separate helper rather than loosening articleSchema, which is typed to
+ * Project and hard-codes Article, datePublished from publishDate and an image
+ * from coverImage. Widening it to accept both would blur what either is for.
+ */
+export function techArticleSchema(input: {
+  headline: string;
+  description: string;
+  url: string;
+  section: string;
+  inLanguage: string;
+  dateModified?: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'TechArticle',
+    headline: input.headline,
+    description: input.description,
+    url: input.url,
+    articleSection: input.section,
+    inLanguage: input.inLanguage,
+    ...(input.dateModified && { dateModified: input.dateModified }),
+    author: { '@type': 'Organization', name: company.name, url: SITE_URL },
+    publisher: { '@type': 'Organization', name: company.name, url: SITE_URL },
+    mainEntityOfPage: input.url,
+  };
+}
+
 export function articleSchema(project: Project, url: string) {
   return {
     '@context': 'https://schema.org',

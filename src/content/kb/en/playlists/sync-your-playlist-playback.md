@@ -1,6 +1,6 @@
 ---
 title: 'Sync your playlist playback'
-slug: 'sync-your-playlist-playback'
+urlSlug: 'sync-your-playlist-playback'
 summary: 'Discover how to sync your playlist playback seamlessly on your digital signage. Follow our easy guide to ensure smooth and synchronized content delivery.'
 category: 'playlists'
 order: 6
@@ -10,7 +10,7 @@ importedAt: '2026-09-23'
 ---
 Sync players’ playlists content playback has never been easier. it works if your players are in one location sharing one local network (wifi/wired) or if they are in different locations with a 3G/4G internet connection.
 
-<img src="/destek/playlists/synced_playlist.webp" alt="Playlist Settings Open" loading="lazy" decoding="async">
+<img src="/kb/playlists/synced_playlist.webp" alt="Playlist Settings Open" loading="lazy" decoding="async">
 
 ### Synced playlist
 
@@ -45,6 +45,6 @@ As the screens are communicating using the internet, they might not be 100% in s
 
 To use Internet sync, make sure your “Local Sync” is disabled (Settings > Screens’ Settings).
 
-<img src="/destek/playlists/screen_settings.webp" alt="Screen Settings" loading="lazy" decoding="async">
+<img src="/kb/playlists/screen_settings.webp" alt="Screen Settings" loading="lazy" decoding="async">
 
 * * *

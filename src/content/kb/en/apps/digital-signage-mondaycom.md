@@ -1,6 +1,6 @@
 ---
 title: 'Monday.com App'
-slug: 'digital-signage-mondaycom'
+urlSlug: 'digital-signage-mondaycom'
 summary: 'Integrate your digital signage with Monday.com to effortlessly display real-time project updates, task statuses, and team workflows directly on your digital signage screens.'
 category: 'apps'
 order: 57
@@ -10,7 +10,7 @@ importedAt: '2026-09-23'
 ---
 monday.com is a cloud-based Work Operating System (Work OS) designed to help teams manage projects, tasks, and workflows efficiently.
 
-<video width="90%" src="/destek/apps/monday.com-vid.mp4" controls="" preload="metadata" playsinline=""></video>
+<video width="90%" src="/kb/apps/monday.com-vid.mp4" controls="" preload="metadata" playsinline=""></video>
 
 -   Go to [Monday.com](https://monday.com) dashboard.
 -   Click on the 3 dots under your dashboard name.

@@ -1,6 +1,6 @@
 ---
 title: 'Must Have Menus App'
-slug: 'digital-signage-musthavemenus'
+urlSlug: 'digital-signage-musthavemenus'
 summary: 'Integrate MustHaveMenus with your digital signage to easily design and showcase stunning digital menus, specials, and promotions directly on your digital signage screens.'
 category: 'apps'
 order: 58
@@ -10,7 +10,7 @@ importedAt: '2026-09-23'
 ---
 MustHaveMenus is an all-in-one menu design and marketing platform that enables users to create, manage, and distribute menus and promotional materials across digital signage channels.
 
-<video width="90%" src="/destek/apps/musthavemenus-app.mp4" controls="" preload="metadata" playsinline=""></video>
+<video width="90%" src="/kb/apps/musthavemenus-app.mp4" controls="" preload="metadata" playsinline=""></video>
 
 -   Go to the [](https://www.musthavemenus.com)MusthaveMenus app.
 -   Choose your menu board design.

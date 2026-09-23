@@ -1,6 +1,6 @@
 ---
 title: 'Player Stuck on Loading Library'
-slug: 'player-stuck-loading-library'
+urlSlug: 'player-stuck-loading-library'
 summary: 'Troubleshoot your digital signage player when it is connected to the internet but stays on Loading Library.'
 category: 'troubleshoot'
 order: 117

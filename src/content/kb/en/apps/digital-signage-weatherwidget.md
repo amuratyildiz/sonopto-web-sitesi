@@ -1,6 +1,6 @@
 ---
 title: 'WeatherWidget App'
-slug: 'digital-signage-weatherwidget'
+urlSlug: 'digital-signage-weatherwidget'
 summary: 'Integrate WeatherWidget with your digital signage to easily display real-time weather conditions, forecasts, and alerts directly on your digital signage screens.'
 category: 'apps'
 order: 78
@@ -10,7 +10,7 @@ importedAt: '2026-09-23'
 ---
 The WeatherWidget app is a customizable tool designed to display real-time weather information directly on your digital signage.
 
-<video width="90%" src="/destek/apps/weather-widget-app.mp4" controls="" preload="metadata" playsinline=""></video>
+<video width="90%" src="/kb/apps/weather-widget-app.mp4" controls="" preload="metadata" playsinline=""></video>
 
 -   Go to the [](https://weatherwidget.io)WeatherWidget app.
 -   Select the location to view the weather.

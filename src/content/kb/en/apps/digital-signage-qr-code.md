@@ -1,6 +1,6 @@
 ---
 title: 'QR Code Generator'
-slug: 'digital-signage-qr-code'
+urlSlug: 'digital-signage-qr-code'
 summary: 'Learn how to create and use digital signage QR codes with sonopto.signage. Discover seamless ways to engage your audience and share content effortlessly!'
 category: 'apps'
 order: 65
@@ -8,7 +8,7 @@ source: 'apps/digital-signage-qr-code'
 sourceHash: '8c2c50a09475e7e2'
 importedAt: '2026-09-23'
 ---
-<video width="90%" src="/destek/apps/digital-signage-qr-code.mp4" controls="" preload="metadata" playsinline=""></video>
+<video width="90%" src="/kb/apps/digital-signage-qr-code.mp4" controls="" preload="metadata" playsinline=""></video>
 
 -   Go to the Management Console.
 -   Click on the playlist then the layer where you want to add a QR Code

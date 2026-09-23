@@ -1,6 +1,6 @@
 ---
 title: 'External Video App'
-slug: 'digital-signage-external-video'
+urlSlug: 'digital-signage-external-video'
 summary: 'Learn how to use the HDMI External Video App to display live video feeds seamlessly on your digital signage screens.'
 category: 'apps'
 order: 42
@@ -51,16 +51,16 @@ These are the only BrightSign models with an HDMI input port, allowing you to di
 -   From the Apps list, choose Video Apps
 -   Click on External Video Source
 
-<img src="/destek/apps/external-video-source.webp" alt="External Video Source" loading="lazy" decoding="async">
+<img src="/kb/apps/external-video-source.webp" alt="External Video Source" loading="lazy" decoding="async">
 
-<img src="/destek/apps/playlist-pip.webp" alt="Playlist-PiP" loading="lazy" decoding="async">
+<img src="/kb/apps/playlist-pip.webp" alt="Playlist-PiP" loading="lazy" decoding="async">
 
 _For more info on how to create a playlist, check the [](/en/support/playlists/digital-signage-playlist/)Playlist Page_.
 
 **If using channels**:  
 To switch between full screen and Picture in Picture (PiP), create a channel with two playlists, one full screen and another with a small layer, and add them to the channel.
 
-<img src="/destek/apps/channel-pip.webp" alt="Channel-PiP" loading="lazy" decoding="async">
+<img src="/kb/apps/channel-pip.webp" alt="Channel-PiP" loading="lazy" decoding="async">
 
 _For more info on how to create a channel, check the [](/en/support/playlists/digital-signage-channels/)Channels Page_.
 

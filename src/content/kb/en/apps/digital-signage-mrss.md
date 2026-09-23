@@ -1,6 +1,6 @@
 ---
 title: 'MRSS Integration'
-slug: 'digital-signage-mrss'
+urlSlug: 'digital-signage-mrss'
 summary: 'Automate your screen content using MRSS feeds. Learn how to connect external image and video feeds with your digital signage for seamless, scheduled updates.'
 category: 'apps'
 order: 67
@@ -40,7 +40,7 @@ Perfect for:
 -   Select the media type from the dropdown list. You can choose to display images, videos, or both.
 -   Click “Save” to apply your changes.
 
-<video width="90%" src="/destek/apps/mrss-app.mp4" controls="" preload="metadata" playsinline=""></video>
+<video width="90%" src="/kb/apps/mrss-app.mp4" controls="" preload="metadata" playsinline=""></video>
 
 * * *
 

@@ -1,6 +1,6 @@
 ---
 title: 'Download and Install Android APK'
-slug: 'digital-signage-install-apk'
+urlSlug: 'digital-signage-install-apk'
 summary: 'Learn how to install a digital signage app from an APK with our step-by-step guide. Simplify your setup and get your screens running in no time!'
 category: 'installation'
 order: 3
@@ -19,7 +19,7 @@ Follow these steps to install the APK on your Android digital signage device:
 3.  Click on **Add Screen**.
 4.  Download the Android APK from the **left banner** as shown in the image below:
 
-<img src="/destek/installation/apk-download.webp" alt="Copy google sheet url and add it to digital signage" loading="lazy" decoding="async">
+<img src="/kb/installation/apk-download.webp" alt="Copy google sheet url and add it to digital signage" loading="lazy" decoding="async">
 
 * * *
 

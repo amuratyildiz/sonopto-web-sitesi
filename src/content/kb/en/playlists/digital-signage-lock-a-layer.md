@@ -1,6 +1,6 @@
 ---
 title: 'Lock Layer'
-slug: 'digital-signage-lock-a-layer'
+urlSlug: 'digital-signage-lock-a-layer'
 summary: 'Learn how to lock a layer to control who can access and manage specific parts of a playlist.'
 category: 'playlists'
 order: 12
@@ -10,7 +10,7 @@ importedAt: '2026-09-23'
 ---
 **The Lock Layer** feature allows you to restrict access to a specific layer within a playlist, so only certain users, like the team that owns the layer, can change it while others can still manage the rest of the playlist.
 
-<img src="/destek/playlists/digital-signage-lock-layer.webp" alt="Lock Layer" loading="lazy" decoding="async">
+<img src="/kb/playlists/digital-signage-lock-layer.webp" alt="Lock Layer" loading="lazy" decoding="async">
 
 ## How Lock Layer Works
 

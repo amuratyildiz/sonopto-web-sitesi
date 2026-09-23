@@ -1,6 +1,6 @@
 ---
 title: 'Install Player on Linux devices'
-slug: 'install-digital-signage-linux'
+urlSlug: 'install-digital-signage-linux'
 summary: 'How to install digital signage app on Linux player'
 category: 'installation'
 order: 12

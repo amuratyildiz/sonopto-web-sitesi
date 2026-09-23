@@ -1,0 +1,73 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/seo/Breadcrumbs.astro';
+import KbSidebar from '../components/kb/KbSidebar.astro';
+import KbArticleList, { type KbListItem } from '../components/kb/KbArticleList.astro';
+import { getDictionary } from '../content/i18n';
+import { alternateLocale, pathFor, type Locale } from '../lib/i18n/routes';
+import { kbCategoryPath, kbArticlePath } from '../lib/kb/paths';
+import { getKbEntries, groupByCategory } from '../lib/kb/nav';
+import type { KbCategoryKey } from '../data/kb';
+
+interface Props { category: KbCategoryKey; locale: Locale }
+
+const { category, locale } = Astro.props;
+const dict = getDictionary(locale);
+const meta = dict.kb.categories[category];
+const path = kbCategoryPath(category, locale);
+
+const entries = await getKbEntries(locale);
+const mine = groupByCategory(entries).get(category) ?? [];
+
+// English is the source language and always complete, so on the Turkish site
+// this fills the gaps rather than leaving holes in a support index.
+const source = await getKbEntries('en');
+const sourceInCategory = groupByCategory(source).get(category) ?? [];
+
+const items: KbListItem[] =
+  locale === 'en'
+    ? mine.map((e) => ({ title: e.data.title, summary: e.data.summary, href: kbArticlePath(e, 'en') }))
+    : sourceInCategory.map((en) => {
+        const tr = mine.find((e) => e.id === en.id);
+        return tr
+          ? { title: tr.data.title, summary: tr.data.summary, href: kbArticlePath(tr, 'tr') }
+          : { title: en.data.title, summary: en.data.summary, href: kbArticlePath(en, 'en'), english: true };
+      });
+
+const hasUntranslated = items.some((i) => i.english);
+---
+
+<BaseLayout
+  title={meta.name}
+  description={meta.metaDescription}
+  path={path}
+  locale={locale}
+  alternatePath={kbCategoryPath(category, alternateLocale(locale))}
+>
+  <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+    <Breadcrumbs
+      items={[
+        { name: dict.nav.home, path: pathFor('home', locale) },
+        { name: dict.kb.pageTitle, path: pathFor('support', locale) },
+        { name: meta.name, path },
+      ]}
+    />
+
+    <div class="mt-8 flex flex-col gap-10 lg:grid lg:grid-cols-[15rem_minmax(0,1fr)]">
+      <div class="order-2 mt-12 border-t border-neutral-100 pt-8 lg:order-none lg:mt-0 lg:border-0 lg:pt-0">
+        <KbSidebar locale={locale} entries={entries} current={category} />
+      </div>
+
+      <div class="order-1 min-w-0 lg:order-none">
+        <h1 class="text-3xl font-bold text-ink">{meta.name}</h1>
+        <p class="mt-3 max-w-2xl text-lg text-neutral-600">{meta.intro}</p>
+        {hasUntranslated && dict.kb.englishNote && (
+          <p class="mt-4 max-w-2xl text-sm text-neutral-500">{dict.kb.englishNote}</p>
+        )}
+        <div class="mt-8">
+          <KbArticleList locale={locale} items={items} />
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

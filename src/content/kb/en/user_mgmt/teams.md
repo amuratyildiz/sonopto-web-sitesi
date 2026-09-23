@@ -1,6 +1,6 @@
 ---
 title: 'Teams'
-slug: 'teams'
+urlSlug: 'teams'
 summary: 'Learn how to effortlessly add teams to your digital signage account, streamline collaboration, and manage content efficiently in just a few steps.'
 category: 'user_mgmt'
 order: 2
@@ -26,13 +26,13 @@ Each team can have multiple users, and each team can create their own playlists,
 -   Click on **User Management**
 -   Go to **TEAMS** tab.
 
-<img src="/destek/user_mgmt/teams1.webp" alt="Teams" loading="lazy" decoding="async">
+<img src="/kb/user_mgmt/teams1.webp" alt="Teams" loading="lazy" decoding="async">
 
 -   The Administrators’ team is created by default and has full access to the system. It can not be edited or deleted.
 -   To add teams click on **+ADD**
 -   “Add Team” screen will open with various access checkboxes.
 
-<img src="/destek/user_mgmt/addteams1.webp" alt="Add team" title="Add Team" loading="lazy" decoding="async">
+<img src="/kb/user_mgmt/addteams1.webp" alt="Add team" title="Add Team" loading="lazy" decoding="async">
 
 -   Enter the team name, for example, “Team1”.
 -   Now, you have to assign privileges to the team you created.
@@ -52,7 +52,7 @@ Each team can have multiple users, and each team can create their own playlists,
 -   Click **Save**
     
 
-<img src="/destek/user_mgmt/restrictedplaylist.webp" alt="Restricted playlist" title="Restricted playlist" loading="lazy" decoding="async">
+<img src="/kb/user_mgmt/restrictedplaylist.webp" alt="Restricted playlist" title="Restricted playlist" loading="lazy" decoding="async">
 
 **Administrators can share playlists among different teams to do so:**
 
@@ -63,7 +63,7 @@ Each team can have multiple users, and each team can create their own playlists,
 -   Click “Save”.
 -   Continue setting up the playlist by following the steps in [](/en/support/playlists/digital-signage-playlist/)Playlist Management.
 
-<img src="/destek/user_mgmt/addplaylist.webp" alt="Add playlist" title="Add playlist" loading="lazy" decoding="async">
+<img src="/kb/user_mgmt/addplaylist.webp" alt="Add playlist" title="Add playlist" loading="lazy" decoding="async">
 
 You can also assign an existing playlist to a team
 
@@ -71,30 +71,30 @@ You can also assign an existing playlist to a team
 -   Click on “Edit playlist”. Playlist settings will open.
 -   From the “Teams” field, choose a team for your playlist.
 
-<img src="/destek/user_mgmt/editplaylistteam.webp" alt="" loading="lazy" decoding="async">  
+<img src="/kb/user_mgmt/editplaylistteam.webp" alt="" loading="lazy" decoding="async">  
 
 #### 2\. Settings
 
 -   If **Settings** checkbox is checked
 
-<img src="/destek/user_mgmt/settings.webp" alt="Settings" title="Settings" loading="lazy" decoding="async">
+<img src="/kb/user_mgmt/settings.webp" alt="Settings" title="Settings" loading="lazy" decoding="async">
 
 This privilege will allow the selected user to access the admin’s account settings.
 
 -   If Unchecked, the only settings the user can manage are his profile and his own account.
 
-<img src="/destek/user_mgmt/accountsettings.webp" alt="Account settings" title="Account settings" loading="lazy" decoding="async">  
+<img src="/kb/user_mgmt/accountsettings.webp" alt="Account settings" title="Account settings" loading="lazy" decoding="async">  
 
 #### 3\. Screens
 
 -   If **Screens** checkbox is unchecked, the user will not have permission to access the Screens management console in your account.
 
-<img src="/destek/user_mgmt/screen1.webp" alt="" loading="lazy" decoding="async">
+<img src="/kb/user_mgmt/screen1.webp" alt="" loading="lazy" decoding="async">
 
 -   If checked, the **SCREENS** will be available for the user to access.
 -   Once you check **Screens**, three other permissions will appear, **Screens Admin**, **Restricted** and **Restrict by tags**.
 
-<img src="/destek/user_mgmt/screen2.webp" alt="" loading="lazy" decoding="async">  
+<img src="/kb/user_mgmt/screen2.webp" alt="" loading="lazy" decoding="async">  
 
 3.1 - **Screens Admin**
 
@@ -105,7 +105,7 @@ This privilege will allow the selected user to access the admin’s account sett
 
 -   If **Restricted** is checked, the user will have restricted access to the team’s groups and video wall only. Other groups and video walls created by the admin or other teams will not be available for this team to view or manage.
 
-<img src="/destek/user_mgmt/restrictedgroups.webp" alt="Restrictedgroups" title="Restricted Group" loading="lazy" decoding="async">
+<img src="/kb/user_mgmt/restrictedgroups.webp" alt="Restrictedgroups" title="Restricted Group" loading="lazy" decoding="async">
 
 3.3 - **Restricted by tags**
 
@@ -115,7 +115,7 @@ This privilege will allow the selected user to access the admin’s account sett
 -   Once you check the Restrict by tags checkbox, **\+ Add** option will pop up to allow you to add tags related to this team.
 -   Click on **\+ Add**
 
-<img src="/destek/user_mgmt/teamtags.webp" alt="" loading="lazy" decoding="async">
+<img src="/kb/user_mgmt/teamtags.webp" alt="" loading="lazy" decoding="async">
 
 -   Enter one or more tags.
 -   Click on Save.
@@ -129,20 +129,20 @@ This privilege allows the user to access SCHEDULES management console.
 -   If unchecked, the user will have no access to the Schedules in your account.
 -   If Checked, the SCHEDULES management console will open, and all the schedules will be available for the user to manage.
 
-<img src="/destek/user_mgmt/schedule.webp" alt="Schedule" title="Schedule" loading="lazy" decoding="async">
+<img src="/kb/user_mgmt/schedule.webp" alt="Schedule" title="Schedule" loading="lazy" decoding="async">
 
 -   ##### Restricted
     
     If **Restricted** is checked, the team will have restricted access to his schedules only. Other schedules will not be available for him to manage.
 
-<img src="/destek/user_mgmt/schedule2.webp" alt="" loading="lazy" decoding="async">
+<img src="/kb/user_mgmt/schedule2.webp" alt="" loading="lazy" decoding="async">
 
 -   Users under this team can create their own schedules.
 -   Go to schedules > click + ADD SCHEDULE > write a schedule name > click save.
 -   Choose a default playlist.
 -   Now if this team has restricted access to the team’s playlists only (check access level for playlists), the team can choose only from playlists assigned to him. Other playlists in your account will not be available.
 
-<img src="/destek/user_mgmt/scheduleplaylist.webp" alt="" loading="lazy" decoding="async">
+<img src="/kb/user_mgmt/scheduleplaylist.webp" alt="" loading="lazy" decoding="async">
 
 #### 5\. Media Assets
 
@@ -154,7 +154,7 @@ This privilege allows the user to access SCHEDULES management console.
 -   This privilege allows the user to access **CHANNELS** in the Playlists Page.
 -   To activate **CHANNELS**, check Channels checkbox.
 
-<img src="/destek/user_mgmt/channels-settings1.webp" alt="Channels Settings" loading="lazy" decoding="async">
+<img src="/kb/user_mgmt/channels-settings1.webp" alt="Channels Settings" loading="lazy" decoding="async">
 
 -   If **Channels** is unchecked, the team will not have the permission to access the Channels page in your account.
 -   If **Channels** is checked, the team can access the channels from the Playlists Page, and from the Media Source type in the Screens Page.
@@ -176,8 +176,8 @@ Add a new user or edit an existing one.
 -   To add a new user, follow the steps in [](/en/support/user-management/users/)Users.
 -   To assign a team to an existing user, click on the edit icon next to the user’s email
 
-<img src="/destek/user_mgmt/edituser1.webp" alt="Edit user" loading="lazy" decoding="async">
+<img src="/kb/user_mgmt/edituser1.webp" alt="Edit user" loading="lazy" decoding="async">
 
 -   Update Team for the selected user and click save.
 
-<img src="/destek/user_mgmt/edituser3.webp" alt="Edit User" loading="lazy" decoding="async">
+<img src="/kb/user_mgmt/edituser3.webp" alt="Edit User" loading="lazy" decoding="async">

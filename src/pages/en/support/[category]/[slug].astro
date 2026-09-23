@@ -1,0 +1,23 @@
+---
+import KbArticleLayout from '../../../../layouts/KbArticleLayout.astro';
+import { getCollection, getEntry } from 'astro:content';
+import { kbCategoryEntries } from '../../../../data/kb';
+import { kbArticlePath } from '../../../../lib/kb/paths';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('kbEn', (e) => !e.data.draft);
+  return entries.map((entry) => ({
+    params: { category: kbCategoryEntries[entry.data.category].slug.en, slug: entry.data.urlSlug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const alt = await getEntry('kbTr', entry.id);
+---
+
+<KbArticleLayout
+  entry={entry}
+  locale="en"
+  alternatePath={alt ? kbArticlePath(alt, 'tr') : undefined}
+/>

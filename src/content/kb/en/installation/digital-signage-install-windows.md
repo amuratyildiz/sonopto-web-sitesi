@@ -1,6 +1,6 @@
 ---
 title: 'Install Player on Windows Digital Signage'
-slug: 'digital-signage-install-windows'
+urlSlug: 'digital-signage-install-windows'
 summary: 'How to install digital signage app on Windows screens'
 category: 'installation'
 order: 8

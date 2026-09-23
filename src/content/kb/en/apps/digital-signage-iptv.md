@@ -1,6 +1,6 @@
 ---
 title: 'IPTV App'
-slug: 'digital-signage-iptv'
+urlSlug: 'digital-signage-iptv'
 summary: 'Learn how to set up and use the IPTV app in your digital signage to seamlessly stream live TV and videos to your digital screens.'
 category: 'apps'
 order: 54
@@ -8,7 +8,7 @@ source: 'apps/digital-signage-iptv'
 sourceHash: 'eafa36f33ae7dc4c'
 importedAt: '2026-09-23'
 ---
-<video width="90%" src="/destek/apps/digital-signage-iptv.mp4" controls="" preload="metadata" playsinline=""></video>
+<video width="90%" src="/kb/apps/digital-signage-iptv.mp4" controls="" preload="metadata" playsinline=""></video>
 
 -   Copy your IPTV stream URL
 -   Go to the Management Console

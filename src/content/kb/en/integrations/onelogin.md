@@ -1,6 +1,6 @@
 ---
 title: 'SSO OneLogin'
-slug: 'onelogin'
+urlSlug: 'onelogin'
 summary: 'Learn how to seamlessly integrate your digital signage account with OneLogin for secure, hassle-free access and enhanced user management.'
 category: 'integrations'
 order: 113
@@ -14,7 +14,7 @@ OneLogin integration is done using OpenID Connect. To add the digital signage ap
 
 Navigate to “Custom Connectors” as per the below screenshot
 
-<img src="/destek/integrations/onelogin_1.webp" alt="Custom Connectors" loading="lazy" decoding="async">
+<img src="/kb/integrations/onelogin_1.webp" alt="Custom Connectors" loading="lazy" decoding="async">
 
 -   Create a new connector
     
@@ -32,19 +32,19 @@ Navigate to “Custom Connectors” as per the below screenshot
 -   Choose RS256 as a signing Algorithm
     
 
-<img src="/destek/integrations/custom_connector_2.webp" alt="Custom Connectors" loading="lazy" decoding="async">
+<img src="/kb/integrations/custom_connector_2.webp" alt="Custom Connectors" loading="lazy" decoding="async">
 
 #### 2\. Add the app to your company catalog
 
 -   After saving the customer connector, click add “Add App to Connector” to add the App to your catalog
 
-<img src="/destek/integrations/custom_connector_3.webp" alt="Custom Connectors" loading="lazy" decoding="async">
+<img src="/kb/integrations/custom_connector_3.webp" alt="Custom Connectors" loading="lazy" decoding="async">
 
 -   This will add the app to your company catalog, fill up the needed details and click save.
 
-<img src="/destek/integrations/openloginapp_1.webp" alt="Custom Connectors" loading="lazy" decoding="async">
+<img src="/kb/integrations/openloginapp_1.webp" alt="Custom Connectors" loading="lazy" decoding="async">
 
 -   To finish the configuration, you will need to send the **Client ID** and the **Issuer URL** to the system administrator to set them app from the digital signage apps side.
 -   You can find the Client ID and the Issuer URL under the SSO tab.
 
-<img src="/destek/integrations/onelogin_2.webp" alt="Custom Connectors" loading="lazy" decoding="async">
+<img src="/kb/integrations/onelogin_2.webp" alt="Custom Connectors" loading="lazy" decoding="async">

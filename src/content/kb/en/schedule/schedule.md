@@ -1,6 +1,6 @@
 ---
 title: 'Digital Signage Scheduling Playlists'
-slug: 'schedule'
+urlSlug: 'schedule'
 summary: 'Learn how to easily schedule playlists and media in your digital signage account to deliver the right content at the right time.'
 category: 'schedule'
 order: 999
@@ -16,7 +16,7 @@ A schedule can be assigned to a display the same way as we assign playlists.
 
 #### Add a schedule
 
-<img src="/destek/schedule/add_schedule.webp" alt="Add Schedule" loading="lazy" decoding="async">
+<img src="/kb/schedule/add_schedule.webp" alt="Add Schedule" loading="lazy" decoding="async">
 
 -   Open the management console and navigate to schedules
 -   Click on **Add Schedule**
@@ -26,14 +26,14 @@ A schedule can be assigned to a display the same way as we assign playlists.
 -   Your schedule calendar will automatically open
 -   Choose a default playlist for your schedule. This playlist will play whenever there are no other scheduled playlists on your schedule
 
-<img src="/destek/schedule/default_playlist.webp" alt="Default Playlist" loading="lazy" decoding="async">
+<img src="/kb/schedule/default_playlist.webp" alt="Default Playlist" loading="lazy" decoding="async">
 
 -   You can see the default playlist in the left side panel
 -   you can also change it by choosing another one from the drop down
 -   Below the default playlist, you can also change the schedule name
 -   This name is used to identify your schedule when you are assigning it to a display
 
-<img src="/destek/schedule/schedule.webp" alt="Schedule" loading="lazy" decoding="async">
+<img src="/kb/schedule/schedule.webp" alt="Schedule" loading="lazy" decoding="async">
 
 #### Calendar
 
@@ -48,7 +48,7 @@ A schedule can be assigned to a display the same way as we assign playlists.
 
 #### Switch calendar view
 
-<img src="/destek/schedule/month_view.webp" alt="Month View" loading="lazy" decoding="async">
+<img src="/kb/schedule/month_view.webp" alt="Month View" loading="lazy" decoding="async">
 
 -   Go to Week drop down. Here you can decide how your calendar will be organized
 -   You can set it to view the current day only, or the current week, month or year
@@ -64,7 +64,7 @@ On the top right, The publish button is here to apply your changes directly with
 
 #### Adding playlists to the schedule
 
-<img src="/destek/schedule/add_playlist_schedule.webp" alt="Add" loading="lazy" decoding="async">
+<img src="/kb/schedule/add_playlist_schedule.webp" alt="Add" loading="lazy" decoding="async">
 
 There are different ways to add a playlist to the schedule:
 
@@ -89,7 +89,7 @@ There are different ways to add a playlist to the schedule:
 
 #### Scheduled Playlist Details
 
-<img src="/destek/schedule/schedule_details.webp" alt="Schedule Details" loading="lazy" decoding="async">
+<img src="/kb/schedule/schedule_details.webp" alt="Schedule Details" loading="lazy" decoding="async">
 
 -   To view a scheduled playlist with more details, click on it in the calendar
 -   In the dialog, you have the scheduled playlist name, the start and end time
@@ -100,7 +100,7 @@ There are different ways to add a playlist to the schedule:
 
 #### Scheduled Playlist Settings
 
-<img src="/destek/schedule/schedule_settings.webp" alt="Schedule Settings" loading="lazy" decoding="async">
+<img src="/kb/schedule/schedule_settings.webp" alt="Schedule Settings" loading="lazy" decoding="async">
 
 -   In the edit dialog, you can change the scheduled playlist by choosing one from the drop down
 -   Repeat on allows you to repeat the scheduled playlist on different days of the week
@@ -110,15 +110,15 @@ There are different ways to add a playlist to the schedule:
 -   Your scheduled playlist will appear on the days you chose
 -   Check the coming weeks, the playlist will be repeated there as well
 
-<img src="/destek/schedule/schedule_repeat_on.webp" alt="Schedule Repeat On" loading="lazy" decoding="async">
+<img src="/kb/schedule/schedule_repeat_on.webp" alt="Schedule Repeat On" loading="lazy" decoding="async">
 
 -   To schedule an All day playlist click on the zone below the day name as indicated in the below picture
 
-<img src="/destek/schedule/schedule_all_day.webp" alt="Schedule All Day" loading="lazy" decoding="async">
+<img src="/kb/schedule/schedule_all_day.webp" alt="Schedule All Day" loading="lazy" decoding="async">
 
 #### Assign a schedule to a display
 
-<img src="/destek/schedule/assign_schedule.webp" alt="Assign Schedule" loading="lazy" decoding="async">
+<img src="/kb/schedule/assign_schedule.webp" alt="Assign Schedule" loading="lazy" decoding="async">
 
 -   After you finish scheduling, we need to assign this schedule to a screen
 -   Close your schedule and navigate to screens page

@@ -1,6 +1,6 @@
 ---
 title: 'Install Player on LG WebOS Digital Signage'
-slug: 'webos'
+urlSlug: 'webos'
 summary: 'How to install digital signage app on LG Digital Signage screens'
 category: 'installation'
 order: 18
@@ -41,11 +41,11 @@ Note that an internet connection is required so make sure that the previous step
 -   Go to EZ Setting
 -   Go to SI Server Setting and continue
 
-<img src="/destek/installation/ez-setting-si-server-setting.webp" alt="Settings" loading="lazy" decoding="async">  
+<img src="/kb/installation/ez-setting-si-server-setting.webp" alt="Settings" loading="lazy" decoding="async">  
 
 Select SI Server Setting  
 
-<img src="/destek/installation/si-server-setting-si-server-setting.webp" alt="SI Server" loading="lazy" decoding="async">
+<img src="/kb/installation/si-server-setting-si-server-setting.webp" alt="SI Server" loading="lazy" decoding="async">
 
 In these settings configure the following in this order:
 
@@ -64,7 +64,7 @@ In these settings configure the following in this order:
 -   When this message disappears, TURN OFF the device using the remote. Then, after 10 seconds, TURN ON the device. The Digital Signage View app will now install and launch.
     
 
-<img src="/destek/installation/si-server-setting-local-app-upgrade-remote.webp" alt="Remote" loading="lazy" decoding="async">
+<img src="/kb/installation/si-server-setting-local-app-upgrade-remote.webp" alt="Remote" loading="lazy" decoding="async">
 
 ### Installing the the sonopto.signage app via a USB drive
 
@@ -92,7 +92,7 @@ In these settings configure the following in this order:
 -   For the final step navigate to Local Application Upgrade and select USB. Press the OK button to confirm. In the top right corner, a pop-up displaying “Start Application Upgrade’ will show for a second.
 -   When this message disappears, TURN OFF the device using the remote. Then, after 10 seconds, TURN ON the device. The the sonopto.signage app will now install and launch.
 
-<img src="/destek/installation/si-server-setting-local-app-upgrade-usb.webp" alt="USB" loading="lazy" decoding="async">
+<img src="/kb/installation/si-server-setting-local-app-upgrade-usb.webp" alt="USB" loading="lazy" decoding="async">
 
 ### Batch Installation from the cloud with settings from a USB drive:
 
@@ -102,7 +102,7 @@ In these settings configure the following in this order:
     
 -   Download and copy the file “scap\_installation.json” to the root directory of the USB drive
     
-    [scap\_installation.json](/destek/installation/scap_installation.json)
+    [scap\_installation.json](/kb/installation/scap_installation.json)
     
 -   Plug the USB drive and restart your screen
     

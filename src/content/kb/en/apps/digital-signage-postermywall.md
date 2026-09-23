@@ -1,6 +1,6 @@
 ---
 title: 'PosterMyWall App'
-slug: 'digital-signage-postermywall'
+urlSlug: 'digital-signage-postermywall'
 summary: 'Easily integrate PosterMyWall designs with your digital signage to create stunning digital signage. Streamline your content creation using ready-made templates.'
 category: 'apps'
 order: 63
@@ -10,7 +10,7 @@ importedAt: '2026-09-23'
 ---
 PosterMyWall is a cloud-based design and marketing platform that empowers users to create professional-quality graphics, videos, and promotional materials without requiring advanced design skills. PosterMyWall offers over 275,000 ready templates of videos and images.
 
-<video width="90%" src="/destek/apps/postermywall-app.mp4" controls="" preload="metadata" playsinline=""></video>
+<video width="90%" src="/kb/apps/postermywall-app.mp4" controls="" preload="metadata" playsinline=""></video>
 
 -   Go to your [](https://www.postermywall.com)Postermywall design.
 -   Click on the “Publish” button in the top-right corner.

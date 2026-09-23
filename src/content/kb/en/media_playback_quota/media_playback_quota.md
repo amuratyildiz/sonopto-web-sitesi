@@ -1,6 +1,6 @@
 ---
 title: 'Media Playback Quota'
-slug: 'media_playback_quota'
+urlSlug: 'media_playback_quota'
 summary: 'Learn about the Media Playback Quota feature that helps manage content playback limits, monitor usage, and optimize campaigns on digital signage networks.'
 category: 'media_playback_quota'
 order: 999
@@ -35,11 +35,11 @@ The Media Playback Quota feature, also known as “Content Playback Cap” or �
 
 1.  Navigate to the playlist, click **Edit** on the desired media, and in the sidebar settings, locate and click on **“Playback Quota.”**
 
-<img src="/destek/media_playback_quota/playback-quota-settings-1.webp" alt="edit digital signage media playback quota" title="Edit digital signage media playback quota" loading="lazy" decoding="async">
+<img src="/kb/media_playback_quota/playback-quota-settings-1.webp" alt="edit digital signage media playback quota" title="Edit digital signage media playback quota" loading="lazy" decoding="async">
 
 2.  Configure the media playback quota settings as shown below:
 
-<img src="/destek/media_playback_quota/playback-quota-settings-2.webp" alt="fill up media playback settings" title="Fill up media playback settings" loading="lazy" decoding="async">
+<img src="/kb/media_playback_quota/playback-quota-settings-2.webp" alt="fill up media playback settings" title="Fill up media playback settings" loading="lazy" decoding="async">
 
   
 

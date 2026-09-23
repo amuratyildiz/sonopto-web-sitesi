@@ -1,0 +1,17 @@
+---
+import KbCategoryLayout from '../../../layouts/KbCategoryLayout.astro';
+import { kbCategoryKeys, kbCategoryEntries } from '../../../data/kb';
+
+// Categories are generated even when nothing in them is translated yet: the
+// page still lists the English articles, which is the point of the section.
+export function getStaticPaths() {
+  return kbCategoryKeys.map((key) => ({
+    params: { category: kbCategoryEntries[key].slug.tr },
+    props: { category: key },
+  }));
+}
+
+const { category } = Astro.props;
+---
+
+<KbCategoryLayout category={category} locale="tr" />

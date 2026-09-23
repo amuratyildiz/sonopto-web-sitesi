@@ -1,6 +1,6 @@
 ---
 title: 'Fix Raspberry Pi After Cloning the SD Card'
-slug: 'fix-raspberry-pi-cloning-sd-card'
+urlSlug: 'fix-raspberry-pi-cloning-sd-card'
 summary: 'Learn how to avoid duplicate Screen ID issues on Raspberry Pi devices after cloning an SD card.'
 category: 'installation'
 order: 10
@@ -27,7 +27,7 @@ Follow the steps below to ensure each cloned Raspberry Pi generates a unique Scr
     -   You may need to **restart the device** after assigning it to your account to trigger the software update.
     -   Confirm the **software version is 215 or higher** before proceeding.
     
-    <img src="/destek/installation/player-rpi-version.webp" alt="Rpi Version" loading="lazy" decoding="async">
+    <img src="/kb/installation/player-rpi-version.webp" alt="Rpi Version" loading="lazy" decoding="async">
     
 
 3.  **Delete the `conf.txt` File**

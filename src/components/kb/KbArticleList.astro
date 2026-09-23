@@ -1,0 +1,38 @@
+---
+import { getDictionary } from '../../content/i18n';
+import type { Locale } from '../../lib/i18n/routes';
+
+export interface KbListItem {
+  title: string;
+  summary: string;
+  href: string;
+  /** True when this row still points at the English article. */
+  english?: boolean;
+}
+
+interface Props { locale: Locale; items: KbListItem[] }
+
+const { locale, items } = Astro.props;
+const dict = getDictionary(locale);
+---
+
+{/*
+  A support index with silent holes fails the person looking for the answer, so
+  untranslated articles are listed and linked to the real English URL with a
+  visible marker — rather than hidden, the way an untranslated case study is.
+  Because the target is the genuine /en/ URL there is no duplicate page and no
+  false hreflang pair.
+*/}
+<ul class="divide-y divide-neutral-100 border-y border-neutral-100">
+  {items.map((item) => (
+    <li>
+      <a href={item.href} hreflang={item.english ? 'en' : undefined} class="kb-row">
+        <span class="flex items-baseline gap-2">
+          <span class="kb-row-title">{item.title}</span>
+          {item.english && <span class="kb-badge">{dict.kb.englishBadge}</span>}
+        </span>
+        {item.summary && <span class="kb-row-summary">{item.summary}</span>}
+      </a>
+    </li>
+  ))}
+</ul>

@@ -1,6 +1,6 @@
 ---
 title: 'Preset RSS News Apps'
-slug: 'digital-signage-news'
+urlSlug: 'digital-signage-news'
 summary: 'Stay updated with the latest in digital signage trends, news, and insights. Explore our Digital Signage News app and keep your audience informed effortlessly!'
 category: 'apps'
 order: 59
@@ -8,7 +8,7 @@ source: 'apps/digital-signage-news'
 sourceHash: '59bf7234ec738340'
 importedAt: '2026-09-23'
 ---
-<video width="90%" src="/destek/apps/digital-signage-news-feed.mp4" controls="" preload="metadata" playsinline=""></video>
+<video width="90%" src="/kb/apps/digital-signage-news-feed.mp4" controls="" preload="metadata" playsinline=""></video>
 
 -   Go to the Management Console.
 -   Click on the playlist then the layer where you will add News App.

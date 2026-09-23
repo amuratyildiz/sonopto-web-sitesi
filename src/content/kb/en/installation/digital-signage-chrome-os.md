@@ -1,6 +1,6 @@
 ---
 title: 'Install Digital Signage on ChromeOS Player'
-slug: 'digital-signage-chrome-os'
+urlSlug: 'digital-signage-chrome-os'
 summary: 'How to set up Digital Signage Player on ChromeOS with Chrome'
 category: 'installation'
 order: 5
@@ -51,7 +51,7 @@ For more information see the Google help guide here - [https://support.google.co
 4.  Under **Licenses**, ensure that the **Kiosk & Signage License** is assigned.
 5.  If you dont have active Kiosk & Signage licences, go to subscription and add licences
 
-<img src="/destek/installation/subscriptions-admin-console.webp" alt="Subscriptions-Admin-Console" loading="lazy" decoding="async"> <img src="/destek/installation/get-more-services-admin-console.webp" alt="Get-more-services-Admin-Console" loading="lazy" decoding="async">
+<img src="/kb/installation/subscriptions-admin-console.webp" alt="Subscriptions-Admin-Console" loading="lazy" decoding="async"> <img src="/kb/installation/get-more-services-admin-console.webp" alt="Get-more-services-Admin-Console" loading="lazy" decoding="async">
 
 ### Step 4: Configure Device Settings for Kiosk Mode
 
@@ -60,14 +60,14 @@ For more information see the Google help guide here - [https://support.google.co
 2.  Click on **Add** and then add by URL
     
 
-<img src="/destek/installation/kiosk-app-management-admin-console-add-brands.webp" alt="Kiosk-App-Management-Admin-Console-add" loading="lazy" decoding="async">
+<img src="/kb/installation/kiosk-app-management-admin-console-add-brands.webp" alt="Kiosk-App-Management-Admin-Console-add" loading="lazy" decoding="async">
 
 3.  Use the `https://dsplayer.io` in the URL as below, then click Save
 
-<img src="/destek/installation/kiosk-app-management-admin-console-nobrand.webp" alt="Kiosk-App-Management-Admin-Console-url" loading="lazy" decoding="async">
+<img src="/kb/installation/kiosk-app-management-admin-console-nobrand.webp" alt="Kiosk-App-Management-Admin-Console-url" loading="lazy" decoding="async">
 
 4.  Set AC Kiosk power settings to never sleep
 
-<img src="/destek/installation/device-settings-details-admin-console.webp" alt="Device-Settings-Details-Admin-Console" loading="lazy" decoding="async">
+<img src="/kb/installation/device-settings-details-admin-console.webp" alt="Device-Settings-Details-Admin-Console" loading="lazy" decoding="async">
 
 * * *

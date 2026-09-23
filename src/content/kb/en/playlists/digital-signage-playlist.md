@@ -1,6 +1,6 @@
 ---
 title: 'Playlist Management'
-slug: 'digital-signage-playlist'
+urlSlug: 'digital-signage-playlist'
 summary: 'Learn how to create and manage digital signage playlists. Explore step-by-step guides and tips for seamless playlist customization and scheduling!'
 category: 'playlists'
 order: 1
@@ -15,7 +15,7 @@ importedAt: '2026-09-23'
 
 ### Add Playlist
 
-<video width="90%" src="/destek/playlists/digital-signage-add-playlist.mp4" controls="" preload="metadata" playsinline=""></video>
+<video width="90%" src="/kb/playlists/digital-signage-add-playlist.mp4" controls="" preload="metadata" playsinline=""></video>
 
 To add a new playlist
 
@@ -38,20 +38,20 @@ To add a new playlist
 
 ### Vertical Playlist
 
-<img src="/destek/playlists/vertical_playlists.webp" alt="Vertical Playlists" loading="lazy" decoding="async">
+<img src="/kb/playlists/vertical_playlists.webp" alt="Vertical Playlists" loading="lazy" decoding="async">
 
 -   If you want to create a vertical playlist, click on **Vertical** and follow the same procedure as explained above
 -   Keep in mind that the content that should be uploaded is designed for vertical screens. Preset content(templates, weather, twitter…) are already designed to fit vertical screens when they are added
 
 ### Playlist Settings
 
-<img src="/destek/playlists/playlist_settings.webp" alt="Playlist Settings" loading="lazy" decoding="async">
+<img src="/kb/playlists/playlist_settings.webp" alt="Playlist Settings" loading="lazy" decoding="async">
 
 -   Go to the playlists page
 -   Hover on your playlist, you will see the settings button on the top right as shown in the image
 -   Click on it to open playlist settings
 
-<img src="/destek/playlists/playlist_settings_open.webp" alt="Playlist Settings Open" loading="lazy" decoding="async">
+<img src="/kb/playlists/playlist_settings_open.webp" alt="Playlist Settings Open" loading="lazy" decoding="async">
 
 -   **Clone**: To Clone a playlist with all its media and properties, click on **Clone**. Check the playlists, the newly cloned playlist will be there.
     

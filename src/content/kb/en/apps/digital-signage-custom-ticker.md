@@ -1,6 +1,6 @@
 ---
 title: 'Custom Ticker App'
-slug: 'digital-signage-custom-ticker'
+urlSlug: 'digital-signage-custom-ticker'
 summary: 'Learn how to use the Custom Ticker App in your digital signage to display personalized scrolling messages, updates, and news with ease.'
 category: 'apps'
 order: 35
@@ -12,7 +12,7 @@ Use the Custom ticker App to create a custom news feed with stories you write yo
 
 This App can be used in 1920x120 layer only.
 
-<video width="90%" src="/destek/apps/digital-signage-custom-ticker.mp4" controls="" preload="metadata" playsinline=""></video>
+<video width="90%" src="/kb/apps/digital-signage-custom-ticker.mp4" controls="" preload="metadata" playsinline=""></video>
 
 -   Go to the Management Console.
 -   Click on the playlist then the 1920x120 layer where you want to add a Custom ticker

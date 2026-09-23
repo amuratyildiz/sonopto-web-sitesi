@@ -1,6 +1,6 @@
 ---
 title: 'Google Drive App'
-slug: 'digital-signage-google-drive'
+urlSlug: 'digital-signage-google-drive'
 summary: 'Integrate your Google Drive with sonopto.signage for seamless digital signage updates. Effortlessly sync files and showcase dynamic content.'
 category: 'apps'
 order: 47
@@ -23,7 +23,7 @@ Additionally, this integration enables external collaborators to share content o
 -   Choose **Google Drive**.
 -   Click on the **Copy icon** to copy the provided email address.
 
-<img src="/destek/apps/copy-email-address.webp" alt="Copy Email Address" loading="lazy" decoding="async">
+<img src="/kb/apps/copy-email-address.webp" alt="Copy Email Address" loading="lazy" decoding="async">
 
 Now, share your Google Drive folder with the copied email address as a **Viewer**.
 
@@ -33,13 +33,13 @@ Now, share your Google Drive folder with the copied email address as a **Viewer*
 -   Click the arrow next to the folder name.
 -   From the menu, select **Share** > **Share**.
 
-<img src="/destek/apps/share-google-drive.webp" alt="Share Google Drive" loading="lazy" decoding="async">
+<img src="/kb/apps/share-google-drive.webp" alt="Share Google Drive" loading="lazy" decoding="async">
 
 -   Paste the copied email address.
 -   Set the access level to **Viewer**.
 -   Click **Share**, then confirm by selecting **Share anyway**.
 
-<img src="/destek/apps/share-email-address.webp" alt="Share Email Address" loading="lazy" decoding="async">
+<img src="/kb/apps/share-email-address.webp" alt="Share Email Address" loading="lazy" decoding="async">
 
 -   Click the arrow next to the folder name again.
 -   Go to **Share** > **Copy link**.
@@ -49,13 +49,13 @@ Return to the Management Console:
 -   Paste the folder link into the designated field.
 -   Click **ADD FOLDER**.
 
-<img src="/destek/apps/paste-folder-link.webp" alt="Paste Folder Link" loading="lazy" decoding="async">
+<img src="/kb/apps/paste-folder-link.webp" alt="Paste Folder Link" loading="lazy" decoding="async">
 
 -   Choose the maximum number of files to display.
 -   Select the allowed file type from the drop-down list (images only, videos only, or all supported file types).
 -   Click **Save**.
 
-<img src="/destek/apps/choose-file-type.webp" alt="Choose File Type" loading="lazy" decoding="async">
+<img src="/kb/apps/choose-file-type.webp" alt="Choose File Type" loading="lazy" decoding="async">
 
 -   The files will now be sourced directly from your Google Drive folder.
 -   Click **PUBLISH** to display the content on the screen.
@@ -65,7 +65,7 @@ To add more Google Drive folders, click **EDIT** next to the playlist name.
 
 -   Click **ADD A NEW FOLDER** and repeat the steps above.
 
-<img src="/destek/apps/add-new-folder.webp" alt="Add New Folder" loading="lazy" decoding="async">
+<img src="/kb/apps/add-new-folder.webp" alt="Add New Folder" loading="lazy" decoding="async">
 
 -   You can select which Google Drive folder to display by choosing it from the drop-down list.
 -   Select the file name, click **Refresh**, then click **Save**.

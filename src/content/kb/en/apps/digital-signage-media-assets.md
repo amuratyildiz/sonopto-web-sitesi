@@ -1,6 +1,6 @@
 ---
 title: 'Media Assets'
-slug: 'digital-signage-media-assets'
+urlSlug: 'digital-signage-media-assets'
 summary: 'Get expert guidance on managing digital signage media assets. Learn how to upload, organize, and optimize content for seamless screen displays.'
 category: 'apps'
 order: 55
@@ -25,11 +25,11 @@ To use media assets in a playlist
 -   If the layer has no media, the apps dialog will open. Otherwise, click on **Add New**
 -   Click on **Media Assets**
 
-<img src="/destek/apps/media_assets_app.webp" alt="Media Assets App" loading="lazy" decoding="async">
+<img src="/kb/apps/media_assets_app.webp" alt="Media Assets App" loading="lazy" decoding="async">
 
 -   Browse through your media assets and click on the wanted media asset to add it to your playlist.
 
-<img src="/destek/apps/browse_media_assets.webp" alt="Browse Media Assets" loading="lazy" decoding="async">
+<img src="/kb/apps/browse_media_assets.webp" alt="Browse Media Assets" loading="lazy" decoding="async">
 
 -   Files imported from media assets don’t need to be reuploaded, they are imported and processed to fit your layer size
 

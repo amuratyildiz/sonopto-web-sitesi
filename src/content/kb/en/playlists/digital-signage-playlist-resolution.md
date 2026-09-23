@@ -1,6 +1,6 @@
 ---
 title: 'Playlist & Layer Resolution'
-slug: 'digital-signage-playlist-resolution'
+urlSlug: 'digital-signage-playlist-resolution'
 summary: 'Learn how playlist and layer resolution works. Understand the virtual canvas concept that lets you design layouts without compromising media quality.'
 category: 'playlists'
 order: 11

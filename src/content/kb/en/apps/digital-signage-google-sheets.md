@@ -1,6 +1,6 @@
 ---
 title: 'Google Sheets App'
-slug: 'digital-signage-google-sheets'
+urlSlug: 'digital-signage-google-sheets'
 summary: 'Learn how to use the Google Sheet app to seamlessly update your digital signage content in real-time with simple spreadsheet integration.'
 category: 'apps'
 order: 49
@@ -8,7 +8,7 @@ source: 'apps/digital-signage-google-sheets'
 sourceHash: '97d5a1f25ec592b6'
 importedAt: '2026-09-23'
 ---
-<video width="90%" src="/destek/apps/google-sheets.mp4" controls="" preload="metadata" playsinline=""></video>
+<video width="90%" src="/kb/apps/google-sheets.mp4" controls="" preload="metadata" playsinline=""></video>
 
 -   Go to Google Sheets and open the sheet you want to show.
     

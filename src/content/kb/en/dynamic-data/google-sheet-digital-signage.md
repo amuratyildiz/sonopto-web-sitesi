@@ -1,6 +1,6 @@
 ---
 title: 'Integrate Google Sheets with Digital Signage Templates'
-slug: 'google-sheet-digital-signage'
+urlSlug: 'google-sheet-digital-signage'
 summary: 'Learn how to use Google Sheets to dynamically update data in your digital signage templates. Perfect for menus, schedules, events, and more.'
 category: 'dynamic-data'
 order: 999
@@ -20,11 +20,11 @@ Dynamic data updates are triggered by the Google Drive API, which does not guara
 
 -   Start with a blank template or use an existing one from the available library.
     
-    <img src="/destek/dynamic-data/add-templates-1.webp" alt="Add Digital Signage Template" loading="lazy" decoding="async">
+    <img src="/kb/dynamic-data/add-templates-1.webp" alt="Add Digital Signage Template" loading="lazy" decoding="async">
     
 -   Open the template editor.
     
-    <img src="/destek/dynamic-data/open-templates-editor-2.webp" alt="Open Digital Signage Template" loading="lazy" decoding="async">
+    <img src="/kb/dynamic-data/open-templates-editor-2.webp" alt="Open Digital Signage Template" loading="lazy" decoding="async">
     
 
 #### Step 2: Design Your Template
@@ -36,28 +36,28 @@ Dynamic data updates are triggered by the Google Drive API, which does not guara
 
 1.  Select **GOOGLE SHEETS** from the left menu in the template editor.
 
-<img src="/destek/dynamic-data/choose-google-sheets-3.webp" alt="Choose Google Sheet Digital Signage" loading="lazy" decoding="async">
+<img src="/kb/dynamic-data/choose-google-sheets-3.webp" alt="Choose Google Sheet Digital Signage" loading="lazy" decoding="async">
 
 2.  Share your Google Sheet with the provided user as a viewer.
     
     -   Copy the provided user email.
     
-    <img src="/destek/dynamic-data/copy-google-sheet-user-4.webp" alt="Copy Viewer Email" loading="lazy" decoding="async">
+    <img src="/kb/dynamic-data/copy-google-sheet-user-4.webp" alt="Copy Viewer Email" loading="lazy" decoding="async">
     
 
 -   Share your Google Sheet by granting Viewer access.
     
     Note: The Google Sheet must be formatted as a plain table with uniform row and column sizes.
     
-    <img src="/destek/dynamic-data/gogole-sheets-share-digital-signage-5.webp" alt="Share your google sheet with digital signage user" loading="lazy" decoding="async">
+    <img src="/kb/dynamic-data/gogole-sheets-share-digital-signage-5.webp" alt="Share your google sheet with digital signage user" loading="lazy" decoding="async">
     
 
-<img src="/destek/dynamic-data/gogole-sheets-share-user-6.webp" alt="Grand viewer access" loading="lazy" decoding="async">
+<img src="/kb/dynamic-data/gogole-sheets-share-user-6.webp" alt="Grand viewer access" loading="lazy" decoding="async">
 
 3.  Copy the Google Sheet URL and paste it into the designated field in editor.
 4.  Click **Add** to link the sheet.
 
-<img src="/destek/dynamic-data/paste-google-sheet-url-7.webp" alt="Copy google sheet url and add it to digital signage" loading="lazy" decoding="async">
+<img src="/kb/dynamic-data/paste-google-sheet-url-7.webp" alt="Copy google sheet url and add it to digital signage" loading="lazy" decoding="async">
 
 #### Step 4: Verify and Choose Your Data
 
@@ -67,7 +67,7 @@ Dynamic data updates are triggered by the Google Drive API, which does not guara
 -   Select the sheet you want to use for dynamic data (only one sheet per template).
 -   Click **ADD TO TEMPLATE** to add the data to your template and open the Data Editor.
 
-<img src="/destek/dynamic-data/add-sheet-8.webp" alt="Select one sheet" loading="lazy" decoding="async">
+<img src="/kb/dynamic-data/add-sheet-8.webp" alt="Select one sheet" loading="lazy" decoding="async">
 
 #### Step 5: Configure Your Data
 

@@ -1,6 +1,6 @@
 ---
 title: 'Screen Settings'
-slug: 'digital-signage-screen-settings'
+urlSlug: 'digital-signage-screen-settings'
 summary: 'Configure your screen settings including password access, daily restart, local sync, notifications, media download limits, and screen status reports.'
 category: 'account_settings'
 order: 3
@@ -18,7 +18,7 @@ To access the Screen Settings:
 -   From the drop-down menu list, select Settings.
 -   Navigate to **Screen Settings**.
 
-<img src="/destek/account_settings/screen_settings.webp" alt="Screen Settings" loading="lazy" decoding="async">
+<img src="/kb/account_settings/screen_settings.webp" alt="Screen Settings" loading="lazy" decoding="async">
 
 ### 1\. Password
 

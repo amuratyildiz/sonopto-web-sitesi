@@ -1,6 +1,6 @@
 ---
 title: 'Instagram App'
-slug: 'digital-signage-instagram'
+urlSlug: 'digital-signage-instagram'
 summary: 'Learn how to integrate Instagram with digital signage for stunning visual displays. Discover step-by-step guidance to showcase your Instagram feed on your digital signage!'
 category: 'apps'
 order: 52
@@ -17,15 +17,15 @@ The Instagram app lets you display your Instagram feed directly on your digital 
 -   Choose **Instagram**
 -   In the details, click “Add/Refresh Account” to connect your Instagram account
 
-<img src="/destek/apps/add-instagram-account.webp" alt="Add Instagram Account" loading="lazy" decoding="async">
+<img src="/kb/apps/add-instagram-account.webp" alt="Add Instagram Account" loading="lazy" decoding="async">
 
 -   Enter your business Instagram account and password
 
-<img src="/destek/apps/log-in-instagram-app.webp" alt="Login Instagram" loading="lazy" decoding="async">
+<img src="/kb/apps/log-in-instagram-app.webp" alt="Login Instagram" loading="lazy" decoding="async">
 
 -   Click “Allow” to grant access to your Instagram account
 
-<img src="/destek/apps/grant-instagram-access.webp" alt="Instagram Access" loading="lazy" decoding="async">
+<img src="/kb/apps/grant-instagram-access.webp" alt="Instagram Access" loading="lazy" decoding="async">
 
 -   After connecting Instagram to your digital signage account, choose the type of content you want to display — images, videos, or both.
     
@@ -46,4 +46,4 @@ The Instagram app lets you display your Instagram feed directly on your digital 
 6.  In the “Active” tab, you’ll see all connected apps.
 7.  Click “Remove” next to the Digital Signage-IG app to disconnect it.
 
-<img src="/destek/apps/revoke-access.webp" alt="Revoke Instagram Access" loading="lazy" decoding="async">
+<img src="/kb/apps/revoke-access.webp" alt="Revoke Instagram Access" loading="lazy" decoding="async">

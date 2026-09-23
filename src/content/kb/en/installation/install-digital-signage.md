@@ -1,6 +1,6 @@
 ---
 title: 'Install Digital Signage'
-slug: 'install-digital-signage'
+urlSlug: 'install-digital-signage'
 summary: 'Install digital signage app'
 category: 'installation'
 order: 2

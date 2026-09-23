@@ -1,6 +1,6 @@
 ---
 title: 'Calendar Settings'
-slug: 'digital-signage-calendar-settings'
+urlSlug: 'digital-signage-calendar-settings'
 summary: 'Upload a logo for the Door Label app in digital signage to display branded room signage.'
 category: 'account_settings'
 order: 7

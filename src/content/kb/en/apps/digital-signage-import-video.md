@@ -1,6 +1,6 @@
 ---
 title: 'Import Video App'
-slug: 'digital-signage-import-video'
+urlSlug: 'digital-signage-import-video'
 summary: 'Learn how to easily import videos into your digital signage with sonopto.signage. Step-by-step guide to create engaging and dynamic video displays.'
 category: 'apps'
 order: 51
@@ -8,7 +8,7 @@ source: 'apps/digital-signage-import-video'
 sourceHash: 'cf1d0dd2bc5816aa'
 importedAt: '2026-09-23'
 ---
-<video width="90%" src="/destek/apps/import-video.mp4" controls="" preload="metadata" playsinline=""></video>
+<video width="90%" src="/kb/apps/import-video.mp4" controls="" preload="metadata" playsinline=""></video>
 
 -   Copy the video URL from YouTube, Vimeo, or other supported platforms.
 -   Go to the Management Console

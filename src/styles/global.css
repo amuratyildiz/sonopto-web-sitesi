@@ -1217,6 +1217,142 @@
     border-top: 1px solid var(--color-neutral-100);
   }
 
+  /*
+   * Knowledge base chrome. Written here rather than as utilities because the
+   * sidebar and row states are stateful, and utilities sit in a later cascade
+   * layer where they would beat the current/hover rules.
+   */
+  .kb-sidebar-root {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 0.9375rem;
+    color: var(--color-ink);
+  }
+
+  .kb-sidebar-cat {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.375rem 0;
+    font-size: 0.875rem;
+    color: var(--color-neutral-700);
+    transition: color var(--motion-base) ease-out;
+  }
+
+  .kb-sidebar-cat:hover { color: var(--color-ink); }
+
+  .kb-sidebar-cat.is-current {
+    font-weight: 500;
+    color: var(--color-ink);
+  }
+
+  /* neutral-500 is 7.0:1 on white; neutral-400 would be 3.45:1 and fail AA. */
+  .kb-sidebar-count {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    color: var(--color-neutral-500);
+  }
+
+  .kb-sidebar-article {
+    display: block;
+    padding: 0.3125rem 0;
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    color: var(--color-neutral-600);
+    transition: color var(--motion-base) ease-out;
+  }
+
+  .kb-sidebar-article:hover { color: var(--color-ink); }
+
+  .kb-sidebar-article.is-current {
+    font-weight: 500;
+    color: var(--color-ink);
+  }
+
+  
+
+  
+
+  /* Sticky only where there is room beside the article for it to sit. */
+  .kb-toc {
+    margin-top: 2rem;
+    border-left: 2px solid var(--color-neutral-100);
+    padding-left: 1rem;
+  }
+
+  .kb-toc-title {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-neutral-500);
+  }
+
+  .kb-toc-link {
+    font-size: 0.8125rem;
+    color: var(--color-neutral-600);
+    transition: color var(--motion-base) ease-out;
+  }
+
+  .kb-toc-link:hover { color: var(--color-ink); }
+
+  .kb-row {
+    display: block;
+    padding: 1rem 0;
+    transition: background-color var(--motion-base) ease-out;
+  }
+
+  .kb-row:hover { background-color: var(--color-neutral-50); }
+
+  .kb-row-title {
+    font-size: 0.9375rem;
+    color: var(--color-ink);
+  }
+
+  .kb-row-summary {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.8125rem;
+    line-height: 1.55;
+    color: var(--color-neutral-600);
+  }
+
+  /* Marks a row that still points at the English article. */
+  .kb-badge {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    letter-spacing: 0.06em;
+    padding: 0.0625rem 0.25rem;
+    border: 1px solid var(--color-neutral-300);
+    color: var(--color-neutral-500);
+  }
+
+  .kb-adjacent {
+    display: block;
+    border: 1px solid var(--color-neutral-100);
+    padding: 1rem 1.25rem;
+    transition: border-color var(--motion-base) ease-out;
+  }
+
+  .kb-adjacent:hover { border-color: var(--color-neutral-300); }
+
+  .kb-adjacent-label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-neutral-500);
+  }
+
+  .kb-adjacent-title {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    color: var(--color-ink);
+  }
+
   /* An infinite animation still counts as running at 0ms, so stop it outright
      rather than relying on the duration variable alone. Everything else on the
      site is a transition, which genuinely does nothing at 0ms. */

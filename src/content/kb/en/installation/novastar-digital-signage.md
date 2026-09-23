@@ -1,6 +1,6 @@
 ---
 title: 'Install Digital Signage on NovaStar LED Displays'
-slug: 'novastar-digital-signage'
+urlSlug: 'novastar-digital-signage'
 summary: 'Step-by-step guide to install digital signage on NovaStar Taurus and TU series LED displays using ViPlex Express, dsplayer.io, publish, and pairing code activation.'
 category: 'installation'
 order: 14
@@ -32,12 +32,12 @@ Before you continue: for NovaStar player onboarding, connection, and screen disc
 
 1.  Select your screen, then open the **Playlist** tab.
 
-<img src="/destek/installation/05-playlist-tab.webp" alt="ViPlex Express - Playlist tab" loading="lazy" decoding="async">
+<img src="/kb/installation/05-playlist-tab.webp" alt="ViPlex Express - Playlist tab" loading="lazy" decoding="async">
 
 2.  Create a playlist and set the resolution to match your LED screen.
 3.  Open **Widget** and add a **Web Page** widget.
 
-<img src="/destek/installation/06-editor-widget-tabs.webp" alt="ViPlex Express - Widget tab" loading="lazy" decoding="async">
+<img src="/kb/installation/06-editor-widget-tabs.webp" alt="ViPlex Express - Widget tab" loading="lazy" decoding="async">
 
 4.  Resize the widget to full screen.
 5.  Set **X=0** and **Y=0**, then set **W/H** to your full resolution.
@@ -55,7 +55,7 @@ You only need one web page in this ViPlex playlist. Your digital signage CMS han
 
 1.  Click **Save** and then **Publish**.
 
-<img src="/destek/installation/07-publish-solution.webp" alt="ViPlex Express - Publish solution" loading="lazy" decoding="async">
+<img src="/kb/installation/07-publish-solution.webp" alt="ViPlex Express - Publish solution" loading="lazy" decoding="async">
 
 2.  Select your target screen and confirm publish.
 3.  After publish, your LED screen should show a pairing code.
@@ -80,8 +80,6 @@ Persisting the Player ID prevents this issue and keeps the device linked to your
 3.  Open Details.
 
 Under Details, you will find the Device ID.
-
-<img src="/destek/installation/nova-start-device-id.webp" alt="Nova Star Device ID" loading="lazy" decoding="async">
 
 Copy the Device ID, then re-publish the Web Page URL from Step 1 using the following format:
 

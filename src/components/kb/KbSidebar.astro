@@ -1,0 +1,56 @@
+---
+import { getDictionary } from '../../content/i18n';
+import { kbCategoryKeys, type KbCategoryKey } from '../../data/kb';
+import { kbCategoryPath, kbArticlePath } from '../../lib/kb/paths';
+import { groupByCategory, type KbEntry } from '../../lib/kb/nav';
+import { pathFor, type Locale } from '../../lib/i18n/routes';
+
+interface Props {
+  locale: Locale;
+  entries: KbEntry[];
+  current?: KbCategoryKey;
+  currentId?: string;
+}
+
+const { locale, entries, current, currentId } = Astro.props;
+const dict = getDictionary(locale);
+const grouped = groupByCategory(entries);
+
+// Only the open category lists its articles. The source ships all 127 links on
+// every page, which spreads link equity thin and is unusable on a phone.
+const categories = kbCategoryKeys
+  .map((key) => ({ key, articles: grouped.get(key) ?? [] }))
+  .filter((c) => c.articles.length > 0);
+---
+
+<nav aria-label={dict.kb.categoriesTitle} class="kb-sidebar">
+  <a href={pathFor('support', locale)} class="kb-sidebar-root">{dict.kb.pageTitle}</a>
+  <ul class="mt-3 space-y-1">
+    {categories.map(({ key, articles }) => (
+      <li>
+        <a
+          href={kbCategoryPath(key, locale)}
+          class:list={['kb-sidebar-cat', key === current && 'is-current']}
+        >
+          {dict.kb.categories[key].name}
+          <span class="kb-sidebar-count">{articles.length}</span>
+        </a>
+        {key === current && (
+          <ul class="mt-1 space-y-0.5 border-l border-neutral-200 pl-3">
+            {articles.map((article) => (
+              <li>
+                <a
+                  href={kbArticlePath(article, locale)}
+                  aria-current={article.id === currentId ? 'page' : undefined}
+                  class:list={['kb-sidebar-article', article.id === currentId && 'is-current']}
+                >
+                  {article.data.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
+      </li>
+    ))}
+  </ul>
+</nav>

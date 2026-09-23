@@ -1,6 +1,6 @@
 ---
 title: 'Brightness Management'
-slug: 'digital-signage-brightness-management'
+urlSlug: 'digital-signage-brightness-management'
 summary: 'Learn how to optimize brightness management for your digital signage screens with sonopto.signage. Step-by-step guides to save energy and enhance visibilty.'
 category: 'screens'
 order: 7
@@ -14,20 +14,20 @@ Users can manage brightness settings in two ways: either they can adjust the bri
 
 ### 1\. For single screen:
 
-<img src="/destek/screens/settings-button.webp" alt="Settings Button" loading="lazy" decoding="async">
+<img src="/kb/screens/settings-button.webp" alt="Settings Button" loading="lazy" decoding="async">
 
 -   Open the management Console and navigate to SCREENS page
 -   Click on the settings button next to the screen name.
 -   From the screen details, click on **Brightness**.
 
-<img src="/destek/screens/brightness-management.webp" alt="Brightness Management" loading="lazy" decoding="async">
+<img src="/kb/screens/brightness-management.webp" alt="Brightness Management" loading="lazy" decoding="async">
 
 **1\. Manual Operation**:
 
 -   To manually adjust the screen brightness, move the brightness slider left or right. The maximum brightness level is 100, for full brightness, and the minimum is 1, for the lowest brightness.
 -   Once you’ve made your adjustments, click " Apply changes instantly" and then save.
 
-<img src="/destek/screens/manual-brightness.webp" alt="Manual Brightness Management" loading="lazy" decoding="async">
+<img src="/kb/screens/manual-brightness.webp" alt="Manual Brightness Management" loading="lazy" decoding="async">
 
 **2\. Schedule Operation**:
 
@@ -46,7 +46,7 @@ _1\. Ensure your screen is set to the correct timezone for the schedule to funct
 
 _2\. The schedule will continue to run seamlessly on the screen even if it goes offline during network failures, and this is due to local caching on the device._
 
-<img src="/destek/screens/schedule-brightness.webp" alt="Schedule Brightness Management" loading="lazy" decoding="async">
+<img src="/kb/screens/schedule-brightness.webp" alt="Schedule Brightness Management" loading="lazy" decoding="async">
 
 ### 2\. Default brightness management for all screens
 
@@ -57,7 +57,7 @@ The default brightness management allows users to adjust brightness across all c
 -   Go to “Screens’ Settings”.
 -   In the Brightness Management section, click on SETTINGS.
 
-<img src="/destek/screens/screens-settings.webp" alt="Default Brightness Settings" loading="lazy" decoding="async">
+<img src="/kb/screens/screens-settings.webp" alt="Default Brightness Settings" loading="lazy" decoding="async">
 
 **1\. Manual Operation:**
 
@@ -65,7 +65,7 @@ The default brightness management allows users to adjust brightness across all c
 -   After making your adjustments, click on “APPLY TO ALL SCREENS” to apply the brightness settings to all displays.
 -   Click save to keep your changes, and then click on PUBLISH.
 
-<img src="/destek/screens/default-manual-brightness.webp" alt="Default Manual Brightness" loading="lazy" decoding="async">
+<img src="/kb/screens/default-manual-brightness.webp" alt="Default Manual Brightness" loading="lazy" decoding="async">
 
 **2\. Schedule Operation:**
 
@@ -80,7 +80,7 @@ To schedule automatic brightness adjustments across all connected screens:
 -   Once you finish editing, click “APPLY TO ALL SCREENS” to apply the brightness settings to all displays.
 -   Click “Save” to keep your changes, then click on PUBLISH.
 
-<img src="/destek/screens/default-schedule-brightness.webp" alt="Default Schedule Brightness" loading="lazy" decoding="async">
+<img src="/kb/screens/default-schedule-brightness.webp" alt="Default Schedule Brightness" loading="lazy" decoding="async">
 
 _**Note:**_
 

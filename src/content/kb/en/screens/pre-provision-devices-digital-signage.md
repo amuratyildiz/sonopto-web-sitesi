@@ -1,6 +1,6 @@
 ---
 title: 'Pre-Provision Devices'
-slug: 'pre-provision-devices-digital-signage'
+urlSlug: 'pre-provision-devices-digital-signage'
 summary: 'Learn how to pre-provision devices in to simplify installations and bulk screen deployments. Configure screens ahead of time and auto-assign playlists and tags before they come online!'
 category: 'screens'
 order: 8
@@ -53,15 +53,15 @@ You can add devices in two ways, manually or upload a CSV file:
 -   Click on “Add Screen”
 -   Click “Provision Devices”
 
-<img src="/destek/screens/pre-provision-devices-digital-signage.webp" alt="Pre-Provision Devices" loading="lazy" decoding="async">
+<img src="/kb/screens/pre-provision-devices-digital-signage.webp" alt="Pre-Provision Devices" loading="lazy" decoding="async">
 
 -   Click “Add Devices”
 
-<img src="/destek/screens/add-device-manual.webp" alt="Add provision device" loading="lazy" decoding="async">
+<img src="/kb/screens/add-device-manual.webp" alt="Add provision device" loading="lazy" decoding="async">
 
 -   Paste the serial number of your device. (You can add more than on serial number, one per line, or separated by commas or spaces)
 
-<img src="/destek/screens/add-serial-number.webp" alt="Add serial number" loading="lazy" decoding="async">
+<img src="/kb/screens/add-serial-number.webp" alt="Add serial number" loading="lazy" decoding="async">
 
 -   Click “Save”
 -   Enter the following:
@@ -69,7 +69,7 @@ You can add devices in two ways, manually or upload a CSV file:
     -   **Playlist** (optional)
     -   **Tags** (optional)
 
-<img src="/destek/screens/add-name-playlist.webp" alt="Enter device details" loading="lazy" decoding="async">
+<img src="/kb/screens/add-name-playlist.webp" alt="Enter device details" loading="lazy" decoding="async">
 
 Now, when the device connects, it auto-registers and applies the settings.
 
@@ -93,11 +93,11 @@ SN002,Menu Board,Menu Playlist,restaurant;menu
 -   Click “Provision Devices”
 -   Go to “Upload CSV File” tab
 
-<img src="/destek/screens/add-csv-file.webp" alt="Upload CSV File" loading="lazy" decoding="async">
+<img src="/kb/screens/add-csv-file.webp" alt="Upload CSV File" loading="lazy" decoding="async">
 
 -   Choose CSV file to upload devices.
 
-<img src="/destek/screens/upload-devices.webp" alt="Upload CSV file" loading="lazy" decoding="async">
+<img src="/kb/screens/upload-devices.webp" alt="Upload CSV file" loading="lazy" decoding="async">
 
 -   Click “Confirm” to save data
 
@@ -116,7 +116,7 @@ Examples:
 -   `gym`
 -   `store-123`
 
-<img src="/destek/screens/tags.webp" alt="Screen Tags" loading="lazy" decoding="async">
+<img src="/kb/screens/tags.webp" alt="Screen Tags" loading="lazy" decoding="async">
 
 _Read more about [](/en/support/playlists/3.7-control-media-playback-by-tags/)Tags_.
 
@@ -130,7 +130,7 @@ When the device connects for the first time:
 -   Applies assigned Playlist/Tags
 -   Appears in the **Players** page
 
-<img src="/destek/screens/screens-on-dashboard.webp" alt="Players on Dashboard" loading="lazy" decoding="async">
+<img src="/kb/screens/screens-on-dashboard.webp" alt="Players on Dashboard" loading="lazy" decoding="async">
 
 * * *
 

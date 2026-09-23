@@ -1,6 +1,6 @@
 ---
 title: 'Windy.com App'
-slug: 'digital-signage-windy'
+urlSlug: 'digital-signage-windy'
 summary: 'Integrate Windy.com with your digital signage to showcase live weather updates, interactive maps, and accurate forecasts directly on your digital signage screens.'
 category: 'apps'
 order: 81
@@ -10,7 +10,7 @@ importedAt: '2026-09-23'
 ---
 Windy.com is a comprehensive weather forecasting platform offering interactive maps and real-time data on wind, temperature, precipitation, and more.
 
-<video width="90%" src="/destek/apps/windy.com-app.mp4" controls="" preload="metadata" playsinline=""></video>
+<video width="90%" src="/kb/apps/windy.com-app.mp4" controls="" preload="metadata" playsinline=""></video>
 
 -   Go to [](https://www.windy.com)windy.com app.
 -   Choose the location to view the weather.

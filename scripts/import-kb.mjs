@@ -32,7 +32,10 @@ const sharp = createRequire(import.meta.url)('sharp');
 
 const BASE = 'https://digitalsignage.web.app';
 const CONTENT_DIR = path.resolve('src', 'content', 'kb', 'en');
-const ASSET_DIR = path.resolve('public', 'destek');
+// Not public/destek: that is the page namespace, and Astro copies public/
+// verbatim, so asset folders would appear as sibling URLs of the category
+// pages and could one day collide with a category slug.
+const ASSET_DIR = path.resolve('public', 'kb');
 
 const args = process.argv.slice(2);
 const flag = (n) => args.includes(n);
@@ -93,11 +96,11 @@ const slugify = (s) =>
     .toLowerCase()
     .replace(/[^a-z0-9.\-_/]+/g, '-')
     .replace(/-+/g, '-')
-    .replace(/^-|-$/g, '');
+    .replace(/^[-.]+|[-.]+$/g, '');
 
 const report = {
   written: [], skipped: [], changed: [], unchanged: [],
-  assets: 0, assetsSkipped: 0, downloads: [], emptyAlt: [], productHits: 0, unmappedLinks: [], droppedLinks: [],
+  assets: 0, assetsSkipped: 0, downloads: [], emptyAlt: [], productHits: 0, unmappedLinks: [], droppedLinks: [], missingAssets: new Set(),
 };
 
 // ---------------------------------------------------------------- discovery
@@ -235,7 +238,7 @@ function localAssetPath(src, category) {
   // Source directories are sometimes capitalised (/assets/img/Door-Label/).
   // That works on a Windows dev box and 404s on Azure.
   const dir = slugify(category);
-  return { file: path.join(ASSET_DIR, dir, name), url: `/destek/${dir}/${name}` };
+  return { file: path.join(ASSET_DIR, dir, name), url: `/kb/${dir}/${name}` };
 }
 
 let categorySlugs = new Map();
@@ -280,7 +283,13 @@ async function downloadAssets(assets) {
     if (existsSync(a.dest)) { report.assetsSkipped += 1; continue; }
     try {
       const r = await fetch(a.src, { headers: ua });
-      if (!r.ok) { report.unmappedLinks.push(`asset ${r.status} ${a.src}`); continue; }
+      if (!r.ok) {
+        // The vendor references a few images it does not actually host. Record
+        // them so the tags can be pulled rather than shipping a broken image.
+        report.missingAssets.add(a.dest);
+        report.unmappedLinks.push(`asset ${r.status} ${a.src}`);
+        continue;
+      }
       await mkdir(path.dirname(a.dest), { recursive: true });
       const buf = Buffer.from(await r.arrayBuffer());
       if (a.dest.endsWith('.webp') && !/\.webp$/i.test(a.src.split('?')[0])) {
@@ -377,7 +386,7 @@ async function main() {
     const frontmatter = [
       '---',
       `title: ${yaml(title)}`,
-      `slug: ${yaml(slugify(a.slug))}`,
+      `urlSlug: ${yaml(slugify(a.slug))}`,
       `summary: ${yaml(summary)}`,
       `category: ${yaml(a.category)}`,
       `order: ${parsed.orderHint ?? a.order}`,

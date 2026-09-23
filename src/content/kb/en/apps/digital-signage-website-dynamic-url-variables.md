@@ -1,6 +1,6 @@
 ---
 title: 'Website Dynamic URL Variables'
-slug: 'digital-signage-website-dynamic-url-variables'
+urlSlug: 'digital-signage-website-dynamic-url-variables'
 summary: 'Learn how to use dynamic URL variables to automatically pass player information and custom tags to external systems, APIs, and data sources.'
 category: 'apps'
 order: 84
@@ -46,7 +46,7 @@ city:Sydney
 
 > Tags are written as `key:value`. You can add multiple tags per player.
 
-<img src="/destek/apps/dynamic-variables-tags.webp" alt="Digital Signage - dynamic-variables-tags" loading="lazy" decoding="async">
+<img src="/kb/apps/dynamic-variables-tags.webp" alt="Digital Signage - dynamic-variables-tags" loading="lazy" decoding="async">
 
 * * *
 

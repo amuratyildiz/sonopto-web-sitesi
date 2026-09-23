@@ -1,0 +1,28 @@
+---
+import { getDictionary } from '../../content/i18n';
+import { kbArticlePath } from '../../lib/kb/paths';
+import type { KbEntry } from '../../lib/kb/nav';
+import type { Locale } from '../../lib/i18n/routes';
+
+interface Props { locale: Locale; prev: KbEntry | null; next: KbEntry | null }
+
+const { locale, prev, next } = Astro.props;
+const dict = getDictionary(locale);
+---
+
+{(prev || next) && (
+  <nav class="mt-12 grid gap-4 border-t border-neutral-100 pt-6 sm:grid-cols-2">
+    {prev ? (
+      <a href={kbArticlePath(prev, locale)} class="kb-adjacent">
+        <span class="kb-adjacent-label">&larr; {dict.kb.prev}</span>
+        <span class="kb-adjacent-title">{prev.data.title}</span>
+      </a>
+    ) : <span />}
+    {next && (
+      <a href={kbArticlePath(next, locale)} class="kb-adjacent sm:text-right">
+        <span class="kb-adjacent-label">{dict.kb.next} &rarr;</span>
+        <span class="kb-adjacent-title">{next.data.title}</span>
+      </a>
+    )}
+  </nav>
+)}

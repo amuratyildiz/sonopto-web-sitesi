@@ -1,6 +1,6 @@
 ---
 title: 'Security'
-slug: 'digital-signage-security'
+urlSlug: 'digital-signage-security'
 summary: 'Secure your digital signage account with IP Access Restrictions by allowing login access only from approved IP addresses and blocking all other login attempts.'
 category: 'account_settings'
 order: 4
@@ -15,7 +15,7 @@ You can restrict access using the following methods:
 -   [IP Access Restrictions](#ip-access-restrictions): Allow only specific IP addresses to log in.
 -   [Country Access Restrictions](#country-access-restrictions): Allow only users from specific countries
 
-<img src="/destek/account_settings/security-setting.webp" alt="Access Restrictions Settings" loading="lazy" decoding="async">
+<img src="/kb/account_settings/security-setting.webp" alt="Access Restrictions Settings" loading="lazy" decoding="async">
 
 * * *
 
@@ -25,7 +25,7 @@ IP Access Restrictions allow you to secure your account by limiting access to **
 
 Any login attempt from an IP address that is not listed will be blocked.
 
-<img src="/destek/account_settings/ip-security-settings.webp" alt="Security Settings" loading="lazy" decoding="async">
+<img src="/kb/account_settings/ip-security-settings.webp" alt="Security Settings" loading="lazy" decoding="async">
 
 -   Click on the profile icon on the top right corner
 -   Click on **Settings → Security**
@@ -67,7 +67,7 @@ Country Access Restrictions allow you to secure your account by limiting access 
 
 Any login attempt from a country that is not listed will be blocked.
 
-<img src="/destek/account_settings/country-security.webp" alt="Country Security Settings" loading="lazy" decoding="async">
+<img src="/kb/account_settings/country-security.webp" alt="Country Security Settings" loading="lazy" decoding="async">
 
 -   Check the **Country Access Restrictions** checkbox to enable the feature.
 -   Enter a country name in the input field
