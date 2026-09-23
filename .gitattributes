@@ -1,0 +1,6 @@
+# Normalise line endings so the 119 imported markdown files stop reporting
+# CRLF conversions on every commit.
+* text=auto
+*.md text eol=lf
+*.webp binary
+*.mp4 binary
