@@ -81,7 +81,7 @@ Persisting the Player ID prevents this issue and keeps the device linked to your
 
 Under Details, you will find the Device ID.
 
-<img src="/kb/installation/nova-start-device-id.webp" alt="Nova Star Device ID" loading="lazy" decoding="async">
+<img src="/kb/installation/device-id.webp" alt="Nova Star Device ID" loading="lazy" decoding="async">
 
 Copy the Device ID, then re-publish the Web Page URL from Step 1 using the following format:
 

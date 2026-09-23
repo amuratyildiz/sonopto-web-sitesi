@@ -12,8 +12,6 @@ Learn how to switch between your main account and the sub-user account you are m
 
 To access the Account Settings, click on the profile icon in the top right corner. From the drop-down menu list, select Settings.
 
-<img src="/kb/account_settings/account-settings.webp" alt="Account Settings" loading="lazy" decoding="async">
-
 -   Select **Account Settings**.
 -   Under account settings, you have the account you own, it’s the one you registered with.
 -   There should be a list of all the other accounts you have been granted access to by other users.

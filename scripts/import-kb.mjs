@@ -193,6 +193,7 @@ function parseArticle(html, article, urlIndex) {
     const src = img.getAttribute('src') ?? '';
     if (!src) { img.remove(); continue; }
     const local = localAssetPath(src, article.category);
+    if (local && DROPPED_ASSETS.has(path.basename(local.url))) { img.remove(); continue; }
     if (local) {
       assets.push({ src: absolute(src), dest: local.file });
       img.setAttribute('src', local.url);
@@ -271,6 +272,22 @@ function parseArticle(html, article, urlIndex) {
 
 const absolute = (src) => (src.startsWith('http') ? src : `${BASE}${src.startsWith('/') ? '' : '/'}${src}`);
 
+/**
+ * Two source images 404 on the vendor's own site, so nothing can be downloaded
+ * for them. Where another article already carries the identical screenshot
+ * under a different name, point at that one instead of shipping a broken img.
+ * 'nova-start-device-id' and 'device-id' are the same Screens > Details panel.
+ */
+const ASSET_ALIASES = new Map([['nova-start-device-id.webp', 'device-id.webp']]);
+
+/**
+ * The second 404 has no stand-in anywhere in the corpus: it is the profile
+ * drop-down, and every other account_settings screenshot is a settings tab.
+ * Dropping the img keeps the prose, which describes the action anyway.
+ */
+const DROPPED_ASSETS = new Set(['account-settings.webp']);
+
+
 function localAssetPath(src, category) {
   if (!src) return null;
   const clean = src.split('?')[0];
@@ -279,6 +296,7 @@ function localAssetPath(src, category) {
   // Rasters are re-encoded to WebP on the way in; the source ships 19MB of
   // JPEG and PNG screenshots and they compress to a fraction of that.
   if (/\.(jpe?g|png)$/i.test(name)) name = name.replace(/\.(jpe?g|png)$/i, '.webp');
+  name = ASSET_ALIASES.get(name) ?? name;
   // Source directories are sometimes capitalised (/assets/img/Door-Label/).
   // That works on a Windows dev box and 404s on Azure.
   const dir = slugify(category);
