@@ -330,7 +330,13 @@
        transparent header, show a strip of hero photo above itself. */
     top: calc(100% + 1.5rem);
     left: 0;
-    width: 19rem;
+    /* Content-driven rather than a fixed 19rem: the same rule now serves the
+       Solutions panel and the much shorter Corporate one. The cap is set so the
+       longest TR label ("Konferans ve Toplantı Salonları") still does not wrap,
+       and the floor keeps a two-item panel from looking like a tooltip. */
+    width: max-content;
+    min-width: 12rem;
+    max-width: 21rem;
     padding: 0.5rem;
     background-color: var(--color-ink);
     border: 1px solid var(--color-neutral-700);
