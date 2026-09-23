@@ -1077,6 +1077,146 @@
     transition-delay: calc(var(--motion-base) * 0.1);
   }
 
+  /*
+   * Document prose — the only place on the site where HTML arrives as a blob
+   * rather than as authored markup: case study bodies and the knowledge base.
+   *
+   * Hand-written rather than @tailwindcss/typography. This stylesheet has no
+   * plugins, one file and a tight type scale, so the plugin's defaults would be
+   * overridden almost line for line in exchange for ~20KB.
+   *
+   * This block is also a bug fix. `prose prose-brand` was already on
+   * CaseStudyLayout with nothing behind it — no plugin installed, no rule in
+   * this file — so those bodies were rendering straight against Preflight's
+   * reset: headings at body size, lists with no markers, no paragraph rhythm.
+   * It survived unnoticed because there are only three short case studies.
+   */
+  .prose {
+    color: var(--color-neutral-700);
+    line-height: 1.75;
+  }
+
+  .prose > * + * {
+    margin-top: 1.25rem;
+  }
+
+  .prose h2,
+  .prose h3,
+  .prose h4 {
+    font-family: var(--font-heading);
+    color: var(--color-ink);
+    line-height: 1.3;
+  }
+
+  /* These beat the generic `* + *` rule above on specificity, so a heading
+     keeps its larger run-in space. */
+  .prose h2 { font-size: 1.5rem; margin-top: 2.5rem; }
+  .prose h3 { font-size: 1.25rem; margin-top: 2rem; }
+  .prose h4 { font-size: 1.0625rem; margin-top: 1.75rem; }
+  .prose > :is(h2, h3, h4):first-child { margin-top: 0; }
+
+  .prose a {
+    color: var(--color-ink);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color var(--motion-base) ease-out;
+  }
+
+  .prose a:hover {
+    color: var(--color-neutral-500);
+  }
+
+  .prose strong {
+    font-weight: 700;
+    color: var(--color-ink);
+  }
+
+  .prose ul { list-style: disc; padding-left: 1.5rem; }
+  .prose ol { list-style: decimal; padding-left: 1.5rem; }
+  .prose li + li { margin-top: 0.5rem; }
+  .prose li > ul,
+  .prose li > ol { margin-top: 0.5rem; }
+  .prose li::marker { color: var(--color-neutral-400); }
+
+  /* Photographs and screenshots are the one place the brand allows a radius. */
+  .prose img,
+  .prose video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--color-neutral-100);
+    border-radius: var(--radius-photo);
+  }
+
+  .prose figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.8125rem;
+    color: var(--color-neutral-500);
+  }
+
+  /* Imported tables can be wider than the column; scroll the table rather than
+     letting it push the whole page sideways. The wrapper is added at import. */
+  .prose .table-scroll {
+    overflow-x: auto;
+  }
+
+  .prose table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+  }
+
+  .prose th,
+  .prose td {
+    border: 1px solid var(--color-neutral-200);
+    padding: 0.625rem 0.75rem;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .prose th {
+    background-color: var(--color-neutral-50);
+    color: var(--color-ink);
+    font-weight: 500;
+  }
+
+  .prose code {
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+    background-color: var(--color-neutral-50);
+    border: 1px solid var(--color-neutral-100);
+    padding: 0.1em 0.35em;
+  }
+
+  .prose pre {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    background-color: var(--color-ink);
+    color: var(--color-neutral-100);
+    padding: 1rem 1.25rem;
+    overflow-x: auto;
+  }
+
+  .prose pre code {
+    background: none;
+    border: 0;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+  }
+
+  .prose blockquote {
+    border-left: 2px solid var(--color-accent);
+    padding-left: 1rem;
+    color: var(--color-neutral-600);
+  }
+
+  .prose hr {
+    margin-top: 2.5rem;
+    border: 0;
+    border-top: 1px solid var(--color-neutral-100);
+  }
+
   /* An infinite animation still counts as running at 0ms, so stop it outright
      rather than relying on the duration variable alone. Everything else on the
      site is a transition, which genuinely does nothing at 0ms. */
