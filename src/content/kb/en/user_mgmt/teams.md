@@ -5,7 +5,7 @@ summary: 'Learn how to effortlessly add teams to your digital signage account, s
 category: 'user_mgmt'
 order: 2
 source: 'user_mgmt/teams'
-sourceHash: '001b31a8abd2dd9e'
+sourceHash: '9679986535c9a8b3'
 importedAt: '2026-09-23'
 ---
 The **TEAMS** feature is how you can provide users with access to specific screens & content.
@@ -61,7 +61,7 @@ Each team can have multiple users, and each team can create their own playlists,
 -   In the “Add Playlist” screen, write the name of the playlist, for example playlist.Team1
 -   In the “Team” drop-down list, choose a team for the playlist you are creating, for example, Team1
 -   Click “Save”.
--   Continue setting up the playlist by following the steps in [](/en/support/playlists/digital-signage-playlist/)Playlist Management.
+-   Continue setting up the playlist by following the steps in [Playlist Management](/en/support/playlists/digital-signage-playlist/).
 
 <img src="/kb/user_mgmt/addplaylist.webp" alt="Add playlist" title="Add playlist" loading="lazy" decoding="async">
 
@@ -173,7 +173,7 @@ This privilege allows the user to access SCHEDULES management console.
 Now, after you have finished assigning access levels to the team you created, go to the **USERS** tab in the user management to link users to the team.  
 Add a new user or edit an existing one.
 
--   To add a new user, follow the steps in [](/en/support/user-management/users/)Users.
+-   To add a new user, follow the steps in [Users](/en/support/user-management/users/).
 -   To assign a team to an existing user, click on the edit icon next to the user’s email
 
 <img src="/kb/user_mgmt/edituser1.webp" alt="Edit user" loading="lazy" decoding="async">

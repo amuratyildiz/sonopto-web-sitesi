@@ -5,7 +5,7 @@ summary: 'Learn how to create and manage digital signage playlists. Explore step
 category: 'playlists'
 order: 1
 source: 'playlists/digital-signage-playlist'
-sourceHash: 'f0eb6ed629a71ed2'
+sourceHash: '09d5688b4c7f5447'
 importedAt: '2026-09-23'
 ---
 -   Open your browser, and go to the management console
@@ -72,4 +72,4 @@ To add a new playlist
     
 -   To close the settings, click on the **X** button in the top right corner.
     
--   Proof of play: [](/en/support/playlists/digital-signage-touchscreen/)TouchScreen features
+-   Proof of play: [TouchScreen features](/en/support/playlists/digital-signage-touchscreen/)

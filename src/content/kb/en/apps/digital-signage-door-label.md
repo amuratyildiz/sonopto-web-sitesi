@@ -5,7 +5,7 @@ summary: 'Learn how to seamlessly display Microsoft and Google Calendars on your
 category: 'apps'
 order: 37
 source: 'apps/digital-signage-door-label'
-sourceHash: 'f229fe73f85eff32'
+sourceHash: '434dc4e3f47ec2ba'
 importedAt: '2026-09-23'
 ---
 The Door Label app displays the room’s status and upcoming meetings and events from your Microsoft and Google Calendar.

@@ -5,7 +5,7 @@ summary: 'Discover how to manage digital signage media assets with ease. Learn t
 category: 'media_assets'
 order: 999
 source: 'media_assets/digital-signage-media-assets'
-sourceHash: 'bd88fd84d8f69c6f'
+sourceHash: 'f60c9e3d66213b5d'
 importedAt: '2026-09-23'
 ---
 Media Assets is a media library of videos, images and PDFs.
@@ -67,4 +67,4 @@ Media Assets is a media library of videos, images and PDFs.
 
 * * *
 
-To use media assets in a playlist, refer to [](/en/support/apps/digital-signage-media-assets/)Media Assets App
+To use media assets in a playlist, refer to [Media Assets App](/en/support/apps/digital-signage-media-assets/)

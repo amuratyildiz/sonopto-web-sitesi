@@ -5,15 +5,15 @@ summary: 'How to run digital signage player from a browser'
 category: 'installation'
 order: 9
 source: 'installation/digital-signage-web-player'
-sourceHash: '61809816c85944b0'
+sourceHash: '609af3a052a4c870'
 importedAt: '2026-09-23'
 ---
 ### How to use web based digital signage player?
 
 -   Open a Web Browser, preferably Chrome or Chromium.
--   Click on [](/iletisim/)dsplayer.io
+-   Click on [dsplayer.io](/iletisim/)
 -   Go to CMS portal and use the code displayed in the browser to assign the web player to your account.
--   For more information on how to assign a screen to your account, check the below link [](/en/support/screens/digital-signage-screens/)Add Screen to your account
+-   For more information on how to assign a screen to your account, check the below link [Add Screen to your account](/en/support/screens/digital-signage-screens/)
 
 ### How to persist the Player ID
 

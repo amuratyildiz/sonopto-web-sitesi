@@ -5,7 +5,7 @@ summary: 'Learn how to avoid duplicate Screen ID issues on Raspberry Pi devices 
 category: 'installation'
 order: 10
 source: 'installation/fix-raspberry-pi-cloning-sd-card'
-sourceHash: '1e700316d81580ad'
+sourceHash: 'ae2253978d218825'
 importedAt: '2026-09-23'
 ---
 Cloning the SD card of a configured Raspberry Pi can save time—but if not done properly, it can cause all your players to share the **same Screen ID**, which means they’ll be treated as the **same device** in digital signage. This leads to unexpected behavior, including players not functioning correctly.
@@ -17,7 +17,7 @@ Follow the steps below to ensure each cloned Raspberry Pi generates a unique Scr
 1.  **Prepare Your Raspberry Pi**
     
     Before cloning the SD card, make sure your Raspberry Pi is properly set up by following this guide:  
-    [](/en/support/installation/install-digital-signage-raspberry-pi/)Install App on Raspberry Pi
+    [Install App on Raspberry Pi](/en/support/installation/install-digital-signage-raspberry-pi/)
     
 
 2.  **Add the Player to Your your sonopto.signage account**

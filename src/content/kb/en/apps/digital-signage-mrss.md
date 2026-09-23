@@ -5,7 +5,7 @@ summary: 'Automate your screen content using MRSS feeds. Learn how to connect ex
 category: 'apps'
 order: 67
 source: 'apps/digital-signage-mrss'
-sourceHash: 'db4e831932d82fb3'
+sourceHash: '28a18c8c4b54af04'
 importedAt: '2026-09-23'
 ---
 ## What is MRSS?

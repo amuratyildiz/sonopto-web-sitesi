@@ -5,7 +5,7 @@ summary: 'How to install digital signage app on Philips screens'
 category: 'installation'
 order: 16
 source: 'installation/philips'
-sourceHash: '9fc4343120de587a'
+sourceHash: '30b22777c13123e5'
 importedAt: '2026-09-23'
 ---
 ### Step 1: Get the APK file

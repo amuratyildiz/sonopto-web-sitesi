@@ -5,7 +5,7 @@ summary: 'Learn how to easily import videos into your digital signage with sonop
 category: 'apps'
 order: 51
 source: 'apps/digital-signage-import-video'
-sourceHash: 'cf1d0dd2bc5816aa'
+sourceHash: 'ea7a2849eabcf698'
 importedAt: '2026-09-23'
 ---
 <video width="90%" src="/kb/apps/import-video.mp4" controls="" preload="metadata" playsinline=""></video>

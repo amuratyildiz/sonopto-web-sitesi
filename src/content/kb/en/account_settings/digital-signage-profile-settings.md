@@ -5,7 +5,7 @@ summary: 'Learn how to update your preferences like account name and password.'
 category: 'account_settings'
 order: 1
 source: 'account_settings/digital-signage-profile-settings'
-sourceHash: '8b3fb0e4ce1eb6c2'
+sourceHash: 'b588a761a404f9e8'
 importedAt: '2026-09-23'
 ---
 Learn how to manage your profile settings, including updating your profile and changing password.

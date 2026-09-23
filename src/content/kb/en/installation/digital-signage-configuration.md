@@ -5,14 +5,14 @@ summary: 'sonopto.signage configuration file'
 category: 'installation'
 order: 19
 source: 'installation/digital-signage-configuration'
-sourceHash: '85ed90cd6e077b20'
+sourceHash: '9e8ec1def99e8093'
 importedAt: '2026-09-23'
 ---
 #### Configuration for:
 
--   [](/en/support/installation/digital-signage-install-windows/)Windows
--   [](/en/support/installation/install-digital-signage-linux/)Linux
--   [](/en/support/installation/install-digital-signage-raspberry-pi/)Raspberry Pi
+-   [Windows](/en/support/installation/digital-signage-install-windows/)
+-   [Linux](/en/support/installation/install-digital-signage-linux/)
+-   [Raspberry Pi](/en/support/installation/install-digital-signage-raspberry-pi/)
 
 #### 1\. The Configuration File
 

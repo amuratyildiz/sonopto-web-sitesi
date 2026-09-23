@@ -5,7 +5,7 @@ summary: 'Learn how to display TikTok videos seamlessly on your digital signage 
 category: 'apps'
 order: 72
 source: 'apps/digital-signage-tiktok'
-sourceHash: '35faf51481c1f332'
+sourceHash: '22865ca7c2367f14'
 importedAt: '2026-09-23'
 ---
 <video width="90%" src="/kb/apps/tiktok.mp4" controls="" preload="metadata" playsinline=""></video>

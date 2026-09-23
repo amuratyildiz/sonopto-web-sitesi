@@ -5,12 +5,12 @@ summary: 'Learn how to integrate RSS feeds with sonopto.signage to display real-
 category: 'apps'
 order: 69
 source: 'apps/digital-signage-rss'
-sourceHash: 'f86dd3eb54eea7e4'
+sourceHash: 'caa6250a9ba2b093'
 importedAt: '2026-09-23'
 ---
 <video width="90%" src="/kb/apps/digital-signage-rss-feed.mp4" controls="" preload="metadata" playsinline=""></video>
 
--   Go to the RSS web page and copy the RSS feed URL (_e.g. [](https://www.jpl.nasa.gov/feeds/news)https://www.jpl.nasa.gov/feeds/news/_).
+-   Go to the RSS web page and copy the RSS feed URL (_e.g. [https://www.jpl.nasa.gov/feeds/news/](https://www.jpl.nasa.gov/feeds/news/)_).
 -   Go to the Management Console.
 -   Click on the playlist then the layer where you will add RSS.
 -   If the layer has no media, the apps dialog will open. Otherwise, click on **Add New**.

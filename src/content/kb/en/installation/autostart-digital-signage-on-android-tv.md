@@ -5,7 +5,7 @@ summary: 'How to auto start digital signage on android TV'
 category: 'installation'
 order: 4
 source: 'installation/autostart-digital-signage-on-android-tv'
-sourceHash: '94ee6b846c0418b0'
+sourceHash: '2c216bf42352dc24'
 importedAt: '2026-09-23'
 ---
 Auto start is the ability of the software to automatically start playing the content as soon as the device is powered on or restarted. It helps businesses keep their digital signage displays up and running without requiring manual intervention.

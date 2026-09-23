@@ -5,7 +5,7 @@ summary: 'Learn how to integrate Google Calendar on your digital screen to strea
 category: 'apps'
 order: 45
 source: 'apps/digital-signage-google-calendar'
-sourceHash: 'b7b0fdc2fc07abcf'
+sourceHash: 'a93cfca991eea47d'
 importedAt: '2026-09-23'
 ---
 The Google Calendar app seamlessly syncs with your calendar to display upcoming schedules and events.

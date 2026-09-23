@@ -5,7 +5,7 @@ summary: 'Learn how to pre-provision devices in to simplify installations and bu
 category: 'screens'
 order: 8
 source: 'screens/pre-provision-devices-digital-signage'
-sourceHash: '73adc2a6afbfd6d0'
+sourceHash: 'f2b93d4bc49dd3d5'
 importedAt: '2026-09-23'
 ---
 Pre-provisioning allows you to prepare screens **before** they come online. This is useful when deploying many screens at once, sending pre-configured devices to clients, or working with installers.
@@ -118,7 +118,7 @@ Examples:
 
 <img src="/kb/screens/tags.webp" alt="Screen Tags" loading="lazy" decoding="async">
 
-_Read more about [](/en/support/playlists/3.7-control-media-playback-by-tags/)Tags_.
+_Read more about [Tags](/en/support/playlists/3.7-control-media-playback-by-tags/)_.
 
 * * *
 

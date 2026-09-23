@@ -5,7 +5,7 @@ summary: 'Learn how to use the HDMI External Video App to display live video fee
 category: 'apps'
 order: 42
 source: 'apps/digital-signage-external-video'
-sourceHash: '5c1e8780bd6e822f'
+sourceHash: 'e73231cb440fd9dd'
 importedAt: '2026-09-23'
 ---
 -   [How it Works](#how-it-works)
@@ -26,7 +26,7 @@ Devices equipped with an HDMI input interface can play video content from an ext
 
 ### Supported Players:
 
--   [](https://shop.geniatech.com/product/apc390k)Android Digital Signage Player with HDMI input & 4G LTE (APC390K)
+-   [Android Digital Signage Player with HDMI input & 4G LTE (APC390K)](https://shop.geniatech.com/product/apc390k/)
     
 -   BrightSign players with HDMI input that support the External HDMI App: **XT-series players**.
     
@@ -55,13 +55,13 @@ These are the only BrightSign models with an HDMI input port, allowing you to di
 
 <img src="/kb/apps/playlist-pip.webp" alt="Playlist-PiP" loading="lazy" decoding="async">
 
-_For more info on how to create a playlist, check the [](/en/support/playlists/digital-signage-playlist/)Playlist Page_.
+_For more info on how to create a playlist, check the [Playlist Page](/en/support/playlists/digital-signage-playlist/)_.
 
 **If using channels**:  
 To switch between full screen and Picture in Picture (PiP), create a channel with two playlists, one full screen and another with a small layer, and add them to the channel.
 
 <img src="/kb/apps/channel-pip.webp" alt="Channel-PiP" loading="lazy" decoding="async">
 
-_For more info on how to create a channel, check the [](/en/support/playlists/digital-signage-channels/)Channels Page_.
+_For more info on how to create a channel, check the [Channels Page](/en/support/playlists/digital-signage-channels/)_.
 
 7.  Assign the playlist or channel to the player.

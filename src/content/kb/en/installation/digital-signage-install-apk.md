@@ -5,7 +5,7 @@ summary: 'Learn how to install a digital signage app from an APK with our step-b
 category: 'installation'
 order: 3
 source: 'installation/digital-signage-install-apk'
-sourceHash: 'fe8e261d2edf623b'
+sourceHash: '9b01fac0bdc35b20'
 importedAt: '2026-09-23'
 ---
 ## How to Install Android APK on Your Digital Signage Device

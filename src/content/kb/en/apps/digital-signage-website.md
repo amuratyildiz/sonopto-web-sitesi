@@ -5,7 +5,7 @@ summary: 'Learn how to display your website/URL seamlessly on digital signage sc
 category: 'apps'
 order: 79
 source: 'apps/digital-signage-website'
-sourceHash: '37d5b9c45fbd6fed'
+sourceHash: 'bda8ee9b82c60f93'
 importedAt: '2026-09-23'
 ---
 <video width="90%" src="/kb/apps/digital-signage-website.mp4" controls="" preload="metadata" playsinline=""></video>

@@ -5,7 +5,7 @@ summary: 'Learn how to organize and manage digital signage screens effortlessly 
 category: 'screens'
 order: 2
 source: 'screens/digital-signage-groups'
-sourceHash: 'b9feae74c7c03acf'
+sourceHash: '4ada822cc4e2774b'
 importedAt: '2026-09-23'
 ---
 A group allows you to schedule playlists for multiple screens at the same time.

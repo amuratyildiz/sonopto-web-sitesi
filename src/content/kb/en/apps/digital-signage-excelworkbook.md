@@ -5,7 +5,7 @@ summary: 'Learn how to use Excel Workbooks to easily update your digital signage
 category: 'apps'
 order: 41
 source: 'apps/digital-signage-excelworkbook'
-sourceHash: '8d8c84fe8c3b0fb4'
+sourceHash: '2212bdef62a65ace'
 importedAt: '2026-09-23'
 ---
 <video width="90%" src="/kb/apps/excel-workbook-app.mp4" controls="" preload="metadata" playsinline=""></video>

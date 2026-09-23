@@ -5,7 +5,7 @@ summary: 'How to set up Digital Signage Player on ChromeOS with Chrome'
 category: 'installation'
 order: 5
 source: 'installation/digital-signage-chrome-os'
-sourceHash: 'cb6a78b21ca58ab8'
+sourceHash: '3e8c26258f666f24'
 importedAt: '2026-09-23'
 ---
 ## How to Install Digital Signage Player on Chrome OS

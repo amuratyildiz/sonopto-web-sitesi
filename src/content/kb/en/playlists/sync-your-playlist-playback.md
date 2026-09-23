@@ -5,7 +5,7 @@ summary: 'Discover how to sync your playlist playback seamlessly on your digital
 category: 'playlists'
 order: 6
 source: 'playlists/sync-your-playlist-playback'
-sourceHash: 'ca176f236515421b'
+sourceHash: '0f068454bff38c56'
 importedAt: '2026-09-23'
 ---
 Sync players’ playlists content playback has never been easier. it works if your players are in one location sharing one local network (wifi/wired) or if they are in different locations with a 3G/4G internet connection.

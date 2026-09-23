@@ -5,7 +5,7 @@ summary: 'Discover how geolocation enhances digital signage campaigns with sonop
 category: 'geolocation'
 order: 999
 source: 'geolocation/digital-signage-geolocation'
-sourceHash: 'e1d7afb829acaf10'
+sourceHash: '99b47040818a3044'
 importedAt: '2026-09-23'
 ---
 Geo-Location allows automatic updates of content based on the device’s geographical location, enabling specific playlists to be displayed in designated areas, regions, or locations.
@@ -94,9 +94,9 @@ A zone is a geographic area assigned to a playlist in a channel. It specifies th
 
 Set up your playlists and create a channel for these playlists.
 
-1.  Go to HORIZONTAL or VERTICAL tabs to add playlists, depending on the type of screens used. For more info on creating a playlist, you can refer to the [](/en/support/playlists/digital-signage-playlist/)PLAYLIST page.
+1.  Go to HORIZONTAL or VERTICAL tabs to add playlists, depending on the type of screens used. For more info on creating a playlist, you can refer to the [PLAYLIST](/en/support/playlists/digital-signage-playlist/) page.
 2.  Once you finish creating playlists, return to the CHANNELS tab.
-3.  In the Channels sub-section, click on ADD to create a channel of the playlists added previously. For more info on creating a channel, refer to the [](/en/support/playlists/digital-signage-channels/)CHANNELS page.
+3.  In the Channels sub-section, click on ADD to create a channel of the playlists added previously. For more info on creating a channel, refer to the [CHANNELS](/en/support/playlists/digital-signage-channels/) page.
 
 <img src="/kb/geolocation/geolocation-add-channel.webp" alt="Add Channel" loading="lazy" decoding="async">
 
@@ -128,7 +128,7 @@ Link each playlist under channels to its corresponding geographical zone so the 
 
 ### Step 5: Assign Channel to Screens
 
-1.  Navigate to the SCREENS page. (For more details on adding a screen, see the [](/en/support/screens/digital-signage-screens/)SCREENS page).
+1.  Navigate to the SCREENS page. (For more details on adding a screen, see the [SCREENS](/en/support/screens/digital-signage-screens/) page).
     
 2.  Click on Media Source Type next to the screen name.
     

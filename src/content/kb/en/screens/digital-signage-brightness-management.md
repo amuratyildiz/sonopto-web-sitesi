@@ -5,7 +5,7 @@ summary: 'Learn how to optimize brightness management for your digital signage s
 category: 'screens'
 order: 7
 source: 'screens/digital-signage-brightness-management'
-sourceHash: 'b6e5fe0d2ae52f1d'
+sourceHash: 'f8c609e5c3bab7ef'
 importedAt: '2026-09-23'
 ---
 Brightness management enables users to adjust their screens brightness manually or set schedules for automatic adjustments to improve visibility and conserve energy.

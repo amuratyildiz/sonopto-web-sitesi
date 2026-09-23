@@ -5,7 +5,7 @@ summary: 'Configure default media behavior, including media duration, screen str
 category: 'account_settings'
 order: 5
 source: 'account_settings/digital-signage-media-settings'
-sourceHash: 'e68daa1c4843da77'
+sourceHash: 'b3c4084376beff52'
 importedAt: '2026-09-23'
 ---
 The Media Settings section allows you to configure the default behavior of media files when they are added to playlists. These settings help streamline content management by automatically applying predefined options to images and videos, saving time when building playlists.

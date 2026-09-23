@@ -5,7 +5,7 @@ summary: 'Get a complete overview of your digital signage account with our intui
 category: 'dashboard'
 order: 999
 source: 'dashboard/digital-signage-dashboard'
-sourceHash: '36520a5c8d85e8ee'
+sourceHash: 'f8ef2bf3249ffb7a'
 importedAt: '2026-09-23'
 ---
 After a successful login to the management console, the system redirects you to the dashboard. The dashboard has 3 main rows:

@@ -5,7 +5,7 @@ summary: 'Step-by-step guide to install digital signage on NovaStar Taurus and T
 category: 'installation'
 order: 14
 source: 'installation/novastar-digital-signage'
-sourceHash: '88c7209cf7599958'
+sourceHash: '341cd5e7da808269'
 importedAt: '2026-09-23'
 ---
 This help page guides you through setting up digital signage on NovaStar LED displays. This method uses the NovaStar multimedia player’s built-in web page widget to load the digital signage web player [(dsplayer.io)](/iletisim/) directly.
@@ -67,7 +67,7 @@ You only need one web page in this ViPlex playlist. Your digital signage CMS han
 3.  Enter the pairing code shown on your LED screen.
 4.  Assign a playlist/schedule and start playback.
 
-For more details: [](/en/support/screens/digital-signage-screens/)Add Screen to your account
+For more details: [Add Screen to your account](/en/support/screens/digital-signage-screens/)
 
 ### Step 4: Persist the Player ID
 
@@ -80,6 +80,8 @@ Persisting the Player ID prevents this issue and keeps the device linked to your
 3.  Open Details.
 
 Under Details, you will find the Device ID.
+
+<img src="/kb/installation/nova-start-device-id.webp" alt="Nova Star Device ID" loading="lazy" decoding="async">
 
 Copy the Device ID, then re-publish the Web Page URL from Step 1 using the following format:
 

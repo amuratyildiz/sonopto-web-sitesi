@@ -5,7 +5,7 @@ summary: 'Learn how to use the Custom Ticker App in your digital signage to disp
 category: 'apps'
 order: 35
 source: 'apps/digital-signage-custom-ticker'
-sourceHash: '868f42ff130e1cea'
+sourceHash: '5c6502be9615a676'
 importedAt: '2026-09-23'
 ---
 Use the Custom ticker App to create a custom news feed with stories you write yourself.

@@ -5,7 +5,7 @@ summary: 'Discover how sonopto.signage supports LED screens for seamless digital
 category: 'screens'
 order: 5
 source: 'screens/digital-signage-led-support'
-sourceHash: 'fdfc7e89340a04df'
+sourceHash: 'cae1e45e11437797'
 importedAt: '2026-09-23'
 ---
 **IMPORTANT:** Before proceeding with the steps below, make sure that you have already installed your player. The process of installing the LED player is the same as the standard player installation. To get detailed instructions on how to install the player, refer to the **installation** section of this manual and choose the type of player you have.

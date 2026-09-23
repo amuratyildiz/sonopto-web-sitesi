@@ -5,7 +5,7 @@ summary: 'Discover how to use Unsplash with sonopto.signage to access stunning f
 category: 'apps'
 order: 75
 source: 'apps/digital-signage-unsplash'
-sourceHash: '81e95b04d7cf5fcd'
+sourceHash: '31b880a1f9d45b59'
 importedAt: '2026-09-23'
 ---
 <video width="90%" src="/kb/apps/digital-signage-unsplash.mp4" controls="" preload="metadata" playsinline=""></video>

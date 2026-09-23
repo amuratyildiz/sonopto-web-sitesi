@@ -5,7 +5,7 @@ summary: 'Effortlessly manage your digital signage screens with advanced tools f
 category: 'screens'
 order: 1
 source: 'screens/digital-signage-screens'
-sourceHash: 'a5cd5334b0ce7c85'
+sourceHash: '20666a7fd9f2c508'
 importedAt: '2026-09-23'
 ---
 ## How to add a screen

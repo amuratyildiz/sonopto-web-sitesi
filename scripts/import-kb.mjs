@@ -91,6 +91,18 @@ const get = async (u) => {
   return r.text();
 };
 
+
+/**
+ * The source HTML is minified with unquoted attribute values. When such a value
+ * ends in a slash — `href=/help/troubleshoot/x/>` — the parser reads the final
+ * `/>` as a self-closing tag, empties the element and spills its text out as a
+ * sibling. That silently produced 54 empty links across 31 articles.
+ *
+ * Quoting those values before parsing is the fix; HTML itself is ambiguous here
+ * and quoting is what the spec expects.
+ */
+const quoteTrailingSlashAttrs = (html) => html.replace(/=([^\s"'>]*\/)>/g, '="$1">');
+
 const slugify = (s) =>
   s
     .toLowerCase()
@@ -140,7 +152,7 @@ async function discover() {
 // ------------------------------------------------------------------ parsing
 
 function parseArticle(html, article, urlIndex) {
-  const root = parse(html);
+  const root = parse(quoteTrailingSlashAttrs(html));
 
   const rawTitle = root.querySelector('h1')?.text?.trim() ?? article.slug;
   // Titles carry inconsistent ordering prefixes: "01 - ", "1- ", "11- ".

@@ -5,7 +5,7 @@ summary: 'Learn how to use the Google Sheet app to seamlessly update your digita
 category: 'apps'
 order: 49
 source: 'apps/digital-signage-google-sheets'
-sourceHash: '97d5a1f25ec592b6'
+sourceHash: 'a853ca2d5d77a6a0'
 importedAt: '2026-09-23'
 ---
 <video width="90%" src="/kb/apps/google-sheets.mp4" controls="" preload="metadata" playsinline=""></video>

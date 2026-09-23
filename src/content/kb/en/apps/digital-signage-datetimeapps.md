@@ -5,7 +5,7 @@ summary: 'Learn how to set up and customize the Date and Time App on your digita
 category: 'apps'
 order: 36
 source: 'apps/digital-signage-datetimeapps'
-sourceHash: '5405d083eae8db55'
+sourceHash: 'c98b38be43329777'
 importedAt: '2026-09-23'
 ---
 <video width="90%" src="/kb/apps/digital-signage-datetime.mp4" controls="" preload="metadata" playsinline=""></video>

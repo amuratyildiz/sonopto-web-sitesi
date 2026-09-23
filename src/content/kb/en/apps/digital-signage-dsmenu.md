@@ -5,7 +5,7 @@ summary: 'DsMenu is a user-friendly and affordable digital menu board design too
 category: 'apps'
 order: 38
 source: 'apps/digital-signage-dsmenu'
-sourceHash: '3f165b245a7c8758'
+sourceHash: 'ce3d5af6f5c28854'
 importedAt: '2026-09-23'
 ---
 <video muted="" width="90%" src="/kb/apps/dsmenu_video.mp4" controls="" preload="metadata" playsinline=""></video>
@@ -16,7 +16,7 @@ DsMenu is a simple and affordable tool for creating digital menu boards without 
 
 ## How to get DsMenu URL?
 
--   Click the link to create your [](https://www.dsmenu.com)DsMenu account, then choose a template and start editing.
+-   Click the link to create your [DsMenu account](https://www.dsmenu.com/), then choose a template and start editing.
 -   Once you’re happy with your design, save and publish it.
 -   Next, go to your DsMenu Menuboards to get the menu link.
 -   Copy the link and paste it into the digital signage DsMenu app to display your content.

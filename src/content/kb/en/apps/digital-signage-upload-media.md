@@ -5,7 +5,7 @@ summary: 'Learn how to upload media to your digital signage with sonopto.signage
 category: 'apps'
 order: 76
 source: 'apps/digital-signage-upload-media'
-sourceHash: 'cdad7a4e89753ef5'
+sourceHash: 'f1c17c96c98415d4'
 importedAt: '2026-09-23'
 ---
 -   Go to the management console
@@ -65,7 +65,7 @@ All the uploaded files will show in the layer’s playlist
 
 **Media Settings**
 
--   Click on **Edit** to change the added [](/en/support/playlists/digital-signage-media-settings/)media settings
+-   Click on **Edit** to change the added [media settings](/en/support/playlists/digital-signage-media-settings/)
 
 * * *
 

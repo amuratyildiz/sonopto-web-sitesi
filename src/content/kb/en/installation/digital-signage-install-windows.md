@@ -5,7 +5,7 @@ summary: 'How to install digital signage app on Windows screens'
 category: 'installation'
 order: 8
 source: 'installation/digital-signage-install-windows'
-sourceHash: '17a7fda4c6cf9990'
+sourceHash: '240b9ae272f7ed12'
 importedAt: '2026-09-23'
 ---
 #### Supported Windows Versions
@@ -21,7 +21,7 @@ On the windows player, make sure the following steps are done before installing 
 -   **Power Options**: Under Control Panel, in the power options, set the PC to never dim the display, never turn off the display and never put the computer in sleep mode.
 -   **Clean Apps**: Uninstall all unneeded programs to prevent interference with the digital signage app.
 -   Disable Auto Update of Installed Apps (printer apps, Adobe Acrobat) to prevent them from popping up on the screen while digital signage is playing.
--   Make sure you have the latest **Edge**, **Chrome** or [](https://www.chromium.org/Home)Chromium Browser is installed.
+-   Make sure you have the latest **Edge**, **Chrome** or [Chromium](https://www.chromium.org/Home/) Browser is installed.
 
 ### Install the sonopto.signage app
 

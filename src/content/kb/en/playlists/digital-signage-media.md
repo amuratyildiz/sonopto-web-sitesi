@@ -5,7 +5,7 @@ summary: 'Learn how to efficiently manage your digital signage playlist''s media
 category: 'playlists'
 order: 2
 source: 'playlists/digital-signage-media'
-sourceHash: 'ac6ea51df44b21ec'
+sourceHash: 'a1432e6fa6fd26c5'
 importedAt: '2026-09-23'
 ---
 <img src="/kb/playlists/media_management.webp" alt="Media Management" loading="lazy" decoding="async">
@@ -23,7 +23,7 @@ importedAt: '2026-09-23'
 
 -   Click on an app to add it to the layer playlist
 
-_Note: To find out how each app works go to [](/en/support/apps/)Apps Section_
+_Note: To find out how each app works go to [Apps Section](/en/support/apps/)_
 
 ### Search Apps
 

@@ -5,7 +5,7 @@ summary: 'Stay updated with the latest in digital signage trends, news, and insi
 category: 'apps'
 order: 59
 source: 'apps/digital-signage-news'
-sourceHash: '59bf7234ec738340'
+sourceHash: 'f437f2051b83a22d'
 importedAt: '2026-09-23'
 ---
 <video width="90%" src="/kb/apps/digital-signage-news-feed.mp4" controls="" preload="metadata" playsinline=""></video>

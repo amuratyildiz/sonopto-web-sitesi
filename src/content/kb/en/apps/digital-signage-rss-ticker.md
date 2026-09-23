@@ -5,7 +5,7 @@ summary: 'Learn how to use the RSS Ticker app on sonopto.signage to display real
 category: 'apps'
 order: 68
 source: 'apps/digital-signage-rss-ticker'
-sourceHash: '458677d84825c0b7'
+sourceHash: '374c3c2644194740'
 importedAt: '2026-09-23'
 ---
 Use the RSS ticker App to create an RSS news feed from any source using the RSS feed URL.

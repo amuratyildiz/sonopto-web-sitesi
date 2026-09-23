@@ -5,14 +5,14 @@ summary: 'Integrate Social Walls with your digital signage to showcase live soci
 category: 'apps'
 order: 70
 source: 'apps/digital-signage-socialwalls'
-sourceHash: 'abd08746b4dd92ed'
+sourceHash: '42813dd8f3f0b04f'
 importedAt: '2026-09-23'
 ---
 The Social Walls app is a platform that enables users to aggregate and display real-time social media content from various platforms such as Facebook, Twitter, Instagram, YouTube, and Pinterest.
 
 <video width="90%" src="/kb/apps/social-walls-app.mp4" controls="" preload="metadata" playsinline=""></video>
 
--   Go to the [](https://socialwalls.com)Social walls app.
+-   Go to the [Social walls](https://socialwalls.com/) app.
 -   Choose the wall you want to share.
 -   Click on the “Display” button at the bottom left corner.
 -   Select platform “Digital Display”.

@@ -5,7 +5,7 @@ summary: 'Learn how to easily add users to your digital signage account, manage 
 category: 'user_mgmt'
 order: 1
 source: 'user_mgmt/users'
-sourceHash: 'c1b5ed079c372027'
+sourceHash: 'cf6081b20ff32b97'
 importedAt: '2026-09-23'
 ---
 <img src="/kb/user_mgmt/adduser.webp" alt="User Management" loading="lazy" decoding="async">

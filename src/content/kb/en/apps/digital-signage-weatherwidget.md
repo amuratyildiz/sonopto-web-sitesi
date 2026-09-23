@@ -5,14 +5,14 @@ summary: 'Integrate WeatherWidget with your digital signage to easily display re
 category: 'apps'
 order: 78
 source: 'apps/digital-signage-weatherwidget'
-sourceHash: '8869da42ee0b7af8'
+sourceHash: '6076b9aaa252b517'
 importedAt: '2026-09-23'
 ---
 The WeatherWidget app is a customizable tool designed to display real-time weather information directly on your digital signage.
 
 <video width="90%" src="/kb/apps/weather-widget-app.mp4" controls="" preload="metadata" playsinline=""></video>
 
--   Go to the [](https://weatherwidget.io)WeatherWidget app.
+-   Go to the [WeatherWidget](https://weatherwidget.io/) app.
 -   Select the location to view the weather.
 -   Customise the weather widget to match your brand. Choose your themes and colours.
 -   Click on the “GET CODE” button.

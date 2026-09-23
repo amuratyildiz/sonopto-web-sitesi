@@ -5,7 +5,7 @@ summary: 'Discover how to enhance your digital signage with stunning, royalty-fr
 category: 'apps'
 order: 62
 source: 'apps/digital-signage-pixabay'
-sourceHash: '0c4bb6f946d176c6'
+sourceHash: '9ef490aa6cba4251'
 importedAt: '2026-09-23'
 ---
 <video width="90%" src="/kb/apps/digital-signage-pixabay.mp4" controls="" preload="metadata" playsinline=""></video>

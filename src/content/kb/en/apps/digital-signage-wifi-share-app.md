@@ -5,7 +5,7 @@ summary: 'Learn how to use the Wi-Fi Share app to display a QR code on your digi
 category: 'apps'
 order: 80
 source: 'apps/digital-signage-wifi-share-app'
-sourceHash: 'ea0e236551939951'
+sourceHash: 'ada54351f0b0ce57'
 importedAt: '2026-09-23'
 ---
 The Wi-Fi Share app allows you to display a QR code on your digital signage screen, for the customers to easily scan and connect to the Wi-Fi in your restaurant, café, or in any other industry.

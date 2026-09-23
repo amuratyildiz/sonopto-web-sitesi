@@ -5,7 +5,7 @@ summary: 'Learn how to seamlessly integrate your digital signage account with On
 category: 'integrations'
 order: 113
 source: 'integrations/onelogin'
-sourceHash: '1e79ae646c69dcbb'
+sourceHash: 'b6922154e9688d50'
 importedAt: '2026-09-23'
 ---
 OneLogin integration is done using OpenID Connect. To add the digital signage app to your organization catalog, follow the below steps:

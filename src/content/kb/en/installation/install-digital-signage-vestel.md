@@ -5,7 +5,7 @@ summary: 'How to install digital signage app on Vestel screens'
 category: 'installation'
 order: 15
 source: 'installation/install-digital-signage-vestel'
-sourceHash: 'd2f9452c894bf48a'
+sourceHash: 'e06c753e60f7b11a'
 importedAt: '2026-09-23'
 ---
 _This Guide is only intended for Android-based Vestel digital signage screens._

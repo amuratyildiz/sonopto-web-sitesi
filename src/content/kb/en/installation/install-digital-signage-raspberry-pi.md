@@ -5,7 +5,7 @@ summary: 'Learn how to install digital signage on your Raspberry Pi with our ste
 category: 'installation'
 order: 11
 source: 'installation/install-digital-signage-raspberry-pi'
-sourceHash: '3408137ae6fd4f40'
+sourceHash: '64a1ff565df14fa7'
 importedAt: '2026-09-23'
 ---
 ## Supported Raspberry Pi
@@ -53,7 +53,7 @@ Using the **digital signage Custom Android Image** is highly recommended for the
 
 -   Insert a microSD card (32GB or larger recommended) into your computer.
     
--   Download the Raspberry Pi Imager from [](https://www.raspberrypi.com/software)raspberrypi.com/software and run the installer.
+-   Download the Raspberry Pi Imager from [raspberrypi.com/software](https://www.raspberrypi.com/software/) and run the installer.
     
 -   Open Raspberry Pi Imager:
     

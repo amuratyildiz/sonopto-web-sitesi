@@ -5,7 +5,7 @@ summary: 'Learn how to integrate Microsoft Power BI with sonopto.signage for sea
 category: 'apps'
 order: 64
 source: 'apps/digital-signage-powerbi'
-sourceHash: '0dd733d07f2a6972'
+sourceHash: 'c59287ba53afd16e'
 importedAt: '2026-09-23'
 ---
 ## How to Use Power BI App with your digital signage

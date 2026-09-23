@@ -5,7 +5,7 @@ summary: 'How to install digital signage app on Linux player'
 category: 'installation'
 order: 12
 source: 'installation/install-digital-signage-linux'
-sourceHash: 'a6c15fbc448a9e3b'
+sourceHash: 'b3bfa88e77e5f7ee'
 importedAt: '2026-09-23'
 ---
 ### Tested on
@@ -15,7 +15,7 @@ importedAt: '2026-09-23'
 
 ### Pre Installation steps
 
--   Make sure the latest Chrome or [](https://www.chromium.org/Home)Chromium Browser is installed.
+-   Make sure the latest Chrome or [Chromium](https://www.chromium.org/Home/) Browser is installed.
 -   Disable the screen saver:
 
 1.  Start the application **Settings**

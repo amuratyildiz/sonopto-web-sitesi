@@ -5,7 +5,7 @@ summary: 'Learn how to use Google Slides with sonopto.signage for dynamic digita
 category: 'apps'
 order: 50
 source: 'apps/digital-signage-google-slides'
-sourceHash: '13d311ff3bbc878f'
+sourceHash: 'fe29c2aa827138fb'
 importedAt: '2026-09-23'
 ---
 <video width="90%" src="/kb/apps/google-slides.mp4" controls="" preload="metadata" playsinline=""></video>

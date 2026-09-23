@@ -5,7 +5,7 @@ summary: 'Learn how to integrate Outlook Calendar with sonopto.signage to stream
 category: 'apps'
 order: 56
 source: 'apps/digital-signage-outlook-calendar'
-sourceHash: '03d85f12285472cf'
+sourceHash: 'a583f94d3490f686'
 importedAt: '2026-09-23'
 ---
 The Outlook Calendar app seamlessly syncs with your calendar to display upcoming schedules and events.

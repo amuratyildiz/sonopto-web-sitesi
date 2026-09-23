@@ -5,7 +5,7 @@ summary: 'Learn how to use the Pexels app with sonopto.signage to access free, h
 category: 'apps'
 order: 61
 source: 'apps/digital-signage-pexels'
-sourceHash: 'a410d18d19929d54'
+sourceHash: '7f64471676d2e56d'
 importedAt: '2026-09-23'
 ---
 <video width="90%" src="/kb/apps/digital-signage-pexels.mp4" controls="" preload="metadata" playsinline=""></video>

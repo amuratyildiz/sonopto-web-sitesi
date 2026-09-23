@@ -5,7 +5,7 @@ summary: 'Discover how to use the Embedded HTML App in your digital signage to s
 category: 'apps'
 order: 40
 source: 'apps/digital-signage-embedded'
-sourceHash: 'a44b2208ec4b1fe8'
+sourceHash: 'b4389260b910244d'
 importedAt: '2026-09-23'
 ---
 <video width="90%" src="/kb/apps/digital-signage-embedded.mp4" controls="" preload="metadata" playsinline=""></video>

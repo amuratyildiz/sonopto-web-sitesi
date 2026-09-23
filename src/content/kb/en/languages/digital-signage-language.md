@@ -5,7 +5,7 @@ summary: 'Discover how sonopto.signage supports multilingual digital signage. Le
 category: 'languages'
 order: 999
 source: 'languages/digital-signage-language'
-sourceHash: '82b5def5f1ee132c'
+sourceHash: '90e853cc12536356'
 importedAt: '2026-09-23'
 ---
 <video width="90%" src="/kb/languages/digital-signage-language.mp4" controls="" preload="metadata" playsinline=""></video>

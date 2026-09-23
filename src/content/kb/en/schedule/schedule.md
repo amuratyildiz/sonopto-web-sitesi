@@ -5,7 +5,7 @@ summary: 'Learn how to easily schedule playlists and media in your digital signa
 category: 'schedule'
 order: 999
 source: 'schedule/schedule'
-sourceHash: '9e74f4e349a7097f'
+sourceHash: '928e8566045ab02a'
 importedAt: '2026-09-23'
 ---
 Schedules allow users to previously prepare a time schedule to play different playlists.

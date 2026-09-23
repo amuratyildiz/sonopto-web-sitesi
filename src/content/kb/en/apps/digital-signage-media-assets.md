@@ -5,7 +5,7 @@ summary: 'Get expert guidance on managing digital signage media assets. Learn ho
 category: 'apps'
 order: 55
 source: 'apps/digital-signage-media-assets'
-sourceHash: '32d26ac53470679c'
+sourceHash: '3d3303d3bcd8e679'
 importedAt: '2026-09-23'
 ---
 Media Assets is a library of all the media files already uploaded to the system.
@@ -35,7 +35,7 @@ To use media assets in a playlist
 
 **Media Settings**
 
--   Click on **Edit** to change the added [](/en/support/playlists/digital-signage-media-settings/)media settings
+-   Click on **Edit** to change the added [media settings](/en/support/playlists/digital-signage-media-settings/)
 
 * * *
 

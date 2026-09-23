@@ -5,7 +5,7 @@ summary: 'Learn how to set up and use the Follow Us app on your digital signage 
 category: 'apps'
 order: 43
 source: 'apps/digital-signage-follow-us'
-sourceHash: 'fe0090458fd137d6'
+sourceHash: '8ef8bd41fa925f47'
 importedAt: '2026-09-23'
 ---
 <video width="90%" src="/kb/apps/digital-signage-followus.mp4" controls="" preload="metadata" playsinline=""></video>

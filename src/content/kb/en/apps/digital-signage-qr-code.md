@@ -5,7 +5,7 @@ summary: 'Learn how to create and use digital signage QR codes with sonopto.sign
 category: 'apps'
 order: 65
 source: 'apps/digital-signage-qr-code'
-sourceHash: '8c2c50a09475e7e2'
+sourceHash: '35dd26dc809711a1'
 importedAt: '2026-09-23'
 ---
 <video width="90%" src="/kb/apps/digital-signage-qr-code.mp4" controls="" preload="metadata" playsinline=""></video>

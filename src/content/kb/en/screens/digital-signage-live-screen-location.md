@@ -5,7 +5,7 @@ summary: 'Learn how to use the sonopto.signage Live Screen Location feature, whi
 category: 'screens'
 order: 6
 source: 'screens/digital-signage-live-screen-location'
-sourceHash: '659d8a1514cade6a'
+sourceHash: '09a65da0023b0450'
 importedAt: '2026-09-23'
 ---
 The Live Screen Location feature allows you to monitor your digital signage screens in real-time. It provides a map view of all your active screens, whether online or offline, so you can see where each screen is located across multiple sites.

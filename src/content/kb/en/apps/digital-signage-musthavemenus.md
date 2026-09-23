@@ -5,14 +5,14 @@ summary: 'Integrate MustHaveMenus with your digital signage to easily design and
 category: 'apps'
 order: 58
 source: 'apps/digital-signage-musthavemenus'
-sourceHash: 'a4d34ceebf40a2ab'
+sourceHash: '1ea2de882317db27'
 importedAt: '2026-09-23'
 ---
 MustHaveMenus is an all-in-one menu design and marketing platform that enables users to create, manage, and distribute menus and promotional materials across digital signage channels.
 
 <video width="90%" src="/kb/apps/musthavemenus-app.mp4" controls="" preload="metadata" playsinline=""></video>
 
--   Go to the [](https://www.musthavemenus.com)MusthaveMenus app.
+-   Go to the [MusthaveMenus](https://www.musthavemenus.com/) app.
 -   Choose your menu board design.
 -   Click on the “Share” button in the top right corner.
 -   Choose “View Only Link” from the options available.

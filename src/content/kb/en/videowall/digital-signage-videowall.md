@@ -5,7 +5,7 @@ summary: 'Learn how to configure a digital signage video wall setup effortlessly
 category: 'videowall'
 order: 999
 source: 'videowall/digital-signage-videowall'
-sourceHash: 'd19b9889f6f80b97'
+sourceHash: '68c52efa5bb666b5'
 importedAt: '2026-09-23'
 ---
 **Network Recommendation: connect your screens to the same wired network, wifi might not perform as expected.**
@@ -49,7 +49,7 @@ There are 5 main steps to creating a video wall.
 <img src="/kb/videowall/screens.webp" alt="Assign Screen" loading="lazy" decoding="async">
 
 -   Install the player app on your screens
--   Add the screens to the management console using the Hash ID. For more info check [](/en/support/screens/digital-signage-screens/)Screens
+-   Add the screens to the management console using the Hash ID. For more info check [Screens](/en/support/screens/digital-signage-screens/)
 -   For a 2x1 video wall, 2 screens are needed
 
 ### Step 3: Create a Video Wall

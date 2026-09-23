@@ -5,7 +5,7 @@ summary: 'Learn how to extend storage on your digital signage screens with sonop
 category: 'screens'
 order: 4
 source: 'screens/digital-signage-extend-storage'
-sourceHash: 'c2ef8b672daef964'
+sourceHash: 'e12764133a8e1e1d'
 importedAt: '2026-09-23'
 ---
 An external SD Card can be used to extend the internal storage of a screen to store apps, files and media for large digital signage playlists.

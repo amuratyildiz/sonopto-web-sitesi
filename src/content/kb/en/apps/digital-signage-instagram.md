@@ -5,7 +5,7 @@ summary: 'Learn how to integrate Instagram with digital signage for stunning vis
 category: 'apps'
 order: 52
 source: 'apps/digital-signage-instagram'
-sourceHash: '67115fb5072d1ded'
+sourceHash: '869258b1f59a489e'
 importedAt: '2026-09-23'
 ---
 The Instagram app lets you display your Instagram feed directly on your digital signage screens. Share photos, videos, and reels from your business account and keep your audience engaged with fresh, visual content automatically.

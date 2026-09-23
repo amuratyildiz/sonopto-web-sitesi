@@ -5,7 +5,7 @@ summary: 'Discover how to use digital signage weather and forecast app. Learn to
 category: 'apps'
 order: 77
 source: 'apps/digital-signage-weather-apps'
-sourceHash: 'c1894e409fd6cd27'
+sourceHash: '5c2b08883dfecc98'
 importedAt: '2026-09-23'
 ---
 ## 1\. Weather

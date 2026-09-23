@@ -5,7 +5,7 @@ summary: 'Learn how to seamlessly integrate YouTube app with your digital signag
 category: 'apps'
 order: 83
 source: 'apps/digital-signage-youtube'
-sourceHash: '379f4f54b57de35e'
+sourceHash: '099deb807cf361a3'
 importedAt: '2026-09-23'
 ---
 <video width="90%" src="/kb/apps/youtube_video.mp4" controls="" preload="metadata" playsinline=""></video>

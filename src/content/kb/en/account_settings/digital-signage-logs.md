@@ -5,7 +5,7 @@ summary: 'Learn how to access and manage digital signage logs. Get detailed insi
 category: 'account_settings'
 order: 108
 source: 'account_settings/digital-signage-logs'
-sourceHash: 'f57dabdf56dfc6a0'
+sourceHash: '44a6099bb055e1f3'
 importedAt: '2026-09-23'
 ---
 This page shows how to access and review system logs, including playback events, errors, and screen activity.

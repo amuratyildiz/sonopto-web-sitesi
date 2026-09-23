@@ -5,7 +5,7 @@ summary: 'Automate your screen content using Media JSON feeds. Learn how to conn
 category: 'apps'
 order: 66
 source: 'apps/digital-signage-media-json'
-sourceHash: '994d8484db067ecf'
+sourceHash: '10fd5825f8135ed6'
 importedAt: '2026-09-23'
 ---
 ## What is Media JSON?

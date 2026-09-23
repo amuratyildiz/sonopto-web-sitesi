@@ -5,7 +5,7 @@ summary: 'Display analog or digital clocks on your screens with full theme, time
 category: 'apps'
 order: 82
 source: 'apps/digital-signage-clock'
-sourceHash: '6f06154eeee3ac8c'
+sourceHash: 'a52e479cb5d20669'
 importedAt: '2026-09-23'
 ---
 The World Clock app brings a polished, professional time display to any digital signage screen. With over 28 carefully designed themes spanning classic analog dials and modern digital styles, you can find the perfect look for any environment, whether it’s a hotel lobby, corporate office, airport terminal, or retail space.

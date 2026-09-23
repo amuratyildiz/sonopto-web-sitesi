@@ -5,7 +5,7 @@ summary: 'Learn how to easily control the volume of videos in your digital signa
 category: 'playlists'
 order: 9
 source: 'playlists/digital-signage-volume-control'
-sourceHash: 'c5a3f41684d3687f'
+sourceHash: '60ccb8a4671eec1c'
 importedAt: '2026-09-23'
 ---
 The volume of a video or an IPTV channel can be controlled and muted in a playlist.

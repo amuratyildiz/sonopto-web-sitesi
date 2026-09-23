@@ -5,7 +5,7 @@ summary: 'Learn how to set up and use the IPTV app in your digital signage to se
 category: 'apps'
 order: 54
 source: 'apps/digital-signage-iptv'
-sourceHash: 'eafa36f33ae7dc4c'
+sourceHash: '03622a86c1bf1938'
 importedAt: '2026-09-23'
 ---
 <video width="90%" src="/kb/apps/digital-signage-iptv.mp4" controls="" preload="metadata" playsinline=""></video>

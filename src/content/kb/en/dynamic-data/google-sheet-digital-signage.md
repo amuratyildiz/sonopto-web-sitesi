@@ -5,7 +5,7 @@ summary: 'Learn how to use Google Sheets to dynamically update data in your digi
 category: 'dynamic-data'
 order: 999
 source: 'dynamic-data/google-sheet-digital-signage'
-sourceHash: '0370d97fd6e79c0d'
+sourceHash: '9375852ec0320af8'
 importedAt: '2026-09-23'
 ---
 ## Using Google Sheets for Dynamic Data in Digital Signage Templates

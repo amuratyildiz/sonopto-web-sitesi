@@ -5,7 +5,7 @@ summary: 'How to install digital signage app on LG Digital Signage screens'
 category: 'installation'
 order: 18
 source: 'installation/webos'
-sourceHash: 'c034079969598dce'
+sourceHash: '7778790f533b4dbe'
 importedAt: '2026-09-23'
 ---
 ### WebOS Signage Support

@@ -5,7 +5,7 @@ summary: 'Learn how to enable Proof of Play in your digital signage account to t
 category: 'proof_of_play'
 order: 999
 source: 'proof_of_play/proof_of_play'
-sourceHash: '1f497958959c2437'
+sourceHash: '5d807c43469c7393'
 importedAt: '2026-09-23'
 ---
 Proof of play provides statistics about media playback.

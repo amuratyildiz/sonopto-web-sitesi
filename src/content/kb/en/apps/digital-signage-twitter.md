@@ -5,7 +5,7 @@ summary: 'Learn how to integrate Twitter with sonopto.signage for real-time upda
 category: 'apps'
 order: 74
 source: 'apps/digital-signage-twitter'
-sourceHash: '1279d9c2b81d5d4f'
+sourceHash: '3a8b8c9ff5f78eb3'
 importedAt: '2026-09-23'
 ---
 <video width="90%" src="/kb/apps/digital-signage-twitter.mp4" controls="" preload="metadata" playsinline=""></video>

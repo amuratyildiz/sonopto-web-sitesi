@@ -5,7 +5,7 @@ summary: 'Learn how to get started with sonopto.signage! Register a new user acc
 category: 'register'
 order: 999
 source: 'register/register'
-sourceHash: 'f0d094b525856220'
+sourceHash: '7b82085bb4571d85'
 importedAt: '2026-09-23'
 ---
 -   Open your browser and go to the **management console**.

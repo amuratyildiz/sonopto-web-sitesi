@@ -5,10 +5,10 @@ summary: 'Learn how to use dynamic URL variables to automatically pass player in
 category: 'apps'
 order: 84
 source: 'apps/digital-signage-website-dynamic-url-variables'
-sourceHash: '35bdc02edc6d6a30'
+sourceHash: '8082c67b4e7dbb07'
 importedAt: '2026-09-23'
 ---
-> **Note:** This feature is used with the **Website/URL** app. See [](/en/support/apps/digital-signage-website/)Website/URL App.
+> **Note:** This feature is used with the **Website/URL** app. See [Website/URL App](/en/support/apps/digital-signage-website/).
 
 Dynamic URL variables let you insert player‑specific values into URLs automatically.  
 Use them to send device information to APIs, content feeds, analytics systems, or custom dashboards.

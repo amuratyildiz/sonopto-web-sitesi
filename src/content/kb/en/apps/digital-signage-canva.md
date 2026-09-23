@@ -5,7 +5,7 @@ summary: 'Discover how to use the Canva app for stunning digital signage designs
 category: 'apps'
 order: 34
 source: 'apps/digital-signage-canva'
-sourceHash: '270986b959613b04'
+sourceHash: 'febc9e728bad5bec'
 importedAt: '2026-09-23'
 ---
 This help page explains how to connect Canva with digital signage so you can design and publish visual content directly from Canva into your signage playlists.

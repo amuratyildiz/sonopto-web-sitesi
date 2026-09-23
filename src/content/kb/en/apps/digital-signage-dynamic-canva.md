@@ -5,12 +5,12 @@ summary: 'Integrate Canva with your digital signage to embed your designs easily
 category: 'apps'
 order: 39
 source: 'apps/digital-signage-dynamic-canva'
-sourceHash: '465c1161831d0497'
+sourceHash: '49a5d17c3b4d0e76'
 importedAt: '2026-09-23'
 ---
 <video muted="" width="90%" src="/kb/apps/dynamic-canva-app.mp4" controls="" preload="metadata" playsinline=""></video>
 
--   Go to your [](https://www.canva.com)Canva design.
+-   Go to your [Canva design](https://www.canva.com/).
 -   Click on the “Share” button in the top right corner.
 -   Choose “Embed” from the list.
 -   Click on the “Embed” button.

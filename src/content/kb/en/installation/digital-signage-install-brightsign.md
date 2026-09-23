@@ -5,7 +5,7 @@ summary: 'How to install digital signage app on BrightSign players'
 category: 'installation'
 order: 6
 source: 'installation/digital-signage-install-brightsign'
-sourceHash: 'da19fa5da7460ad6'
+sourceHash: 'aa29aeec247b7b59'
 importedAt: '2026-09-23'
 ---
 BrightSign is renowned for its reliability as a leader in commercial-grade digital signage players. All BrightSign **Series 4 and Series 5** players are fully supported, but we recommend using the **HD**, **XD**, and **XT** product lines for optimal performance.
@@ -30,4 +30,4 @@ Please make sure your BrightSign player is connected to the internet.
 
 #### 4\. Pair the screen
 
-Now you are ready to go to your portal, and pair the screen using your screen’s code and start assigning content to it. For detailed steps, click [](/en/support/screens/digital-signage-screens/)here.
+Now you are ready to go to your portal, and pair the screen using your screen’s code and start assigning content to it. For detailed steps, click [here](/en/support/screens/digital-signage-screens/).

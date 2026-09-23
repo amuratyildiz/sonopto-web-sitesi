@@ -5,7 +5,7 @@ summary: 'Learn how to use the Twitter Ticker app in your digital signage playli
 category: 'apps'
 order: 73
 source: 'apps/digital-signage-twitter-ticker'
-sourceHash: 'fa85807eb37153bc'
+sourceHash: '8dce071108c6002a'
 importedAt: '2026-09-23'
 ---
 Use the twitter ticker app to create a twitter news feed from a twitter account.

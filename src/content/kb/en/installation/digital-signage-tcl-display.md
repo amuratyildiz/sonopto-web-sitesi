@@ -5,7 +5,7 @@ summary: 'Step-by-step guide to install Digital Signage on TCL digital signage d
 category: 'installation'
 order: 7
 source: 'installation/digital-signage-tcl-display'
-sourceHash: '1f9f083be305ef2e'
+sourceHash: '35ebd8c071c9f143'
 importedAt: '2026-09-23'
 ---
 This guide offers clear instructions for installing Digital Signage on TCL commercial Android displays, configuring settings, and setting the digital signage app as the default playback application.

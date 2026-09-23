@@ -5,14 +5,14 @@ summary: 'Integrate Windy.com with your digital signage to showcase live weather
 category: 'apps'
 order: 81
 source: 'apps/digital-signage-windy'
-sourceHash: '26079673d75b6abb'
+sourceHash: '4e4348b4678ae30f'
 importedAt: '2026-09-23'
 ---
 Windy.com is a comprehensive weather forecasting platform offering interactive maps and real-time data on wind, temperature, precipitation, and more.
 
 <video width="90%" src="/kb/apps/windy.com-app.mp4" controls="" preload="metadata" playsinline=""></video>
 
--   Go to [](https://www.windy.com)windy.com app.
+-   Go to [windy.com](https://www.windy.com/) app.
 -   Choose the location to view the weather.
 -   Navigate to the Menu bar.
 -   Scroll down and click on “Embed Widget”.

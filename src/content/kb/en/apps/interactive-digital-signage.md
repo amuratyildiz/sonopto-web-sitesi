@@ -5,7 +5,7 @@ summary: 'Learn how to create and manage an interactive kiosk in digital signage
 category: 'apps'
 order: 53
 source: 'apps/interactive-digital-signage'
-sourceHash: '6e85a0805dd0aec2'
+sourceHash: '6bb859c65f9a35da'
 importedAt: '2026-09-23'
 ---
 The Interactive Kiosk app lets you build multi-page interactive sites — such as product catalogs, information directories, or self-service menus — where viewers can navigate between pages directly on the screen.
@@ -163,7 +163,7 @@ Adjust the zoom level (0–200%) to scale the kiosk content on your screen. This
 
 ## Touchscreen Setup
 
-To make the most of the Interactive Kiosk app, ensure your screen supports touch input. For detailed instructions on configuring touchscreen features such as manual control, screensavers, navigation arrows, and tap-to-start, see the [](/en/support/playlists/digital-signage-touchscreen/)Touch Screen Features guide.
+To make the most of the Interactive Kiosk app, ensure your screen supports touch input. For detailed instructions on configuring touchscreen features such as manual control, screensavers, navigation arrows, and tap-to-start, see the [Touch Screen Features](/en/support/playlists/digital-signage-touchscreen/) guide.
 
 * * *
 

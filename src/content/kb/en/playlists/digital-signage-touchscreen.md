@@ -5,7 +5,7 @@ summary: 'Learn how to set up and manage digital signage on touchscreens. Explor
 category: 'playlists'
 order: 5
 source: 'playlists/digital-signage-touchscreen'
-sourceHash: 'a56a96e3338b8d4f'
+sourceHash: 'a303b36057b800a9'
 importedAt: '2026-09-23'
 ---
 Touch screen features are found under playlist settings, to open playlist Settings:

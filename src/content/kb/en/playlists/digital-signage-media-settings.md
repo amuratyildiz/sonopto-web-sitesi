@@ -5,7 +5,7 @@ summary: 'Learn how to easily change your digital signage media settings in just
 category: 'playlists'
 order: 3
 source: 'playlists/digital-signage-media-settings'
-sourceHash: 'cfc17afedf1ccda8'
+sourceHash: '8a34e632eb134b36'
 importedAt: '2026-09-23'
 ---
 <img src="/kb/playlists/media_settings.webp" alt="Media Settings" loading="lazy" decoding="async">

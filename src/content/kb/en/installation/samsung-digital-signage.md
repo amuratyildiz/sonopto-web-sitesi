@@ -5,7 +5,7 @@ summary: 'How to install digital signage app on Samsung SSSP Commercial Display'
 category: 'installation'
 order: 17
 source: 'installation/samsung-digital-signage'
-sourceHash: '6fbce08db3c3965a'
+sourceHash: '11784d5c1060e5b2'
 importedAt: '2026-09-23'
 ---
 ### Samsung SSSP Commercial Display Support

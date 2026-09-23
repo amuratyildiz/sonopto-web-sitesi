@@ -5,7 +5,7 @@ summary: 'Track media playback with statistics settings. Enable Google Analytics
 category: 'account_settings'
 order: 6
 source: 'account_settings/digital-signage-statistics'
-sourceHash: 'da01f4d4ed1c3625'
+sourceHash: '33ebb57f631bb679'
 importedAt: '2026-09-23'
 ---
 This section allows you to track and analyze media playback activity on your screens.  

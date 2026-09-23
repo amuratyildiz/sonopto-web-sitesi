@@ -5,7 +5,7 @@ summary: 'Learn how to set up SAML 2.0 SSO for seamless single sign-on, enhancin
 category: 'integrations'
 order: 112
 source: 'integrations/ad_sso'
-sourceHash: 'ba00419063a0e02e'
+sourceHash: '8b72b8f9a6181565'
 importedAt: '2026-09-23'
 ---
 ## Prerequisites:

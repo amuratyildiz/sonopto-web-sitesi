@@ -5,7 +5,7 @@ summary: 'Integrate your digital signage with Monday.com to effortlessly display
 category: 'apps'
 order: 57
 source: 'apps/digital-signage-mondaycom'
-sourceHash: 'a92964cb6935bb79'
+sourceHash: '95ab4b011f49b0db'
 importedAt: '2026-09-23'
 ---
 monday.com is a cloud-based Work Operating System (Work OS) designed to help teams manage projects, tasks, and workflows efficiently.

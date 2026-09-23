@@ -5,7 +5,7 @@ summary: 'Learn how to customize layouts for your digital signage playlists. Fol
 category: 'playlists'
 order: 4
 source: 'playlists/digital-signage-customize_layout'
-sourceHash: 'e2ef63312e74bce6'
+sourceHash: '91f878e895acdc58'
 importedAt: '2026-09-23'
 ---
 -   Go to playlists page
