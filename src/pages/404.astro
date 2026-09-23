@@ -1,19 +1,119 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SignageIcon from '../components/sections/SignageIcon.astro';
+import ProductName from '../components/layout/ProductName.astro';
 import { getDictionary } from '../content/i18n';
 import { pathFor } from '../lib/i18n/routes';
+import { serviceEntries, serviceKeys } from '../data/services';
+import { solutionEntries, solutionKeys } from '../data/solutions';
+import { signageSectorEntries, signageSectorKeys } from '../data/signage';
 
+/*
+ * Azure Static Web Apps takes a single file for its 404 override, so this page
+ * is Turkish — the default locale — and carries a visible way across for anyone
+ * who arrived from an /en/ URL. Per-language 404s would need a per-path rule,
+ * which SWA's responseOverrides does not offer.
+ *
+ * Kept out of the sitemap by the filter in astro.config.mjs.
+ */
 const locale = 'tr' as const;
 const dict = getDictionary(locale);
+const nf = dict.notFound;
+
+const services = serviceKeys.map((key) => ({
+  label: dict.services.items[key].title,
+  path: pathFor(serviceEntries[key].routeId, locale),
+}));
+
+const solutions = solutionKeys.map((key) => ({
+  label: dict.solutions.items[key].title,
+  path: pathFor(solutionEntries[key].routeId, locale),
+}));
+
+const shortcuts = [
+  { label: dict.nav.home, path: pathFor('home', locale) },
+  { label: dict.nav.references, path: pathFor('references', locale) },
+  { label: dict.nav.faq, path: pathFor('faq', locale) },
+  { label: dict.nav.about, path: pathFor('about', locale) },
+];
+
+const columns = [
+  { title: nf.servicesTitle, links: services },
+  { title: nf.solutionsTitle, links: solutions },
+  { title: nf.shortcutsTitle, links: shortcuts },
+];
 ---
 
-<BaseLayout title="Sayfa Bulunamadı" description="Aradığınız sayfa bulunamadı." path="/404/" locale={locale}>
-  <div class="mx-auto max-w-xl px-4 py-24 text-center sm:px-6">
-    <p class="text-sm font-semibold uppercase tracking-wide text-neutral-500">404</p>
-    <h1 class="mt-2 text-3xl font-bold text-ink">Sayfa Bulunamadı</h1>
-    <p class="mt-3 text-neutral-600">Aradığınız sayfa taşınmış veya kaldırılmış olabilir.</p>
-    <a href={pathFor('home', locale)} class="btn-sweep mt-8 inline-block bg-ink px-6 py-3 text-sm font-semibold text-white transition hover:bg-neutral-800">
-      {dict.nav.home}
-    </a>
-  </div>
+<BaseLayout title={nf.pageTitle} description={nf.lead} path="/404" locale={locale} noindex>
+  <section class="bg-ink text-white">
+    <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
+      <p class="font-mono text-xs uppercase tracking-[0.2em] text-accent">{nf.kicker}</p>
+      <h1 class="mt-4 text-3xl font-bold sm:text-4xl">{nf.headline}</h1>
+      <p class="mt-5 max-w-2xl text-lg text-neutral-300">{nf.lead}</p>
+
+      <div class="mt-8 flex flex-wrap items-center gap-4">
+        <a
+          href={pathFor('contact', locale)}
+          class="btn-sweep inline-block bg-accent px-6 py-3 text-sm font-semibold text-on-accent transition hover:bg-accent-hover"
+        >
+          {dict.common.contactUs}
+        </a>
+        <a
+          href={pathFor('home', locale)}
+          class="border border-neutral-700 px-6 py-3 text-sm font-semibold text-white transition hover:border-neutral-400 hover:bg-neutral-900"
+        >
+          {dict.nav.home}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+      {columns.map((column) => (
+        <div>
+          <h2 class="text-sm uppercase tracking-wide text-neutral-500">{column.title}</h2>
+          <ul class="mt-4 space-y-2">
+            {column.links.map((link) => (
+              <li>
+                <a href={link.path} class="text-neutral-800 underline-offset-4 transition hover:text-ink hover:underline">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="border-y border-neutral-100 bg-neutral-50">
+    <div class="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+      <h2 class="text-lg text-ink">
+        <ProductName /> — {dict.signage.useCasesTitle}
+      </h2>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {signageSectorKeys.map((key) => (
+          <a
+            href={pathFor(signageSectorEntries[key].routeId, locale)}
+            class="flex items-center gap-4 border border-neutral-100 bg-white p-4 transition hover:border-neutral-300"
+          >
+            <SignageIcon name={key} />
+            <span class="text-sm text-ink">{dict.signage.sectors[key].title}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* The one concession to the single-file limit: an obvious way back for an
+      English visitor, rather than leaving them on a Turkish page. */}
+  <section class="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+    <p class="text-sm text-neutral-600">
+      {nf.otherLanguageNote}{' '}
+      <a href={pathFor('home', 'en')} hreflang="en" class="underline underline-offset-4 transition hover:text-ink">
+        {nf.otherLanguageCta}
+      </a>
+    </p>
+  </section>
 </BaseLayout>

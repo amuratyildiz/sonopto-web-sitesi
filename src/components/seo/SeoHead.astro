@@ -11,9 +11,11 @@ interface Props {
   alternatePath?: string;
   image?: string;
   type?: 'website' | 'article';
+  /** Error pages: no canonical, no hreflang, and keep them out of the index. */
+  noindex?: boolean;
 }
 
-const { title, description, path, locale, alternatePath, image, type = 'website' } = Astro.props;
+const { title, description, path, locale, alternatePath, image, type = 'website', noindex = false } = Astro.props;
 
 const canonical = absoluteUrl(path);
 const ogImage = absoluteUrl(image ?? '/og-default.png');
@@ -22,11 +24,18 @@ const other = alternateLocale(locale);
 
 <title>{buildTitle(title)}</title>
 <meta name="description" content={description} />
-<link rel="canonical" href={canonical} />
-
-<link rel="alternate" hreflang={locale} href={canonical} />
-{alternatePath && <link rel="alternate" hreflang={other} href={absoluteUrl(alternatePath)} />}
-<link rel="alternate" hreflang="x-default" href={absoluteUrl(locale === defaultLocale ? path : (alternatePath ?? '/'))} />
+{noindex ? (
+  /* A 404 is served under whatever URL was requested, so declaring a canonical
+     or an hreflang set for it would be describing a page that does not exist. */
+  <meta name="robots" content="noindex, follow" />
+) : (
+  <>
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang={locale} href={canonical} />
+    {alternatePath && <link rel="alternate" hreflang={other} href={absoluteUrl(alternatePath)} />}
+    <link rel="alternate" hreflang="x-default" href={absoluteUrl(locale === defaultLocale ? path : (alternatePath ?? '/'))} />
+  </>
+)}
 
 <meta property="og:type" content={type} />
 <meta property="og:title" content={title} />

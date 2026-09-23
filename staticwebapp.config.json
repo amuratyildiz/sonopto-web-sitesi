@@ -1,7 +1,15 @@
 {
   "routes": [
-    { "route": "/blog/referanslar-5", "redirect": "/referanslar/", "statusCode": 301 },
-    { "route": "/blog/referanslar-5/feed", "redirect": "/referanslar/", "statusCode": 301 },
+    {
+      "route": "/blog/referanslar-5",
+      "redirect": "/referanslar/",
+      "statusCode": 301
+    },
+    {
+      "route": "/blog/referanslar-5/feed",
+      "redirect": "/referanslar/",
+      "statusCode": 301
+    },
     {
       "route": "/blog/referanslar-5/kosgeb-x-garaj-teknoloji-gelistirme-merkezi-led-video-wall-kurulumu-7",
       "redirect": "/referanslar/kosgeb-x-garaj-teknoloji-gelistirme-merkezi-led-video-wall-kurulumu-7/",
@@ -22,8 +30,16 @@
       "redirect": "/referanslar/konferans-salonu-5/",
       "statusCode": 301
     },
-    { "route": "/teknik-servis", "redirect": "/sss/", "statusCode": 301 },
-    { "route": "/helpdesk/destek-2/knowledgebase", "redirect": "/sss/", "statusCode": 301 }
+    {
+      "route": "/teknik-servis",
+      "redirect": "/sss/",
+      "statusCode": 301
+    },
+    {
+      "route": "/helpdesk/destek-2/knowledgebase",
+      "redirect": "/sss/",
+      "statusCode": 301
+    }
   ],
   "globalHeaders": {
     "X-Frame-Options": "DENY",
@@ -35,5 +51,10 @@
   "mimeTypes": {
     ".webp": "image/webp",
     ".avif": "image/avif"
+  },
+  "responseOverrides": {
+    "404": {
+      "rewrite": "/404.html"
+    }
   }
 }

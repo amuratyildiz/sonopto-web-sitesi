@@ -242,6 +242,18 @@ export interface Dictionary {
     };
   };
   signage: SignageContent;
+  notFound: {
+    kicker: string;
+    pageTitle: string;
+    headline: string;
+    lead: string;
+    servicesTitle: string;
+    solutionsTitle: string;
+    shortcutsTitle: string;
+    /** Shown to visitors who landed here from an /en/ URL. */
+    otherLanguageNote: string;
+    otherLanguageCta: string;
+  };
   about: {
     pageTitle: string;
     intro: string;
@@ -970,6 +982,18 @@ export const tr: Dictionary = {
     crossLinkBody:
       'Bu alandaki bilgilendirme ve yönlendirme ekranlarını, kendi dijital tabela platformumuz sonopto.signage ile tek panelden yönetebilirsiniz.',
     crossLinkCta: 'sonopto.signage\'ı inceleyin',
+  },
+  notFound: {
+    kicker: '404',
+    pageTitle: 'Sayfa Bulunamadı',
+    headline: 'Aradığınız Sayfayı Bulamadık',
+    lead:
+      'Ama aradığınız çözümü büyük ihtimalle bulabiliriz. Adres değişmiş ya da yanlış yazılmış olabilir; aşağıdan devam edebilir veya doğrudan bize yazabilirsiniz.',
+    servicesTitle: 'Hizmetlerimiz',
+    solutionsTitle: 'Sektörel Çözümler',
+    shortcutsTitle: 'Kısayollar',
+    otherLanguageNote: 'Looking for the English site?',
+    otherLanguageCta: 'Go to the English home page',
   },
   about: {
     pageTitle: 'Hakkımızda',

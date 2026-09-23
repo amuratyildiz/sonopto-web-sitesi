@@ -673,6 +673,18 @@ export const en: Dictionary = {
       'The information and wayfinding screens in this environment can be run from a single panel with sonopto.signage, our own digital signage platform.',
     crossLinkCta: 'Explore sonopto.signage',
   },
+  notFound: {
+    kicker: '404',
+    pageTitle: 'Page Not Found',
+    headline: 'We Could Not Find That Page',
+    lead:
+      'We can almost certainly find what you were after, though. The address may have changed or been mistyped — carry on below, or just write to us.',
+    servicesTitle: 'Our Services',
+    solutionsTitle: 'Sector Solutions',
+    shortcutsTitle: 'Shortcuts',
+    otherLanguageNote: 'Türkçe site mi arıyordunuz?',
+    otherLanguageCta: 'Türkçe ana sayfaya gidin',
+  },
   about: {
     pageTitle: 'About Us',
     intro: 'Your Solution Partner in the Field.',

@@ -19,6 +19,9 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
+      // The 404 is served under whatever URL was requested, so it is not a
+      // destination and has no place in the sitemap.
+      filter: (page) => !page.includes('/404'),
       i18n: {
         defaultLocale: 'tr',
         locales: {
