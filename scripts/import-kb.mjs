@@ -329,6 +329,23 @@ turndown.addRule('keepTableWrap', {
 
 const yaml = (v) => `'${String(v).replace(/'/g, "''")}'`;
 
+
+/**
+ * Titles get their own treatment. Running the body rules over them produces
+ * mid-sentence phrasing in a heading — "the sonopto.signage web player" — and
+ * repeating the product name in all 119 titles is noise anyway, since the whole
+ * section is about one product. Strip the qualifier and keep the feature name.
+ */
+function cleanTitle(raw) {
+  return raw
+    .replace(/^(the|your|a)\s+/i, '')
+    .replace(/^sonopto\.signage\s+/i, '')
+    .replace(/^Digital Signage\s+/i, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/^(?!sonopto\.)[a-z]/, (c) => c.toUpperCase());
+}
+
 function applyProductRules(text) {
   let out = text;
   for (const [re, to] of PRODUCT_RULES) {
@@ -380,7 +397,7 @@ async function main() {
     const parsed = parseArticle(html, a, urlIndex);
 
     let bodyHtml = applyProductRules(parsed.html);
-    const title = applyProductRules(parsed.title);
+    const title = cleanTitle(parsed.title);
     const summary = applyProductRules(parsed.summary);
 
     const markdown = turndown.turndown(bodyHtml).trim();

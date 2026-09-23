@@ -1,5 +1,5 @@
 ---
-title: 'the sonopto.signage web player'
+title: 'Web Player'
 urlSlug: 'digital-signage-web-player'
 summary: 'How to run digital signage player from a browser'
 category: 'installation'

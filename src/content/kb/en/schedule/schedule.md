@@ -1,5 +1,5 @@
 ---
-title: 'Digital Signage Scheduling Playlists'
+title: 'Scheduling Playlists'
 urlSlug: 'schedule'
 summary: 'Learn how to easily schedule playlists and media in your digital signage account to deliver the right content at the right time.'
 category: 'schedule'

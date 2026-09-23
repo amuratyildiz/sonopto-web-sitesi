@@ -1,5 +1,5 @@
 ---
-title: 'Digital Signage Video Wall'
+title: 'Video Wall'
 urlSlug: 'digital-signage-videowall'
 summary: 'Learn how to configure a digital signage video wall setup effortlessly. Discover tips for seamless installation and stunning visual displays.'
 category: 'videowall'

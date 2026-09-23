@@ -1,5 +1,5 @@
 ---
-title: 'sonopto.signage configuration file'
+title: 'Application configuration file'
 urlSlug: 'digital-signage-configuration'
 summary: 'sonopto.signage configuration file'
 category: 'installation'

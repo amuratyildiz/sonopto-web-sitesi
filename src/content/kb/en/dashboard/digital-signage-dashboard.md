@@ -1,5 +1,5 @@
 ---
-title: 'sonopto.signage'
+title: 'Dashboard'
 urlSlug: 'digital-signage-dashboard'
 summary: 'Get a complete overview of your digital signage account with our intuitive dashboard. Manage content, track performance, and stay in control effortlessly!'
 category: 'dashboard'
