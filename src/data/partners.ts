@@ -24,4 +24,12 @@ export const partners: Partner[] = [
   { name: 'Montarbo', logo: '/partners/montarbo.webp', alt: 'Montarbo profesyonel ses logosu' },
   { name: 'RF Venue', logo: '/partners/rf-venue.webp', alt: 'RF Venue kablosuz anten sistemleri logosu' },
   { name: 'Lauten Audio', logo: '/partners/lauten-audio.webp', alt: 'Lauten Audio mikrofon logosu' },
+  // Display and player brands, added with the signage section. Samsung and LG
+  // are re-rendered from their single-path marks in white; BrightSign is the
+  // inverted flat artwork and NovaStar its silhouette, because its metallic
+  // lettering hollows out when the levels are lifted.
+  { name: 'Samsung', logo: '/partners/samsung.webp', alt: 'Samsung profesyonel ekran logosu' },
+  { name: 'LG', logo: '/partners/lg.webp', alt: 'LG profesyonel ekran logosu' },
+  { name: 'BrightSign', logo: '/partners/brightsign.webp', alt: 'BrightSign dijital tabela oynatıcı logosu' },
+  { name: 'NovaStar', logo: '/partners/novastar.webp', alt: 'NovaStar LED ekran kontrol sistemleri logosu' },
 ];
