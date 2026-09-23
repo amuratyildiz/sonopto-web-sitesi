@@ -5,7 +5,7 @@ summary: 'TCL kurumsal Android ekranlarda APK kurulumu, birincil CMS ayarı, oto
 category: 'installation'
 order: 7
 source: 'installation/digital-signage-tcl-display'
-sourceHash: '35ebd8c071c9f143'
+sourceHash: 'd77c1cb5ad936aac'
 importedAt: '2026-09-23'
 ---
 Bu rehber, TCL kurumsal Android ekranlara kurulumu, ayarların yapılandırılmasını ve oynatıcının varsayılan uygulama olarak tanımlanmasını anlatır.

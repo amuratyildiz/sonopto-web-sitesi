@@ -5,7 +5,7 @@ summary: 'Windows tabanlı oynatıcılarda kurulum öncesi hazırlık, uygulama 
 category: 'installation'
 order: 8
 source: 'installation/digital-signage-install-windows'
-sourceHash: '240b9ae272f7ed12'
+sourceHash: '330ae44ef7c7596f'
 importedAt: '2026-09-23'
 ---
 #### Desteklenen Windows sürümleri

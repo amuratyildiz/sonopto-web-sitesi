@@ -5,7 +5,7 @@ summary: 'BrightSign oynatıcılarda autorun dosyasıyla bağımsız (standalone
 category: 'installation'
 order: 6
 source: 'installation/digital-signage-install-brightsign'
-sourceHash: '1a5e1a39bcdecb05'
+sourceHash: '5f6dad844841055a'
 importedAt: '2026-09-23'
 ---
 BrightSign, kurumsal sınıf dijital tabela oynatıcılarında güvenilirliğiyle bilinen bir markadır. Tüm BrightSign **Series 4 ve Series 5** oynatıcıları desteklenir; en iyi performans için **HD**, **XD** ve **XT** ürün hatlarını öneriyoruz.

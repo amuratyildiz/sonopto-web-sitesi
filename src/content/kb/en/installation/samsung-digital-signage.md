@@ -5,7 +5,7 @@ summary: 'How to install digital signage app on Samsung SSSP Commercial Display'
 category: 'installation'
 order: 17
 source: 'installation/samsung-digital-signage'
-sourceHash: '411f094d50d69b5f'
+sourceHash: '3e4d16552c70ccef'
 importedAt: '2026-09-23'
 ---
 ### Samsung SSSP Commercial Display Support
@@ -68,7 +68,7 @@ _Check the [supported features](#Supported-Features)._
 
 <img src="/kb/installation/sssp-url-no-brand-launcher-settings.webp" alt="URL Launcher Settings Type" loading="lazy" decoding="async">
 
--   the sonopto.signage app is now installed, it will start automatically.
+-   sonopto.signage app is now installed, it will start automatically.
 
 <img src="/kb/installation/sssp-nobrand-urllauncher.webp" alt=" URL Launcher" loading="lazy" decoding="async">
 
@@ -130,7 +130,7 @@ _You can change the orientation remotely from the management console later on - 
 
 <img src="/kb/installation/sssp-setup-done.webp" alt="Setup Done" loading="lazy" decoding="async">
 
--   the sonopto.signage app is now installed, it will start automatically
+-   sonopto.signage app is now installed, it will start automatically
 
 <img src="/kb/installation/sssp-nobrand-urllauncher.webp" alt="URL Launcher" loading="lazy" decoding="async">
 

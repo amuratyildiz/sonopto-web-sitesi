@@ -81,11 +81,11 @@ const BRAND_RULES = [
 const PRODUCT_RULES = [
   [/Digital Signage Dashboard/g, 'sonopto.signage'],
   [/Digital Signage Application/g, 'sonopto.signage'],
-  [/Digital Signage Player App/g, 'the sonopto.signage player'],
-  [/Digital Signage App\b/g, 'the sonopto.signage app'],
+  [/Digital Signage Player App/g, 'sonopto.signage player'],
+  [/Digital Signage App\b/g, 'sonopto.signage app'],
   [/Digital Signage Portal/g, 'sonopto.signage'],
-  [/Digital Signage Account/g, 'your sonopto.signage account'],
-  [/Digital Signage Web Player/g, 'the sonopto.signage web player'],
+  [/Digital Signage Account/g, 'sonopto.signage account'],
+  [/Digital Signage Web Player/g, 'sonopto.signage web player'],
   // The source spells the vendor brand at least three ways in body copy
   // ("EasySignage", "Easysignage", "easysignage"), so this rule is
   // deliberately case-insensitive. The FORBIDDEN guard is what proves it worked.
@@ -378,6 +378,17 @@ function cleanTitle(raw) {
     .replace(/^(?!sonopto\.)[a-z]/, (c) => c.toUpperCase());
 }
 
+/**
+ * Doubled articles. Two come from the source's own typos ("the the root"), the
+ * rest appeared when a rewrite dropped an article next to one already in the
+ * sentence. Cleaning them here keeps the fix in one place rather than in 119
+ * files, since this ships as our documentation, not theirs.
+ */
+const fixDoubledWords = (text) =>
+  text
+    .replace(/\b(the|your|a|to|of|in)(\s+(?:<[^>]+>|\*\*|__)*)\1\b/gi, '$1$2')
+    .replace(/  +/g, ' ');
+
 function applyRules(text, rules) {
   let out = text;
   for (const [re, to] of rules) {
@@ -388,7 +399,7 @@ function applyRules(text, rules) {
   return out;
 }
 
-const applyProductRules = (text) => applyRules(applyRules(text, BRAND_RULES), PRODUCT_RULES);
+const applyProductRules = (text) => fixDoubledWords(applyRules(applyRules(text, BRAND_RULES), PRODUCT_RULES));
 
 function assertClean(text, where) {
   for (const re of FORBIDDEN) {

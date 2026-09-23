@@ -5,7 +5,7 @@ summary: 'Step-by-step guide to install Digital Signage on TCL digital signage d
 category: 'installation'
 order: 7
 source: 'installation/digital-signage-tcl-display'
-sourceHash: '35ebd8c071c9f143'
+sourceHash: 'd77c1cb5ad936aac'
 importedAt: '2026-09-23'
 ---
 This guide offers clear instructions for installing Digital Signage on TCL commercial Android displays, configuring settings, and setting the digital signage app as the default playback application.
@@ -74,7 +74,7 @@ Go to Settings > Device Preferences > Quick Start > Toggle the Quick Start switc
 
 or:
 
-Go to Settings > Apps > Special app access > Display over other apps > Ensure that the “the sonopto.signage app” is ON.
+Go to Settings > Apps > Special app access > Display over other apps > Ensure that the “sonopto.signage app” is ON.
 
 -   **Step 2**:
     
@@ -82,7 +82,7 @@ Go to Settings > Apps > Special app access > Display over other apps > Ensure th
     -   Select “Permission shield”.
     -   Select “Auto launch permission”.
     -   First, toggle “Auto manager” to Closed.
-    -   then, toggle “the sonopto.signage app” to Opened.
+    -   then, toggle “sonopto.signage app” to Opened.
 -   **Step 3**:
     
     -   Go to Settings > Device Preferences > Restart.

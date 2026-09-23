@@ -5,7 +5,7 @@ summary: 'Learn how to install Digital Signage on Sony BRAVIA professional displ
 category: 'installation'
 order: 13
 source: 'installation/digital-signage-sony'
-sourceHash: '621fc150e36e9c36'
+sourceHash: 'ff1a7b14be007b36'
 importedAt: '2026-09-23'
 ---
 This help page shows how to install Digital Signage on Sony BRAVIA professional displays using an APK copied to a USB drive.
@@ -55,7 +55,7 @@ Sony BRAVIA Professional Display range running Android with Pro Mode, which incl
 
 <img src="/kb/installation/sony-install-apk.webp" alt="Sony Install APK" loading="lazy" decoding="async">
 
-## Start the sonopto.signage app
+## Start sonopto.signage app
 
 -   Open the digital signage app after installation.
 -   Wait for the screen hash ID to appear.

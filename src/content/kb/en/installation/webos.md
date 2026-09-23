@@ -5,7 +5,7 @@ summary: 'How to install digital signage app on LG Digital Signage screens'
 category: 'installation'
 order: 18
 source: 'installation/webos'
-sourceHash: '17e6e1da464cd2a8'
+sourceHash: 'e8ff102c498276e3'
 importedAt: '2026-09-23'
 ---
 ### WebOS Signage Support
@@ -14,7 +14,7 @@ Supported LG Operating Systems: WebOS4.0 Signage WebOS4.1 Signage or higher
 
 **WebOS smart TV not supported**
 
-### Installing the the sonopto.signage app
+### Installing the sonopto.signage app
 
 To Install the digital signage app, choose one of the following methods:
 
@@ -66,7 +66,7 @@ In these settings configure the following in this order:
 
 <img src="/kb/installation/si-server-setting-local-app-upgrade-remote.webp" alt="Remote" loading="lazy" decoding="async">
 
-### Installing the the sonopto.signage app via a USB drive
+### Installing the sonopto.signage app via a USB drive
 
 -   Download the latest version of the Digital Signage from [contact us for the download](/iletisim/)
     
@@ -90,7 +90,7 @@ In these settings configure the following in this order:
 -   Application Launch Mode: local
 -   Local Application type: IPK
 -   For the final step navigate to Local Application Upgrade and select USB. Press the OK button to confirm. In the top right corner, a pop-up displaying “Start Application Upgrade’ will show for a second.
--   When this message disappears, TURN OFF the device using the remote. Then, after 10 seconds, TURN ON the device. The the sonopto.signage app will now install and launch.
+-   When this message disappears, TURN OFF the device using the remote. Then, after 10 seconds, TURN ON the device. The sonopto.signage app will now install and launch.
 
 <img src="/kb/installation/si-server-setting-local-app-upgrade-usb.webp" alt="USB" loading="lazy" decoding="async">
 

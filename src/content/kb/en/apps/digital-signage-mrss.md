@@ -5,7 +5,7 @@ summary: 'Automate your screen content using MRSS feeds. Learn how to connect ex
 category: 'apps'
 order: 67
 source: 'apps/digital-signage-mrss'
-sourceHash: '28a18c8c4b54af04'
+sourceHash: '4753f60ad594f5c6'
 importedAt: '2026-09-23'
 ---
 ## What is MRSS?
@@ -55,28 +55,28 @@ Your MRSS file must be:
 
 ```xml
 <rss xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
-  <channel>
-    <title>Media RSS</title>
-    <description>Media RSS Feed</description>
-    <item>
-      <title>Image 1</title>
-      <media:content
-        url="https://your-domain.com/path/image1.jpg"
-        type="image/jpeg"
-        medium="image"
-        key_change="hash1"
-        duration="10"/>
-    </item>
-    <item>
-      <title>Video 1</title>
-      <media:content
-        url="https://your-domain.com/path/video1.mp4"
-        type="video/mp4"
-        medium="video"
-        key_change="hash2"
-        duration="10"/>
-    </item>
-  </channel>
+ <channel>
+ <title>Media RSS</title>
+ <description>Media RSS Feed</description>
+ <item>
+ <title>Image 1</title>
+ <media:content
+ url="https://your-domain.com/path/image1.jpg"
+ type="image/jpeg"
+ medium="image"
+ key_change="hash1"
+ duration="10"/>
+ </item>
+ <item>
+ <title>Video 1</title>
+ <media:content
+ url="https://your-domain.com/path/video1.mp4"
+ type="video/mp4"
+ medium="video"
+ key_change="hash2"
+ duration="10"/>
+ </item>
+ </channel>
 </rss>
 ```
 
@@ -107,13 +107,13 @@ Each `<item>` represents a piece of media content (image or video).
 
 ```xml
 <item>
-  <title>Video 1</title>
-  <media:content
-    url="https://yourdomain.com/media/video1.mp4"
-    type="video/mp4"
-    medium="video"
-    duration="15"
-    key_change="abc123xyz456def789"/>
+ <title>Video 1</title>
+ <media:content
+ url="https://yourdomain.com/media/video1.mp4"
+ type="video/mp4"
+ medium="video"
+ duration="15"
+ key_change="abc123xyz456def789"/>
 </item>
 ```
 

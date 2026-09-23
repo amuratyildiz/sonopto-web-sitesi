@@ -5,7 +5,7 @@ summary: 'How to install digital signage app on Philips screens'
 category: 'installation'
 order: 16
 source: 'installation/philips'
-sourceHash: 'f8db1fd380539af5'
+sourceHash: 'e222a44c4d825f6c'
 importedAt: '2026-09-23'
 ---
 ### Step 1: Get the APK file
@@ -155,14 +155,14 @@ importedAt: '2026-09-23'
     
 -   This menu should appear
     
--   Choose the sonopto.signage app as Home App
+-   Choose sonopto.signage app as Home App
     
 -   Press on Always
     
 
 ### Step 19: Display Hash
 
--   Wait for a few seconds until the the screen ID shows as below
+-   Wait for a few seconds until the screen ID shows as below
     
 -   Use the displayed hash (screen ID) to register the display on your CMS web portal.
     

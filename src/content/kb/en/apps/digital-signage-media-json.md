@@ -5,7 +5,7 @@ summary: 'Automate your screen content using Media JSON feeds. Learn how to conn
 category: 'apps'
 order: 66
 source: 'apps/digital-signage-media-json'
-sourceHash: '10fd5825f8135ed6'
+sourceHash: '86e3d71c72785a51'
 importedAt: '2026-09-23'
 ---
 ## What is Media JSON?
@@ -56,30 +56,30 @@ Your Media JSON feed must be:
 
 ```json
 {
-  "channel": {
-    "items": [
-      {
-        "title": "Image 1",
-        "mediaContent": {
-          "url": "https://files.cloud-digitalsignage.com/mrss/files/1.jpg",
-          "type": "image/jpeg",
-          "medium": "image",
-          "duration": "10",
-          "changeKey": "a077ae97dfe45af878f0e0fafdc05c85"
-        }
-      },
-      {
-        "title": "Video 1",
-        "mediaContent": {
-          "url": "https://files.cloud-digitalsignage.com/mrss/files/a.mp4",
-          "type": "video/mp4",
-          "medium": "video",
-          "duration": "10",
-          "changeKey": "f11b8c8d750d2087e0a6c0478840063d"
-        }
-      }
-    ]
-  }
+ "channel": {
+ "items": [
+ {
+ "title": "Image 1",
+ "mediaContent": {
+ "url": "https://files.cloud-digitalsignage.com/mrss/files/1.jpg",
+ "type": "image/jpeg",
+ "medium": "image",
+ "duration": "10",
+ "changeKey": "a077ae97dfe45af878f0e0fafdc05c85"
+ }
+ },
+ {
+ "title": "Video 1",
+ "mediaContent": {
+ "url": "https://files.cloud-digitalsignage.com/mrss/files/a.mp4",
+ "type": "video/mp4",
+ "medium": "video",
+ "duration": "10",
+ "changeKey": "f11b8c8d750d2087e0a6c0478840063d"
+ }
+ }
+ ]
+ }
 }
 ```
 
@@ -113,14 +113,14 @@ Understanding each field ensures your content displays correctly on your digital
 
 ```json
 {
-  "title": "Video 1",
-  "mediaContent": {
-    "url": "https://yourdomain.com/media/video1.mp4",
-    "type": "video/mp4",
-    "medium": "video",
-    "duration": "15",
-    "changeKey": "abc123xyz456def789"
-  }
+ "title": "Video 1",
+ "mediaContent": {
+ "url": "https://yourdomain.com/media/video1.mp4",
+ "type": "video/mp4",
+ "medium": "video",
+ "duration": "15",
+ "changeKey": "abc123xyz456def789"
+ }
 }
 ```
 

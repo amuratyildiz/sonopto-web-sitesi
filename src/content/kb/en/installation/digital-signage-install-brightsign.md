@@ -5,7 +5,7 @@ summary: 'How to install digital signage app on BrightSign players'
 category: 'installation'
 order: 6
 source: 'installation/digital-signage-install-brightsign'
-sourceHash: '1a5e1a39bcdecb05'
+sourceHash: '5f6dad844841055a'
 importedAt: '2026-09-23'
 ---
 BrightSign is renowned for its reliability as a leader in commercial-grade digital signage players. All BrightSign **Series 4 and Series 5** players are fully supported, but we recommend using the **HD**, **XD**, and **XT** product lines for optimal performance.
@@ -18,7 +18,7 @@ The latest autorun.zip file can be downloaded from [contact us for the download]
 
 #### 2\. Copy the autorun file to your storage device
 
-Copy the autorun.zip file to the the root of your SD card. DO NOT extract the zip file.
+Copy the autorun.zip file to the root of your SD card. DO NOT extract the zip file.
 
 <img src="/kb/installation/brightsign-standalone-sdcard.webp" alt="brightsign-standalone-sdcard" loading="lazy" decoding="async">
 

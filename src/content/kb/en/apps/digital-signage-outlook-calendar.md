@@ -5,7 +5,7 @@ summary: 'Learn how to integrate Outlook Calendar with sonopto.signage to stream
 category: 'apps'
 order: 56
 source: 'apps/digital-signage-outlook-calendar'
-sourceHash: 'a583f94d3490f686'
+sourceHash: '8270abad29f5c859'
 importedAt: '2026-09-23'
 ---
 The Outlook Calendar app seamlessly syncs with your calendar to display upcoming schedules and events.
@@ -35,7 +35,7 @@ The Outlook Calendar app seamlessly syncs with your calendar to display upcoming
 
 _**Weekly View:**_
 
-<img src="/kb/apps/outlook-calendar-app.webp" alt="Microsoft Calendar the sonopto.signage app" loading="lazy" decoding="async">
+<img src="/kb/apps/outlook-calendar-app.webp" alt="Microsoft Calendar sonopto.signage app" loading="lazy" decoding="async">
 
 -   You can also select the “List View” to display tasks in a list format. Enable “Auto-Scroll Interval” and set the duration in seconds for automatic page scrolling.
 -   Click **Save**.

@@ -5,7 +5,7 @@ summary: 'Learn how to install digital signage on your Raspberry Pi with our ste
 category: 'installation'
 order: 11
 source: 'installation/install-digital-signage-raspberry-pi'
-sourceHash: '64a1ff565df14fa7'
+sourceHash: '0f8c550c402485b4'
 importedAt: '2026-09-23'
 ---
 ## Supported Raspberry Pi
@@ -200,7 +200,7 @@ Follow the below steps:
 Open terminal and run the below command
 
 ```
-  sudo raspi-config
+ sudo raspi-config
 ```
 
 -   Navigate to: 6 Advanced Options
