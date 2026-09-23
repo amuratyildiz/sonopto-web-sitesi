@@ -21,7 +21,7 @@ Yeni bir çalma listesi eklemek için:
 
 -   **Add Playlist** düğmesine tıklayın.
 -   Çalma listesinin adını girin.
--   **Team** listesinden bir takım seçin. (Takımlar çalma listesinden önce oluşturulmalıdır. Bunun için **User Management** bölümündeki [Teams](/en/support/user-management/teams/) makalesine bakın.)
+-   **Team** listesinden bir takım seçin. (Takımlar çalma listesinden önce oluşturulmalıdır. Bunun için **User Management** bölümündeki [Takımlar](/destek/kullanici-yonetimi/takimlar/) makalesine bakın.)
 -   **Save** düğmesine tıklayın.
 -   Bir düzene tıklayarak onu seçin. Ekran bu düzene göre katmanlara bölünür.
 -   İçerik eklemek için her katmana tıklayın. Her katmanda, boyutuna uygun medya uygulamaları listelenir.

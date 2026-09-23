@@ -23,7 +23,7 @@ Kanal, var olan çalma listelerini yeniden kullanarak kendi içerik kanalınız�
 -   **Add Channel** penceresinde **Name** alanına kanalın adını yazın.
 -   Açılır listeden ekran yönünü seçin.
 -   Erişimi sınırlamak istediğiniz **Team** değerini seçin.
-    (Takımlar kanaldan önce oluşturulmalıdır. Takım ekleme ve kanallara erişim vermek için **User Management** bölümündeki [Teams](/en/support/user-management/teams/) makalesine bakın.)
+    (Takımlar kanaldan önce oluşturulmalıdır. Takım ekleme ve kanallara erişim vermek için **User Management** bölümündeki [Takımlar](/destek/kullanici-yonetimi/takimlar/) makalesine bakın.)
 -   **ADD** düğmesine tıklayın.
 -   **ADD** düğmesine tıkladığınızda, oluşturduğunuz kanala çalma listesi atamanız için yeni bir ekran açılır.
     (Kanal eklemeden önce [çalma listeleri](/destek/calma-listeleri/) oluşturulmuş olmalıdır.)
