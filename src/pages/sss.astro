@@ -4,6 +4,8 @@ import Breadcrumbs from '../components/seo/Breadcrumbs.astro';
 import FaqAccordion from '../components/sections/FaqAccordion.astro';
 import { getDictionary } from '../content/i18n';
 import { pathFor } from '../lib/i18n/routes';
+import JsonLd from '../components/seo/JsonLd.astro';
+import { faqSchema } from '../lib/seo/schema';
 
 const locale = 'tr' as const;
 const dict = getDictionary(locale);
@@ -21,7 +23,10 @@ const path = pathFor('faq', locale);
     </div>
 
     <p class="mt-8 text-sm text-neutral-500">
-      Sorunuzun cevabını bulamadınız mı? <a href={pathFor('contact', locale)} class="font-medium text-neutral-700 underline">Bize ulaşın</a>.
+      Ürünün kullanımıyla ilgili bir sorunuz varsa <a href={pathFor('support', locale)} class="font-medium text-neutral-700 underline">Bilgi Bankası</a>'na
+      bakın. Aradığınızı bulamadıysanız <a href={pathFor('contact', locale)} class="font-medium text-neutral-700 underline">bize ulaşın</a>.
     </p>
   </div>
+
+  <JsonLd data={faqSchema([...dict.faq.items])} />
 </BaseLayout>

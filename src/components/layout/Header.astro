@@ -38,6 +38,14 @@ const solutionsPanel: PanelLink[] = [
   { path: signagePath, note: dict.signage.navNote, product: true },
 ];
 
+// Two audiences, two pages: the FAQ answers someone deciding whether to buy,
+// the knowledge base is for someone already running screens. Grouping them
+// keeps the bar at seven items instead of growing an eighth.
+const supportPanel: PanelLink[] = [
+  { label: dict.nav.faq, path: pathFor('faq', locale) },
+  { label: dict.kb.pageTitle, path: pathFor('support', locale) },
+];
+
 // "Kurumsal" has no hub page of its own, so this panel is just its two pages.
 const corporatePanel: PanelLink[] = [
   { label: dict.about.pageTitle, path: pathFor('about', locale) },
@@ -52,7 +60,7 @@ const navItems: { label: string; path?: string; panel?: PanelLink[] }[] = [
   { label: dict.nav.solutions, path: solutionsPath, panel: solutionsPanel },
   { label: dict.nav.about, panel: corporatePanel },
   { label: dict.nav.references, path: pathFor('references', locale) },
-  { label: dict.nav.faq, path: pathFor('faq', locale) },
+  { label: dict.nav.support, panel: supportPanel },
   { label: dict.nav.contact, path: pathFor('contact', locale) },
 ];
 ---

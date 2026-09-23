@@ -199,6 +199,15 @@ const processRoutes: RouteId[] = [
     <div data-reveal class="mt-8 max-w-3xl">
       <FaqAccordion items={signage.faq} />
     </div>
+
+    {/* Six questions cover the sale; everything after it lives in the knowledge
+        base, so the handover belongs here rather than at the foot of the page. */}
+    <p data-reveal class="mt-8 max-w-3xl text-sm text-neutral-500">
+      {signage.kbNote}{' '}
+      <a href={pathFor('support', locale)} class="font-medium text-neutral-700 underline underline-offset-2 transition hover:text-ink">
+        {signage.kbCta}
+      </a>
+    </p>
   </section>
 
   <section class="border-t border-neutral-100 bg-neutral-50">

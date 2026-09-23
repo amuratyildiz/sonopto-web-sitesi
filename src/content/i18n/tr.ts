@@ -86,6 +86,9 @@ export interface SignageContent {
   heroIntro: string;
   platformCta: string;
   platformCtaNote: string;
+  /** Sends a question the six-item FAQ does not answer to the knowledge base. */
+  kbNote: string;
+  kbCta: string;
   whatTitle: string;
   whatBody: string;
   featuresTitle: string;
@@ -183,6 +186,8 @@ export interface Dictionary {
     visionMission: string;
     references: string;
     faq: string;
+    /** The group that holds the FAQ and the knowledge base. */
+    support: string;
     contact: string;
   };
   /**
@@ -366,6 +371,7 @@ export const tr: Dictionary = {
     visionMission: 'Vizyon & Misyon',
     references: 'Referanslar',
     faq: 'SSS',
+    support: 'Destek',
     contact: 'İletişim',
   },
   brandTagline: 'Görüntü | Ses | Sahne Sistemleri',
@@ -573,6 +579,8 @@ export const tr: Dictionary = {
     /* Sits at the foot of the page, not in the hero: signing in is for people
        who are already customers, and it should not compete with the enquiry. */
     platformCtaNote: 'Zaten sonopto.signage kullanıyor musunuz?',
+    kbNote: 'Ürünün kullanımıyla ilgili adım adım anlatımlar için:',
+    kbCta: 'Bilgi Bankası',
     whatTitle: 'sonopto.signage nedir?',
     whatBody:
       'Bir ekrana ne zaman ne görüneceğini belirleyen yönetim katmanıdır. Tarayıcıdan açtığınız panelden içeriğinizi yükler, çalma listelerini kurar, hangi ekranın hangi saatte ne göstereceğini planlarsınız. Tek bir ekran için de, farklı şehirlere dağılmış yüzlerce ekran için de aynı panel kullanılır. Altyapı Google Cloud üzerinde çalışır; destek Türkçe ve doğrudan bizden.',

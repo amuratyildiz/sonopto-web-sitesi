@@ -37,7 +37,7 @@
     },
     {
       "route": "/helpdesk/destek-2/knowledgebase",
-      "redirect": "/sss/",
+      "redirect": "/destek/",
       "statusCode": 301
     }
   ],

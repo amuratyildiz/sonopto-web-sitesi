@@ -9,6 +9,7 @@ export const en: Dictionary = {
     visionMission: 'Vision & Mission',
     references: 'References',
     faq: 'FAQ',
+    support: 'Support',
     contact: 'Contact',
   },
   brandTagline: 'Video | Audio | Stage Systems',
@@ -214,6 +215,8 @@ export const en: Dictionary = {
       'sonopto.signage is cloud-based digital signage software that lets you design content, schedule it and send it to any screen. From the same team that mounts the panel, runs the cable and turns up when something fails.',
     platformCta: 'Sign In to the Platform',
     platformCtaNote: 'Already using sonopto.signage?',
+    kbNote: 'For step-by-step guides on using the product:',
+    kbCta: 'Knowledge Base',
     whatTitle: 'What is sonopto.signage?',
     whatBody:
       'It is the management layer that decides what appears on a screen and when. From a panel you open in your browser, you upload content, build playlists and plan which screen shows what at which hour. The same panel serves a single screen and hundreds of screens spread across cities. The infrastructure runs on Google Cloud; support comes directly from us.',
