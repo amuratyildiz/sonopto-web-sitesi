@@ -67,4 +67,4 @@ Medya kütüphanesi (Media Assets); video, görsel ve PDF dosyalarından oluşan
 
 * * *
 
-Medya kütüphanesini bir çalma listesinde kullanmak için [Media Assets App](/en/support/apps/digital-signage-media-assets/) makalesine bakın.
+Medya kütüphanesini bir çalma listesinde kullanmak için [Medya Kütüphanesi Uygulaması](/destek/uygulamalar/medya-kutuphanesi-uygulamasi/) makalesine bakın.

@@ -5,7 +5,7 @@ summary: 'Step-by-step guide to install digital signage on NovaStar Taurus and T
 category: 'installation'
 order: 14
 source: 'installation/novastar-digital-signage'
-sourceHash: '341cd5e7da808269'
+sourceHash: 'a7034e3212fd49d7'
 importedAt: '2026-09-23'
 ---
 This help page guides you through setting up digital signage on NovaStar LED displays. This method uses the NovaStar multimedia player’s built-in web page widget to load the digital signage web player [(dsplayer.io)](/iletisim/) directly.

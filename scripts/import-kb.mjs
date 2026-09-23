@@ -78,12 +78,15 @@ const BRAND_RULES = [
  * keyword this site wants to rank for, and rewriting every instance would give
  * sentences like "sonopto.signage playlists let you play sonopto.signage".
  */
+// A rule that replaces into the bare brand has to swallow the plural too:
+// "Digital Signage Applications" once left its s behind and produced
+// "sonopto.signages". Rules replacing into a common noun keep theirs.
 const PRODUCT_RULES = [
-  [/Digital Signage Dashboard/g, 'sonopto.signage'],
-  [/Digital Signage Application/g, 'sonopto.signage'],
+  [/Digital Signage Dashboards?\b/g, 'sonopto.signage'],
+  [/Digital Signage Applications?\b/g, 'sonopto.signage'],
   [/Digital Signage Player App/g, 'sonopto.signage player'],
   [/Digital Signage App\b/g, 'sonopto.signage app'],
-  [/Digital Signage Portal/g, 'sonopto.signage'],
+  [/Digital Signage Portals?\b/g, 'sonopto.signage'],
   [/Digital Signage Account/g, 'sonopto.signage account'],
   [/Digital Signage Web Player/g, 'sonopto.signage web player'],
   // The source spells the vendor brand at least three ways in body copy
@@ -160,7 +163,6 @@ async function discover() {
       return { url, rel, category, slug, order: order.get(url) ?? order.get(url + '/') ?? 999 };
     })
     .filter((a) => !EXCLUDED.has(a.rel))
-    .filter((a) => !ONLY || a.category === ONLY)
     .sort((a, b) => a.order - b.order);
 }
 
@@ -417,6 +419,61 @@ function applyRules(text, rules) {
   return out;
 }
 
+/**
+ * Corrections the global rules cannot express, keyed by source path.
+ *
+ * The rewrite table works on phrases, so it cannot tell the two senses of
+ * "Digital Signage Application" apart: in most articles it means our app and
+ * the rule is right, but in the External Video article the same phrase heads a
+ * list item about the physical displays, and rewriting it there leaves our
+ * product name introducing the sentence "These devices are commonly used in
+ * retail stores". Applied after the global rules, so it sees their output.
+ */
+const ARTICLE_FIXES = new Map([
+  [
+    'installation/samsung-digital-signage',
+    [
+      [/\]\(#List-of-Supported-SSSP-Models\)/g, '](#list-of-supported-sssp-models)'],
+      [/\]\(#tizen-40-inuse\)/g, '](#tizen-40-option-1-follow-this-if-samsung-sssp-is-already-in-use)'],
+      [/\]\(#tizen-40-brand-new\)/g, '](#tizen-40-option-2-follow-this-if-samsung-sssp-is-brand-new-or-after-a-factory-reset)'],
+      [/\]\(#tizen-65-inuse\)/g, '](#tizen-65-option-1-follow-this-if-samsung-sssp-is-already-in-use)'],
+      [/\]\(#tizen-65-brand-new\)/g, '](#tizen-65-option-2-follow-this-if-samsung-sssp-is-brand-new-or-after-a-factory-reset)'],
+      [/\]\(#tizen-4-usb\)/g, '](#usb-setup-on-sssp6---tizen-40-display)'],
+      [/\]\(#tizen-65-usb\)/g, '](#usb-setup-on-sssp10---tizen-65-display)'],
+      [/\]\(#tizen-usb\)/g, '](#install-from-usb-flash-drive-1)'],
+      [/\]\(#url-launcher\)/g, '](#how-to-switch-a-samsung-display-from-magicinfo-to-url-launcher)'],
+      [/\]\(#connect-to-server\)/g, '](#how-to-fix-unable-to-connect-to-the-server-please-try-again-later-on-samsung-tizen-1)'],
+      [/\]\(#tizen-40\)/g, '](#tizen-40-1)'],
+      [/\]\(#tizen-65\)/g, '](#tizen-65-1)'],
+      [/\]\(#tizen-7\)/g, '](#tizen-7-1)'],
+      [/_Check the \[supported features\]\(#Supported-Features\)\._\n*/g, ''],
+    ],
+  ],
+  [
+    'apps/digital-signage-tableau',
+    [
+      [/\]\(#overview\)/g, '](#1-overview)'],
+      [/\]\(#public-vs-secure-tableau-dashboards\)/g, '](#2-public-vs-secure-tableau-dashboards)'],
+      [/\]\(#setting-up-a-tableau-connected-app\)/g, '](#3-setting-up-a-tableau-connected-app)'],
+      [/\]\(#configuring-digital-signage-with-tableau\)/g, '](#4-configuring-digital-signage-with-tableau)'],
+    ],
+  ],
+  [
+    'apps/digital-signage-external-video',
+    [
+      [/\]\(#steps-how-to-set-the-player\)/g, '](#how-to-set-the-player)'],
+      [/\*\*sonopto\.signage\*\*: These devices/g, '**Digital signage displays**: These devices'],
+    ],
+  ],
+  [
+    'screens/digital-signage-live-screen-location',
+    [
+      [/\]\(#configure-location\)/g, '](#1-configure-location-services-on-the-device)'],
+      [/\]\(#set-screen-location\)/g, '](#2-set-screen-location-on-the-cms-portal)'],
+    ],
+  ],
+]);
+
 const applyProductRules = (text) => fixDoubledWords(applyRules(applyRules(text, BRAND_RULES), PRODUCT_RULES));
 
 function assertClean(text, where) {
@@ -440,7 +497,10 @@ async function readCategorySlugs() {
 
 async function main() {
   const articles = await discover();
-  const list = LIMIT ? articles.slice(0, LIMIT) : articles;
+  // --only narrows what is WRITTEN, never what is indexed: the link index
+  // below has to see every article or cross-category links come out unmapped.
+  const selected = ONLY ? articles.filter((a) => a.category === ONLY) : articles;
+  const list = LIMIT ? selected.slice(0, LIMIT) : selected;
   console.log(`discovered ${articles.length} articles; processing ${list.length}\n`);
 
   // Category slugs come from src/data/kb.ts so there is one source of truth.
@@ -463,7 +523,9 @@ async function main() {
     const title = cleanTitle(applyRules(parsed.title, BRAND_RULES));
     const summary = applyProductRules(parsed.summary);
 
-    const markdown = turndown.turndown(bodyHtml).trim();
+    let markdown = turndown.turndown(bodyHtml).trim();
+    const fixes = ARTICLE_FIXES.get(a.rel);
+    if (fixes) markdown = applyRules(markdown, fixes);
     const hash = createHash('sha256').update(markdown).digest('hex').slice(0, 16);
 
     const dest = path.join(CONTENT_DIR, a.category, `${slugify(a.slug)}.md`);

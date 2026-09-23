@@ -5,7 +5,7 @@ summary: 'Cihazda konum servislerini açma ve panelde GPS ile otomatik konum gü
 category: 'screens'
 order: 6
 source: 'screens/digital-signage-live-screen-location'
-sourceHash: '09a65da0023b0450'
+sourceHash: '624d95fb28d22f48'
 importedAt: '2026-09-23'
 ---
 Canlı ekran konumu, ekranlarınızı gerçek zamanlı olarak izlemenizi sağlar. Çevrimiçi ya da çevrimdışı tüm etkin ekranlarınızı harita üzerinde göstererek her ekranın hangi noktada olduğunu görmenize yarar.

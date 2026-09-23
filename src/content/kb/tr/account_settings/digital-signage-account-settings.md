@@ -5,7 +5,7 @@ summary: 'Kendi hesabınızla, size erişim verilmiş diğer hesaplar arasında 
 category: 'account_settings'
 order: 2
 source: 'account_settings/digital-signage-account-settings'
-sourceHash: '143e13081eb8db7b'
+sourceHash: '946d0c881c19f2f6'
 importedAt: '2026-09-23'
 ---
 Bu makale, kendi ana hesabınızla yönettiğiniz alt kullanıcı hesabı arasında nasıl geçiş yapacağınızı anlatır.

@@ -5,7 +5,7 @@ summary: 'NovaStar Taurus ve TU serisi oynatıcılarda ViPlex Express ile web sa
 category: 'installation'
 order: 14
 source: 'installation/novastar-digital-signage'
-sourceHash: '341cd5e7da808269'
+sourceHash: 'a7034e3212fd49d7'
 importedAt: '2026-09-23'
 ---
 Bu sayfa, NovaStar LED ekranlarda dijital tabela kurulumunu anlatır. Yöntem, NovaStar çoklu ortam oynatıcısının kendi web sayfası bileşenini kullanarak [web oynatıcıyı](/iletisim/) doğrudan yüklemeye dayanır.

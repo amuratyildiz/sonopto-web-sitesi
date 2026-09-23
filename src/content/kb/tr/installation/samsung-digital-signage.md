@@ -5,7 +5,7 @@ summary: 'Samsung SSSP ticari ekranlarda Tizen 4.0, 6.5 ve 7 için URL ile veya 
 category: 'installation'
 order: 17
 source: 'installation/samsung-digital-signage'
-sourceHash: '3e4d16552c70ccef'
+sourceHash: 'bbe678add729fa6f'
 importedAt: '2026-09-23'
 ---
 ### Samsung SSSP ticari ekran desteği

@@ -5,39 +5,37 @@ summary: 'How to install digital signage app on Samsung SSSP Commercial Display'
 category: 'installation'
 order: 17
 source: 'installation/samsung-digital-signage'
-sourceHash: '3e4d16552c70ccef'
+sourceHash: 'bbe678add729fa6f'
 importedAt: '2026-09-23'
 ---
 ### Samsung SSSP Commercial Display Support
 
 -   SSSP 6.0 on Tizen 4.0 or SSSP 10 on Tizen 6.5 or higher
 
-_Check the [full list of supported devices](#List-of-Supported-SSSP-Models)._
-
-_Check the [supported features](#Supported-Features)._
+_Check the [full list of supported devices](#list-of-supported-sssp-models)._
 
 ### Install from URL
 
-#### [Tizen 4.0](#tizen-40)
+#### [Tizen 4.0](#tizen-40-1)
 
--   [Tizen 4.0 existing screen](#tizen-40-inuse)
--   [Tizen 4.0 Brand New Screen](#tizen-40-brand-new)
+-   [Tizen 4.0 existing screen](#tizen-40-option-1-follow-this-if-samsung-sssp-is-already-in-use)
+-   [Tizen 4.0 Brand New Screen](#tizen-40-option-2-follow-this-if-samsung-sssp-is-brand-new-or-after-a-factory-reset)
 
-#### [Tizen 6.5](#tizen-65)
+#### [Tizen 6.5](#tizen-65-1)
 
--   [Tizen 6.5 Existing Screen](#tizen-65-inuse)
--   [Tizen 6.5 Brand New Screen](#tizen-65-brand-new)
+-   [Tizen 6.5 Existing Screen](#tizen-65-option-1-follow-this-if-samsung-sssp-is-already-in-use)
+-   [Tizen 6.5 Brand New Screen](#tizen-65-option-2-follow-this-if-samsung-sssp-is-brand-new-or-after-a-factory-reset)
 
-#### [Tizen 7](#tizen-7)
+#### [Tizen 7](#tizen-7-1)
 
-### [Install from USB Flash Drive](#tizen-usb)
+### [Install from USB Flash Drive](#install-from-usb-flash-drive-1)
 
--   [Install from USB Flash Drive on Tizen 4.0](#tizen-4-usb)
--   [Install from USB Flash Drive on Tizen 6.5](#tizen-65-usb)
+-   [Install from USB Flash Drive on Tizen 4.0](#usb-setup-on-sssp6---tizen-40-display)
+-   [Install from USB Flash Drive on Tizen 6.5](#usb-setup-on-sssp10---tizen-65-display)
 
-### [How to Switch from MagicInfo to URL Launcher](#url-launcher)
+### [How to Switch from MagicInfo to URL Launcher](#how-to-switch-a-samsung-display-from-magicinfo-to-url-launcher)
 
-### [How to Fix “Unable to connect to the server, Please try again later” on Samsung Tizen](#connect-to-server)
+### [How to Fix “Unable to connect to the server, Please try again later” on Samsung Tizen](#how-to-fix-unable-to-connect-to-the-server-please-try-again-later-on-samsung-tizen-1)
 
 * * *
 

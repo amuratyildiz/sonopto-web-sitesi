@@ -5,19 +5,19 @@ summary: 'Learn how to use the HDMI External Video App to display live video fee
 category: 'apps'
 order: 42
 source: 'apps/digital-signage-external-video'
-sourceHash: 'e73231cb440fd9dd'
+sourceHash: '1ec19c09fb3bb931'
 importedAt: '2026-09-23'
 ---
 -   [How it Works](#how-it-works)
 -   [Supported Players](#supported-players)
--   [How to Set the Player](#steps-how-to-set-the-player)
+-   [How to Set the Player](#how-to-set-the-player)
 
 Devices equipped with an HDMI input interface can play video content from an external source in either fullscreen or Picture in Picture (PiP) mode. This feature is commonly used in digital signage solutions, where high-quality video content needs to be securely displayed.
 
 ### How it Works:
 
 1.  **HDMI Input Interface**: This port enables the device to receive video and audio signals from an external source, such as a media player, computer, or other HDMI-compatible device.
-2.  **sonopto.signages**: These devices are commonly used in retail stores, airports, and public spaces to display advertisements, information, and other digital content.
+2.  **Digital signage displays**: These devices are commonly used in retail stores, airports, and public spaces to display advertisements, information, and other digital content.
 3.  **Encrypted Video Content**: The HDMI input can process encrypted video streams, ensuring secure content protected from unauthorized copying or distribution.
 4.  **Playback Modes**:
 

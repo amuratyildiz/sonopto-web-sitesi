@@ -5,7 +5,7 @@ summary: 'Learn how to securely display your Tableau dashboards on sonopto.signa
 category: 'apps'
 order: 71
 source: 'apps/digital-signage-tableau'
-sourceHash: '312a4b2abb825c31'
+sourceHash: '47e4b4abe2c785da'
 importedAt: '2026-09-23'
 ---
 Welcome to the **Tableau Dashboard App** guide for Digital Signage. This document provides step-by-step instructions on how to use public and secure dashboards through Digital Signage.
@@ -14,10 +14,10 @@ Welcome to the **Tableau Dashboard App** guide for Digital Signage. This documen
 
 ## Table of Contents
 
-1.  [Overview](#overview)
-2.  [Public vs. Secure Tableau Dashboards](#public-vs-secure-tableau-dashboards)
-3.  [Setting Up a Tableau Connected App](#setting-up-a-tableau-connected-app)
-4.  [Configuring Digital Signage with Tableau](#configuring-digital-signage-with-tableau)
+1.  [Overview](#1-overview)
+2.  [Public vs. Secure Tableau Dashboards](#2-public-vs-secure-tableau-dashboards)
+3.  [Setting Up a Tableau Connected App](#3-setting-up-a-tableau-connected-app)
+4.  [Configuring Digital Signage with Tableau](#4-configuring-digital-signage-with-tableau)
 
 * * *
 

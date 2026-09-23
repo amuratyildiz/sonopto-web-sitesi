@@ -5,15 +5,15 @@ summary: 'Learn how to use the sonopto.signage Live Screen Location feature, whi
 category: 'screens'
 order: 6
 source: 'screens/digital-signage-live-screen-location'
-sourceHash: '09a65da0023b0450'
+sourceHash: '624d95fb28d22f48'
 importedAt: '2026-09-23'
 ---
 The Live Screen Location feature allows you to monitor your digital signage screens in real-time. It provides a map view of all your active screens, whether online or offline, so you can see where each screen is located across multiple sites.
 
 There are 2 main steps to use the Live Screen Location:
 
-1.  [Configure Location Services on the Device](#configure-location)
-2.  [Set Screen Location on the CMS Portal](#set-screen-location)
+1.  [Configure Location Services on the Device](#1-configure-location-services-on-the-device)
+2.  [Set Screen Location on the CMS Portal](#2-set-screen-location-on-the-cms-portal)
 
 ## 1\. Configure Location Services on the Device
 
