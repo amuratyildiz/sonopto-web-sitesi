@@ -1,0 +1,9 @@
+{
+  "serverIp": "0.0.0.0",
+  "serverPort": 80,
+  "secureConnection": false,
+  "appLaunchMode": "local",
+  "fqdnMode": true,
+  "fqdnAddr": "https://download.cloud-digitalsignage.com/brands/com.lg.app.signage.ipk",
+  "appType": "ipk"
+}

@@ -167,6 +167,13 @@ export interface SignageContent {
   crossLinkCta: string;
 }
 
+export interface KbCategory {
+  name: string;
+  /** One paragraph of our own, shown on the category page and the hub card. */
+  intro: string;
+  metaDescription: string;
+}
+
 export interface Dictionary {
   nav: {
     home: string;
@@ -242,6 +249,48 @@ export interface Dictionary {
     };
   };
   signage: SignageContent;
+  /**
+   * Knowledge base. Category names and intros are OUR copy, not the vendor's —
+   * the source's 19 category pages are empty JS redirects, so this is the one
+   * part of the section that is original English as well as original Turkish.
+   */
+  kb: {
+    pageTitle: string;
+    pageIntro: string;
+    categoriesTitle: string;
+    onThisPage: string;
+    inThisSection: string;
+    prev: string;
+    next: string;
+    articles: string;
+    /** Marks a link that still goes to the English article. */
+    englishBadge: string;
+    englishNote: string;
+    lastReviewed: string;
+    stuckTitle: string;
+    stuckBody: string;
+    categories: {
+      dashboard: KbCategory;
+      register: KbCategory;
+      installation: KbCategory;
+      playlists: KbCategory;
+      apps: KbCategory;
+      templates: KbCategory;
+      media_assets: KbCategory;
+      schedule: KbCategory;
+      screens: KbCategory;
+      videowall: KbCategory;
+      media_playback_quota: KbCategory;
+      proof_of_play: KbCategory;
+      account_settings: KbCategory;
+      languages: KbCategory;
+      user_mgmt: KbCategory;
+      integrations: KbCategory;
+      geolocation: KbCategory;
+      'dynamic-data': KbCategory;
+      troubleshoot: KbCategory;
+    };
+  };
   notFound: {
     kicker: string;
     pageTitle: string;
@@ -994,6 +1043,141 @@ export const tr: Dictionary = {
     shortcutsTitle: 'Kısayollar',
     otherLanguageNote: 'Looking for the English site?',
     otherLanguageCta: 'Go to the English home page',
+  },
+  kb: {
+    pageTitle: 'Bilgi Bankası',
+    pageIntro:
+      'sonopto.signage panelinin tüm kullanım adımları. Ekran kurulumundan çalma listesine, zamanlamadan sorun gidermeye kadar ürünün her bölümü burada anlatılıyor.',
+    categoriesTitle: 'Bölümler',
+    onThisPage: 'Bu sayfada',
+    inThisSection: 'Bu bölümde',
+    prev: 'Önceki',
+    next: 'Sonraki',
+    articles: 'makale',
+    englishBadge: 'EN',
+    englishNote:
+      'Bu bölümdeki bazı makaleler henüz Türkçeye çevrilmedi. Onlar İngilizce olarak açılır ve EN etiketiyle işaretlenmiştir.',
+    lastReviewed: 'Son gözden geçirme',
+    stuckTitle: 'Aradığınızı bulamadınız mı?',
+    stuckBody:
+      'Panelde çözemediğiniz bir durum varsa yazın; ekranı kuran ekip aynı ekip olduğu için sorunu uzaktan görüp yönlendirebiliyoruz.',
+    categories: {
+      dashboard: {
+        name: 'Panel',
+        intro:
+          'Oturum açtıktan sonra karşınıza çıkan ekran. Ekranlarınızın durumu, son yüklenen medya ve hesap özeti burada; günlük iş bu sayfadan başlar.',
+        metaDescription: 'sonopto.signage panelinin ana ekranı: ekran durumları, son medya ve hesap özeti.',
+      },
+      register: {
+        name: 'Kayıt ve Giriş',
+        intro:
+          'Hesap oluşturma, oturum açma ve parola işlemleri. Ekibinize kullanıcı eklemeden önce bu adımların tamamlanmış olması gerekir.',
+        metaDescription: 'sonopto.signage hesabı oluşturma, oturum açma ve parola işlemleri.',
+      },
+      installation: {
+        name: 'Kurulum',
+        intro:
+          'Yazılımın hangi ekrana ve oynatıcıya nasıl kurulacağı. Samsung, LG, Philips, Vestel, Sony, BrightSign, Android, ChromeOS ve Raspberry Pi için ayrı adımlar.',
+        metaDescription:
+          'sonopto.signage kurulumu: Samsung, LG, Philips, Vestel, Sony, BrightSign, Android, ChromeOS ve Raspberry Pi için adım adım.',
+      },
+      playlists: {
+        name: 'Çalma Listeleri',
+        intro:
+          'Ekranda ne oynayacağını belirleyen yapı. Liste oluşturma, yerleşim seçme, katman ekleme, senkron oynatma ve dokunmatik kullanım bu bölümde.',
+        metaDescription: 'sonopto.signage çalma listeleri: yerleşim, katman, senkron oynatma ve dokunmatik kullanım.',
+      },
+      apps: {
+        name: 'Uygulamalar',
+        intro:
+          'Çalma listesine içerik besleyen bileşenler: takvim, hava durumu, tablo, video, sosyal medya ve tasarım araçları. Her biri bir katmana yerleşir.',
+        metaDescription:
+          'sonopto.signage uygulamaları: Canva, Google Sheets, takvim, hava durumu, video ve sosyal medya bileşenleri.',
+      },
+      templates: {
+        name: 'Şablonlar',
+        intro:
+          'Hazır tasarımlar ve çevrimiçi düzenleyici. Sıfırdan tasarım yapmadan kendi metninizi ve görselinizi yerleştirmenin yolu.',
+        metaDescription: 'sonopto.signage hazır şablonları ve çevrimiçi düzenleyici.',
+      },
+      media_assets: {
+        name: 'Medya Kitaplığı',
+        intro:
+          'Yüklediğiniz görsel ve videoların durduğu yer. Klasörleme, arama ve çalma listelerinde yeniden kullanım.',
+        metaDescription: 'sonopto.signage medya kitaplığı: görsel ve video yükleme, klasörleme, yeniden kullanım.',
+      },
+      schedule: {
+        name: 'Zamanlama',
+        intro:
+          'İçeriğin hangi gün ve saatte oynayacağını belirleme. Gün bölümüne göre menü değişimi ve kampanya takvimi bu bölümde kurulur.',
+        metaDescription: 'sonopto.signage zamanlama: gün ve saate göre otomatik içerik değişimi.',
+      },
+      screens: {
+        name: 'Ekranlar',
+        intro:
+          'Kayıtlı ekranların yönetimi: gruplama, güç yönetimi, parlaklık, depolama genişletme, konum takibi ve LED ekran desteği.',
+        metaDescription:
+          'sonopto.signage ekran yönetimi: gruplama, güç yönetimi, parlaklık, depolama ve LED ekran desteği.',
+      },
+      videowall: {
+        name: 'Video Wall',
+        intro:
+          'Yan yana duran ekranların tek görüntü gibi çalışması. Bölümleme, hizalama ve senkron oynatma ayarları.',
+        metaDescription: 'sonopto.signage video wall kurulumu: bölümleme, hizalama ve senkron oynatma.',
+      },
+      media_playback_quota: {
+        name: 'Medya Oynatma Kotası',
+        intro:
+          'Bir medyanın kaç kez oynatılacağını sınırlama. Süresi ya da sözleşmeli yayın sayısı olan kampanya içerikleri için.',
+        metaDescription: 'sonopto.signage medya oynatma kotası: bir içeriğin oynatma sayısını sınırlama.',
+      },
+      proof_of_play: {
+        name: 'Yayın Kanıtı',
+        intro:
+          'Hangi içeriğin ne zaman ve kaç kez oynatıldığının raporu. Reklam alanı satan kurulumlarda faturalandırmanın dayanağı.',
+        metaDescription: 'sonopto.signage yayın kanıtı raporu: oynatma kayıtları ve reklam faturalandırması.',
+      },
+      account_settings: {
+        name: 'Ayarlar',
+        intro:
+          'Profil, güvenlik, medya, takvim ve istatistik ayarları ile hesap günlükleri. Hesabın davranışını belirleyen her şey burada.',
+        metaDescription: 'sonopto.signage hesap ayarları: profil, güvenlik, medya, takvim, istatistik ve günlükler.',
+      },
+      languages: {
+        name: 'Diller',
+        intro: 'Panelin arayüz dili ve içerikte çoklu dil kullanımı.',
+        metaDescription: 'sonopto.signage dil ayarları ve çok dilli içerik.',
+      },
+      user_mgmt: {
+        name: 'Kullanıcı Yönetimi',
+        intro:
+          'Kullanıcı ekleme, yetki verme ve ekip oluşturma. Hangi ekibin hangi ekranı ve çalma listesini görebileceği burada belirlenir.',
+        metaDescription: 'sonopto.signage kullanıcı ve ekip yönetimi, yetkilendirme.',
+      },
+      integrations: {
+        name: 'Entegrasyonlar',
+        intro: 'Kurumsal kimlik doğrulama: Azure AD ve OneLogin ile tek oturum açma (SSO) kurulumu.',
+        metaDescription: 'sonopto.signage SSO entegrasyonu: Azure AD ve OneLogin ile tek oturum açma.',
+      },
+      geolocation: {
+        name: 'Coğrafi Konum',
+        intro:
+          'İçeriğin cihazın bulunduğu konuma göre değişmesi. Aynı çalma listesinin her şubede o şubeye ait içeriği göstermesi.',
+        metaDescription: 'sonopto.signage coğrafi konum: cihazın konumuna göre otomatik içerik değişimi.',
+      },
+      'dynamic-data': {
+        name: 'Dinamik Veri',
+        intro:
+          'Google Sheets gibi dış kaynaklardan beslenen içerik. Tabloyu güncellediğinizde ekranın da kendiliğinden güncellenmesi.',
+        metaDescription: 'sonopto.signage dinamik veri: Google Sheets ve tablo kaynaklı otomatik içerik.',
+      },
+      troubleshoot: {
+        name: 'Sorun Giderme',
+        intro:
+          'Oynatıcı çevrimdışı görünüyorsa, açılışta takılıyorsa ya da video siyah ekran veriyorsa buradan başlayın.',
+        metaDescription: 'sonopto.signage sorun giderme: çevrimdışı oynatıcı, açılış takılması, siyah ekran.',
+      },
+    },
   },
   about: {
     pageTitle: 'Hakkımızda',

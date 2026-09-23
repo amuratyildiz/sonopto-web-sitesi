@@ -685,6 +685,140 @@ export const en: Dictionary = {
     otherLanguageNote: 'Türkçe site mi arıyordunuz?',
     otherLanguageCta: 'Türkçe ana sayfaya gidin',
   },
+  kb: {
+    pageTitle: 'Knowledge Base',
+    pageIntro:
+      'Every step of using the sonopto.signage dashboard — from installing a screen to building a playlist, scheduling content and working out what went wrong.',
+    categoriesTitle: 'Sections',
+    onThisPage: 'On this page',
+    inThisSection: 'In this section',
+    prev: 'Previous',
+    next: 'Next',
+    articles: 'articles',
+    englishBadge: 'EN',
+    englishNote: '',
+    lastReviewed: 'Last reviewed',
+    stuckTitle: 'Still stuck?',
+    stuckBody:
+      'If the dashboard will not do what you need, write to us. The team that installed your screens is the team that answers, so we can usually see the problem from here.',
+    categories: {
+      dashboard: {
+        name: 'Dashboard',
+        intro:
+          'The screen you land on after signing in. Screen status, recently uploaded media and the account summary all sit here; the working day starts on this page.',
+        metaDescription: 'The sonopto.signage dashboard: screen status, recent media and account summary.',
+      },
+      register: {
+        name: 'Registration and Login',
+        intro:
+          'Creating an account, signing in and password handling. These steps have to be complete before you can add users to your team.',
+        metaDescription: 'Creating a sonopto.signage account, signing in and password handling.',
+      },
+      installation: {
+        name: 'Installation',
+        intro:
+          'How to install the software on each screen and player. Separate steps for Samsung, LG, Philips, Vestel, Sony, BrightSign, Android, ChromeOS and Raspberry Pi.',
+        metaDescription:
+          'Installing sonopto.signage: step-by-step for Samsung, LG, Philips, Vestel, Sony, BrightSign, Android, ChromeOS and Raspberry Pi.',
+      },
+      playlists: {
+        name: 'Playlists',
+        intro:
+          'What decides which content plays on a screen. Creating a playlist, choosing a layout, adding layers, synchronised playback and touchscreen use.',
+        metaDescription: 'sonopto.signage playlists: layouts, layers, synchronised playback and touchscreen use.',
+      },
+      apps: {
+        name: 'Apps',
+        intro:
+          'The components that feed content into a playlist: calendars, weather, spreadsheets, video, social media and design tools. Each one sits in a layer.',
+        metaDescription:
+          'sonopto.signage apps: Canva, Google Sheets, calendars, weather, video and social media components.',
+      },
+      templates: {
+        name: 'Templates',
+        intro:
+          'Ready-made designs and the online editor — a way to place your own text and images without designing from scratch.',
+        metaDescription: 'sonopto.signage templates and the online editor.',
+      },
+      media_assets: {
+        name: 'Media Assets',
+        intro:
+          'Where the images and video you upload are kept. Folders, search, and reuse across playlists.',
+        metaDescription: 'sonopto.signage media assets: uploading images and video, folders and reuse.',
+      },
+      schedule: {
+        name: 'Schedules',
+        intro:
+          'Setting which day and hour content plays. Dayparting for menus and the campaign calendar are built here.',
+        metaDescription: 'sonopto.signage scheduling: automatic content changes by day and time.',
+      },
+      screens: {
+        name: 'Screens',
+        intro:
+          'Managing registered screens: grouping, power management, brightness, extended storage, live location and LED wall support.',
+        metaDescription:
+          'sonopto.signage screen management: grouping, power management, brightness, storage and LED support.',
+      },
+      videowall: {
+        name: 'Video Wall',
+        intro:
+          'Making adjacent screens behave as one image. Splitting, alignment and synchronised playback.',
+        metaDescription: 'sonopto.signage video wall setup: splitting, alignment and synchronised playback.',
+      },
+      media_playback_quota: {
+        name: 'Media Playback Quota',
+        intro:
+          'Limiting how many times a piece of media plays — for campaign content with a fixed run or a contracted number of plays.',
+        metaDescription: 'sonopto.signage media playback quota: limiting how often an item plays.',
+      },
+      proof_of_play: {
+        name: 'Proof of Play',
+        intro:
+          'A report of what played, when and how often. The basis for billing where screen time is sold as advertising inventory.',
+        metaDescription: 'sonopto.signage proof of play: playback records and advertising billing.',
+      },
+      account_settings: {
+        name: 'Settings',
+        intro:
+          'Profile, security, media, calendar and statistics settings, plus account logs. Everything that governs how the account behaves.',
+        metaDescription: 'sonopto.signage account settings: profile, security, media, calendar, statistics and logs.',
+      },
+      languages: {
+        name: 'Languages',
+        intro: 'The dashboard interface language and working with content in more than one language.',
+        metaDescription: 'sonopto.signage language settings and multilingual content.',
+      },
+      user_mgmt: {
+        name: 'User Management',
+        intro:
+          'Adding users, granting permissions and building teams. Which team can see which screens and playlists is decided here.',
+        metaDescription: 'sonopto.signage user and team management, permissions.',
+      },
+      integrations: {
+        name: 'Integrations',
+        intro: 'Enterprise authentication: single sign-on with Azure AD and OneLogin.',
+        metaDescription: 'sonopto.signage SSO integration: single sign-on with Azure AD and OneLogin.',
+      },
+      geolocation: {
+        name: 'Geo Location',
+        intro:
+          'Content that changes with where the device is, so one playlist shows each branch its own material.',
+        metaDescription: 'sonopto.signage geolocation: content that changes automatically by device location.',
+      },
+      'dynamic-data': {
+        name: 'Dynamic Data',
+        intro:
+          'Content fed from outside sources such as Google Sheets — update the spreadsheet and the screen follows.',
+        metaDescription: 'sonopto.signage dynamic data: content driven from Google Sheets and other tables.',
+      },
+      troubleshoot: {
+        name: 'Troubleshoot',
+        intro:
+          'Start here if a player shows offline, sticks on the loading screen, or a video plays as a black screen.',
+        metaDescription: 'sonopto.signage troubleshooting: offline player, stuck loading, black screen on video.',
+      },
+    },
+  },
   about: {
     pageTitle: 'About Us',
     intro: 'Your Solution Partner in the Field.',

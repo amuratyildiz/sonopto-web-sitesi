@@ -46,6 +46,11 @@ export const routes = {
   /* Distinct from solutionsEducation, which is about school audio and PA: this
      one targets signage intent ("okul duyuru ekranı"), not "okul ses sistemi". */
   signageEducation: { tr: 'signage/egitim', en: 'signage/education' },
+  /* Knowledge base root. The 19 category slugs and 120 article slugs are NOT
+     route ids — they live in src/data/kb.ts and the article frontmatter, and
+     are assembled by src/lib/kb/paths.ts. Putting them here would bloat this
+     file without ever covering the articles anyway. */
+  support: { tr: 'destek', en: 'support' },
   about: { tr: 'kurumsal/hakkimizda', en: 'about' },
   visionMission: { tr: 'vizyon-misyon', en: 'vision-and-mission' },
   references: { tr: 'referanslar', en: 'references' },
