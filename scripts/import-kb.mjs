@@ -54,7 +54,23 @@ const EXCLUDED = new Set(['installation/install-hexa-ai-apk']);
  * Strings that must never reach our output. The first two are the vendor's
  * company and brand; the third is their unbranded portal host.
  */
-const FORBIDDEN = [/easysignage/i, /beetek/i, /web\.app/i];
+const FORBIDDEN = [/easysignage/i, /beetek/i, /web\.app/i, /hexa/i];
+
+/**
+ * Vendor identity. Applied to titles AND bodies, unlike the phrasing rules
+ * below: the SSO article named the vendor in its own heading, and the title
+ * path deliberately skips PRODUCT_RULES.
+ *
+ * "Hexa"/"CloudHexa" is the vendor's platform name, and the article told our
+ * customer to email the "Hexa Support Team" — that both names them and routes
+ * the support request away from us. Compound names go before the bare one.
+ */
+const BRAND_RULES = [
+  [/\bEasy\s?Signage\b/gi, 'sonopto.signage'],
+  [/Hexa\s+Support\s+Team/gi, 'Sonopto support'],
+  [/\bCloudHexa\b/gi, 'sonopto.signage'],
+  [/\bHexa\b/gi, 'sonopto.signage'],
+];
 
 /**
  * Product naming. Deliberately a curated list of qualified phrases rather than
@@ -73,7 +89,6 @@ const PRODUCT_RULES = [
   // The source spells the vendor brand at least three ways in body copy
   // ("EasySignage", "Easysignage", "easysignage"), so this rule is
   // deliberately case-insensitive. The FORBIDDEN guard is what proves it worked.
-  [/\bEasy\s?Signage\b/gi, 'sonopto.signage'],
 ];
 
 /**
@@ -222,8 +237,25 @@ function parseArticle(html, article, urlIndex) {
     }
 
     const mapped = mapLink(href, urlIndex);
-    if (mapped === false) a.replaceWith(parse(a.innerHTML)); // excluded article: keep the words, drop the link
-    else if (mapped) a.setAttribute('href', mapped);
+
+    if (mapped === false) {
+      // Link into an article we did not import. If it was the whole list item,
+      // drop the item — a bare vendor feature name with no explanation is worse
+      // than not mentioning it.
+      const li = a.parentNode;
+      if (li?.tagName === 'LI' && li.text.trim() === a.text.trim()) li.remove();
+      else a.replaceWith(parse(a.innerHTML));
+      continue;
+    }
+
+    if (mapped) {
+      a.setAttribute('href', mapped);
+      // A download link whose visible text is the vendor's own URL would leak
+      // that host onto the page even though the href now points at us.
+      if (mapped === DOWNLOAD_PLACEHOLDER && /^https?:\/\//i.test(a.text.trim())) {
+        a.set_content('contact us for the download');
+      }
+    }
   }
 
   // Wide imported tables scroll rather than pushing the page sideways; the
@@ -346,15 +378,17 @@ function cleanTitle(raw) {
     .replace(/^(?!sonopto\.)[a-z]/, (c) => c.toUpperCase());
 }
 
-function applyProductRules(text) {
+function applyRules(text, rules) {
   let out = text;
-  for (const [re, to] of PRODUCT_RULES) {
+  for (const [re, to] of rules) {
     const before = out;
     out = out.replace(re, to);
     if (out !== before) report.productHits += 1;
   }
   return out;
 }
+
+const applyProductRules = (text) => applyRules(applyRules(text, BRAND_RULES), PRODUCT_RULES);
 
 function assertClean(text, where) {
   for (const re of FORBIDDEN) {
@@ -397,7 +431,7 @@ async function main() {
     const parsed = parseArticle(html, a, urlIndex);
 
     let bodyHtml = applyProductRules(parsed.html);
-    const title = cleanTitle(parsed.title);
+    const title = cleanTitle(applyRules(parsed.title, BRAND_RULES));
     const summary = applyProductRules(parsed.summary);
 
     const markdown = turndown.turndown(bodyHtml).trim();

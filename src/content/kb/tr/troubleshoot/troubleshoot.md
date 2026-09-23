@@ -5,7 +5,7 @@ summary: 'Oynatıcı bağlantısı, açılış ve video oynatma sorunları için
 category: 'troubleshoot'
 order: 116
 source: 'troubleshoot/troubleshoot'
-sourceHash: 'c84b4cb57e898621'
+sourceHash: '64a4e65b6fb190ae'
 importedAt: '2026-09-23'
 ---
 Oynatıcı bağlantısıyla ilgili sık karşılaşılan sorunlar için aşağıdaki rehberleri kullanın.

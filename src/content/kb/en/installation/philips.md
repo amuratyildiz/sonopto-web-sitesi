@@ -5,12 +5,12 @@ summary: 'How to install digital signage app on Philips screens'
 category: 'installation'
 order: 16
 source: 'installation/philips'
-sourceHash: '30b22777c13123e5'
+sourceHash: 'f8db1fd380539af5'
 importedAt: '2026-09-23'
 ---
 ### Step 1: Get the APK file
 
--   Download the latest APK from [https://download.cloud-digitalsignage.com/signage-latest.apk](/iletisim/)
+-   Download the latest APK from [contact us for the download](/iletisim/)
     
 -   Copy it to a USB disk
     
