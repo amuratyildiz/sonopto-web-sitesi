@@ -59,13 +59,57 @@ export type SignageSectorKey = keyof Dictionary['signage']['sectors'];
  *
  * The key doubles as the icon name.
  */
-export const signageSectorKeys = ['retail', 'food', 'office', 'health'] as const satisfies readonly SignageSectorKey[];
+export const signageSectorKeys = [
+  'retail',
+  'food',
+  'office',
+  'transport',
+  'education',
+  'health',
+] as const satisfies readonly SignageSectorKey[];
 
-export const signageSectorEntries: Record<SignageSectorKey, { routeId: RouteId }> = {
-  retail: { routeId: 'signageRetail' },
-  food: { routeId: 'signageFood' },
-  office: { routeId: 'signageOffice' },
-  health: { routeId: 'signageHealth' },
+interface SignageSectorEntry {
+  routeId: RouteId;
+  /**
+   * Feature photo, cropped 4:3. null where we have no genuine reference shot —
+   * healthcare, for now. The page simply omits the figure rather than falling
+   * back to stock imagery, which never passes for the real thing.
+   */
+  image: string | null;
+  /** A second shot at its own aspect, laid beside the screens list. */
+  imageSecondary?: string;
+}
+
+export const signageSectorEntries: Record<SignageSectorKey, SignageSectorEntry> = {
+  retail: {
+    routeId: 'signageRetail',
+    image: '/signage/sektorler/magaza-vitrin-ekrani-sonopto.webp',
+    // Portrait subject: a 4:3 crop cut the totem top and bottom, so this one
+    // keeps its own square framing beside the list instead.
+    imageSecondary: '/signage/sektorler/market-reyon-totem-ekrani-sonopto.webp',
+  },
+  food: {
+    routeId: 'signageFood',
+    image: '/signage/sektorler/restoran-dijital-menu-panosu-sonopto.webp',
+    imageSecondary: '/signage/sektorler/kafe-kahve-menu-ekrani-sonopto.webp',
+  },
+  office: {
+    routeId: 'signageOffice',
+    image: '/signage/sektorler/ofis-dolu-oda-kapi-ekrani-sonopto.webp',
+    imageSecondary: '/signage/sektorler/toplanti-odasi-kapi-ekrani-sonopto.webp',
+  },
+  transport: {
+    routeId: 'signageTransport',
+    image: '/signage/sektorler/tren-istasyonu-bilgilendirme-ekrani-sonopto.webp',
+    imageSecondary: '/signage/sektorler/terminal-video-wall-sonopto.webp',
+  },
+  education: {
+    routeId: 'signageEducation',
+    image: '/signage/sektorler/okul-koridoru-duyuru-ekrani-sonopto.webp',
+    imageSecondary: '/signage/sektorler/kutuphane-bilgilendirme-ekrani-sonopto.webp',
+  },
+  // Still no genuine reference shot for healthcare.
+  health: { routeId: 'signageHealth', image: null },
 };
 
 export type SignageIconName = SignageFeatureKey | SignageIntegrationKey | SignageSectorKey;

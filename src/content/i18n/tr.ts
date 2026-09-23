@@ -41,6 +41,12 @@ export interface SignageBlock {
 export interface SignageSector {
   /** Short label for cards and breadcrumbs. */
   title: string;
+  /**
+   * Optional because healthcare has no photograph yet. The layout throws if a
+   * sector carries an image without one, so an image can never ship unlabelled.
+   */
+  imageAlt?: string;
+  imageSecondaryAlt?: string;
   /** The page's H1 — a hook, not a category name. */
   headline: string;
   /** Card text on the product page. */
@@ -143,6 +149,8 @@ export interface SignageContent {
     retail: SignageSector;
     food: SignageSector;
     office: SignageSector;
+    transport: SignageSector;
+    education: SignageSector;
     health: SignageSector;
   };
   /** Strip at the foot of every sector page. */
@@ -626,6 +634,10 @@ export const tr: Dictionary = {
     sectors: {
       retail: {
         title: 'Perakende ve Mağazalar',
+        imageAlt:
+          'Mağaza vitrininde indirim kampanyası gösteren büyük formatlı dijital ekran',
+        imageSecondaryAlt:
+          'Market reyonunda günün kampanyasını gösteren dikey dijital totem ekranı',
         headline: 'Kampanya Başladığında Vitrin de Değişsin',
         summary:
           'Vitrin ve reyon ekranları, şube ağında tek panelden yönetim, kampanya takvimine bağlı otomatik içerik değişimi.',
@@ -670,6 +682,10 @@ export const tr: Dictionary = {
       },
       food: {
         title: 'Restoran ve Kafeler',
+        imageAlt:
+          'Restoranda tuğla duvara monte edilmiş, kategorilere ayrılmış dijital menü panosu',
+        imageSecondaryAlt:
+          'Kafe tezgâhının üzerinde kahve çeşitlerini ve fiyatlarını gösteren dijital menü ekranı',
         headline: 'Menü Kahvaltıdan Akşama Kendi Kendine Değişsin',
         summary:
           'Dijital menü panoları, gün içinde otomatik değişen menüler, fiyatların tablodan beslenmesi ve baskı maliyetinin sıfırlanması.',
@@ -714,6 +730,10 @@ export const tr: Dictionary = {
       },
       office: {
         title: 'Kurumsal Ofisler',
+        imageAlt:
+          'Cam bölmeli toplantı odasının kapısında, odanın dolu olduğunu ve toplantının saatini gösteren kırmızı dijital kapı ekranı',
+        imageSecondaryAlt:
+          'Toplantı odası girişinde odanın boş olduğunu gösteren yeşil dijital kapı ekranı',
         headline: 'Toplantı Odası Kapısındaki Tartışma Bitsin',
         summary:
           'Karşılama ekranları, kapı önü oda rezervasyon ekranları, iç iletişim panoları ve kurum içi duyuru ağı.',
@@ -753,6 +773,102 @@ export const tr: Dictionary = {
             question: 'Birden fazla ofisimiz var, hepsini tek yerden yönetebilir miyiz?',
             answer:
               'Evet. Ofisleri gruplayarak kurumsal duyuruyu tek işlemle hepsine gönderir, yerel duyuruları ise yalnızca ilgili ofisin grubuna bırakırsınız. Hangi ekranın çevrimiçi olduğunu ve en son ne zaman güncellendiğini de panelden görürsünüz.',
+          },
+        ],
+      },
+      transport: {
+        title: 'Ulaşım ve Terminaller',
+        imageAlt:
+          'Tren peronunda yolculara kampanya gösteren dikey dijital bilgilendirme ekranı',
+        imageSecondaryAlt:
+          'Terminal geçişinde altı ekrandan oluşan, tek görüntü olarak çalışan dijital video wall',
+        headline: 'Yolcu Beklerken Ekran Çalışsın',
+        summary:
+          'Peron ve terminal bilgilendirmesi, yönlendirme ekranları, reklam alanı olarak kullanılan video wall kurulumları.',
+        metaDescription:
+          'Metro, tren, otogar ve havalimanı için dijital tabela: sefer bilgilendirmesi, yönlendirme ve reklam ekranları. Video wall kurulumu ve montaj dahil.',
+        intro:
+          'Ulaşım noktalarında ekranın iki işi vardır: yolcuyu doğru yere yönlendirmek ve bekleme süresini değerli bir alana çevirmek. İkincisi çoğu kurumda kullanılmadan duran bir gelir kalemidir.',
+        problemTitle: 'Yolcu akışı durmuyor, bakım için ekranı kapatmak da mümkün olmuyor',
+        problemBody:
+          'Terminaller 7/24 açıktır; bir ekranı kapatıp müdahale etmek için uygun bir saat neredeyse hiç yoktur. Bu yüzden ulaşım noktalarındaki kurulumlarda kritik olan ekranın markası değil, arızaya düşmeden ne kadar dayandığı ve düştüğünde ne kadar hızlı ayağa kalktığıdır. Uzaktan izleme ile arızayı yolcudan önce görmek, müdahale penceresini saatler yerine dakikalara indirir.',
+        screensTitle: 'Ekranlarda neler gösteriliyor?',
+        screens: [
+          'Sefer ve peron bilgilendirmesi: kalkış, varış, gecikme ve peron değişikliği',
+          'Yönlendirme: çıkış, aktarma, bagaj ve engelli erişim yönlendirmesi',
+          'Reklam alanı: peron ve holdeki ekranların kiralanabilir yayın envanteri olarak kullanılması',
+          'Video wall: giriş holü ve aktarma geçişlerinde büyük ölçekli kurumsal yayın',
+          'Acil durum bilgilendirmesi: tahliye yönlendirmesi ve anons desteği',
+        ],
+        integrationTitle: 'Bu sektörde asıl fark: çevrimdışı çalışma ve ekran gruplama',
+        integrationBody:
+          'Terminal ağlarında bağlantı her noktada aynı kalitede olmaz. Medya dosyaları ekranın yerel depolamasına indiği için kopan bir hat yayını durdurmaz. Gruplama ile peron ekranlarını tek grup, hol ekranlarını başka bir grup olarak yönetir; sefer bilgisini yalnızca ilgili perona, kurumsal yayını ise tüm terminale gönderirsiniz. Video wall kurulumlarında senkron oynatma, yan yana duran ekranların tek bir görüntü gibi çalışmasını sağlar.',
+        resultTitle: 'Ekranı biz kurduğumuz için fark ne?',
+        resultBody:
+          'Ulaşım noktalarındaki montaj bir yapı işidir: yüksek tavana askı, yoğun yolcu akışının ortasında güvenli konstrüksiyon, kapalı alanda görüş açısına göre yerleşim. Video wall ise milimetrik hizalama ister; tek bir panel yamuk oturduğunda bütün duvar yamuk görünür. Bu işleri kendi ekibimizle yapıyor, metal konstrüksiyondan veri ve enerji altyapısına kadar tek kalemde çözüyoruz.',
+        faq: [
+          {
+            question: 'Sefer bilgilerini mevcut sistemimizden çekebilir miyiz?',
+            answer:
+              'Sefer verisi bir tablo, CSV, JSON ya da web sayfası olarak dışarı verilebiliyorsa ekrana bağlanabilir. Mevcut sisteminizin ne sunduğunu keşif sırasında inceliyor, entegrasyonun mümkün olup olmadığını taahhüt vermeden önce netleştiriyoruz.',
+          },
+          {
+            question: 'Video wall kurulumu yapıyor musunuz?',
+            answer:
+              'Evet. LED duvar ve çok ekranlı video wall kurulumları yaptığımız işlerin önemli bir bölümünü oluşturuyor; metal konstrüksiyon imalatı, veri ve enerji altyapısı ile montaj bize ait. Yazılım tarafında senkron oynatma ile ekranlar tek görüntü olarak çalışır.',
+          },
+          {
+            question: 'Ekranlar reklam geliri için kullanılabilir mi?',
+            answer:
+              'Evet, yaygın bir kullanım. Ekranları bölge ve saat bazında gruplayarak farklı reklamverenlere farklı zaman dilimleri ayırabilir, yayının gerçekten döndüğünü uzaktan izleme ile doğrulayabilirsiniz.',
+          },
+        ],
+      },
+      education: {
+        title: 'Okullar ve Kampüsler',
+        imageAlt:
+          'Okul koridorunda duyuru ve kulüp tanıtımı gösteren üç dijital ekranın önünden geçen öğrenciler',
+        imageSecondaryAlt:
+          'Kütüphanede yeni gelen kitapları duyuran dikey dijital bilgilendirme ekranı',
+        headline: 'Panodaki Duyuruyu Kimse Okumuyor',
+        summary:
+          'Koridor ve kantin duyuru ekranları, kütüphane bilgilendirmesi, sınav ve etkinlik takvimi, kampüs yönlendirmesi.',
+        metaDescription:
+          'Okul ve kampüsler için dijital tabela: koridor duyuru ekranları, sınav ve etkinlik takvimi, kütüphane bilgilendirmesi, kampüs yönlendirmesi. Kurulum ve montaj dahil.',
+        intro:
+          'Okullarda iletişim sorunu bilgi eksikliğinden değil, bilginin kimsenin bakmadığı bir yerde durmasından kaynaklanır. Koridordaki bir ekran, kapıdaki mantar panodan çok daha fazla okunur.',
+        problemTitle: 'Duyuru asıldı ama öğrenciye ulaşmadı',
+        problemBody:
+          'Basılı duyurunun iki sorunu vardır: asılana kadar geçen süre ve asıldıktan sonra kimsenin bakmaması. Sınav saati değiştiğinde ya da servis gecikmesi olduğunda bilginin dakikalar içinde yayılması gerekir; kâğıt bunu yapamaz. Ekrana geçen okullarda duyurunun ulaşma süresi günden dakikaya iner, üstelik duyuruyu asacak personel de bu işten kurtulur.',
+        screensTitle: 'Ekranlarda neler gösteriliyor?',
+        screens: [
+          'Koridor duyuruları: sınav takvimi, ders programı değişiklikleri, servis ve yemek bilgisi',
+          'Kulüp ve etkinlik tanıtımı: kulüp çağrıları, turnuva ve tören duyuruları',
+          'Kütüphane: yeni gelen kitaplar, sessizlik hatırlatmaları, çalışma saatleri',
+          'Kampüs yönlendirmesi: bina ve derslik yönlendirmesi, kat planları',
+          'Öğretmenler odası ve idari alanlar: nöbet listesi, toplantı ve iç duyurular',
+        ],
+        integrationTitle: 'Bu sektörde asıl fark: zamanlama ve Google Sheets',
+        integrationBody:
+          'Okul günü zaten bir zaman çizelgesidir; ekranlar da aynı çizelgeye bağlanır. Ders programı ve sınav takvimi bir Google Sheets tablosundan beslendiğinde, tabloyu güncelleyen idari personel ekranları da güncellemiş olur. Zamanlama ile teneffüste farklı, ders saatinde farklı içerik yayınlanır; tatil dönemlerinde güç yönetimi ekranları tamamen kapatır. Tasarım tarafında Canva şablonları, duyuru hazırlamayı öğrenci kulüplerinin bile üstlenebileceği bir işe indirger.',
+        resultTitle: 'Ekranı biz kurduğumuz için fark ne?',
+        resultBody:
+          'Okullarda montaj planlaması en az montajın kendisi kadar önemlidir: işler yaz döneminde, okul kapalıyken yapılır. Koridor ekranları öğrenci trafiğine dayanıklı askılarla ve erişilemeyecek yükseklikte monte edilir. Eğitim kurumlarında zaten akıllı tahta servisi, anons ve tören sistemleri kuruyoruz; signage ekranlarını aynı yaz programına almak hem maliyeti hem kesintiyi azaltır.',
+        faq: [
+          {
+            question: 'Kurulum eğitim yılını böler mi?',
+            answer:
+              'Hayır, planlaması buna göre yapılır. Eğitim kurumlarındaki işleri yaz döneminde, okul kapalıyken yürütüyoruz. Yıl içinde acil bir ihtiyaç çıkarsa hafta sonu ve mesai dışı çalışmayla ders akışını kesmeden tamamlıyoruz.',
+          },
+          {
+            question: 'Duyuruları öğretmenler kendisi girebilir mi?',
+            answer:
+              'Evet. Panel tarayıcıdan çalışır ve gündelik duyuru için teknik bilgi gerektirmez. Ders programı gibi düzenli veriyi Google Sheets üzerinden yönetirseniz tabloyu güncellemek yeterli olur; panele girmeye bile gerek kalmaz.',
+          },
+          {
+            question: 'Mevcut akıllı tahtalarımızı duyuru ekranı olarak kullanabilir miyiz?',
+            answer:
+              'Çoğu durumda evet, ancak önerimiz duruma göre değişir. Akıllı tahtalar ders için kullanıldığı saatlerde duyuru gösteremez; bu yüzden koridor ve ortak alanlara ayrı ekran koymak genellikle daha verimlidir. Mevcut envanterinizi keşifte görüp hangisinin nerede değerlendirileceğini birlikte belirliyoruz.',
           },
         ],
       },

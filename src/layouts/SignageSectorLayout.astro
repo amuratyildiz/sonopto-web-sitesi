@@ -19,8 +19,17 @@ const { sectorKey, locale } = Astro.props;
 const dict = getDictionary(locale);
 const sector = dict.signage.sectors[sectorKey];
 
-const { routeId } = signageSectorEntries[sectorKey];
+const { routeId, image, imageSecondary } = signageSectorEntries[sectorKey];
 const path = pathFor(routeId, locale);
+
+// An image without a description is the one failure mode worth stopping the
+// build for: it ships silently and only hurts the people who cannot see it.
+if (image && !sector.imageAlt) {
+  throw new Error(`SignageSector "${sectorKey}" has an image but no imageAlt in the ${locale} dictionary.`);
+}
+if (imageSecondary && !sector.imageSecondaryAlt) {
+  throw new Error(`SignageSector "${sectorKey}" has imageSecondary but no imageSecondaryAlt in the ${locale} dictionary.`);
+}
 const signagePath = pathFor('signage', locale);
 
 // Siblings at the foot, so the set is crawlable from any entry point rather
@@ -35,9 +44,10 @@ const others = signageSectorKeys.filter((key) => key !== sectorKey);
   locale={locale}
   alternatePath={pathFor(routeId, alternateLocale(locale))}
 >
-  {/* No photography, matching the rest of the signage section: the product page
-      is an ink band and line icons, and inventing stock imagery for four
-      sectors we have no reference shots of would look exactly like what it is. */}
+  {/* The hero stays an ink band across all four sectors, so the set reads as one
+      even though healthcare has no photograph yet. The feature photo sits lower
+      down and is simply omitted where we have none — a stock substitute would
+      look exactly like what it is. */}
   <section class="bg-ink text-white">
     <div class="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
       <Breadcrumbs
@@ -75,17 +85,46 @@ const others = signageSectorKeys.filter((key) => key !== sectorKey);
     </div>
   </section>
 
+  {image && (
+    <section class="mx-auto max-w-6xl px-4 pb-16 sm:px-6">
+      <img
+        data-reveal
+        src={image}
+        alt={sector.imageAlt}
+        width="1200"
+        height="900"
+        loading="lazy"
+        class="aspect-[4/3] w-full max-w-3xl rounded-photo object-cover"
+      />
+    </section>
+  )}
+
   <section class="border-y border-neutral-100 bg-neutral-50">
     <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
       <h2 data-reveal class="text-2xl font-bold text-ink sm:text-3xl">{sector.screensTitle}</h2>
-      <ul data-reveal class="mt-8 grid gap-4 sm:grid-cols-2">
-        {sector.screens.map((item) => (
-          <li class="flex gap-3 border border-neutral-100 bg-white p-5 text-sm text-neutral-700">
-            <span aria-hidden="true" class="mt-1.5 h-1.5 w-1.5 shrink-0 bg-accent"></span>
-            {item}
-          </li>
-        ))}
-      </ul>
+      {/* With a second photo the list shares the row with it; without one it
+          runs full width in two columns. */}
+      <div class:list={['mt-8 grid gap-8', imageSecondary && 'lg:grid-cols-[1fr_20rem]']}>
+        <ul data-reveal class:list={['grid gap-4', !imageSecondary && 'sm:grid-cols-2']}>
+          {sector.screens.map((item) => (
+            <li class="flex gap-3 border border-neutral-100 bg-white p-5 text-sm text-neutral-700">
+              <span aria-hidden="true" class="mt-1.5 h-1.5 w-1.5 shrink-0 bg-accent"></span>
+              {item}
+            </li>
+          ))}
+        </ul>
+        {imageSecondary && (
+          <img
+            data-reveal
+            src={imageSecondary}
+            alt={sector.imageSecondaryAlt}
+            width="900"
+            height="900"
+            loading="lazy"
+            class="aspect-square w-full self-start rounded-photo object-cover"
+          />
+        )}
+      </div>
     </div>
   </section>
 
@@ -135,7 +174,7 @@ const others = signageSectorKeys.filter((key) => key !== sectorKey);
         </a>
       </div>
 
-      <div data-reveal-group class="mt-8 grid gap-6 sm:grid-cols-3">
+      <div data-reveal-group class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {others.map((key) => (
           <a
             data-reveal

@@ -336,6 +336,10 @@ export const en: Dictionary = {
     sectors: {
       retail: {
         title: 'Retail and Shops',
+        imageAlt:
+          'A large-format digital display in a shop window showing a sale campaign',
+        imageSecondaryAlt:
+          'A freestanding digital totem in a supermarket aisle showing the promotion of the day',
         headline: 'When the Campaign Starts, So Should the Window',
         summary:
           'Window and aisle displays, one panel for the whole branch network, content that changes automatically on the campaign calendar.',
@@ -380,6 +384,10 @@ export const en: Dictionary = {
       },
       food: {
         title: 'Restaurants and Cafés',
+        imageAlt:
+          'A digital menu board mounted on a brick wall in a restaurant, split into categories',
+        imageSecondaryAlt:
+          'A digital menu screen above a café counter listing coffees and their prices',
         headline: 'Let the Menu Change Itself From Breakfast to Dinner',
         summary:
           'Digital menu boards, menus that switch automatically through the day, prices driven from a spreadsheet and no reprinting.',
@@ -424,6 +432,10 @@ export const en: Dictionary = {
       },
       office: {
         title: 'Corporate Offices',
+        imageAlt:
+          'A red digital door display on a glass-walled meeting room showing the room is occupied and when the meeting ends',
+        imageSecondaryAlt:
+          'A green digital door display at a meeting room entrance showing the room is vacant',
         headline: 'End the Argument Outside the Meeting Room',
         summary:
           'Welcome displays, room booking screens at the door, internal communication boards and a company-wide announcement network.',
@@ -463,6 +475,102 @@ export const en: Dictionary = {
             question: 'We have several offices — can we manage them from one place?',
             answer:
               'Yes. Group the offices and a company-wide announcement reaches all of them in one action, while local notices go only to the relevant group. You can also see from the panel which screens are online and when each last updated.',
+          },
+        ],
+      },
+      transport: {
+        title: 'Transport and Terminals',
+        imageAlt:
+          'A portrait digital information display on a railway platform showing an offer to waiting passengers',
+        imageSecondaryAlt:
+          'A six-panel digital video wall running as a single image across a terminal concourse',
+        headline: 'Put the Wait to Work',
+        summary:
+          'Platform and terminal information, wayfinding displays, and video walls run as sellable advertising inventory.',
+        metaDescription:
+          'Digital signage for metro, rail, coach and airport terminals: service information, wayfinding and advertising displays. Video wall installation included.',
+        intro:
+          'A screen in a transport hub has two jobs: send the passenger to the right place, and turn the wait into something of value. The second is revenue most operators leave on the table.',
+        problemTitle: 'Passenger flow never stops, so there is no window to take a screen down',
+        problemBody:
+          'Terminals run around the clock, and there is almost never a convenient hour to switch a display off and work on it. That makes the critical factor not the brand of the screen but how long it runs without failing and how quickly it comes back when it does. Remote monitoring — seeing the fault before a passenger does — shrinks the response window from hours to minutes.',
+        screensTitle: 'What goes on the screens?',
+        screens: [
+          'Service and platform information: departures, arrivals, delays and platform changes',
+          'Wayfinding: exits, interchanges, baggage and step-free access',
+          'Advertising: platform and concourse screens run as rentable broadcast inventory',
+          'Video walls: large-format corporate content in entrance halls and interchanges',
+          'Emergency information: evacuation guidance and support for public address',
+        ],
+        integrationTitle: 'What really matters here: offline operation and screen grouping',
+        integrationBody:
+          'Connectivity is never uniform across a terminal estate. Because media downloads to each screen\u2019s local storage, a dropped line does not stop playback. Grouping lets you run platform screens as one group and concourse screens as another, so service information goes only to the relevant platform while corporate content goes estate-wide. On video walls, synchronised playback keeps adjacent panels behaving as a single image.',
+        resultTitle: 'What difference does it make that we install the screen?',
+        resultBody:
+          'Installation in a transport hub is structural work: mounting to high ceilings, safe steelwork in the middle of heavy passenger flow, and positioning set by sight lines in an enclosed space. A video wall demands millimetre alignment — one panel seated slightly off and the whole wall looks crooked. We do this with our own team, covering steel fabrication, data and power infrastructure in a single scope.',
+        faq: [
+          {
+            question: 'Can we feed service information from our existing system?',
+            answer:
+              'If that data can be exported as a spreadsheet, CSV, JSON or a web page, it can be connected to the screens. We look at what your current system exposes during the survey and confirm whether integration is possible before committing to it.',
+          },
+          {
+            question: 'Do you install video walls?',
+            answer:
+              'Yes. LED walls and multi-screen video walls are a substantial part of our work: steel fabrication, data and power infrastructure and the installation itself are ours. On the software side, synchronised playback makes the panels run as one image.',
+          },
+          {
+            question: 'Can the screens be used for advertising revenue?',
+            answer:
+              'Yes, and it is a common use. Grouping screens by zone and time lets you sell different slots to different advertisers, and remote monitoring lets you verify that the campaign actually played.',
+          },
+        ],
+      },
+      education: {
+        title: 'Schools and Campuses',
+        imageAlt:
+          'Pupils walking past three digital displays in a school corridor showing announcements and a club promotion',
+        imageSecondaryAlt:
+          'A portrait digital display in a library announcing newly arrived books',
+        headline: 'Nobody Reads the Noticeboard',
+        summary:
+          'Corridor and canteen announcement screens, library information, exam and event calendars, campus wayfinding.',
+        metaDescription:
+          'Digital signage for schools and campuses: corridor announcement screens, exam and event calendars, library information and campus wayfinding. Installation included.',
+        intro:
+          'Communication problems in schools rarely come from missing information. They come from information sitting somewhere nobody looks. A screen in the corridor gets read far more than a cork board by the door.',
+        problemTitle: 'The notice went up, but it never reached the students',
+        problemBody:
+          'A printed notice has two problems: the time it takes to go up, and the fact that nobody looks at it once it has. When an exam time changes or a bus is delayed, the information has to travel in minutes — paper cannot do that. Schools that move to screens cut the time a notice takes to land from a day to a minute, and free the member of staff who used to pin them up.',
+        screensTitle: 'What goes on the screens?',
+        screens: [
+          'Corridor announcements: exam timetables, timetable changes, bus and lunch information',
+          'Clubs and events: club call-outs, tournament and ceremony announcements',
+          'Library: new arrivals, quiet reminders, opening hours',
+          'Campus wayfinding: building and classroom directions, floor plans',
+          'Staff and admin areas: duty rotas, meetings and internal notices',
+        ],
+        integrationTitle: 'What really matters here: scheduling and Google Sheets',
+        integrationBody:
+          'A school day is already a timetable, and the screens run on the same one. When the timetable and exam calendar are driven from a Google Sheet, the admin staff who update the sheet have updated the screens too. Scheduling shows one thing at break and another during lessons, and power management switches the screens off entirely over the holidays. On the design side, Canva templates bring notice-making within reach of the student clubs themselves.',
+        resultTitle: 'What difference does it make that we install the screen?',
+        resultBody:
+          'In schools the scheduling of an installation matters as much as the installation: the work happens over the summer, while the buildings are empty. Corridor screens are mounted out of reach on brackets that survive student traffic. We already service interactive whiteboards and install PA and ceremony systems in education, so folding the signage screens into the same summer programme cuts both cost and disruption.',
+        faq: [
+          {
+            question: 'Will the installation interrupt the school year?',
+            answer:
+              'No — it is planned around it. We carry out work in education over the summer while the buildings are closed. If something urgent comes up mid-year we complete it at weekends and outside teaching hours, without breaking the timetable.',
+          },
+          {
+            question: 'Can teachers post notices themselves?',
+            answer:
+              'Yes. The panel runs in a browser and posting a notice needs no technical background. If regular data such as the timetable is managed in a Google Sheet, updating the sheet is enough — nobody has to open the panel at all.',
+          },
+          {
+            question: 'Can we use our existing interactive whiteboards as notice screens?',
+            answer:
+              'In many cases yes, though our recommendation depends on the situation. A whiteboard cannot show notices during the lessons it is being used for, so dedicated screens in corridors and shared areas are usually more effective. We look at your existing inventory during the survey and decide together what is best used where.',
           },
         ],
       },
