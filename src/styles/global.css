@@ -1353,6 +1353,120 @@
     color: var(--color-ink);
   }
 
+  /* Search. Hand-authored in this layer for the same reason every other
+     stateful component is: a Tailwind utility would sit in the later utilities
+     layer and win over these hover and focus rules. */
+  .search-field {
+    display: flex;
+    gap: 0.5rem;
+    align-items: stretch;
+  }
+
+  /* The label is read out but never drawn — a placeholder alone is not a name.
+     Same technique as .device-radio: display:none would take it out of the
+     accessibility tree entirely. */
+  .search-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .search-input {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-neutral-300);
+    background-color: #fff;
+    color: var(--color-ink);
+    font-size: 1rem;
+    transition: border-color var(--motion-base) ease-out;
+  }
+
+  .search-input::placeholder { color: var(--color-neutral-400); }
+  .search-input:hover { border-color: var(--color-neutral-400); }
+
+  .search-input:focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+    border-color: var(--color-ink);
+  }
+
+  /* Chrome draws its own clear button on type=search and it lands on top of
+     our border; the site supplies no icon of its own, so drop it. */
+  .search-input::-webkit-search-decoration,
+  .search-input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+  }
+
+  .search-submit {
+    flex: 0 0 auto;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--color-ink);
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: background-color var(--motion-base) ease-out;
+  }
+
+  .search-submit:hover { background-color: var(--color-neutral-800); }
+
+  .search-submit:focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+  }
+
+  .search-result {
+    display: block;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--color-neutral-100);
+    transition: background-color var(--motion-base) ease-out;
+  }
+
+  .search-result:hover { background-color: var(--color-neutral-50); }
+
+  .search-result:focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+  }
+
+  .search-result-head {
+    display: flex;
+    gap: 0.75rem;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  .search-result-title {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-ink);
+  }
+
+  /* Which part of the site the hit came from. Same treatment as .kb-badge so
+     the two read as one family. */
+  .search-result-section {
+    flex: 0 0 auto;
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-neutral-500);
+  }
+
+  .search-result-summary {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.8125rem;
+    line-height: 1.55;
+    color: var(--color-neutral-600);
+  }
+
   /* An infinite animation still counts as running at 0ms, so stop it outright
      rather than relying on the duration variable alone. Everything else on the
      site is a transition, which genuinely does nothing at 0ms. */

@@ -20,8 +20,9 @@ export default defineConfig({
   integrations: [
     sitemap({
       // The 404 is served under whatever URL was requested, so it is not a
-      // destination and has no place in the sitemap.
-      filter: (page) => !page.includes('/404'),
+      // destination and has no place in the sitemap. The search pages are
+      // noindex — listing a page we ask not to be indexed is a contradiction.
+      filter: (page) => !page.includes('/404') && !/\/(arama|search)\/$/.test(page),
       i18n: {
         defaultLocale: 'tr',
         locales: {

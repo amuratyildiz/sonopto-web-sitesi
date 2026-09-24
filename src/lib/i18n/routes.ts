@@ -55,6 +55,9 @@ export const routes = {
   visionMission: { tr: 'vizyon-misyon', en: 'vision-and-mission' },
   references: { tr: 'referanslar', en: 'references' },
   faq: { tr: 'sss', en: 'faq' },
+  /* Site-wide search. The results page reads ?q= and is deliberately a real
+     route rather than an overlay, so a result set can be linked and shared. */
+  search: { tr: 'arama', en: 'search' },
   contact: { tr: 'iletisim', en: 'contact' },
 } as const;
 

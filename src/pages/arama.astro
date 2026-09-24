@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/seo/Breadcrumbs.astro';
+import { getDictionary } from '../content/i18n';
+import { pathFor } from '../lib/i18n/routes';
+
+const locale = 'tr' as const;
+const dict = getDictionary(locale);
+const path = pathFor('search', locale);
+---
+
+<BaseLayout
+  title={dict.search.pageTitle}
+  description={dict.search.pageIntro}
+  path={path}
+  locale={locale}
+  alternatePath={pathFor('search', 'en')}
+  noindex
+>
+  <div class="mx-auto max-w-3xl px-4 py-10 sm:px-6">
+    <Breadcrumbs items={[{ name: dict.nav.home, path: pathFor('home', locale) }, { name: dict.search.pageTitle, path }]} />
+    <h1 class="mt-4 text-3xl font-bold text-ink">{dict.search.pageTitle}</h1>
+    <p class="mt-3 text-neutral-600">{dict.search.pageIntro}</p>
+
+    {/*
+      The index URL and every string the script prints cross over on data-*
+      attributes, like the contact form's messages — the script itself stays
+      language-agnostic and is served once for both locales.
+    */}
+    <div
+      id="search-root"
+      class="mt-8"
+      data-index-url="/arama-index.tr.json"
+      data-count-label={dict.search.resultCount}
+      data-empty-label={dict.search.empty}
+      data-prompt-label={dict.search.prompt}
+      data-unavailable-label={dict.search.unavailable}
+      data-sections={JSON.stringify(dict.search.sections)}
+    >
+      <form id="search-form" role="search" class="search-field">
+        <label class="search-label" for="search-input">{dict.search.inputLabel}</label>
+        <input
+          id="search-input"
+          class="search-input"
+          type="search"
+          name="q"
+          autocomplete="off"
+          placeholder={dict.search.placeholder}
+        />
+        <button type="submit" class="search-submit">{dict.search.submit}</button>
+      </form>
+
+      <p id="search-status" role="status" class="mt-6 text-sm text-neutral-500"></p>
+      <ul id="search-results" class="mt-4"></ul>
+
+      <noscript>
+        <p class="mt-6 text-sm text-neutral-500">
+          {dict.search.noScript}{' '}
+          <a href={pathFor('support', locale)} class="font-medium text-neutral-700 underline">{dict.kb.pageTitle}</a>
+        </p>
+      </noscript>
+    </div>
+  </div>
+</BaseLayout>
+
+<script is:inline src="/search.js" defer></script>

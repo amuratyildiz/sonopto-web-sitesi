@@ -335,6 +335,34 @@ export interface Dictionary {
     pageIntro: string;
     items: FaqEntry[];
   };
+  search: {
+    pageTitle: string;
+    pageIntro: string;
+    /** Visually hidden, so the input still has a name for screen readers. */
+    inputLabel: string;
+    placeholder: string;
+    submit: string;
+    /** "%d sonuç" — the client substitutes the count for %d. */
+    resultCount: string;
+    empty: string;
+    /** Shown before anything has been typed. */
+    prompt: string;
+    /** The index is only produced by a build, so dev and failures need a line. */
+    unavailable: string;
+    noScript: string;
+    /** Badge on each result. Keys are the sections build-search-index.mjs emits. */
+    sections: {
+      kb: string;
+      signage: string;
+      services: string;
+      solutions: string;
+      references: string;
+      corporate: string;
+      faq: string;
+      contact: string;
+      home: string;
+    };
+  };
   contact: {
     pageTitle: string;
     pageIntro: string;
@@ -1244,6 +1272,30 @@ export const tr: Dictionary = {
           'İlk görüşme ve ihtiyaç analizi ücretsizdir. Detaylı teknik danışmanlık kapsamı projenin büyüklüğüne göre ayrıca değerlendirilir.',
       },
     ],
+  },
+  search: {
+    pageTitle: 'Arama',
+    pageIntro: 'Hizmetler, çözümler, sonopto.signage ve bilgi bankası — sitedeki her sayfada arayın.',
+    inputLabel: 'Sitede ara',
+    placeholder: 'Örneğin: samsung kurulumu, çalma listesi, yayın kanıtı',
+    submit: 'Ara',
+    resultCount: '%d sonuç',
+    empty: 'Aramanızla eşleşen sayfa bulunamadı. Farklı bir sözcük deneyin ya da bize ulaşın.',
+    prompt: 'Aramak istediğiniz sözcüğü yazın.',
+    unavailable: 'Arama dizini yüklenemedi. Sayfayı yenileyin; sorun sürerse bize ulaşın.',
+    noScript:
+      'Arama için tarayıcınızda JavaScript etkin olmalı. Kapalıysa bilgi bankasındaki kategorilerden ilerleyebilirsiniz.',
+    sections: {
+      kb: 'Bilgi Bankası',
+      signage: 'sonopto.signage',
+      services: 'Hizmetler',
+      solutions: 'Çözümler',
+      references: 'Referanslar',
+      corporate: 'Kurumsal',
+      faq: 'SSS',
+      contact: 'İletişim',
+      home: 'Ana Sayfa',
+    },
   },
   contact: {
     pageTitle: 'İletişim',

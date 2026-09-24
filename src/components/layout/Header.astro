@@ -116,6 +116,19 @@ const navItems: { label: string; path?: string; panel?: PanelLink[] }[] = [
     </nav>
 
     <div class="flex items-center gap-3">
+      {/* Search sits here, not in the nav list: the bar is tuned to seven items
+          and an eighth would wrap. An icon with a label for screen readers. */}
+      <a
+        href={pathFor('search', locale)}
+        aria-label={dict.search.inputLabel}
+        title={dict.search.inputLabel}
+        class="hidden text-neutral-100 transition hover:text-white sm:inline-flex"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"></circle>
+          <path d="M20 20l-3.5-3.5"></path>
+        </svg>
+      </a>
       <div class="hidden sm:block">
         <LanguageSwitcher locale={locale} alternatePath={alternatePath} variant="dark" />
       </div>
@@ -154,7 +167,12 @@ const navItems: { label: string; path?: string; panel?: PanelLink[] }[] = [
                 ))}
               </>
             ))}
-            <li class="mt-1 border-t border-neutral-100 pt-2 sm:hidden">
+            <li class="mt-1 border-t border-neutral-100 pt-2">
+              <a href={pathFor('search', locale)} class="block px-3 py-2 text-sm transition hover:bg-neutral-50">
+                {dict.search.inputLabel}
+              </a>
+            </li>
+            <li class="sm:hidden">
               <LanguageSwitcher locale={locale} alternatePath={alternatePath} />
             </li>
           </ul>

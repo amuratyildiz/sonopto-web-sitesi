@@ -45,3 +45,7 @@ snpt/
 # duplicates of files already processed). Everything the site actually serves
 # is committed under public/signage/; the source folder stays local.
 sonopto_signage_medyalar/
+
+# Generated from the rendered site by scripts/build-search-index.mjs on every
+# build. The copy here is only so `astro dev` has an index to serve.
+public/arama-index.*.json
