@@ -6,7 +6,7 @@ category: 'apps'
 order: 67
 source: 'apps/digital-signage-mrss'
 sourceHash: '4753f60ad594f5c6'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 ## What is MRSS?
 

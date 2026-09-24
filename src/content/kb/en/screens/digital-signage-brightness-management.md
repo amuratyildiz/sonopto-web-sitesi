@@ -6,7 +6,7 @@ category: 'screens'
 order: 7
 source: 'screens/digital-signage-brightness-management'
 sourceHash: 'f8c609e5c3bab7ef'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 Brightness management enables users to adjust their screens brightness manually or set schedules for automatic adjustments to improve visibility and conserve energy.
 

@@ -6,7 +6,7 @@ category: 'apps'
 order: 68
 source: 'apps/digital-signage-rss-ticker'
 sourceHash: '374c3c2644194740'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 Use the RSS ticker App to create an RSS news feed from any source using the RSS feed URL.
 

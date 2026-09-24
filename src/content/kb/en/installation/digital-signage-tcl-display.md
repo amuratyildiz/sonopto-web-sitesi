@@ -5,8 +5,8 @@ summary: 'Step-by-step guide to install Digital Signage on TCL digital signage d
 category: 'installation'
 order: 7
 source: 'installation/digital-signage-tcl-display'
-sourceHash: 'd77c1cb5ad936aac'
-importedAt: '2026-09-23'
+sourceHash: 'b5c06e32dfb6d019'
+importedAt: '2026-09-24'
 ---
 This guide offers clear instructions for installing Digital Signage on TCL commercial Android displays, configuring settings, and setting the digital signage app as the default playback application.
 
@@ -22,7 +22,7 @@ This guide offers clear instructions for installing Digital Signage on TCL comme
 
 -   Insert a USB drive into a computer
     
--   Download the latest APK from [**Download APK**](/iletisim/)
+-   Download the latest APK from [**Download APK**](https://download.cloud-digitalsignage.com/signage-latest.apk)
     
 -   Copy it to the main directory of your USB drive
     

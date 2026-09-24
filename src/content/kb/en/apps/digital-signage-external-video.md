@@ -6,7 +6,7 @@ category: 'apps'
 order: 42
 source: 'apps/digital-signage-external-video'
 sourceHash: '1ec19c09fb3bb931'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 -   [How it Works](#how-it-works)
 -   [Supported Players](#supported-players)

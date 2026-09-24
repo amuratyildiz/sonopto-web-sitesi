@@ -6,7 +6,7 @@ category: 'apps'
 order: 72
 source: 'apps/digital-signage-tiktok'
 sourceHash: '22865ca7c2367f14'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 <video width="90%" src="/kb/apps/tiktok.mp4" controls="" preload="metadata" playsinline=""></video>
 

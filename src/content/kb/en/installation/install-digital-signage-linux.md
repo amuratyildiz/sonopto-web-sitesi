@@ -6,7 +6,7 @@ category: 'installation'
 order: 12
 source: 'installation/install-digital-signage-linux'
 sourceHash: 'b3bfa88e77e5f7ee'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 ### Tested on
 

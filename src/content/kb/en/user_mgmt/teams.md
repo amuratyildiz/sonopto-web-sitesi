@@ -6,7 +6,7 @@ category: 'user_mgmt'
 order: 2
 source: 'user_mgmt/teams'
 sourceHash: '9679986535c9a8b3'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 The **TEAMS** feature is how you can provide users with access to specific screens & content.
 

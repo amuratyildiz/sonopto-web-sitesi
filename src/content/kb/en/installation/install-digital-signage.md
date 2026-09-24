@@ -6,7 +6,7 @@ category: 'installation'
 order: 2
 source: 'installation/install-digital-signage'
 sourceHash: '27b5c5a057f26baf'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 A wide range of digital signage and operating systems are supported. Please click on the link below that suits your hardware.
 

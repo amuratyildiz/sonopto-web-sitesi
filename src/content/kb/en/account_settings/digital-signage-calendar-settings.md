@@ -6,7 +6,7 @@ category: 'account_settings'
 order: 7
 source: 'account_settings/digital-signage-calendar-settings'
 sourceHash: 'd31cde02a8539cbb'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 This setting allows you to upload a logo for the Door Label app. The logo will be displayed on the door label screens, helping you maintain consistent branding across your meeting room or room signage displays.
 

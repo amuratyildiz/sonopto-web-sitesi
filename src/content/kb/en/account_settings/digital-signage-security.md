@@ -6,7 +6,7 @@ category: 'account_settings'
 order: 4
 source: 'account_settings/digital-signage-security'
 sourceHash: '9e1dd71a9f47c3f4'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 Access Restrictions allow you to secure your account by limiting who can log in based on specific criteria. Once enabled, only users who meet the defined rules will be able to access and manage this account.
 

@@ -5,8 +5,8 @@ summary: 'Learn how to install digital signage on your Raspberry Pi with our ste
 category: 'installation'
 order: 11
 source: 'installation/install-digital-signage-raspberry-pi'
-sourceHash: '0f8c550c402485b4'
-importedAt: '2026-09-23'
+sourceHash: 'cf4a5f8b1037c69a'
+importedAt: '2026-09-24'
 ---
 ## Supported Raspberry Pi
 
@@ -44,9 +44,9 @@ Using the **digital signage Custom Android Image** is highly recommended for the
 
 #### 1\. Download the Image
 
--   Download the image file for Raspberry 4: [rpi4-aosp15-ez-v1.img.zip](/iletisim/)
+-   Download the image file for Raspberry 4: [rpi4-aosp15-ez-v1.img.zip](https://download.cloud-digitalsignage.com/rpi/android/ds-rpi4-aosp15-ez-v1.zip)
     
--   Download the image file for Raspberry 5: [rpi5-aosp15-ez-v1.img.zip](/iletisim/)
+-   Download the image file for Raspberry 5: [rpi5-aosp15-ez-v1.img.zip](https://download.cloud-digitalsignage.com/rpi/android/ds-rpi5-aosp15-ez-v1.zip)
     
 
 #### 2\. Flash the Image to an SD Card

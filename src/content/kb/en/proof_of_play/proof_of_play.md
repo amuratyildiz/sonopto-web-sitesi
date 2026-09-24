@@ -6,7 +6,7 @@ category: 'proof_of_play'
 order: 999
 source: 'proof_of_play/proof_of_play'
 sourceHash: '5d807c43469c7393'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 Proof of play provides statistics about media playback.
 

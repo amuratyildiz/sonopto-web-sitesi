@@ -6,7 +6,7 @@ category: 'register'
 order: 999
 source: 'register/register'
 sourceHash: '7b82085bb4571d85'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 -   Open your browser and go to the **management console**.
 

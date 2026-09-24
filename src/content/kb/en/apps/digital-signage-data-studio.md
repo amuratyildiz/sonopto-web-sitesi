@@ -6,7 +6,7 @@ category: 'apps'
 order: 48
 source: 'apps/digital-signage-data-studio'
 sourceHash: '3f12f149a59faf47'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 <video width="90%" src="/kb/apps/looker-studio.mp4" controls="" preload="metadata" playsinline=""></video>
 

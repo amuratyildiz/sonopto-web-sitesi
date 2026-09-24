@@ -6,7 +6,7 @@ category: 'installation'
 order: 10
 source: 'installation/fix-raspberry-pi-cloning-sd-card'
 sourceHash: '5633a4389caeae48'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 Cloning the SD card of a configured Raspberry Pi can save time—but if not done properly, it can cause all your players to share the **same Screen ID**, which means they’ll be treated as the **same device** in digital signage. This leads to unexpected behavior, including players not functioning correctly.
 

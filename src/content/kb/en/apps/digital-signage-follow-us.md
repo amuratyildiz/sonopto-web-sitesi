@@ -6,7 +6,7 @@ category: 'apps'
 order: 43
 source: 'apps/digital-signage-follow-us'
 sourceHash: '8ef8bd41fa925f47'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 <video width="90%" src="/kb/apps/digital-signage-followus.mp4" controls="" preload="metadata" playsinline=""></video>
 

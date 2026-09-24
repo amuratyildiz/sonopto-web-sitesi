@@ -6,7 +6,7 @@ category: 'apps'
 order: 38
 source: 'apps/digital-signage-dsmenu'
 sourceHash: 'ce3d5af6f5c28854'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 <video muted="" width="90%" src="/kb/apps/dsmenu_video.mp4" controls="" preload="metadata" playsinline=""></video>
 

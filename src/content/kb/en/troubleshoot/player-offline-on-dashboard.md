@@ -6,7 +6,7 @@ category: 'troubleshoot'
 order: 118
 source: 'troubleshoot/player-offline-on-dashboard'
 sourceHash: '8231a068d01c7a82'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 ## Player Connected to Internet but Showing Offline on Dashboard
 

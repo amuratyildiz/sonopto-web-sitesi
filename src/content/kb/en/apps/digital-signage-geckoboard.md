@@ -6,7 +6,7 @@ category: 'apps'
 order: 44
 source: 'apps/digital-signage-geckoboard'
 sourceHash: '84a2843791b65abe'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 Geckoboard is a cloud-based dashboard platform that enables teams to visualize and monitor key performance indicators (KPIs) in real time. By connecting to over 90 data sources—including tools like Google Analytics, Salesforce, Zendesk, and spreadsheets—Geckoboard allows users to create live dashboards that surface important metrics, making data accessible and actionable across organizations.
 

@@ -6,7 +6,7 @@ category: 'apps'
 order: 39
 source: 'apps/digital-signage-dynamic-canva'
 sourceHash: '49a5d17c3b4d0e76'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 <video muted="" width="90%" src="/kb/apps/dynamic-canva-app.mp4" controls="" preload="metadata" playsinline=""></video>
 

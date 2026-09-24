@@ -5,7 +5,7 @@ summary: 'Samsung SSSP ticari ekranlarda Tizen 4.0, 6.5 ve 7 için URL ile veya 
 category: 'installation'
 order: 17
 source: 'installation/samsung-digital-signage'
-sourceHash: 'bbe678add729fa6f'
+sourceHash: 'c04c7f9b02675d3a'
 importedAt: '2026-09-23'
 ---
 ### Samsung SSSP ticari ekran desteği
@@ -241,7 +241,7 @@ _Ekranı hesabınıza ekledikten sonra yönü panelden uzaktan da değiştirebil
 
 -   USB belleği bilgisayara takın.
 
--   Kurulum dosyasını **USB belleğin kök dizinine** indirmek için [bizimle iletişime geçin](/iletisim/)
+-   Şu dosyayı **USB belleğin kök dizinine** indirin: [SSSP.zip](https://app-ds.net/ts/SSSP.zip)
 
 -   Dosyayı USB belleğin kök dizinine açın (USB içinde ayrıca klasör oluşturmayın). USB sürücü F:/ ise klasör şöyle olmalıdır: F:/SSSP
 

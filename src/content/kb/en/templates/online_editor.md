@@ -6,7 +6,7 @@ category: 'templates'
 order: 86
 source: 'templates/online_editor'
 sourceHash: 'e9d90ddbec69197a'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 -   Open the management console
 -   Click on **Playlists**

@@ -6,7 +6,7 @@ category: 'apps'
 order: 73
 source: 'apps/digital-signage-twitter-ticker'
 sourceHash: '8dce071108c6002a'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 Use the twitter ticker app to create a twitter news feed from a twitter account.
 

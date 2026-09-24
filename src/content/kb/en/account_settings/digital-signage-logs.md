@@ -6,7 +6,7 @@ category: 'account_settings'
 order: 108
 source: 'account_settings/digital-signage-logs'
 sourceHash: '44a6099bb055e1f3'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 This page shows how to access and review system logs, including playback events, errors, and screen activity.
 

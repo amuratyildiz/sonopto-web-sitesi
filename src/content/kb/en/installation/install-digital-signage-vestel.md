@@ -5,14 +5,14 @@ summary: 'How to install digital signage app on Vestel screens'
 category: 'installation'
 order: 15
 source: 'installation/install-digital-signage-vestel'
-sourceHash: '7472d5306774a694'
-importedAt: '2026-09-23'
+sourceHash: '1326001dd751e810'
+importedAt: '2026-09-24'
 ---
 _This Guide is only intended for Android-based Vestel digital signage screens._
 
 ### Step 1: Get the APK file
 
--   Download the latest APK from [contact us for the download](/iletisim/)
+-   Download the latest APK from [https://download.cloud-digitalsignage.com/signage-latest.apk](https://download.cloud-digitalsignage.com/signage-latest.apk)
     
 -   Copy it to a USB disk.
     

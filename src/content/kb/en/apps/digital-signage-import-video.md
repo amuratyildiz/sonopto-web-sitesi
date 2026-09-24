@@ -6,7 +6,7 @@ category: 'apps'
 order: 51
 source: 'apps/digital-signage-import-video'
 sourceHash: 'ea7a2849eabcf698'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 <video width="90%" src="/kb/apps/import-video.mp4" controls="" preload="metadata" playsinline=""></video>
 

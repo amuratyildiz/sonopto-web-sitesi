@@ -6,7 +6,7 @@ category: 'apps'
 order: 70
 source: 'apps/digital-signage-socialwalls'
 sourceHash: '42813dd8f3f0b04f'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 The Social Walls app is a platform that enables users to aggregate and display real-time social media content from various platforms such as Facebook, Twitter, Instagram, YouTube, and Pinterest.
 

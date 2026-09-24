@@ -6,7 +6,7 @@ category: 'playlists'
 order: 11
 source: 'playlists/digital-signage-playlist-resolution'
 sourceHash: 'badf76d78bd651c6'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 This document explains how the digital signage system handles playlist resolution settings, including how to align your media and playlist resolution with your screen’s display for optimal playback quality.
 

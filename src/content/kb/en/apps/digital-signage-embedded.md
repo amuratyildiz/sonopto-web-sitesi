@@ -6,7 +6,7 @@ category: 'apps'
 order: 40
 source: 'apps/digital-signage-embedded'
 sourceHash: 'b4389260b910244d'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 <video width="90%" src="/kb/apps/digital-signage-embedded.mp4" controls="" preload="metadata" playsinline=""></video>
 

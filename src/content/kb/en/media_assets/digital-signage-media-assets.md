@@ -6,7 +6,7 @@ category: 'media_assets'
 order: 999
 source: 'media_assets/digital-signage-media-assets'
 sourceHash: 'f60c9e3d66213b5d'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 Media Assets is a media library of videos, images and PDFs.
 

@@ -6,7 +6,7 @@ category: 'apps'
 order: 81
 source: 'apps/digital-signage-windy'
 sourceHash: '4e4348b4678ae30f'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 Windy.com is a comprehensive weather forecasting platform offering interactive maps and real-time data on wind, temperature, precipitation, and more.
 

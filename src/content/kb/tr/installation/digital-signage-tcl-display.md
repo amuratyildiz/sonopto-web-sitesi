@@ -5,7 +5,7 @@ summary: 'TCL kurumsal Android ekranlarda APK kurulumu, birincil CMS ayarı, oto
 category: 'installation'
 order: 7
 source: 'installation/digital-signage-tcl-display'
-sourceHash: 'd77c1cb5ad936aac'
+sourceHash: 'b5c06e32dfb6d019'
 importedAt: '2026-09-23'
 ---
 Bu rehber, TCL kurumsal Android ekranlara kurulumu, ayarların yapılandırılmasını ve oynatıcının varsayılan uygulama olarak tanımlanmasını anlatır.
@@ -22,7 +22,7 @@ Bu rehber, TCL kurumsal Android ekranlara kurulumu, ayarların yapılandırılma
 
 -   Bir USB belleği bilgisayara takın
 
--   Güncel APK dosyası için [bizimle iletişime geçin](/iletisim/)
+-   [Güncel APK dosyasını indirin](https://download.cloud-digitalsignage.com/signage-latest.apk)
 
 -   Dosyayı USB belleğin ana dizinine kopyalayın
 

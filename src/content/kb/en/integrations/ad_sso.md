@@ -6,7 +6,7 @@ category: 'integrations'
 order: 112
 source: 'integrations/ad_sso'
 sourceHash: 'ae0487d17c0501db'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 ## Prerequisites:
 

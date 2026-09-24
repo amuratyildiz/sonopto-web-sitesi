@@ -6,7 +6,7 @@ category: 'apps'
 order: 35
 source: 'apps/digital-signage-custom-ticker'
 sourceHash: '5c6502be9615a676'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 Use the Custom ticker App to create a custom news feed with stories you write yourself.
 

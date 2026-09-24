@@ -5,8 +5,8 @@ summary: 'How to install digital signage app on Samsung SSSP Commercial Display'
 category: 'installation'
 order: 17
 source: 'installation/samsung-digital-signage'
-sourceHash: 'bbe678add729fa6f'
-importedAt: '2026-09-23'
+sourceHash: 'c04c7f9b02675d3a'
+importedAt: '2026-09-24'
 ---
 ### Samsung SSSP Commercial Display Support
 
@@ -254,7 +254,7 @@ _You can change the orientation remotely from the management console later on - 
 
 -   Plug your USB Flash Drive to a PC
     
--   Download the following file under the **USB root folder**: [contact us for the download](/iletisim/)
+-   Download the following file under the **USB root folder**: [https://app-ds.net/ts/SSSP.zip](https://app-ds.net/ts/SSSP.zip)
     
 -   Unzip the file under the root of the USB flash drive (DO NOT create a folder under the USB), if usb flash drive is F:/. the folder should look like this: F:/SSSP
     

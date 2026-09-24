@@ -6,7 +6,7 @@ category: 'media_playback_quota'
 order: 999
 source: 'media_playback_quota/media_playback_quota'
 sourceHash: '837aef3af7b33045'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 The Media Playback Quota feature, also known as “Content Playback Cap” or “Play Count Restriction” in the digital signage advertisement industry, gives users control over how many times a specific media file (image or video) can play across all screens. This ensures content is displayed according to predefined limits, making it ideal for managing limited-run promotions and targeted campaigns.
 

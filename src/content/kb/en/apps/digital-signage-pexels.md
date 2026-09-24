@@ -6,7 +6,7 @@ category: 'apps'
 order: 61
 source: 'apps/digital-signage-pexels'
 sourceHash: '7f64471676d2e56d'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 <video width="90%" src="/kb/apps/digital-signage-pexels.mp4" controls="" preload="metadata" playsinline=""></video>
 

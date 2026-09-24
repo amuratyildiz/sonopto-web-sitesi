@@ -6,7 +6,7 @@ category: 'playlists'
 order: 3
 source: 'playlists/digital-signage-media-settings'
 sourceHash: '8a34e632eb134b36'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 <img src="/kb/playlists/media_settings.webp" alt="Media Settings" loading="lazy" decoding="async">
 

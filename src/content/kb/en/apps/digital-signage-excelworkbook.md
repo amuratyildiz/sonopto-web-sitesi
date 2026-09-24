@@ -6,7 +6,7 @@ category: 'apps'
 order: 41
 source: 'apps/digital-signage-excelworkbook'
 sourceHash: '2212bdef62a65ace'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 <video width="90%" src="/kb/apps/excel-workbook-app.mp4" controls="" preload="metadata" playsinline=""></video>
 

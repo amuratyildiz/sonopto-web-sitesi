@@ -6,7 +6,7 @@ category: 'apps'
 order: 63
 source: 'apps/digital-signage-postermywall'
 sourceHash: '4d2c4386bb0c6169'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 PosterMyWall is a cloud-based design and marketing platform that empowers users to create professional-quality graphics, videos, and promotional materials without requiring advanced design skills. PosterMyWall offers over 275,000 ready templates of videos and images.
 

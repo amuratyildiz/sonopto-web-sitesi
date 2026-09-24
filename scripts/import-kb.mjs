@@ -95,12 +95,13 @@ const PRODUCT_RULES = [
 ];
 
 /**
- * Vendor download endpoints. Sonopto has its own build URLs that have not been
- * supplied yet, so these point at the contact page for now and every hit is
- * listed in the report. Filling them in later is a change to this table only.
+ * Player download and player-endpoint hosts, left exactly as the source writes
+ * them: the vendor publishes the current software there and keeps it current,
+ * and Sonopto has no build of its own to serve instead. They are still listed
+ * in the report so a new one never appears unnoticed, and the FORBIDDEN guard
+ * runs over the finished article, so a branded host would fail the import.
  */
 const DOWNLOAD_HOSTS = /^https?:\/\/(download\.cloud-digitalsignage\.com|download\.beetek\.com\.au|appds\.io|app-ds\.net|dsplayer\.io)/i;
-const DOWNLOAD_PLACEHOLDER = '/iletisim/';
 
 const ua = { 'user-agent': 'Mozilla/5.0 (compatible; sonopto-kb-import)' };
 const get = async (u) => {
@@ -251,14 +252,7 @@ function parseArticle(html, article, urlIndex) {
       continue;
     }
 
-    if (mapped) {
-      a.setAttribute('href', mapped);
-      // A download link whose visible text is the vendor's own URL would leak
-      // that host onto the page even though the href now points at us.
-      if (mapped === DOWNLOAD_PLACEHOLDER && /^https?:\/\//i.test(a.text.trim())) {
-        a.set_content('contact us for the download');
-      }
-    }
+    if (mapped) a.setAttribute('href', mapped);
   }
 
   // Wide imported tables scroll rather than pushing the page sideways; the
@@ -311,7 +305,7 @@ function mapLink(href, urlIndex) {
   if (!href) return null;
   if (DOWNLOAD_HOSTS.test(href)) {
     report.downloads.push(href);
-    return DOWNLOAD_PLACEHOLDER;
+    return href;
   }
   // The source links internally three ways: absolute on its own host, absolute
   // on the vendor's branded help domain, and bare paths with no trailing slash.
@@ -568,7 +562,7 @@ async function main() {
   console.log(`unchanged      ${report.unchanged.length}`);
   console.log(`assets         ${report.assets} downloaded, ${report.assetsSkipped} already present`);
   console.log(`product rules  ${report.productHits} rewrites`);
-  console.log(`download links ${new Set(report.downloads).size} distinct -> ${DOWNLOAD_PLACEHOLDER}`);
+  console.log(`download links ${new Set(report.downloads).size} distinct, kept as published`);
   for (const d of [...new Set(report.downloads)]) console.log(`    ${d}`);
   console.log(`empty alt      ${report.emptyAlt.length}`);
   console.log(`dropped links  ${report.droppedLinks.length} (into excluded articles)`);

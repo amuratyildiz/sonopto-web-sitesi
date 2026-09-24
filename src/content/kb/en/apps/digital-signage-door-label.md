@@ -6,7 +6,7 @@ category: 'apps'
 order: 37
 source: 'apps/digital-signage-door-label'
 sourceHash: '434dc4e3f47ec2ba'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 The Door Label app displays the room’s status and upcoming meetings and events from your Microsoft and Google Calendar.
 

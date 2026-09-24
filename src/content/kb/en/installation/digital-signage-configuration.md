@@ -6,7 +6,7 @@ category: 'installation'
 order: 19
 source: 'installation/digital-signage-configuration'
 sourceHash: '9e8ec1def99e8093'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 #### Configuration for:
 

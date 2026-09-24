@@ -6,7 +6,7 @@ category: 'apps'
 order: 66
 source: 'apps/digital-signage-media-json'
 sourceHash: '86e3d71c72785a51'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 ## What is Media JSON?
 

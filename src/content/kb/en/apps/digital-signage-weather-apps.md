@@ -6,7 +6,7 @@ category: 'apps'
 order: 77
 source: 'apps/digital-signage-weather-apps'
 sourceHash: '5c2b08883dfecc98'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 ## 1\. Weather
 

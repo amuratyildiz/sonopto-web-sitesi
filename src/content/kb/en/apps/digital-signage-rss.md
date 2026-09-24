@@ -6,7 +6,7 @@ category: 'apps'
 order: 69
 source: 'apps/digital-signage-rss'
 sourceHash: 'caa6250a9ba2b093'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 <video width="90%" src="/kb/apps/digital-signage-rss-feed.mp4" controls="" preload="metadata" playsinline=""></video>
 

@@ -6,7 +6,7 @@ category: 'geolocation'
 order: 999
 source: 'geolocation/digital-signage-geolocation'
 sourceHash: '99b47040818a3044'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 Geo-Location allows automatic updates of content based on the device’s geographical location, enabling specific playlists to be displayed in designated areas, regions, or locations.
 

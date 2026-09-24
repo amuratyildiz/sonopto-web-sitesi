@@ -6,7 +6,7 @@ category: 'apps'
 order: 58
 source: 'apps/digital-signage-musthavemenus'
 sourceHash: '1ea2de882317db27'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 MustHaveMenus is an all-in-one menu design and marketing platform that enables users to create, manage, and distribute menus and promotional materials across digital signage channels.
 

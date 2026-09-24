@@ -6,7 +6,7 @@ category: 'playlists'
 order: 1
 source: 'playlists/digital-signage-playlist'
 sourceHash: '09d5688b4c7f5447'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 -   Open your browser, and go to the management console
 -   Click on playlists in the navigation bar

@@ -5,7 +5,7 @@ summary: 'Raspberry Pi 4 ve 5 için hazır Android imajını SD karta yazdırma 
 category: 'installation'
 order: 11
 source: 'installation/install-digital-signage-raspberry-pi'
-sourceHash: '0f8c550c402485b4'
+sourceHash: 'cf4a5f8b1037c69a'
 importedAt: '2026-09-23'
 ---
 ## Desteklenen Raspberry Pi modelleri
@@ -44,9 +44,9 @@ En iyi performans ve kararlılık için özel Android imajını kullanmanızı �
 
 #### 1\. İmaj dosyasını indirin
 
--   Raspberry Pi 4 imaj dosyası için [bizimle iletişime geçin](/iletisim/)
+-   Raspberry Pi 4 imaj dosyası: [rpi4-aosp15-ez-v1.img.zip](https://download.cloud-digitalsignage.com/rpi/android/ds-rpi4-aosp15-ez-v1.zip)
 
--   Raspberry Pi 5 imaj dosyası için [bizimle iletişime geçin](/iletisim/)
+-   Raspberry Pi 5 imaj dosyası: [rpi5-aosp15-ez-v1.img.zip](https://download.cloud-digitalsignage.com/rpi/android/ds-rpi5-aosp15-ez-v1.zip)
 
 
 #### 2\. İmajı SD karta yazdırın

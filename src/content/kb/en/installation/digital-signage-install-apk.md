@@ -6,7 +6,7 @@ category: 'installation'
 order: 3
 source: 'installation/digital-signage-install-apk'
 sourceHash: '9b01fac0bdc35b20'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 ## How to Install Android APK on Your Digital Signage Device
 

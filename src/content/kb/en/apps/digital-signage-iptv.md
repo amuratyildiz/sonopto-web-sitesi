@@ -6,7 +6,7 @@ category: 'apps'
 order: 54
 source: 'apps/digital-signage-iptv'
 sourceHash: '03622a86c1bf1938'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 <video width="90%" src="/kb/apps/digital-signage-iptv.mp4" controls="" preload="metadata" playsinline=""></video>
 

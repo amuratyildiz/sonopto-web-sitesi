@@ -5,7 +5,7 @@ summary: 'LG WebOS Signage ekranlarında internet veya USB üzerinden IPK kurulu
 category: 'installation'
 order: 18
 source: 'installation/webos'
-sourceHash: 'e8ff102c498276e3'
+sourceHash: '44035b255904e617'
 importedAt: '2026-09-23'
 ---
 ### WebOS Signage desteği
@@ -51,7 +51,7 @@ Burada aşağıdaki ayarları bu sırayla yapın:
 
 -   **Fully qualified domain name**: enabled
 
--   **Address URL**: [bizimle iletişime geçin](/iletisim/)
+-   **Address URL**: https://appds.io/lgw
 
 -   **Application Launch Mode**: local
 
@@ -68,7 +68,7 @@ Burada aşağıdaki ayarları bu sırayla yapın:
 
 ### Uygulamayı USB bellek ile kurma
 
--   Güncel sürüm için [bizimle iletişime geçin](/iletisim/)
+-   [Güncel .ipk dosyasını indirin](https://download.cloud-digitalsignage.com/brands/com.lg.app.signage.ipk)
 
 -   İndirdiğiniz .ipk dosyasının adını **com.lg.app.signage.ipk** olarak değiştirin — **bu adım zorunludur.**
 

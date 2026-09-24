@@ -6,7 +6,7 @@ category: 'playlists'
 order: 8
 source: 'playlists/digital-signage-channels'
 sourceHash: 'e199b3811e50a554'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 A Channel is a collection of playlists that can be used to create your own content channel by reusing playlists.
 

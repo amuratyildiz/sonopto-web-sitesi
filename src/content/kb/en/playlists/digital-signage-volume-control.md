@@ -6,7 +6,7 @@ category: 'playlists'
 order: 9
 source: 'playlists/digital-signage-volume-control'
 sourceHash: '60ccb8a4671eec1c'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 The volume of a video or an IPTV channel can be controlled and muted in a playlist.
 

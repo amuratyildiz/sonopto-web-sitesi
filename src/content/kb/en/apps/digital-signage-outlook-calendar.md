@@ -6,7 +6,7 @@ category: 'apps'
 order: 56
 source: 'apps/digital-signage-outlook-calendar'
 sourceHash: '8270abad29f5c859'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 The Outlook Calendar app seamlessly syncs with your calendar to display upcoming schedules and events.
 

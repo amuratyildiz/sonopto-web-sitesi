@@ -6,7 +6,7 @@ category: 'screens'
 order: 1
 source: 'screens/digital-signage-screens'
 sourceHash: '20666a7fd9f2c508'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 ## How to add a screen
 

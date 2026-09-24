@@ -6,7 +6,7 @@ category: 'apps'
 order: 59
 source: 'apps/digital-signage-news'
 sourceHash: 'f437f2051b83a22d'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 <video width="90%" src="/kb/apps/digital-signage-news-feed.mp4" controls="" preload="metadata" playsinline=""></video>
 

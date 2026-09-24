@@ -5,14 +5,14 @@ summary: 'Android tabanlı Vestel dijital tabela ekranlarında kurulum sihirbaz�
 category: 'installation'
 order: 15
 source: 'installation/install-digital-signage-vestel'
-sourceHash: '7472d5306774a694'
+sourceHash: '1326001dd751e810'
 importedAt: '2026-09-23'
 ---
 _Bu kılavuz yalnızca Android tabanlı Vestel dijital tabela ekranları içindir._
 
 ### Adım 1: APK dosyasını edinin
 
--   Güncel APK dosyası için [bizimle iletişime geçin](/iletisim/)
+-   [Güncel APK dosyasını indirin](https://download.cloud-digitalsignage.com/signage-latest.apk)
 
 -   Dosyayı bir USB belleğe kopyalayın.
 

@@ -6,7 +6,7 @@ category: 'apps'
 order: 55
 source: 'apps/digital-signage-media-assets'
 sourceHash: '3d3303d3bcd8e679'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 Media Assets is a library of all the media files already uploaded to the system.
 

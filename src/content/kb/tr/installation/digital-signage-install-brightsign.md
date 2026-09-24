@@ -5,7 +5,7 @@ summary: 'BrightSign oynatıcılarda autorun dosyasıyla bağımsız (standalone
 category: 'installation'
 order: 6
 source: 'installation/digital-signage-install-brightsign'
-sourceHash: '5f6dad844841055a'
+sourceHash: '0cbaf12b48068c0d'
 importedAt: '2026-09-23'
 ---
 BrightSign, kurumsal sınıf dijital tabela oynatıcılarında güvenilirliğiyle bilinen bir markadır. Tüm BrightSign **Series 4 ve Series 5** oynatıcıları desteklenir; en iyi performans için **HD**, **XD** ve **XT** ürün hatlarını öneriyoruz.
@@ -14,7 +14,7 @@ BrightSign, kurumsal sınıf dijital tabela oynatıcılarında güvenilirliğiyl
 
 #### 1\. Autorun dosyasını indirin
 
-Güncel `autorun.zip` dosyasını almak için [bizimle iletişime geçin](/iletisim/).
+Güncel `autorun.zip` dosyasını [buradan indirin](https://appds.io/bs/autorun.zip).
 
 #### 2\. Autorun dosyasını depolama aygıtına kopyalayın
 

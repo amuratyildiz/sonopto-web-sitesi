@@ -6,7 +6,7 @@ category: 'apps'
 order: 36
 source: 'apps/digital-signage-datetimeapps'
 sourceHash: 'c98b38be43329777'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 <video width="90%" src="/kb/apps/digital-signage-datetime.mp4" controls="" preload="metadata" playsinline=""></video>
 

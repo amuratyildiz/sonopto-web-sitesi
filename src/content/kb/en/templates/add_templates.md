@@ -6,7 +6,7 @@ category: 'templates'
 order: 85
 source: 'templates/add_templates.'
 sourceHash: 'c328c48f1ba5db66'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 <video width="90%" src="/kb/templates/digital-signage-templates.mp4" controls="" preload="metadata" playsinline=""></video>
 

@@ -6,7 +6,7 @@ category: 'apps'
 order: 60
 source: 'apps/digital-signage-notion'
 sourceHash: '6d48eb1165a9b4ff'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 Notion is an all-in-one productivity and collaboration app that combines note-taking, project management, databases, task tracking, and documentation in a single workspace. It’s used by individuals and teams to organize their work, manage projects, write content, and centralize knowledge.
 

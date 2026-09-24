@@ -6,7 +6,7 @@ category: 'screens'
 order: 3
 source: 'screens/digital-signage-power-management'
 sourceHash: '1f37c98e12c82398'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 Power Management is used to turn screens on and off. Turning screens off at idle times saves power.
 

@@ -6,7 +6,7 @@ category: 'apps'
 order: 46
 source: 'apps/digital-signage-google-docs'
 sourceHash: '754e2e66da36cd51'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 <video width="90%" src="/kb/apps/google-docs.mp4" controls="" preload="metadata" playsinline=""></video>
 

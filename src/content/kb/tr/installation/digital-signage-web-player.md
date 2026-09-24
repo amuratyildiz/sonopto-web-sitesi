@@ -5,13 +5,13 @@ summary: 'Tarayıcı üzerinden çalışan oynatıcıyı kullanma, ekran kimliğ
 category: 'installation'
 order: 9
 source: 'installation/digital-signage-web-player'
-sourceHash: '609af3a052a4c870'
+sourceHash: '2c71b8881a401f14'
 importedAt: '2026-09-23'
 ---
 ### Tarayıcı tabanlı oynatıcı nasıl kullanılır?
 
 -   Bir tarayıcı açın, tercihen Chrome ya da Chromium.
--   Web oynatıcı adresi için [bizimle iletişime geçin](/iletisim/).
+-   Tarayıcıda [dsplayer.io](https://dsplayer.io) adresini açın.
 -   Panele gidip tarayıcıda görünen kodu kullanarak web oynatıcıyı hesabınıza tanımlayın.
 -   Ekranı hesabınıza ekleme adımları için [Ekranlar](/destek/ekranlar/) bölümüne bakın.
 

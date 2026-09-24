@@ -6,7 +6,7 @@ category: 'account_settings'
 order: 8
 source: 'account_settings/digital-signage-canva-settings'
 sourceHash: '1e730c2d7434fc1d'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 This section explains how to disconnect your Canva account from your digital signage. If you no longer want to access your Canva account, you can easily remove the connection through the Canva Settings page.
 

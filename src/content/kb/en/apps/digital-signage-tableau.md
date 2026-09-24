@@ -6,7 +6,7 @@ category: 'apps'
 order: 71
 source: 'apps/digital-signage-tableau'
 sourceHash: '47e4b4abe2c785da'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 Welcome to the **Tableau Dashboard App** guide for Digital Signage. This document provides step-by-step instructions on how to use public and secure dashboards through Digital Signage.
 

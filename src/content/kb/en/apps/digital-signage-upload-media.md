@@ -6,7 +6,7 @@ category: 'apps'
 order: 76
 source: 'apps/digital-signage-upload-media'
 sourceHash: 'f1c17c96c98415d4'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 -   Go to the management console
 -   Click on the playlist then the layer where you will upload media.

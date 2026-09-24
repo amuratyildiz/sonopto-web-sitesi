@@ -6,7 +6,7 @@ category: 'playlists'
 order: 4
 source: 'playlists/digital-signage-customize_layout'
 sourceHash: '91f878e895acdc58'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 -   Go to playlists page
 -   Click on a playlist to open the layout view

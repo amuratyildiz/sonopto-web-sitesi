@@ -6,7 +6,7 @@ category: 'dynamic-data'
 order: 999
 source: 'dynamic-data/google-sheet-digital-signage'
 sourceHash: '9375852ec0320af8'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 ## Using Google Sheets for Dynamic Data in Digital Signage Templates
 

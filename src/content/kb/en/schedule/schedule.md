@@ -6,7 +6,7 @@ category: 'schedule'
 order: 999
 source: 'schedule/schedule'
 sourceHash: '928e8566045ab02a'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 Schedules allow users to previously prepare a time schedule to play different playlists.
 

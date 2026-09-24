@@ -6,7 +6,7 @@ category: 'user_mgmt'
 order: 1
 source: 'user_mgmt/users'
 sourceHash: 'cf6081b20ff32b97'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 <img src="/kb/user_mgmt/adduser.webp" alt="User Management" loading="lazy" decoding="async">
 

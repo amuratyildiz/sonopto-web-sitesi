@@ -6,7 +6,7 @@ category: 'account_settings'
 order: 3
 source: 'account_settings/digital-signage-screen-settings'
 sourceHash: '220ff2f16405a725'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 The Screen Settings section allows you to configure important behavior and control features for each screen. From this section, you can manage security settings, set automatic restarts, synchronize screens, adjust screens brightness, control media download behavior, and oversee status reporting.
 

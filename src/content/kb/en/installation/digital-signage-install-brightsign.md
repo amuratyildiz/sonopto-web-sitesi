@@ -5,8 +5,8 @@ summary: 'How to install digital signage app on BrightSign players'
 category: 'installation'
 order: 6
 source: 'installation/digital-signage-install-brightsign'
-sourceHash: '5f6dad844841055a'
-importedAt: '2026-09-23'
+sourceHash: '0cbaf12b48068c0d'
+importedAt: '2026-09-24'
 ---
 BrightSign is renowned for its reliability as a leader in commercial-grade digital signage players. All BrightSign **Series 4 and Series 5** players are fully supported, but we recommend using the **HD**, **XD**, and **XT** product lines for optimal performance.
 
@@ -14,7 +14,7 @@ BrightSign is renowned for its reliability as a leader in commercial-grade digit
 
 #### 1\. Download the autorun file
 
-The latest autorun.zip file can be downloaded from [contact us for the download](/iletisim/)
+The latest autorun.zip file can be downloaded from [https://appds.io/bs/autorun.zip](https://appds.io/bs/autorun.zip)
 
 #### 2\. Copy the autorun file to your storage device
 

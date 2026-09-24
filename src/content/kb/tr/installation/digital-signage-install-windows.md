@@ -5,7 +5,7 @@ summary: 'Windows tabanlı oynatıcılarda kurulum öncesi hazırlık, uygulama 
 category: 'installation'
 order: 8
 source: 'installation/digital-signage-install-windows'
-sourceHash: '330ae44ef7c7596f'
+sourceHash: 'f00c387dbec54274'
 importedAt: '2026-09-23'
 ---
 #### Desteklenen Windows sürümleri
@@ -25,7 +25,7 @@ Uygulamayı kurmadan önce Windows oynatıcıda aşağıdakileri tamamlayın.
 
 ### Uygulamayı kurun
 
--   Kurulum dosyası için [bizimle iletişime geçin](/iletisim/).
+-   [Windows 64 bit kurulum dosyasını indirin](https://download.cloud-digitalsignage.com/brands-ds-win64-amd64.exe.zip).
 -   İndirdiğiniz dosyayı açın (unzip)
 -   Uygulamayı başlatmak için dosyaya çift tıklayın
 -   "Unknown Publisher" uyarısı çıkarsa **More** ve ardından **Run Anyway** seçeneğine tıklayın

@@ -6,7 +6,7 @@ category: 'playlists'
 order: 2
 source: 'playlists/digital-signage-media'
 sourceHash: 'a1432e6fa6fd26c5'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 <img src="/kb/playlists/media_management.webp" alt="Media Management" loading="lazy" decoding="async">
 

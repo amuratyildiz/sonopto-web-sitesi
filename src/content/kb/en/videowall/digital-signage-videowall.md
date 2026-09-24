@@ -6,7 +6,7 @@ category: 'videowall'
 order: 999
 source: 'videowall/digital-signage-videowall'
 sourceHash: '68c52efa5bb666b5'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 **Network Recommendation: connect your screens to the same wired network, wifi might not perform as expected.**
 

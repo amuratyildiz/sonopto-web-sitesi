@@ -6,7 +6,7 @@ category: 'apps'
 order: 33
 source: 'apps/digital-signage-background-music'
 sourceHash: '3ab3000150cebd50'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 -   Go to the management console
 -   Click on the playlist and then on the layer where you want to upload the music file.

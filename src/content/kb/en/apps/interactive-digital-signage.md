@@ -6,7 +6,7 @@ category: 'apps'
 order: 53
 source: 'apps/interactive-digital-signage'
 sourceHash: '6bb859c65f9a35da'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 The Interactive Kiosk app lets you build multi-page interactive sites — such as product catalogs, information directories, or self-service menus — where viewers can navigate between pages directly on the screen.
 

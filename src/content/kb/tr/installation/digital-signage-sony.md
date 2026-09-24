@@ -5,7 +5,7 @@ summary: 'Sony BRAVIA profesyonel ekranlarda USB üzerinden APK kurulumu, Pro Mo
 category: 'installation'
 order: 13
 source: 'installation/digital-signage-sony'
-sourceHash: 'ff1a7b14be007b36'
+sourceHash: 'face0a1f2186ef1b'
 importedAt: '2026-09-23'
 ---
 Bu makale, Sony BRAVIA profesyonel ekranlara USB bellekteki APK dosyasıyla kurulumun nasıl yapılacağını anlatır.
@@ -38,7 +38,7 @@ Pro Mode özellikli, Android çalıştıran Sony BRAVIA profesyonel ekran ailesi
 
 ### Adım 1 — USB belleği hazırlayın
 
--   Güncel APK dosyası için [bizimle iletişime geçin](/iletisim/).
+-   [Güncel APK dosyasını indirin](https://download.cloud-digitalsignage.com/signage-latest.apk).
 -   Dosyayı FAT32 biçimli bir USB belleğin kök dizinine kopyalayın.
 
 ### Adım 2 — USB belleği takın

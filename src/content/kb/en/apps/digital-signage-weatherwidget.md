@@ -6,7 +6,7 @@ category: 'apps'
 order: 78
 source: 'apps/digital-signage-weatherwidget'
 sourceHash: '6076b9aaa252b517'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 The WeatherWidget app is a customizable tool designed to display real-time weather information directly on your digital signage.
 

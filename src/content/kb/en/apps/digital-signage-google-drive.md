@@ -6,7 +6,7 @@ category: 'apps'
 order: 47
 source: 'apps/digital-signage-google-drive'
 sourceHash: '87d18128ca5f3ebc'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 The Google Drive integration empowers you to easily manage your digital signage content directly from your Google Drive. With this feature, you can link media files from your Google Drive to your digital signage displays, and any updates or changes made in the designated Google Drive folder will automatically sync with your screens in near real time.
 

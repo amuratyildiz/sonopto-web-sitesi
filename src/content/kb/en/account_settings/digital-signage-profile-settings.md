@@ -6,7 +6,7 @@ category: 'account_settings'
 order: 1
 source: 'account_settings/digital-signage-profile-settings'
 sourceHash: 'b588a761a404f9e8'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 Learn how to manage your profile settings, including updating your profile and changing password.
 

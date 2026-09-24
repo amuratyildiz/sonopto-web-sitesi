@@ -6,7 +6,7 @@ category: 'screens'
 order: 2
 source: 'screens/digital-signage-groups'
 sourceHash: '4ada822cc4e2774b'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 A group allows you to schedule playlists for multiple screens at the same time.
 

@@ -6,7 +6,7 @@ category: 'playlists'
 order: 12
 source: 'playlists/digital-signage-lock-a-layer'
 sourceHash: '88c05f4208f25632'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 **The Lock Layer** feature allows you to restrict access to a specific layer within a playlist, so only certain users, like the team that owns the layer, can change it while others can still manage the rest of the playlist.
 

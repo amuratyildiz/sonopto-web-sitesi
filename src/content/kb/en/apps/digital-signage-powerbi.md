@@ -6,7 +6,7 @@ category: 'apps'
 order: 64
 source: 'apps/digital-signage-powerbi'
 sourceHash: 'c59287ba53afd16e'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 ## How to Use Power BI App with your digital signage
 

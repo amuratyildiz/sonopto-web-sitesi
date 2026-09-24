@@ -6,7 +6,7 @@ category: 'playlists'
 order: 5
 source: 'playlists/digital-signage-touchscreen'
 sourceHash: 'a303b36057b800a9'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 Touch screen features are found under playlist settings, to open playlist Settings:
 

@@ -6,7 +6,7 @@ category: 'apps'
 order: 62
 source: 'apps/digital-signage-pixabay'
 sourceHash: '9ef490aa6cba4251'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 <video width="90%" src="/kb/apps/digital-signage-pixabay.mp4" controls="" preload="metadata" playsinline=""></video>
 

@@ -5,12 +5,12 @@ summary: 'Philips dijital tabela ekranlarında ilk kurulum sihirbazı, dosya yö
 category: 'installation'
 order: 16
 source: 'installation/philips'
-sourceHash: 'e222a44c4d825f6c'
+sourceHash: 'ff1ec992ee23e7fa'
 importedAt: '2026-09-23'
 ---
 ### Adım 1: APK dosyasını edinin
 
--   Güncel APK dosyası için [bizimle iletişime geçin](/iletisim/)
+-   [Güncel APK dosyasını indirin](https://download.cloud-digitalsignage.com/signage-latest.apk)
 
 -   Dosyayı bir USB belleğe kopyalayın.
 

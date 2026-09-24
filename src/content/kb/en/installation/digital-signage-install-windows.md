@@ -5,8 +5,8 @@ summary: 'How to install digital signage app on Windows screens'
 category: 'installation'
 order: 8
 source: 'installation/digital-signage-install-windows'
-sourceHash: '330ae44ef7c7596f'
-importedAt: '2026-09-23'
+sourceHash: 'f00c387dbec54274'
+importedAt: '2026-09-24'
 ---
 #### Supported Windows Versions
 
@@ -27,7 +27,7 @@ On the windows player, make sure the following steps are done before installing 
 
 -   Download the sonopto.signage app from the below link(s).
 
-[Digital Signage for Windows 64bit](/iletisim/)
+[Digital Signage for Windows 64bit](https://download.cloud-digitalsignage.com/brands-ds-win64-amd64.exe.zip)
 
 -   Unzip the downloaded file
 -   Double click the downloaded file to start the digital signage app

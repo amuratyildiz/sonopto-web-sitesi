@@ -6,7 +6,7 @@ category: 'apps'
 order: 84
 source: 'apps/digital-signage-website-dynamic-url-variables'
 sourceHash: '8082c67b4e7dbb07'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 > **Note:** This feature is used with the **Website/URL** app. See [Website/URL App](/en/support/apps/digital-signage-website/).
 

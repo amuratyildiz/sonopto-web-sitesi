@@ -5,8 +5,8 @@ summary: 'How to install digital signage app on LG Digital Signage screens'
 category: 'installation'
 order: 18
 source: 'installation/webos'
-sourceHash: 'e8ff102c498276e3'
-importedAt: '2026-09-23'
+sourceHash: '44035b255904e617'
+importedAt: '2026-09-24'
 ---
 ### WebOS Signage Support
 
@@ -51,7 +51,7 @@ In these settings configure the following in this order:
 
 -   Fully qualified domain name: enabled
     
--   Address URL: [contact us for the download](/iletisim/)
+-   Address URL: [https://appds.io/lgw](https://appds.io/lgw)
     
 -   Application Launch Mode: local
     
@@ -68,7 +68,7 @@ In these settings configure the following in this order:
 
 ### Installing the sonopto.signage app via a USB drive
 
--   Download the latest version of the Digital Signage from [contact us for the download](/iletisim/)
+-   Download the latest version of the Digital Signage from [https://download.cloud-digitalsignage.com/brands/com.lg.app.signage.ipk](https://download.cloud-digitalsignage.com/brands/com.lg.app.signage.ipk)
     
 -   Rename the downloaded .ipk file to com.lg.app.signage.ipk – **this is important!**
     

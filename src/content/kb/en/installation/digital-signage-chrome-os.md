@@ -6,7 +6,7 @@ category: 'installation'
 order: 5
 source: 'installation/digital-signage-chrome-os'
 sourceHash: '3e8c26258f666f24'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 ## How to Install Digital Signage Player on Chrome OS
 

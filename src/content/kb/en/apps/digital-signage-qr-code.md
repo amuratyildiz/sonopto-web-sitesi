@@ -6,7 +6,7 @@ category: 'apps'
 order: 65
 source: 'apps/digital-signage-qr-code'
 sourceHash: '35dd26dc809711a1'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 <video width="90%" src="/kb/apps/digital-signage-qr-code.mp4" controls="" preload="metadata" playsinline=""></video>
 

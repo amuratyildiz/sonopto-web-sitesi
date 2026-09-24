@@ -6,7 +6,7 @@ category: 'account_settings'
 order: 2
 source: 'account_settings/digital-signage-account-settings'
 sourceHash: '946d0c881c19f2f6'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 Learn how to switch between your main account and the sub-user account you are managing.
 

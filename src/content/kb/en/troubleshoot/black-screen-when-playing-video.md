@@ -6,7 +6,7 @@ category: 'troubleshoot'
 order: 119
 source: 'troubleshoot/black-screen-when-playing-video'
 sourceHash: '9c3a881be2ce5ce5'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 If your screen turns black when a video starts, your device may not support the video’s **resolution**, **codec**, or **bitrate**.
 

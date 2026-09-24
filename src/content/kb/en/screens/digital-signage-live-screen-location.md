@@ -6,7 +6,7 @@ category: 'screens'
 order: 6
 source: 'screens/digital-signage-live-screen-location'
 sourceHash: '624d95fb28d22f48'
-importedAt: '2026-09-23'
+importedAt: '2026-09-24'
 ---
 The Live Screen Location feature allows you to monitor your digital signage screens in real-time. It provides a map view of all your active screens, whether online or offline, so you can see where each screen is located across multiple sites.
 
