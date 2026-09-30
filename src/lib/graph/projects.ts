@@ -46,10 +46,26 @@ function localMediaFiles(slug: string): string[] {
   return readdirSync(dir).sort();
 }
 
+/**
+ * The gallery renders every entry as an <img>, so anything that is not an
+ * image has to be dropped here. Site photo folders routinely carry a few
+ * phone videos alongside the stills, and each one would otherwise reach the
+ * page as a broken image.
+ */
+const IMAGE_FILE = /\.(jpe?g|png|webp|avif|gif)$/i;
+
+/**
+ * The cover is whichever file is named "cover". Matching loosely on extension
+ * and case is deliberate: a cover.JPG straight off a phone, or a cover.png,
+ * used to fall through to the gallery and leave the page on the placeholder
+ * with nothing to say why.
+ */
+const COVER_FILE = /^cover\.(jpe?g|png|webp|avif)$/i;
+
 function mapListItem(fields: SharePointListItemFields, id: string, mediaBase: string): Project {
-  const mediaFiles = localMediaFiles(fields.Slug);
-  const hasCover = mediaFiles.includes('cover.jpg');
-  const gallery = mediaFiles.filter((file) => file !== 'cover.jpg').map((file) => `${mediaBase}/${fields.Slug}/${file}`);
+  const mediaFiles = localMediaFiles(fields.Slug).filter((file) => IMAGE_FILE.test(file));
+  const cover = mediaFiles.find((file) => COVER_FILE.test(file));
+  const gallery = mediaFiles.filter((file) => file !== cover).map((file) => `${mediaBase}/${fields.Slug}/${file}`);
 
   return {
     id,
@@ -64,7 +80,7 @@ function mapListItem(fields: SharePointListItemFields, id: string, mediaBase: st
     publishDate: fields.PublishDate ?? new Date().toISOString(),
     published: fields.Published ?? false,
     sortOrder: fields.SortOrder,
-    coverImage: hasCover ? `${mediaBase}/${fields.Slug}/cover.jpg` : '/references/placeholder-cover.svg',
+    coverImage: cover ? `${mediaBase}/${fields.Slug}/${cover}` : '/references/placeholder-cover.svg',
     gallery,
     bodyTr: fields.BodyTR ?? '',
     bodyEn: fields.BodyEN,
