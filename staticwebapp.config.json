@@ -39,6 +39,16 @@
       "route": "/helpdesk/destek-2/knowledgebase",
       "redirect": "/destek/",
       "statusCode": 301
+    },
+    {
+      "route": "/referanslar/ankara-hakimevi-dikmen-salon-led-ekran-kurulumu/",
+      "redirect": "/referanslar/ankara-hakimevi-dikmen-salon-lcd-videowall-kurulumu/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/references/ankara-hakimevi-dikmen-hall-led-screen-installation/",
+      "redirect": "/en/references/ankara-hakimevi-dikmen-hall-lcd-video-wall-installation/",
+      "statusCode": 301
     }
   ],
   "globalHeaders": {
