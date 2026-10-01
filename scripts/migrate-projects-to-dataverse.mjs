@@ -17,18 +17,36 @@
  *   (default)     also uploads photos, which needs the service principal —
  *                 SharePoint refuses a download link presented with an Azure
  *                 CLI user token and hands back a sign-in page instead.
+ *   --from-live   takes the photo bytes from the published site rather than
+ *                 SharePoint, so the photo pass needs no credential at all.
  * A second run adds photos to records that already exist without any.
  *
- *   node scripts/migrate-projects-to-dataverse.mjs [--dry] [--skip-media] [--only <slug>]
+ *   node scripts/migrate-projects-to-dataverse.mjs [--dry] [--skip-media]
+ *                                                  [--from-live] [--only <slug>]
  */
 import { ClientSecretCredential } from '@azure/identity';
 import { Client } from '@microsoft/microsoft-graph-client';
 import { execFileSync } from 'node:child_process';
+import { createRequire } from 'node:module';
+
+const sharp = createRequire(import.meta.url)('sharp');
 
 const DV = process.env.DATAVERSE_URL;
 const API = `${DV}/api/data/v9.2`;
 const DRY = process.argv.includes('--dry');
 const SKIP_MEDIA = process.argv.includes('--skip-media');
+
+/**
+ * Where the photo BYTES come from. SharePoint stays the source of truth for
+ * which photos belong to a project — listing a folder works with either
+ * identity, only downloading is refused. The same files are already published,
+ * resized and stripped of EXIF by the build, so this reads them back over
+ * plain HTTPS and the migration can finish without a secret on the laptop.
+ *
+ * www, not the apex: sonopto.com has no HTTPS certificate yet.
+ */
+const FROM_LIVE = process.argv.includes('--from-live');
+const LIVE_MEDIA = 'https://www.sonopto.com/references';
 // indexOf returns -1 when the flag is absent, and argv[0] is node's own
 // path — which would filter every record out rather than none.
 const onlyAt = process.argv.indexOf('--only');
@@ -140,17 +158,47 @@ function safeJson(raw, fallback) {
   }
 }
 
+/**
+ * What the bytes actually are, regardless of the file name: one folder holds a
+ * WebP saved as cover.jpg, so the extension cannot be trusted.
+ */
+function imageKind(buf) {
+  const hex = buf.subarray(0, 4).toString('hex');
+  if (hex.startsWith('ffd8')) return 'jpeg';
+  if (hex.startsWith('89504e47')) return 'png';
+  if (hex.startsWith('47494638')) return 'gif';
+  if (buf.subarray(0, 4).toString('latin1') === 'RIFF' && buf.subarray(8, 12).toString('latin1') === 'WEBP') return 'webp';
+  if (buf.subarray(4, 8).toString('latin1') === 'ftyp') return 'avif';
+  return null;
+}
+
+/**
+ * Dataverse image columns take JPEG, PNG and GIF, and answer anything else
+ * with a bare "Invalid argument" 400 — so WebP and AVIF are re-encoded here
+ * rather than at the far end of a confusing error.
+ */
+async function forDataverse(buf) {
+  const kind = imageKind(buf);
+  if (kind === 'jpeg' || kind === 'png' || kind === 'gif') return buf;
+  return sharp(buf).jpeg({ quality: 82, mozjpeg: true }).toBuffer();
+}
+
 /** Uploads a project's photos as image rows. Returns how many went up. */
 async function addMedia(slug, referansId) {
   const files = await mediaFiles(slug);
   for (const [i, file] of files.entries()) {
-    const res = await fetch(file['@microsoft.graph.downloadUrl']);
-    const bytes = Buffer.from(await res.arrayBuffer());
-    // SharePoint answers an unauthorised download with an HTML sign-in page,
-    // which would otherwise be stored as if it were the photo.
-    if (!res.ok || bytes.length === 0) {
-      throw new Error(`${slug}/${file.name}: indirilemedi (${res.status}, ${bytes.length} bayt)`);
+    const res = await fetch(
+      FROM_LIVE ? `${LIVE_MEDIA}/${slug}/${file.name}` : file['@microsoft.graph.downloadUrl'],
+    );
+    const downloaded = Buffer.from(await res.arrayBuffer());
+    // Both sources answer an unauthorised or missing file with HTML — a
+    // sign-in page from SharePoint, a 404 page from the site — and either
+    // would otherwise be stored as if it were the photo. Reading the magic
+    // bytes catches that whatever the status code says.
+    if (!res.ok || !imageKind(downloaded)) {
+      throw new Error(`${slug}/${file.name}: indirilemedi (${res.status}, ${downloaded.length} bayt)`);
     }
+    const bytes = await forDataverse(downloaded);
     await dv('POST', '/cr0c0_webreferansgorsels', {
       cr0c0_ad: file.name,
       cr0c0_gorsel: bytes.toString('base64'),
