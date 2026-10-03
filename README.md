@@ -24,7 +24,7 @@ npm run preview   # build çıktısını yerelde önizler
 - `src/content/i18n/` — TR/EN arayüz metinleri.
 - `src/data/` — Şirket bilgileri, partner logoları, yer tutucu proje verisi.
 - `api/` — Azure Static Web Apps "Managed Functions": `/api/contact-submit` (iletişim formu → Dataverse).
-- `scripts/fetch-project-media.mjs` — Build öncesi referans fotoğraflarını Dataverse'ten `public/references/<slug>/` altına indirir.
+- `scripts/fetch-dataverse-media.mjs` — Build öncesi referans fotoğraflarını `public/references/<slug>/`, müşteri logolarını `public/clients/` altına indirir.
 - `scripts/fetch-partner-logos.mjs` — Partner logolarını SharePoint doküman kütüphanesinden indirir.
 - `staticwebapp.config.json` — 301 yönlendirmeleri (eski Odoo URL'leri) + güvenlik başlıkları.
 

@@ -54,3 +54,6 @@ public/arama-index.*.json
 # scripts/fetch-project-media.mjs before every build. The placeholder
 # beside them is committed, because it ships when a photo is missing.
 public/references/*/
+
+# Client logos, likewise re-downloaded from Dataverse before every build.
+public/clients/

@@ -45,6 +45,7 @@ export const en: Dictionary = {
     servicesTitle: 'What We Do',
     servicesSubtitle: 'From installation to after-sales support, we manage the full lifecycle of your AV systems.',
     partnersTitle: 'Brands We Work With',
+    clientsTitle: 'Organizations We Work With',
     referencesTitle: 'Featured Projects',
     ctaTitle: "Let's talk about your project",
     ctaSubtitle: "We'll listen to your needs and design the right AV solution together.",
@@ -872,6 +873,13 @@ export const en: Dictionary = {
       perakende: 'Retail',
       stk: 'Non-profit',
       sanayi: 'Industry',
+    },
+    filter: {
+      jobLabel: 'Job type',
+      clientLabel: 'Client type',
+      all: 'All',
+      count: '%d reference(s)',
+      none: 'No references match this selection.',
     },
   },
   faq: {

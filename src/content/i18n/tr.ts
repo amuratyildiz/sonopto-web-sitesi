@@ -227,6 +227,9 @@ export interface Dictionary {
     servicesTitle: string;
     servicesSubtitle: string;
     partnersTitle: string;
+    /** The client logo strip. Distinct from referencesTitle, which heads
+     *  the featured case studies just above it. */
+    clientsTitle: string;
     referencesTitle: string;
     ctaTitle: string;
     ctaSubtitle: string;
@@ -337,6 +340,15 @@ export interface Dictionary {
      */
     jobTypes: Record<string, string>;
     clientTypes: Record<string, string>;
+    /** The filter row, which only exists when JavaScript runs. */
+    filter: {
+      jobLabel: string;
+      clientLabel: string;
+      all: string;
+      /** "%d referans" — the client substitutes the count for %d. */
+      count: string;
+      none: string;
+    };
   };
   faq: {
     pageTitle: string;
@@ -443,6 +455,7 @@ export const tr: Dictionary = {
     servicesTitle: 'Neler Yapıyoruz',
     servicesSubtitle: 'Kurulumdan satış sonrası desteğe, AV sistemlerinizin tüm yaşam döngüsünü yönetiyoruz.',
     partnersTitle: 'Birlikte Çalıştığımız Markalar',
+    clientsTitle: 'Çalıştığımız Kurumlar',
     referencesTitle: 'Öne Çıkan Projeler',
     ctaTitle: 'Projenizi konuşalım',
     ctaSubtitle: 'İhtiyaçlarınızı dinleyip size en uygun AV çözümünü birlikte tasarlayalım.',
@@ -1273,6 +1286,13 @@ export const tr: Dictionary = {
       perakende: 'Perakende',
       stk: 'STK',
       sanayi: 'Sanayi',
+    },
+    filter: {
+      jobLabel: 'İş tipi',
+      clientLabel: 'Müşteri tipi',
+      all: 'Tümü',
+      count: '%d referans',
+      none: 'Bu seçimle eşleşen referans yok.',
     },
   },
   faq: {

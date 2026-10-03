@@ -1,0 +1,81 @@
+---
+import { getDictionary } from '../../content/i18n';
+import type { Locale } from '../../lib/i18n/routes';
+import type { Project } from '../../lib/dataverse/types';
+
+interface Props {
+  projects: Project[];
+  locale: Locale;
+}
+
+const { projects, locale } = Astro.props;
+const dict = getDictionary(locale);
+
+/**
+ * Only offer a filter for something that is actually on the page. Listing
+ * every choice in Dataverse would show buttons that can only ever empty the
+ * grid, and the list grows as the choices do.
+ */
+function present(keys: string[], labels: Record<string, string>) {
+  return [...new Set(keys)]
+    .map((key) => ({ key, label: labels[key] ?? key }))
+    .sort((a, b) => a.label.localeCompare(b.label, locale));
+}
+
+const jobs = present(
+  projects.flatMap((project) => project.categories),
+  dict.references.jobTypes,
+);
+const clients = present(
+  projects.map((project) => project.clientType).filter((key): key is string => Boolean(key)),
+  dict.references.clientTypes,
+);
+
+// Nothing to narrow down with: one group of one is not a filter.
+const worthShowing = jobs.length > 1 || clients.length > 1;
+---
+
+{/*
+  The row ships hidden and the script removes the attribute: with JavaScript
+  off every card stays visible, and a filter that cannot filter would just be
+  a dead control.
+
+  Deliberately not <nav>: scripts/build-search-index.mjs strips <nav> out of
+  <main> — which is right for these labels, they are chrome — but the element
+  is a group of controls, not navigation.
+*/}
+{worthShowing && (
+  <div
+    id="reference-filter"
+    hidden
+    data-count-label={dict.references.filter.count}
+    data-none-label={dict.references.filter.none}
+    class="mt-8 flex flex-col gap-4 border-y border-neutral-200 py-4"
+  >
+      {[
+        { name: 'is', label: dict.references.filter.jobLabel, options: jobs },
+        { name: 'musteri', label: dict.references.filter.clientLabel, options: clients },
+      ]
+        .filter((group) => group.options.length > 1)
+        .map((group) => (
+          <div class="flex flex-wrap items-baseline gap-x-3 gap-y-2" role="group" aria-label={group.label}>
+            <span class="text-xs font-semibold uppercase tracking-wide text-neutral-500">{group.label}</span>
+            <button type="button" class="filter-pill" data-filter={group.name} data-value="" aria-pressed="true">
+              {dict.references.filter.all}
+            </button>
+            {group.options.map((option) => (
+              <button
+                type="button"
+                class="filter-pill"
+                data-filter={group.name}
+                data-value={option.key}
+                aria-pressed="false"
+              >
+                {option.label}
+              </button>
+            ))}
+          </div>
+        ))}
+    <p id="reference-filter-status" role="status" class="text-sm text-neutral-500"></p>
+  </div>
+)}
