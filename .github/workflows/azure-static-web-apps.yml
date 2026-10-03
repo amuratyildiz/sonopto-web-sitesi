@@ -34,12 +34,22 @@ jobs:
         id: deploy
         uses: Azure/static-web-apps-deploy@v1
         env:
+          # Oryx runs the build in its own container, where GitHub's own CI
+          # variable does not reach. Set here so src/lib/dataverse/projects.ts
+          # refuses to publish placeholder write-ups when a secret is missing
+          # rather than doing it quietly.
+          CI: 'true'
+          # Reference write-ups, their credit and FAQ rows, photos and the
+          # client logos. Read-only service principal, content tables only.
+          DATAVERSE_URL: ${{ secrets.DATAVERSE_URL }}
+          DATAVERSE_TENANT_ID: ${{ secrets.DATAVERSE_TENANT_ID }}
+          DATAVERSE_CLIENT_ID: ${{ secrets.DATAVERSE_CLIENT_ID }}
+          DATAVERSE_CLIENT_SECRET: ${{ secrets.DATAVERSE_CLIENT_SECRET }}
+          # Only the partner brand strip still comes from SharePoint.
           GRAPH_TENANT_ID: ${{ secrets.GRAPH_TENANT_ID }}
           GRAPH_CLIENT_ID: ${{ secrets.GRAPH_CLIENT_ID }}
           GRAPH_CLIENT_SECRET: ${{ secrets.GRAPH_CLIENT_SECRET }}
           GRAPH_SITE_ID: ${{ secrets.GRAPH_SITE_ID }}
-          GRAPH_PROJECTS_LIST_ID: ${{ secrets.GRAPH_PROJECTS_LIST_ID }}
-          GRAPH_MEDIA_DRIVE_ID: ${{ secrets.GRAPH_MEDIA_DRIVE_ID }}
           GRAPH_PARTNERS_LIST_ID: ${{ secrets.GRAPH_PARTNERS_LIST_ID }}
           GRAPH_PARTNER_LOGOS_DRIVE_ID: ${{ secrets.GRAPH_PARTNER_LOGOS_DRIVE_ID }}
           PUBLIC_TURNSTILE_SITE_KEY: ${{ secrets.PUBLIC_TURNSTILE_SITE_KEY }}
