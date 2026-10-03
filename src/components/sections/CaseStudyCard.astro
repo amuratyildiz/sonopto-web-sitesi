@@ -1,29 +1,52 @@
 ---
-import type { Project } from '../../lib/graph/types';
+import { getDictionary } from '../../content/i18n';
+import type { Locale } from '../../lib/i18n/routes';
+import type { Project } from '../../lib/dataverse/types';
 
 interface Props {
   project: Project;
   href: string;
   readMoreLabel: string;
+  locale: Locale;
 }
 
-const { project, href, readMoreLabel } = Astro.props;
+const { project, href, readMoreLabel, locale } = Astro.props;
+const dict = getDictionary(locale);
+
+// The English pages used to show the Turkish headline: project.title was read
+// unconditionally and titleEn never looked at.
+const title = locale === 'en' && project.titleEn ? project.titleEn : project.title;
+
+// Categories are stored as stable keys so they can travel in the query string;
+// an unmapped key shows as itself rather than disappearing.
+const badge = project.categories[0];
+const badgeLabel = badge ? (dict.references.jobTypes[badge] ?? badge) : undefined;
+
+// Read by public/reference-filter.js. Space-separated so a card can carry
+// several job types; the filter matches on whole words.
+const jobTypes = project.categories.join(' ');
 ---
 
-<a href={href} data-reveal class="media-card card-status flex flex-col overflow-hidden">
+<a
+  href={href}
+  data-reveal
+  data-is-tipi={jobTypes}
+  data-musteri-tipi={project.clientType}
+  class="media-card card-status flex flex-col overflow-hidden"
+>
   <img
     src={project.coverImage}
-    alt={project.title}
+    alt={project.coverAlt || title}
     width="600"
     height="400"
     loading="lazy"
     class="aspect-[3/2] w-full object-cover"
   />
   <div class="flex flex-1 flex-col p-5">
-    {project.categories[0] && (
-      <span class="text-xs font-semibold uppercase tracking-wide text-neutral-500">{project.categories[0]}</span>
+    {badgeLabel && (
+      <span class="text-xs font-semibold uppercase tracking-wide text-neutral-500">{badgeLabel}</span>
     )}
-    <h3 class="mt-1 text-base text-ink">{project.title}</h3>
+    <h3 class="mt-1 text-base text-ink">{title}</h3>
     <span class="media-card-more mt-3 text-sm font-medium">{readMoreLabel} &rarr;</span>
   </div>
 </a>

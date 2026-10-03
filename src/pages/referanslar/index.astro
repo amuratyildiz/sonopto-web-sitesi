@@ -4,7 +4,7 @@ import Breadcrumbs from '../../components/seo/Breadcrumbs.astro';
 import CaseStudyCard from '../../components/sections/CaseStudyCard.astro';
 import { getDictionary } from '../../content/i18n';
 import { pathFor } from '../../lib/i18n/routes';
-import { getProjects } from '../../lib/graph/projects';
+import { getProjects } from '../../lib/dataverse/projects';
 
 const locale = 'tr' as const;
 const dict = getDictionary(locale);
@@ -21,7 +21,7 @@ const projects = await getProjects();
     {projects.length > 0 ? (
       <div data-reveal-group class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
-          <CaseStudyCard project={project} href={`${path}${project.slug}/`} readMoreLabel={dict.common.readMore} />
+          <CaseStudyCard project={project} href={`${path}${project.slug}/`} readMoreLabel={dict.common.readMore} locale={locale} />
         ))}
       </div>
     ) : (

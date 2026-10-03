@@ -19,16 +19,20 @@ npm run preview   # build çıktısını yerelde önizler
 ## Proje Yapısı
 
 - `src/pages/` — TR sayfalar kökte, EN sayfalar `src/pages/en/` altında (bkz. `src/lib/i18n/routes.ts`).
-- `src/lib/graph/` — Microsoft Graph build-time entegrasyonu (SharePoint "Projects" listesi).
+- `src/lib/dataverse/` — Referans yazıları, künye/SSS satırları, fotoğraflar ve müşteri logoları (Dataverse, derleme zamanı salt-okunur).
+- `src/lib/graph/` — Yalnızca partner logo şeridi için kalan SharePoint entegrasyonu.
 - `src/content/i18n/` — TR/EN arayüz metinleri.
 - `src/data/` — Şirket bilgileri, partner logoları, yer tutucu proje verisi.
 - `api/` — Azure Static Web Apps "Managed Functions": `/api/contact-submit` (iletişim formu → Dataverse).
-- `scripts/fetch-project-media.mjs` / `scripts/fetch-partner-logos.mjs` — Build öncesi SharePoint doküman kütüphanelerinden proje görsellerini ve partner logolarını indirir.
+- `scripts/fetch-project-media.mjs` — Build öncesi referans fotoğraflarını Dataverse'ten `public/references/<slug>/` altına indirir.
+- `scripts/fetch-partner-logos.mjs` — Partner logolarını SharePoint doküman kütüphanesinden indirir.
 - `staticwebapp.config.json` — 301 yönlendirmeleri (eski Odoo URL'leri) + güvenlik başlıkları.
 
 ## Ortam Değişkenleri
 
-Kök dizindeki `.env.example` dosyasını `.env` olarak kopyalayıp doldurun (bkz. dosya içi açıklamalar): `GRAPH_TENANT_ID`, `GRAPH_CLIENT_ID`, `GRAPH_CLIENT_SECRET`, `GRAPH_SITE_ID`, `GRAPH_PROJECTS_LIST_ID`, `GRAPH_MEDIA_DRIVE_ID`, `GRAPH_PARTNERS_LIST_ID`, `GRAPH_PARTNER_LOGOS_DRIVE_ID`, `PUBLIC_TURNSTILE_SITE_KEY`.
+Kök dizindeki `.env.example` dosyasını `.env` olarak kopyalayıp doldurun (bkz. dosya içi açıklamalar): `DATAVERSE_URL`, `DATAVERSE_TENANT_ID`, `DATAVERSE_CLIENT_ID`, `DATAVERSE_CLIENT_SECRET`, `GRAPH_TENANT_ID`, `GRAPH_CLIENT_ID`, `GRAPH_CLIENT_SECRET`, `GRAPH_SITE_ID`, `GRAPH_PARTNERS_LIST_ID`, `GRAPH_PARTNER_LOGOS_DRIVE_ID`, `PUBLIC_TURNSTILE_SITE_KEY`.
+
+Referanslar artık SharePoint'ten değil Dataverse'ten okunuyor; yazılar `make.powerapps.com` üzerindeki **Sonopto Web İçeriği** uygulamasından giriliyor. SharePoint `Projects` listesi salt-okunur yedek olarak duruyor.
 
 `api/` fonksiyonu için `api/local.settings.json.example` dosyasını `api/local.settings.json` olarak kopyalayıp doldurun: `DATAVERSE_URL`, `DATAVERSE_TENANT_ID`, `DATAVERSE_CLIENT_ID`, `DATAVERSE_CLIENT_SECRET`, `TURNSTILE_SECRET_KEY`.
 
@@ -53,7 +57,7 @@ M365/Azure tarafı kuruldu ve GitHub Actions secrets'ları bağlandı:
 10. ~~**Sektörel Çözümler bölümü**~~ — `/cozumler` (+ `/en/solutions`) altında 4 sektör sayfası eklendi: konferans/toplantı salonu, okul ve eğitim, otel ve konaklama, kamu kurumları. İçerik kimlik kılavuzu §12'deki gerçek sektörel hizmet kalemlerinden yazıldı; her sayfa soru formatında H2'ler ve `FAQPage` şeması içeriyor.
 11. **`snpt/` klasörü** — Antigravity ile yapılmış eski içerik çalışmasının referansı (kendi git reposu, ~480MB). `.gitignore`'da; görseller kullanıldıkça `public/` altına optimize edilerek kopyalanıyor. Henüz değerlendirilmeyen içerikler: KOSGEB referans vaka analizi (1.100 kelime + 24 gerçek saha fotoğrafı) ve 2 blog yazısı — blog bölümü açıldığında kullanılabilir.
 
-GitHub Actions secrets olarak ayarlı: `GRAPH_TENANT_ID`, `GRAPH_CLIENT_ID`, `GRAPH_CLIENT_SECRET`, `GRAPH_SITE_ID`, `GRAPH_PROJECTS_LIST_ID`, `GRAPH_MEDIA_DRIVE_ID`, `AZURE_STATIC_WEB_APPS_API_TOKEN`. Azure Static Web Apps Application Settings olarak ayarlı: `DATAVERSE_URL`, `DATAVERSE_TENANT_ID`, `DATAVERSE_CLIENT_ID`, `DATAVERSE_CLIENT_SECRET`.
+GitHub Actions secrets olarak ayarlı: `GRAPH_TENANT_ID`, `GRAPH_CLIENT_ID`, `GRAPH_CLIENT_SECRET`, `GRAPH_SITE_ID`, `AZURE_STATIC_WEB_APPS_API_TOKEN`. **Eksik:** derlemenin referansları okuyabilmesi için `DATAVERSE_URL`, `DATAVERSE_TENANT_ID`, `DATAVERSE_CLIENT_ID`, `DATAVERSE_CLIENT_SECRET` de eklenmeli — bunlar olmadan derleme `CI` ortamında bilerek hata verir, çünkü aksi hâlde site üç yer tutucu yazıyla yayına çıkardı. Azure Static Web Apps Application Settings olarak ayarlı: `DATAVERSE_URL`, `DATAVERSE_TENANT_ID`, `DATAVERSE_CLIENT_ID`, `DATAVERSE_CLIENT_SECRET`.
 
 Aşamalı teslim planı, 301 yönlendirme haritası ve yayına alma kontrol listesi için `PLAN.md` dosyasına bakın.
 

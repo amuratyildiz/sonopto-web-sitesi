@@ -7,7 +7,7 @@ import CaseStudyCard from '../components/sections/CaseStudyCard.astro';
 import { getDictionary } from '../content/i18n';
 import { pathFor } from '../lib/i18n/routes';
 import { BRAND } from '../lib/seo/meta';
-import { getProjects } from '../lib/graph/projects';
+import { getProjects } from '../lib/dataverse/projects';
 import { serviceEntries, serviceKeys } from '../data/services';
 
 const locale = 'tr' as const;
@@ -72,6 +72,7 @@ const services = serviceKeys.map((key) => ({
             project={project}
             href={`${pathFor('references', locale)}${project.slug}/`}
             readMoreLabel={dict.common.readMore}
+            locale={locale}
           />
         ))}
       </div>

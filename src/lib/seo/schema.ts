@@ -1,6 +1,6 @@
 import { company } from '../../data/company';
 import { SITE_URL } from './meta';
-import type { Project } from '../graph/types';
+import type { Project } from '../dataverse/types';
 
 export function organizationSchema() {
   // sameAs is how search engines tie the social profiles to this organisation
@@ -155,11 +155,16 @@ export function techArticleSchema(input: {
   };
 }
 
-export function articleSchema(project: Project, url: string) {
+/**
+ * The locale matters: this used to emit the Turkish headline on the English
+ * page, which told search engines the wrong thing about /en/references/.
+ */
+export function articleSchema(project: Project, url: string, locale: 'tr' | 'en' = 'tr') {
   return {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    headline: project.title,
+    headline: locale === 'en' && project.titleEn ? project.titleEn : project.title,
+    inLanguage: locale,
     image: project.coverImage ? [new URL(project.coverImage, SITE_URL).toString()] : undefined,
     datePublished: project.publishDate,
     author: {

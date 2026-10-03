@@ -49,3 +49,8 @@ sonopto_signage_medyalar/
 # Generated from the rendered site by scripts/build-search-index.mjs on every
 # build. The copy here is only so `astro dev` has an index to serve.
 public/arama-index.*.json
+
+# Reference photos, re-downloaded from Dataverse by
+# scripts/fetch-project-media.mjs before every build. The placeholder
+# beside them is committed, because it ships when a photo is missing.
+public/references/*/

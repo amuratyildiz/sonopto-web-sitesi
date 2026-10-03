@@ -329,6 +329,14 @@ export interface Dictionary {
     pageTitle: string;
     pageIntro: string;
     empty: string;
+    /**
+     * Labels for the two filter columns, keyed exactly as
+     * src/lib/dataverse/projects.ts emits them. Dataverse stores the choices
+     * in Turkish only, so the English wording lives here rather than there;
+     * a key with no entry falls back to the key itself.
+     */
+    jobTypes: Record<string, string>;
+    clientTypes: Record<string, string>;
   };
   faq: {
     pageTitle: string;
@@ -1246,6 +1254,26 @@ export const tr: Dictionary = {
     pageTitle: 'Referanslarımız',
     pageIntro: 'Tamamladığımız projelerden bazıları.',
     empty: 'Yakında burada yeni projeler yer alacak.',
+    jobTypes: {
+      'led-ekran': 'LED Ekran',
+      'led-video-wall': 'LED Video Wall',
+      'lcd-videowall': 'LCD Videowall',
+      konferans: 'Konferans Sistemleri',
+      ses: 'Ses Sistemleri',
+      'sahne-isik': 'Sahne Işık',
+      'dijital-tabela': 'Dijital Tabela',
+      'bakim-onarim': 'Bakım ve Onarım',
+    },
+    clientTypes: {
+      kamu: 'Kamu',
+      finans: 'Finans',
+      saglik: 'Sağlık',
+      egitim: 'Eğitim',
+      teknoloji: 'Teknoloji',
+      perakende: 'Perakende',
+      stk: 'STK',
+      sanayi: 'Sanayi',
+    },
   },
   faq: {
     pageTitle: 'Sıkça Sorulan Sorular',

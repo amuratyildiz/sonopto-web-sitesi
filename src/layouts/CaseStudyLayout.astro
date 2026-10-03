@@ -4,11 +4,11 @@ import JsonLd from '../components/seo/JsonLd.astro';
 import Breadcrumbs from '../components/seo/Breadcrumbs.astro';
 import ProjectFactsTable from '../components/sections/ProjectFactsTable.astro';
 import FaqAccordion from '../components/sections/FaqAccordion.astro';
-import { articleSchema } from '../lib/seo/schema';
+import { articleSchema, faqSchema } from '../lib/seo/schema';
 import { absoluteUrl } from '../lib/seo/meta';
 import { pathFor, type Locale } from '../lib/i18n/routes';
 import { getDictionary } from '../content/i18n';
-import type { Project } from '../lib/graph/types';
+import type { Project } from '../lib/dataverse/types';
 
 interface Props {
   project: Project;
@@ -23,6 +23,14 @@ const title = locale === 'en' && project.titleEn ? project.titleEn : project.tit
 const body = locale === 'en' && project.bodyEn ? project.bodyEn : project.bodyTr;
 const description =
   (locale === 'en' ? project.metaDescriptionEn : project.metaDescriptionTr) ?? title;
+
+// The English questions are optional in Dataverse and mostly unwritten, so an
+// English page still shows the Turkish ones rather than losing the section.
+const faq = locale === 'en' && project.faqEn.length > 0 ? project.faqEn : project.faq;
+
+// FAQPage markup claims the answers are in the page's language, so it is only
+// emitted when that is actually true.
+const faqMatchesLocale = locale === 'tr' || project.faqEn.length > 0;
 ---
 
 <BaseLayout
@@ -60,7 +68,7 @@ const description =
 
     <img
       src={project.coverImage}
-      alt={title}
+      alt={project.coverAlt || title}
       width="1200"
       height="800"
       class="mt-6 aspect-[3/2] w-full rounded-photo object-cover"
@@ -71,7 +79,7 @@ const description =
     {project.gallery.length > 0 && (
       <div class="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3">
         {project.gallery.map((image) => (
-          <img src={image} alt="" loading="lazy" width="400" height="300" class="aspect-[4/3] w-full rounded-photo object-cover" />
+          <img src={image.src} alt={image.alt} loading="lazy" width="400" height="300" class="aspect-[4/3] w-full rounded-photo object-cover" />
         ))}
       </div>
     )}
@@ -82,11 +90,11 @@ const description =
       </div>
     )}
 
-    {project.faq.length > 0 && (
+    {faq.length > 0 && (
       <div class="mt-10">
         <h2 class="text-xl text-ink">{dict.faq.pageTitle}</h2>
         <div class="mt-4">
-          <FaqAccordion items={project.faq} />
+          <FaqAccordion items={faq} />
         </div>
       </div>
     )}
@@ -96,5 +104,6 @@ const description =
     </a>
   </article>
 
-  <JsonLd data={articleSchema(project, absoluteUrl(path))} />
+  <JsonLd data={articleSchema(project, absoluteUrl(path), locale)} />
+  {faq.length > 0 && faqMatchesLocale && <JsonLd data={faqSchema(faq)} />}
 </BaseLayout>
