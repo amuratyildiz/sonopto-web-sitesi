@@ -881,6 +881,14 @@ export const en: Dictionary = {
       count: '%d reference(s)',
       none: 'No references match this selection.',
     },
+    gallery: {
+      label: 'Photo gallery',
+      close: 'Close',
+      prev: 'Previous photo',
+      next: 'Next photo',
+      counter: '%d / %d',
+      photo: 'Photo',
+    },
   },
   faq: {
     pageTitle: 'Frequently Asked Questions',

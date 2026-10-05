@@ -349,6 +349,21 @@ export interface Dictionary {
       count: string;
       none: string;
     };
+    /**
+     * The photo lightbox. Without JavaScript each photo is a plain link to its
+     * own file, so none of this is reachable and nothing is lost.
+     */
+    gallery: {
+      label: string;
+      close: string;
+      prev: string;
+      next: string;
+      /** "%d / %d" — the client fills in the current frame and the total. */
+      counter: string;
+      /** Names a thumbnail link whose photo has no alt text yet, so the
+       *  link is never announced as nameless. Rendered as "Fotoğraf 3". */
+      photo: string;
+    };
   };
   faq: {
     pageTitle: string;
@@ -1293,6 +1308,14 @@ export const tr: Dictionary = {
       all: 'Tümü',
       count: '%d referans',
       none: 'Bu seçimle eşleşen referans yok.',
+    },
+    gallery: {
+      label: 'Fotoğraf galerisi',
+      close: 'Kapat',
+      prev: 'Önceki fotoğraf',
+      next: 'Sonraki fotoğraf',
+      counter: '%d / %d',
+      photo: 'Fotoğraf',
     },
   },
   faq: {

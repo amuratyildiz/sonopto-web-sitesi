@@ -63,8 +63,15 @@ const fold = (s) => s.toLowerCase().replace(/[çğıöşüâîûİ]/g, (c) => FO
 const WORD = /[0-9a-zçğıöşüâîû]{2,}/g;
 const tokenize = (text) => fold(text).match(WORD) ?? [];
 
-/** Chrome that sits inside <main> and must not be indexed — see below. */
-const CHROME = /<(nav|aside|script|style|svg)\b[^>]*>[\s\S]*?<\/\1>/gi;
+/**
+ * Chrome that sits inside <main> and must not be indexed — see below.
+ *
+ * <dialog> is on the list because the reference pages carry a photo lightbox:
+ * its button labels would otherwise put "kapat", "önceki" and "sonraki" into
+ * every one of those pages' entries, so searching "kapat" would return the
+ * whole references section.
+ */
+const CHROME = /<(nav|aside|script|style|svg|dialog)\b[^>]*>[\s\S]*?<\/\1>/gi;
 
 const decode = (s) =>
   s

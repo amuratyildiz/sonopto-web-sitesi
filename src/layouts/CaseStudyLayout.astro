@@ -66,20 +66,29 @@ const faqMatchesLocale = locale === 'tr' || project.faqEn.length > 0;
       </div>
     </dl>
 
-    <img
-      src={project.coverImage}
-      alt={project.coverAlt || title}
-      width="1200"
-      height="800"
-      class="mt-6 aspect-[3/2] w-full rounded-photo object-cover"
-    />
+    <a href={project.coverImage} data-lightbox class="mt-6 block">
+      <img
+        src={project.coverImage}
+        alt={project.coverAlt || title}
+        width="1200"
+        height="800"
+        class="aspect-[3/2] w-full rounded-photo object-cover"
+      />
+    </a>
 
     <div class="prose mt-8 max-w-none" set:html={body} />
 
     {project.gallery.length > 0 && (
       <div class="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3">
-        {project.gallery.map((image) => (
-          <img src={image.src} alt={image.alt} loading="lazy" width="400" height="300" class="aspect-[4/3] w-full rounded-photo object-cover" />
+        {project.gallery.map((image, index) => (
+          <a
+            href={image.src}
+            data-lightbox
+            class="block"
+            aria-label={image.alt || `${dict.references.gallery.photo} ${index + 2}`}
+          >
+            <img src={image.src} alt={image.alt} loading="lazy" width="400" height="300" class="aspect-[4/3] w-full rounded-photo object-cover" />
+          </a>
         ))}
       </div>
     )}
@@ -104,6 +113,48 @@ const faqMatchesLocale = locale === 'tr' || project.faqEn.length > 0;
     </a>
   </article>
 
+  {/*
+    The lightbox chrome. scripts/build-search-index.mjs strips <dialog> out of
+    <main> for exactly this reason — without that, "kapat", "önceki" and
+    "sonraki" would join every reference page's search entry.
+
+    Every photo above is already a link to its own file; this is the
+    enhancement. With the script blocked the dialog never opens and the links
+    still work.
+  */}
+  <dialog
+    id="lightbox"
+    class="lightbox"
+    aria-label={dict.references.gallery.label}
+    data-counter-label={dict.references.gallery.counter}
+  >
+    <div id="lightbox-frame" class="lightbox-frame">
+      <img id="lightbox-image" class="lightbox-img" alt="" />
+      <p id="lightbox-caption" class="lightbox-caption"></p>
+      {/* role="status" is implicitly a polite live region, so stepping through
+          the frames is announced; the same idiom as #search-status. */}
+      <span id="lightbox-counter" class="lightbox-counter" role="status"></span>
+
+      <button id="lightbox-close" type="button" class="lightbox-btn lightbox-close" aria-label={dict.references.gallery.close}>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" />
+        </svg>
+      </button>
+      <button id="lightbox-prev" type="button" class="lightbox-btn lightbox-prev" aria-label={dict.references.gallery.prev}>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
+          <path d="M15 6l-6 6 6 6" />
+        </svg>
+      </button>
+      <button id="lightbox-next" type="button" class="lightbox-btn lightbox-next" aria-label={dict.references.gallery.next}>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
+          <path d="M9 6l6 6-6 6" />
+        </svg>
+      </button>
+    </div>
+  </dialog>
+
   <JsonLd data={articleSchema(project, absoluteUrl(path), locale)} />
   {faq.length > 0 && faqMatchesLocale && <JsonLd data={faqSchema(faq)} />}
 </BaseLayout>
+
+<script is:inline src="/lightbox.js" defer></script>
