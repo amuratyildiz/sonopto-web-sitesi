@@ -1301,6 +1301,7 @@ export const tr: Dictionary = {
       perakende: 'Perakende',
       stk: 'STK',
       sanayi: 'Sanayi',
+      medya: 'Medya ve Prodüksiyon',
     },
     filter: {
       jobLabel: 'İş tipi',

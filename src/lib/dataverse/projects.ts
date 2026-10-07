@@ -76,6 +76,7 @@ const CLIENT_TYPE = new Map<number, string>([
   [100000005, 'perakende'],
   [100000006, 'stk'],
   [100000007, 'sanayi'],
+  [100000008, 'medya'],
 ]);
 
 const FOLD: Record<string, string> = { ç: 'c', ğ: 'g', ı: 'i', ö: 'o', ş: 's', ü: 'u', İ: 'i' };

@@ -873,6 +873,7 @@ export const en: Dictionary = {
       perakende: 'Retail',
       stk: 'Non-profit',
       sanayi: 'Industry',
+      medya: 'Media & Production',
     },
     filter: {
       jobLabel: 'Job type',
