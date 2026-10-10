@@ -42,8 +42,10 @@ interface FaqRow extends ChildRow {
   cr0c0_cevapen?: string;
 }
 
+/** No cr0c0_ad: the file on disk is named after the id, never after the row's
+ *  own "Ad" column. Selecting it here would only suggest otherwise. */
 interface ImageRow extends ChildRow {
-  cr0c0_ad?: string;
+  cr0c0_webreferansgorselid: string;
   cr0c0_altmetin?: string;
   cr0c0_kapak?: boolean;
 }
@@ -127,28 +129,47 @@ function groupByParent<T extends ChildRow>(rows: T[]): Map<string, T[]> {
 }
 
 /**
+ * The extensions scripts/fetch-dataverse-media.mjs can write, in the order it
+ * recognises them. It names every file <row id>.<ext> with the extension read
+ * from the downloaded bytes, so the name is never CMS-authored — see the
+ * comment at the top of that script for what taking the row's "Ad" verbatim
+ * allowed. Nothing records which of the three it chose, so the file is found
+ * by trying each; three existsSync calls per photo is cheaper than carrying a
+ * manifest between the two steps.
+ */
+const MEDIA_EXTENSIONS = ['.jpg', '.png', '.gif'];
+
+function fileNameFor(row: ImageRow, slug: string): string | undefined {
+  for (const extension of MEDIA_EXTENSIONS) {
+    const name = `${row.cr0c0_webreferansgorselid}${extension}`;
+    if (existsSync(path.resolve('public', 'references', slug, name))) return name;
+  }
+  return undefined;
+}
+
+/**
  * Photos are downloaded into public/references/<slug>/ by the prebuild step
- * (scripts/fetch-project-media.mjs). A row whose file is not on disk is left
+ * (scripts/fetch-dataverse-media.mjs). A row whose file is not on disk is left
  * out rather than rendered as a broken image: that happens when the download
  * was skipped, and the page should fall back to the placeholder instead.
  */
 function images(rows: ImageRow[], slug: string, mediaBase: string) {
-  const present = rows.filter((row) => {
-    const name = row.cr0c0_ad;
-    return name ? existsSync(path.resolve('public', 'references', slug, name)) : false;
+  const present = rows.flatMap((row) => {
+    const file = fileNameFor(row, slug);
+    return file ? [{ row, file }] : [];
   });
 
-  const coverRow = present.find((row) => row.cr0c0_kapak) ?? present[0];
+  const cover = present.find((entry) => entry.row.cr0c0_kapak) ?? present[0];
   const gallery: ProjectImage[] = present
-    .filter((row) => row !== coverRow)
-    .map((row) => ({
-      src: `${mediaBase}/${slug}/${row.cr0c0_ad}`,
-      alt: row.cr0c0_altmetin ?? '',
+    .filter((entry) => entry !== cover)
+    .map((entry) => ({
+      src: `${mediaBase}/${slug}/${entry.file}`,
+      alt: entry.row.cr0c0_altmetin ?? '',
     }));
 
   return {
-    coverImage: coverRow ? `${mediaBase}/${slug}/${coverRow.cr0c0_ad}` : '/references/placeholder-cover.svg',
-    coverAlt: coverRow?.cr0c0_altmetin ?? '',
+    coverImage: cover ? `${mediaBase}/${slug}/${cover.file}` : '/references/placeholder-cover.svg',
+    coverAlt: cover?.row.cr0c0_altmetin ?? '',
     gallery,
   };
 }
@@ -245,7 +266,7 @@ export async function getProjects(): Promise<Project[]> {
             'cr0c0_sira,_cr0c0_referans_value',
         ),
         client.list<ImageRow>(
-          '/cr0c0_webreferansgorsels?$select=cr0c0_ad,cr0c0_altmetin,cr0c0_kapak,cr0c0_sira,' +
+          '/cr0c0_webreferansgorsels?$select=cr0c0_altmetin,cr0c0_kapak,cr0c0_sira,' +
             '_cr0c0_referans_value',
         ),
       ]);
