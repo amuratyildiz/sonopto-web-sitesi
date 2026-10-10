@@ -5,12 +5,19 @@
  * `astro build` runs, so astro:assets can optimize them into the static
  * output.
  *
- * A reference photo's file name comes from the image row's "Ad" column, which
- * is also what src/lib/dataverse/projects.ts expects on disk: the row is the
- * one source of truth for both. Which photo is the cover comes from the
- * "Kapak mı" flag, not from the name. Logos have no name column, so they are
- * written as <record id>.<ext> and src/lib/dataverse/clients.ts matches them
- * back by that id.
+ * Every file is written as <record id>.<ext>, where the extension comes from
+ * the magic bytes this script read, never from anything stored in Dataverse.
+ * src/lib/dataverse/projects.ts and clients.ts find them back by that id.
+ *
+ * The id, not the row's "Ad" column, because "Ad" is CMS-authored text and
+ * this is a write to a web root. Taking it verbatim let an author choose both
+ * the extension and the directory: a row named "x.js" whose bytes begin "GI"
+ * passes the check below (GIF89a=1; is a valid GIF header AND valid
+ * JavaScript) and would be served as same-origin script, which is exactly
+ * what the site's script-src 'self' is there to prevent; and path.join does
+ * not stop "../", so a name could escape the slug directory entirely.
+ *
+ * Which photo is the cover comes from the "Kapak mı" flag, not from the name.
  *
  * No-ops (exits 0) when DATAVERSE_* env vars are not set, so the build keeps
  * working from the committed sample data. See README.
@@ -55,6 +62,27 @@ async function list(query) {
 
 const EXTENSION = { ffd8: '.jpg', '8950': '.png', 4749: '.gif' };
 
+const REFERENCE_ROOT = path.resolve('public', 'references');
+
+/**
+ * The slug becomes a directory name, and it is CMS-authored too: path.resolve
+ * would follow a "../" in it straight out of public/references/.
+ *
+ * Checked by containment, not by spelling. A slug is typed by hand in
+ * Dataverse or carried over from the old SharePoint list, so it is held to no
+ * shape at all — an earlier draft of this guard matched /^[a-z0-9-]+$/, which
+ * would have silently dropped every photo of a reference whose slug had a
+ * Turkish character in it, and the page would still have built, with a
+ * placeholder cover. Containment rejects the traversal and nothing else.
+ *
+ * Returns null when the slug would escape.
+ */
+function directoryFor(slug) {
+  const dir = path.resolve(REFERENCE_ROOT, slug);
+  if (dir === REFERENCE_ROOT || !dir.startsWith(REFERENCE_ROOT + path.sep)) return null;
+  return dir;
+}
+
 /**
  * Reads an image column. Without ?size=full Dataverse serves the 144px
  * thumbnail it keeps alongside the real image, and a JSON Accept header
@@ -82,18 +110,34 @@ async function referencePhotos() {
 
   let saved = 0;
   const skipped = [];
+  const escaping = new Set();
   for (const row of rows) {
     const slug = slugs.get(row._cr0c0_referans_value);
-    if (!slug || !row.cr0c0_ad) continue;
+    if (!slug) continue;
 
-    const result = await image('cr0c0_webreferansgorsels', row.cr0c0_webreferansgorselid, 'cr0c0_gorsel');
-    if (result.error) {
-      skipped.push(`${slug}/${row.cr0c0_ad} (${result.error})`);
+    const dir = directoryFor(slug);
+    if (!dir) {
+      // Reported once per reference rather than once per photo: ten identical
+      // lines would fill the truncated warning list below and hide the real
+      // download failures behind them.
+      if (!escaping.has(slug)) {
+        escaping.add(slug);
+        console.error(`[dataverse-media] slug klasör dışına çıkıyor, atlandı: ${JSON.stringify(slug)}`);
+      }
+      // Unlike a failed download, this is not a hiccup to ride out — it means
+      // a slug is trying to write outside the web root. Fail the build.
+      process.exitCode = 1;
       continue;
     }
-    const dir = path.resolve('public', 'references', slug);
+
+    const id = row.cr0c0_webreferansgorselid;
+    const result = await image('cr0c0_webreferansgorsels', id, 'cr0c0_gorsel');
+    if (result.error) {
+      skipped.push(`${slug}/${row.cr0c0_ad ?? id} (${result.error})`);
+      continue;
+    }
     await mkdir(dir, { recursive: true });
-    await writeFile(path.join(dir, row.cr0c0_ad), result.buffer);
+    await writeFile(path.join(dir, `${id}${result.extension}`), result.buffer);
     saved += 1;
   }
   return { saved, total: rows.length, skipped, label: 'referans fotoğrafı' };
