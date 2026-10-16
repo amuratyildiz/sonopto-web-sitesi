@@ -21,16 +21,16 @@ export interface ContactSubmissionInput {
  * from the build-time Microsoft Graph/SharePoint credential in the main
  * site, per the integration plan (PLAN.md).
  *
- * When DATAVERSE_* env vars are not configured, logs the submission instead
- * of throwing, so the contact form keeps working end-to-end before the
- * Power Platform side has been provisioned.
+ * Throws when DATAVERSE_* env vars are not configured: the visitor then sees
+ * the error message (and can call or e-mail) instead of a success message for
+ * a submission that was never stored. Nothing from the submission is logged —
+ * it is personal data.
  */
 export async function createContactSubmission(input: ContactSubmissionInput): Promise<void> {
   const { DATAVERSE_URL, DATAVERSE_TENANT_ID, DATAVERSE_CLIENT_ID, DATAVERSE_CLIENT_SECRET } = process.env;
 
   if (!DATAVERSE_URL || !DATAVERSE_TENANT_ID || !DATAVERSE_CLIENT_ID || !DATAVERSE_CLIENT_SECRET) {
-    console.warn('[contact-submit] DATAVERSE_* env vars not set — submission was NOT persisted to Dataverse:', input);
-    return;
+    throw new Error('DATAVERSE_* app settings are not configured; the submission was not stored.');
   }
 
   const credential = new ClientSecretCredential(DATAVERSE_TENANT_ID, DATAVERSE_CLIENT_ID, DATAVERSE_CLIENT_SECRET);

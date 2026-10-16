@@ -7,6 +7,7 @@
 export async function verifyTurnstile(token: string | undefined, remoteIp: string | undefined): Promise<boolean> {
   const secretKey = process.env.TURNSTILE_SECRET_KEY;
   if (!secretKey) {
+    console.warn('[contact-submit] TURNSTILE_SECRET_KEY is not set — bot verification is skipped.');
     return true;
   }
 

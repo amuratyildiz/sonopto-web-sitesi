@@ -11,10 +11,14 @@ const contactSchema = z.object({
   company: z.string().trim().max(200).optional().or(z.literal('')),
   subject: z.string().trim().min(1).max(200),
   message: z.string().trim().min(1).max(5000),
-  // Honeypot field: real visitors never fill this in.
-  website: z.string().max(0).optional().or(z.literal('')),
   'cf-turnstile-response': z.string().optional(),
 });
+
+/** Honeypot field: hidden from people, so only bots fill it in. */
+function honeypotFilled(payload: unknown): boolean {
+  const value = (payload as { website?: unknown } | null)?.website;
+  return typeof value === 'string' ? value.trim().length > 0 : value !== undefined && value !== null;
+}
 
 async function contactSubmit(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {
   const clientIp = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'unknown';
@@ -30,18 +34,19 @@ async function contactSubmit(request: HttpRequest, context: InvocationContext): 
     return { status: 400, jsonBody: { error: 'Invalid JSON body' } };
   }
 
+  // Honeypot tripped: pretend success so bots don't learn to skip this field. Checked BEFORE validation — otherwise a
+  // filled field failed validation and the bot got a 400, i.e. learned that the field matters.
+  if (honeypotFilled(payload)) {
+    context.log('Honeypot triggered, silently discarding submission.');
+    return { status: 200, jsonBody: { ok: true } };
+  }
+
   const parsed = contactSchema.safeParse(payload);
   if (!parsed.success) {
     return { status: 400, jsonBody: { error: 'Invalid form data' } };
   }
 
-  const { name, email, phone, company, subject, message, website } = parsed.data;
-
-  // Honeypot tripped: pretend success so bots don't learn to skip this field.
-  if (website) {
-    context.log('Honeypot triggered, silently discarding submission.');
-    return { status: 200, jsonBody: { ok: true } };
-  }
+  const { name, email, phone, company, subject, message } = parsed.data;
 
   const turnstileOk = await verifyTurnstile(parsed.data['cf-turnstile-response'], clientIp);
   if (!turnstileOk) {
@@ -51,7 +56,8 @@ async function contactSubmit(request: HttpRequest, context: InvocationContext): 
   try {
     await createContactSubmission({ name, email, phone: phone || undefined, company: company || undefined, subject, message });
   } catch (error) {
-    context.error('Failed to create Dataverse contact submission', error);
+    // Only the error, never the submission (personal data).
+    context.error('Failed to create Dataverse contact submission', error instanceof Error ? error.message : error);
     return { status: 502, jsonBody: { error: 'Could not submit your message right now' } };
   }
 
